@@ -789,6 +789,24 @@
       "id": "WO4NKXh_",
       "createdAt": 1677665594014,
       "updatedAt": 1677911605112
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "Element Contains",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "const elementContains = (parent, child) =>\n  parent !== child && parent.contains(child)\n  \n  //Example\n  const head = document.querySelector('head')\nconst body = document.querySelector('body')\n\nelementContains(head, body) // true"
+        }
+      ],
+      "id": "RXx-J-WS",
+      "createdAt": 1677925363218,
+      "updatedAt": 1677941776049
     }
   ],
   "tags": [
