@@ -9,7 +9,7 @@
       "id": "y-C8x3sP",
       "createdAt": 1677574921501,
       "updatedAt": 1677574968878,
-      "index": 1
+      "index": 0
     },
     {
       "name": "CSS",
@@ -20,6 +20,17 @@
       "id": "3BVGYMMN",
       "createdAt": 1677579960490,
       "updatedAt": 1677579968963,
+      "index": 1
+    },
+    {
+      "name": "vue",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "-fio_qG6",
+      "createdAt": 1678105368093,
+      "updatedAt": 1678105372040,
       "index": 2
     }
   ],
@@ -295,7 +306,7 @@
       "updatedAt": 1677579935350
     },
     {
-      "isDeleted": false,
+      "isDeleted": true,
       "isFavorites": false,
       "folderId": "3BVGYMMN",
       "tagsIds": [],
@@ -310,7 +321,7 @@
       ],
       "id": "gzvnkrMo",
       "createdAt": 1677579971923,
-      "updatedAt": 1677579982889
+      "updatedAt": 1678189146112
     },
     {
       "isDeleted": false,
@@ -346,7 +357,7 @@
       ],
       "id": "_ICz9XMC",
       "createdAt": 1677580106476,
-      "updatedAt": 1677640481375
+      "updatedAt": 1678267695999
     },
     {
       "isDeleted": false,
@@ -807,6 +818,175 @@
       "id": "RXx-J-WS",
       "createdAt": 1677925363218,
       "updatedAt": 1677941776049
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "动态更换背景图的组件",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "<template>\n    <div>\n        <div class=\"bg-image\" :style=\"{ backgroundImage: 'url(' + imageUrl + ')' }\">\n            <div class=\"l_1\">\n                <slot>默认值</slot>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script>\nexport default {\n    name: 'DynamicBgImage',\n    props: {\n        imageUrl: {\n            type: String,\n            required: true,\n            // 动态图片需要使用require()引入，这个是默认的一张图，其他页面可以自定义其他图\n            default: require('../../../assets/images/winbg.png')\n        }\n    }\n}\n</script>\n\n<style lang=\"less\" scoped>\n.l_1 {\n    position: relative;\n    width: 100%;\n    height: auto;\n    padding: 1vw 1.3vw;\n    padding-bottom: -6vw;\n    margin-bottom: 1vw;\n    background: url('../../../assets/images/titleBG_5.svg') center top no-repeat;\n    background-size: contain;\n    border: 1px solid;\n    border-image: linear-gradient(180deg, rgba(0, 255, 255, 0.5) 0%, #00bbf2 20%, rgba(0, 255, 255, 0.1) 100%)2 2 2 2;\n}\n\n.bg-image {\n    width: 100%;\n    height: 100%;\n    background-size: cover;\n}\n</style>"
+        }
+      ],
+      "id": "jBtfVxSi",
+      "createdAt": 1678105375885,
+      "updatedAt": 1678105641291
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "动态更换背景图的组件",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "<template>\n    <div>\n        <div class=\"bg-image\" :style=\"{ background: `url(${imageUrl}) no-repeat bottom / contain` }\">\n            <div class=\"l_1\">\n                <slot>默认值</slot>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script>\nexport default {\n    name: 'DynamicBgImage',\n    props: {\n        imageUrl: {\n            type: String,\n            required: true,\n            // 动态图片需要使用require()引入\n            default: require('../../../assets/images/winbg.png')\n        }\n    }\n}\n</script>\n\n<style lang=\"less\" scoped>\n.l_1 {\n    position: relative;\n    width: 100%;\n    height: auto;\n    padding: 1vw 1.3vw;\n    padding-bottom: -6vw;\n    margin-bottom: 1vw;\n    background: url('../../../assets/images/titleBG_5.svg') center top no-repeat;\n    background-size: contain;\n    border: 1px solid;\n    border-image: linear-gradient(180deg, rgba(0, 255, 255, 0.5) 0%, #00bbf2 20%, rgba(0, 255, 255, 0.1) 100%)2 2 2 2;\n}\n\n.bg-image {\n    width: 100%;\n    height: 100%;\n}\n</style>\n\n//父组件这样使用：\n<winSub :imageUrl=\"imageUrl\">\n\ndata() {\n        return {\n            imageUrl: require('../../../assets/images/otherbg.png')\n        };\n    },"
+        },
+        {
+          "label": "Fragment 2",
+          "language": "plain_text",
+          "value": "父组件这样使用：\n<winSub :imageUrl=\"imageUrl\"><winSub>"
+        }
+      ],
+      "id": "VHTMKWuu",
+      "createdAt": 1678105521667,
+      "updatedAt": 1678170415523
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "<template>\n    <div>\n        <div class=\"bg-image\" :style=\"{ backgroundImage: 'url(' + imageUrl + ')' }\">\n            <div class=\"l_1\">\n                <slot>默认值</slot>\n            </div>\n        </div>\n    </div>\n</template>\n\n<script>\nexport default {\n    name: 'DynamicBgImage',\n    props: {\n        imageUrl: {\n            type: String,\n            required: true,\n            // 动态图片需要使用require()引入，这个是默认的一张图，其他页面可以自定义其他图\n            default: require('../../../assets/images/winbg.png')\n        }\n    }\n}\n</script>\n\n<style lang=\"less\" scoped>\n.l_1 {\n    position: relative;\n    width: 100%;\n    height: auto;\n    padding: 1vw 1.3vw;\n    padding-bottom: -6vw;\n    margin-bottom: 1vw;\n    background: url('../../../assets/images/titleBG_5.svg') center top no-repeat;\n    background-size: contain;\n    border: 1px solid;\n    border-image: linear-gradient(180deg, rgba(0, 255, 255, 0.5) 0%, #00bbf2 20%, rgba(0, 255, 255, 0.1) 100%)2 2 2 2;\n}\n\n.bg-image {\n    width: 100%;\n    height: 100%;\n    background-size: cover;\n}\n</style>"
+        }
+      ],
+      "id": "A0d0Z27C",
+      "createdAt": 1678105616625,
+      "updatedAt": 1678105623646
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "gtzXOkAc"
+      ],
+      "description": "element.closest(selector);",
+      "name": "dom 操作",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "用closet()查找特定祖先元素\nconst myElement = document.querySelector('#my-element');\nconst closestDiv = myElement.closest('div');\n/*上面的代码将查找 ID 为 my-element 的元素的最近祖先 div 元素，如果找到则将其赋值给变量 closestDiv。\n如果没有找到，则 closestDiv 的值为 null。closest 方法可以方便地在DOM树中查找元素的祖先元素，\n特别是在需要找到指定元素的父级或更高层次的祖先元素时，它会非常有用。*/\n\n 用 children 获取所有sibling element\n//[...h1.parentElement.children] 将类数组转为数组\n//注意children可以获取所有子元素，思路是先到parentElement\n[...h1.parentElement.children].forEach(function (el){\n    if (el !== h1) el.style.transform = 'scale(0.5)';\n})"
+        }
+      ],
+      "id": "XEhy6_vs",
+      "createdAt": 1678188833239,
+      "updatedAt": 1678280324862
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [],
+      "description": null,
+      "name": "渐变外边框",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "    border: 1px solid;\n    border-image: linear-gradient(180deg, rgba(0, 255, 255, 0.5) 0%, #00bbf2 20%, rgba(0, 255, 255, 0.1) 100%)2 2 2 2;"
+        }
+      ],
+      "id": "nhDqQdnw",
+      "createdAt": 1678189084177,
+      "updatedAt": 1678189113611
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [],
+      "description": null,
+      "name": "css下划线",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "background-image: linear-gradient(90deg,#fae54d 0,#fae54d);\nbackground-position: left bottom 20%;\nbackground-repeat: repeat-x;\nbackground-size: 1px 4px;"
+        }
+      ],
+      "id": "-n8mNroq",
+      "createdAt": 1678189122456,
+      "updatedAt": 1678189150375
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "<template>\n  <div class=\"main-well\">\n    <div class=\"line\"></div>\n    <slot></slot>\n    <span class=\"left-top\"></span>\n    <span class=\"right-top\"></span>\n    <span class=\"left-bottom\"></span>\n    <span class=\"right-bottom\"></span>\n    <div class=\"line_bottom\"></div>\n  </div>\n</template>\n\n<style lang=\"less\" scoped>\n.line,\n.line_bottom {\n  background-image: linear-gradient(90deg, rgba(237, 240, 244, 0.00) 11%, #EEF1F5 35%, #EEF1F5 64%, rgba(238, 241, 243, 0.00) 86%);\n  width: 90%;\n  height: 1px;\n  position: absolute;\n  top: -1px;\n  left: 10%;\n}\n\n.line_bottom {\n  top: unset;\n  bottom: -1px;\n}\n\n.main-well {\n  position: relative;\n  padding: 20px;\n  padding-top: 15px;\n\n  background: url('../assets/images/line.png'),\n    linear-gradient(to bottom,\n      rgba(0, 13, 74, .7) 0,\n      rgba(0, 13, 74, .7) 20%,\n      rgba(19, 36, 98, .7) 40%,\n      rgba(19, 36, 98, .7) 80%,\n      rgba(19, 36, 98, .7) 100%);\n\n  // box-sizing: border-box;\n  // background-size: 100% auto;\n  width: 100%;\n  border: 1px solid rgb(21, 47, 119);\n\n  .left-top,\n  .right-top,\n  .left-bottom,\n  .right-bottom {\n    position: absolute;\n    width: 8px;\n    height: 8px;\n  }\n\n  .left-top {\n    left: 0;\n    top: 0;\n    border-left: solid 2px #02a6b5;\n    border-top: solid 2px #02a6b5;\n  }\n\n  .right-top {\n    right: 0;\n    top: 0;\n    border-right: solid 2px #02a6b5;\n    border-top: solid 2px #02a6b5;\n  }\n\n  .left-bottom {\n    left: 0;\n    bottom: 0;\n    border-left: solid 2px #02a6b5;\n    border-bottom: solid 2px #02a6b5;\n  }\n\n  .right-bottom {\n    right: 0;\n    bottom: 0;\n    border-right: solid 2px #02a6b5;\n    border-bottom: solid 2px #02a6b5;\n  }\n}\n</style>"
+        }
+      ],
+      "id": "2POU4Tjx",
+      "createdAt": 1678258120365,
+      "updatedAt": 1678258191535
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "窗口组件",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "<template>\n  <div class=\"main-well\">\n    <div class=\"line\"></div>\n    <slot></slot>\n    <span class=\"left-top\"></span>\n    <span class=\"right-top\"></span>\n    <span class=\"left-bottom\"></span>\n    <span class=\"right-bottom\"></span>\n    <div class=\"line_bottom\"></div>\n  </div>\n</template>\n\n<style lang=\"less\" scoped>\n.line,\n.line_bottom {\n  background-image: linear-gradient(90deg, rgba(237, 240, 244, 0.00) 11%, #EEF1F5 35%, #EEF1F5 64%, rgba(238, 241, 243, 0.00) 86%);\n  width: 90%;\n  height: 1px;\n  position: absolute;\n  top: -1px;\n  left: 10%;\n}\n\n.line_bottom {\n  top: unset;\n  bottom: -1px;\n}\n\n.main-well {\n  position: relative;\n  padding: 20px;\n  padding-top: 15px;\n\n  background: url('../assets/images/line.png'),\n    linear-gradient(to bottom,\n      rgba(0, 13, 74, .7) 0,\n      rgba(0, 13, 74, .7) 20%,\n      rgba(19, 36, 98, .7) 40%,\n      rgba(19, 36, 98, .7) 80%,\n      rgba(19, 36, 98, .7) 100%);\n\n  // box-sizing: border-box;\n  // background-size: 100% auto;\n  width: 100%;\n  border: 1px solid rgb(21, 47, 119);\n\n  .left-top,\n  .right-top,\n  .left-bottom,\n  .right-bottom {\n    position: absolute;\n    width: 8px;\n    height: 8px;\n  }\n\n  .left-top {\n    left: 0;\n    top: 0;\n    border-left: solid 2px #02a6b5;\n    border-top: solid 2px #02a6b5;\n  }\n\n  .right-top {\n    right: 0;\n    top: 0;\n    border-right: solid 2px #02a6b5;\n    border-top: solid 2px #02a6b5;\n  }\n\n  .left-bottom {\n    left: 0;\n    bottom: 0;\n    border-left: solid 2px #02a6b5;\n    border-bottom: solid 2px #02a6b5;\n  }\n\n  .right-bottom {\n    right: 0;\n    bottom: 0;\n    border-right: solid 2px #02a6b5;\n    border-bottom: solid 2px #02a6b5;\n  }\n}\n</style>"
+        }
+      ],
+      "id": "yKVDWGcB",
+      "createdAt": 1678258135677,
+      "updatedAt": 1678258186973
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [],
+      "description": "这个可以应用在窗口的上下两边",
+      "name": "发光线条",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "//应用 <div class='line'>\n\n.line,\n.line_bottom {\n  background-image: linear-gradient(90deg, rgba(237, 240, 244, 0.00) 11%, #EEF1F5 35%, #EEF1F5 64%, rgba(238, 241, 243, 0.00) 86%);\n  width: 90%;\n  height: 1px;\n  position: absolute;\n  top: -1px;\n  left: 10%;\n}\n\n.line_bottom {\n  top: unset;\n  bottom: -1px;\n}"
+        }
+      ],
+      "id": "Qh9k1XS5",
+      "createdAt": 1678258252252,
+      "updatedAt": 1678258600130
     }
   ],
   "tags": [
@@ -833,6 +1013,12 @@
       "id": "VMVF-8hD",
       "createdAt": 1677665702294,
       "updatedAt": 1677665702294
+    },
+    {
+      "name": "dom操作",
+      "id": "gtzXOkAc",
+      "createdAt": 1678279968558,
+      "updatedAt": 1678279968558
     }
   ]
 }
