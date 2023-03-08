@@ -883,20 +883,21 @@
       "isFavorites": false,
       "folderId": "y-C8x3sP",
       "tagsIds": [
-        "gtzXOkAc"
+        "gtzXOkAc",
+        "VeWisvfJ"
       ],
-      "description": "element.closest(selector);",
+      "description": null,
       "name": "dom 操作",
       "content": [
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "用closet()查找特定祖先元素\nconst myElement = document.querySelector('#my-element');\nconst closestDiv = myElement.closest('div');\n/*上面的代码将查找 ID 为 my-element 的元素的最近祖先 div 元素，如果找到则将其赋值给变量 closestDiv。\n如果没有找到，则 closestDiv 的值为 null。closest 方法可以方便地在DOM树中查找元素的祖先元素，\n特别是在需要找到指定元素的父级或更高层次的祖先元素时，它会非常有用。*/\n\n 用 children 获取所有sibling element\n//[...h1.parentElement.children] 将类数组转为数组\n//注意children可以获取所有子元素，思路是先到parentElement\n[...h1.parentElement.children].forEach(function (el){\n    if (el !== h1) el.style.transform = 'scale(0.5)';\n})"
+          "value": "用closet()查找特定祖先元素 语法：element.closest(selector) 是搭配事件代理常用的dom方法;\nconst myElement = document.querySelector('#my-element');\nconst closestDiv = myElement.closest('div');\n/*上面的代码将查找 ID 为 my-element 的元素的最近祖先 div 元素，如果找到则将其赋值给变量 closestDiv。\n如果没有找到，则 closestDiv 的值为 null。closest 方法可以方便地在DOM树中查找元素的祖先元素，\n特别是在需要找到指定元素的父级或更高层次的祖先元素时，它会非常有用。*/\n\n 用 children 获取所有sibling element\n//[...h1.parentElement.children] 将类数组转为数组\n//注意children可以获取所有子元素，思路是先到parentElement\n[...h1.parentElement.children].forEach(function (el){\n    if (el !== h1) el.style.transform = 'scale(0.5)';\n})\n\n//++++++++++++++++++++++++++++++++++++++++++++++++++ Tabbed component Tab 页切换 +++++++++++++++++++++++\n/*实现核心就是添加或去除class样式，下面案例重点：\n1) 代理的应用，就是通过父元素给下面所有子元素添加了事件监听\n2) dom元素dataset的使用：使用dataset元素可以方便地访问和修改HTML元素的自定义属性。它也可以为JavaScript应用程序提供一种简单的方法来存储额外的信息。要使用dataset元素，您需要在HTML元素上添加属性，并将其前缀“data-”。例如，要添加一个名为“color”的属性，您可以使用data-color属性，如下所示：<div data-color=\"blue\">。然后，您可以使用JavaScript来访问这个属性，如下所示：var color = element.dataset.color;\n3) if (!clicked) return; 条件不成立立即结束执行，不执行下面程序，否则报错\n4) 通过closest()操作定位dom,配合事件代理的完成\n5)使用 forEach()方法对高亮元素的操作\n*/\n\ntabsContainer.addEventListener('click', function (e) {\n  const clicked = e.target.closest('.operations__tab');\n\n  // Guard clause\n  if (!clicked) return;\n\n  // Remove active classes\n  tabs.forEach(t => t.classList.remove('operations__tab--active'));\n  tabsContent.forEach(c => c.classList.remove('operations__content--active'));\n\n  // Activate tab\n  clicked.classList.add('operations__tab--active');\n\n  // Activate content area\n  document\n    .querySelector(`.operations__content--${clicked.dataset.tab}`)\n    .classList.add('operations__content--active');\n});"
         }
       ],
       "id": "XEhy6_vs",
       "createdAt": 1678188833239,
-      "updatedAt": 1678280324862
+      "updatedAt": 1678283187095
     },
     {
       "isDeleted": false,
@@ -1019,6 +1020,12 @@
       "id": "gtzXOkAc",
       "createdAt": 1678279968558,
       "updatedAt": 1678279968558
+    },
+    {
+      "name": "tab页",
+      "id": "VeWisvfJ",
+      "createdAt": 1678282529320,
+      "updatedAt": 1678282529320
     }
   ]
 }
