@@ -16,10 +16,10 @@
       "parentId": null,
       "isOpen": false,
       "isSystem": false,
-      "defaultLanguage": "plain_text",
+      "defaultLanguage": "css",
       "id": "3BVGYMMN",
       "createdAt": 1677579960490,
-      "updatedAt": 1677579968963,
+      "updatedAt": 1678974417347,
       "index": 1
     },
     {
@@ -27,11 +27,22 @@
       "parentId": null,
       "isOpen": false,
       "isSystem": false,
-      "defaultLanguage": "plain_text",
+      "defaultLanguage": "vue",
       "id": "-fio_qG6",
       "createdAt": 1678105368093,
-      "updatedAt": 1678105372040,
+      "updatedAt": 1678975111702,
       "index": 2
+    },
+    {
+      "name": "element ui",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "kYeA3Yuv",
+      "createdAt": 1678621283163,
+      "updatedAt": 1678621291846,
+      "index": 3
     }
   ],
   "snippets": [
@@ -244,12 +255,12 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "//方式一 \n//使用 map() 方法将提若干属性取到一个数组中，而不必返回整个对象\nconst data = JSON.parse(jsonString).data;\n\n//注意，如果提取的属性是惟一的就用find(),因为发现目标后会理解返回对象，不在执行遍历\nconst products = data.filter(obj => obj.product === \"DBOne\").map(obj => {\n  return {\n    product: obj.product,\n    btnUrl: obj.btnUrl\n  };\n});\n\n//方式二\n//优化方案：对象解构的方式比map更优雅，不通点：map返回的是数组，对象解构的是属性\nconst { product, btnUrl } = data.find(obj => obj.product === \"DBOne\");\n/*在这个例子中，find() 方法用于查找具有 'product' 值为 'DBOne' 的对象，\n并将其存储在一个变量中。然后，对象解构用于从该对象中提取 'product' 和\n'btnUrl' 字段，并将它们存储在 product 和 btnUrl 变量中。*/\n\n//方式三\n/*上一个方法适用于您只需要访问少量字段的情况，并且不需要修改对象。\n如果您需要修改对象，那么您可能需要返回整个对象。在这种情况下，\n您可以使用对象解构来清晰地指定要修改的字段。例如，以下代码仅修改 'product' 字段：*/\nconst obj = data.find(obj => obj.product === \"DBOne\");\nconst { product, ...rest } = obj;\n//将rest对象与修改后的product字段合并到一个新的对象modifiedObj中\nconst modifiedObj = {\n  ...rest,\n  product: \"New Product Name\"\n};\n\n//方式四 核心：obj[key]\n//将产品信息存储在一个对象中，其中键是产品名称，值是产品信息对象，如下所示：\nconst products = {\n  \"DBOne\": {\n    essentials: [\"essential1\", \"essential2\"],\n    subTitle: \"演示要点\"\n  },\n  \"DBOne Monitor\": {\n    essentials: [\"essential3\", \"essential4\"],\n    subTitle: \"演示要点\"\n  },\n  \"DBSync\": {\n    essentials: [\"essential5\", \"essential6\"],\n    subTitle: \"演示要点\"\n  },\n  //...\n};\n//然后，在代码中，您可以使用 products 对象来查找相应产品的信息，如下所示：\n//const productName = 'DBSync';\nconst productName = findProductName(queryParameters);\n//productName in products 返回布尔值\nif (productName in products) {\n  //由于products的属性是对象形式，这里productInfo会返回一个目标对象\n  const productInfo = products[productName];\n  //productInfo是对象，这里可以进行解构\n  const { essentials, subTitle } = productInfo;\n    console.log('productInfo:',productInfo)\n    console.log('essentials:',essentials)\n} else {\n  console.log(`Product not found for name '${productName}'`);\n}\n\nfunction findProductName(queryParameters) {\n  if (queryParameters.includes(\"11.0.2.10:8080\")) {\n    return \"DBOne\";\n  } else if (queryParameters.includes(\"11.0.2.14:9090\")) {\n    return \"DBOne Monitor\";\n  } else if (queryParameters.includes(\"11.0.2.17:8888\")) {\n    return \"DBSync\";\n  } else {\n    return null;\n  }\n}\nfunction findProductName(queryParameters) {\n  if (queryParameters.includes(\"11.0.2.10:8080\")) {\n    return \"DBOne\";\n  } else if (queryParameters.includes(\"11.0.2.14:9090\")) {\n    return \"DBOne Monitor\";\n  } else if (queryParameters.includes(\"11.0.2.17:8888\")) {\n    return \"DBSync\";\n  } else {\n    return null;\n  }\n}\n/*在这个版本的代码中，我们首先定义了一个名为 `products` 的对象，用于存储不同产品的信息\n。然后，我们定义了一个名为 `findProductName` 的函数，用于根据查询参数返回相应的产品名称。\n接下来，在代码中，我们首先调用 `findProductName` 函数，找到相应的产品名称。然后，我们使用\n `products` 对象来查找该产品的信息，并更新 UI 元素的内容。\n这个版本的代码更简洁、更易于维护，而且可以很容易地添加或删除产品信息，而无需修改多个 `if` 代码块。*/"
+          "value": "const [entry] = entries;\n/*这句话是ES6中解构赋值语法的一种。它的作用是把数组或对象中的值解构出来并赋值给左侧的变量。\n在这里，entries是一个数组，使用解构赋值的方式把它的第一个元素（下标为0）赋值给entry变量。\n等价于下面的写法：const entry = entries[0]; \nconst[entry,en2] = entries 这句与上一句类似，不同之处在于它使用了解构赋值的扩展语法。这里\n将数组entries中的前两个元素（下标为0和1）依次解构并赋值给entry和en2两个变量，可以理解为：\nconst entry = entries[0];\nconst en2 = entries[1];\n*/\n\n//方式一 \n//使用 map() 方法将提若干属性取到一个数组中，而不必返回整个对象\nconst data = JSON.parse(jsonString).data;\n\n//注意，如果提取的属性是惟一的就用find(),因为发现目标后会理解返回对象，不在执行遍历\nconst products = data.filter(obj => obj.product === \"DBOne\").map(obj => {\n  return {\n    product: obj.product,\n    btnUrl: obj.btnUrl\n  };\n});\n\n//方式二\n//优化方案：对象解构的方式比map更优雅，不通点：map返回的是数组，对象解构的是属性\nconst { product, btnUrl } = data.find(obj => obj.product === \"DBOne\");\n/*在这个例子中，find() 方法用于查找具有 'product' 值为 'DBOne' 的对象，\n并将其存储在一个变量中。然后，对象解构用于从该对象中提取 'product' 和\n'btnUrl' 字段，并将它们存储在 product 和 btnUrl 变量中。*/\n\n//方式三\n/*上一个方法适用于您只需要访问少量字段的情况，并且不需要修改对象。\n如果您需要修改对象，那么您可能需要返回整个对象。在这种情况下，\n您可以使用对象解构来清晰地指定要修改的字段。例如，以下代码仅修改 'product' 字段：*/\nconst obj = data.find(obj => obj.product === \"DBOne\");\nconst { product, ...rest } = obj;\n//将rest对象与修改后的product字段合并到一个新的对象modifiedObj中\nconst modifiedObj = {\n  ...rest,\n  product: \"New Product Name\"\n};\n\n//方式四 核心：obj[key]\n//将产品信息存储在一个对象中，其中键是产品名称，值是产品信息对象，如下所示：\nconst products = {\n  \"DBOne\": {\n    essentials: [\"essential1\", \"essential2\"],\n    subTitle: \"演示要点\"\n  },\n  \"DBOne Monitor\": {\n    essentials: [\"essential3\", \"essential4\"],\n    subTitle: \"演示要点\"\n  },\n  \"DBSync\": {\n    essentials: [\"essential5\", \"essential6\"],\n    subTitle: \"演示要点\"\n  },\n  //...\n};\n//然后，在代码中，您可以使用 products 对象来查找相应产品的信息，如下所示：\n//const productName = 'DBSync';\nconst productName = findProductName(queryParameters);\n//productName in products 返回布尔值\nif (productName in products) {\n  //由于products的属性是对象形式，这里productInfo会返回一个目标对象\n  const productInfo = products[productName];\n  //productInfo是对象，这里可以进行解构\n  const { essentials, subTitle } = productInfo;\n    console.log('productInfo:',productInfo)\n    console.log('essentials:',essentials)\n} else {\n  console.log(`Product not found for name '${productName}'`);\n}\n\nfunction findProductName(queryParameters) {\n  if (queryParameters.includes(\"11.0.2.10:8080\")) {\n    return \"DBOne\";\n  } else if (queryParameters.includes(\"11.0.2.14:9090\")) {\n    return \"DBOne Monitor\";\n  } else if (queryParameters.includes(\"11.0.2.17:8888\")) {\n    return \"DBSync\";\n  } else {\n    return null;\n  }\n}\nfunction findProductName(queryParameters) {\n  if (queryParameters.includes(\"11.0.2.10:8080\")) {\n    return \"DBOne\";\n  } else if (queryParameters.includes(\"11.0.2.14:9090\")) {\n    return \"DBOne Monitor\";\n  } else if (queryParameters.includes(\"11.0.2.17:8888\")) {\n    return \"DBSync\";\n  } else {\n    return null;\n  }\n}\n/*在这个版本的代码中，我们首先定义了一个名为 `products` 的对象，用于存储不同产品的信息\n。然后，我们定义了一个名为 `findProductName` 的函数，用于根据查询参数返回相应的产品名称。\n接下来，在代码中，我们首先调用 `findProductName` 函数，找到相应的产品名称。然后，我们使用\n `products` 对象来查找该产品的信息，并更新 UI 元素的内容。\n这个版本的代码更简洁、更易于维护，而且可以很容易地添加或删除产品信息，而无需修改多个 `if` 代码块。*/"
         }
       ],
       "id": "Pfb1HxdY",
       "createdAt": 1677576889200,
-      "updatedAt": 1677576900244
+      "updatedAt": 1678337321371
     },
     {
       "isDeleted": false,
@@ -958,7 +969,7 @@
       "isFavorites": false,
       "folderId": "-fio_qG6",
       "tagsIds": [],
-      "description": null,
+      "description": "上下两边带闪光线条，四个角带包边的窗口组件，引跑多个项目有使用",
       "name": "窗口组件",
       "content": [
         {
@@ -969,7 +980,7 @@
       ],
       "id": "yKVDWGcB",
       "createdAt": 1678258135677,
-      "updatedAt": 1678258186973
+      "updatedAt": 1678975223527
     },
     {
       "isDeleted": false,
@@ -988,6 +999,194 @@
       "id": "Qh9k1XS5",
       "createdAt": 1678258252252,
       "updatedAt": 1678258600130
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": ""
+        }
+      ],
+      "id": "Qr3iIz4m",
+      "createdAt": 1678337087185,
+      "updatedAt": 1678337087185
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "Intersection Observer API",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "/*\nIntersection Observer API是一种在网页中监听元素是否进入或离开视口的JavaScript API。它允许我们异步地观察单个或多个DOM元素，以了解它们的交叉状态。\n使用Intersection Observer API可以实现许多有用的功能，例如：\n延迟加载图像和视频。\n无限滚动和分页。\n监听广告的显示和隐藏。\n视觉上显示元素的动画效果。\n该API通过IntersectionObserver类和IntersectionObserverEntry类实现。IntersectionObserver类用于创建一个观察器实例，该实例可以通过observe()方法观察指定的元素。IntersectionObserverEntry用于记录元素的交叉状态，包括交叉比例和交叉矩形等。\n以下是一个简单的例子，用于观察一个元素是否进入视口：*/\n// 创建一个IntersectionObserver实例\nconst observer = new IntersectionObserver((entries) => {\n  entries.forEach((entry) => {\n    if (entry.isIntersecting) {\n      console.log('Element is visible in the viewport');\n    } else {\n      console.log('Element is hidden in the viewport');\n    }\n  });\n});\n\n// 观察指定的DOM元素\nobserver.observe(document.querySelector('#target-element'));\n//在这个例子中，我们创建了一个IntersectionObserver实例，使用observe()方法观察一个元素，当元素进入或离开视口时，触发回调函数并打印相应的消息。"
+        }
+      ],
+      "id": "PkpyJalX",
+      "createdAt": 1678340645588,
+      "updatedAt": 1678340765582
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "[data-src]')\nconst imgTargets = document.querySelectorAll('img"
+        }
+      ],
+      "id": "Wjh3Yjlm",
+      "createdAt": 1678359540750,
+      "updatedAt": 1678359543134
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [],
+      "description": null,
+      "name": "属性选择",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "\nconst imgTargets = document.querySelectorAll('img[data-src]')"
+        }
+      ],
+      "id": "eLvZiojw",
+      "createdAt": 1678359553335,
+      "updatedAt": 1678359636115
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "CommonJs",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "//在 Nodejs 环境中，默认就支持模块系统，该模块系统遵循 CommonJS 规范\n//在 Nodejs 中一个 js 文件就是一个模块\n\n// index.js\nfunction add(a, b) {\n  return a + b;\n}\n\nfunction minus(a, b) {\n  return a - b;\n}\n\n// 导出单个\nmodule.exports = add;\n// 在别的文件引入\nconst add = require(\"index.js\");\n\n// 导出多个\nmodule.exports = {\n  add,\n  minus\n};\n// 在别的文件引入\nconst { add, minus } = require(\"index.js\");\n\n// 直接引入npm包\nconst _ = require(\"lodash\");"
+        }
+      ],
+      "id": "1xLS6cwD",
+      "createdAt": 1678364181946,
+      "updatedAt": 1678364238735
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "kYeA3Yuv",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "<template>\n<el-carousel ref=\"carousel\" :interval=\"4000\" type=\"card\" height=\"16vw\" width=\"20vw\" :autoplay=\"true\" :loop=\"true\" arrow=\"always\">\n<el-carousel-item v-for=\"(item, index) in headline\" :key=\"item.id\" :title=\"item.title\">\n<el-image class=\"main-image\" :src=\"item.file\" fit=\"fill\" @mouseenter=\"setActiveDebounced(index)\" @mouseleave=\"setActive(activeIndex)\"></el-image>\n<h3 class=\"bottom\" style=\"color:white\">{{ item.title }}</h3>\n</el-carousel-item>\n</el-carousel>\n</template>\n\n<script>\nexport default {\ndata() {\nreturn {\nactiveIndex: 0\n}\n},\nmethods: {\nsetActive(index) {\nthis.activeIndex = index;\nthis.$refs.carousel.setActiveItem(this.activeIndex);\n},\nsetActiveDebounced(fn, delay) {\nlet timerId;\nreturn function (...args) {\nif (timerId) {\nclearTimeout(timerId);\n}\ntimerId = setTimeout(() => {\nfn.apply(this, args);\ntimerId = null;\n}, delay);\n};\n},\nsetActiveDebounced: function(index) {\nthis.setActiveDebounced(this.setActive, 1000)(index);\n}\n}\n}\n</script>"
+        }
+      ],
+      "id": "YtQR_lzz",
+      "createdAt": 1678621296242,
+      "updatedAt": 1678621298348
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": "这个鼠标事件是chatgpt给的方案，可用！",
+      "name": "轮播图加鼠标切换事件",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "/*\n这段代码是一个基于Element UI的轮播组件，展示了一个滑动的图片列表。代码中的 el-carousel 组件是整个轮播的容器，通过设置不同的属性来控制轮播的效果。其中，interval 属性指定了轮播的间隔时间，type 属性指定了轮播的类型（这里是卡片式的轮播），height 和 width 属性指定了轮播容器的高度和宽度，autoplay 属性指定了是否自动播放，loop 属性指定了是否循环播放。\n\n在 el-carousel 组件中，每个轮播项使用 el-carousel-item 组件来表示，通过 v-for 指令循环渲染出图片列表中的每一项，并通过 @click.native 事件监听用户的点击操作。每个轮播项中包含了一张图片和一个标题，图片使用 el-image 组件来展示，通过设置 :src 属性来指定图片的路径，标题则使用 h3 标签进行展示。\n\n在 script 标签中，代码定义了一个名为 setActive 的方法，用于设置当前活动项的索引。在 data 中定义了一个名为 activeIndex 的变量，用于保存当前活动项的索引。当用户鼠标悬停在某个轮播项上时，会触发 @mouseenter 事件，调用 setActive 方法并传入该项的索引值，从而实现高亮该项。当鼠标移开时，会触发 @mouseleave 事件，调用 setActive 方法并传入当前活动项的索引值，从而取消高亮该项。\n\n在 setActive 方法中，代码使用 setTimeout 函数来实现延迟执行，当用户在400毫秒内多次悬停在不同的轮播项上时，只有最后一次悬停的项会被高亮显示。同时，代码通过 $refs 属性获取了 el-carousel 组件的引用，并调用其 setActiveItem 方法来设置当前活动项的索引值，从而实现滑动到对应的轮播项。\n\n总体来说，这段代码通过使用Element UI提供的轮播组件和事件监听机制，实现了一个简单的图片轮播效果，并且还实现了一些用户体验优化，例如延迟高亮和滑动到对应项等功能。*/\n<template>\n    <el-carousel ref=\"carousel\" :interval=\"2500\" type=\"card\" height=\"16vw\" width=\"20vw\" :autoplay=\"true\" :loop=\"true\">\n        <el-carousel-item v-for=\"(item, index) in headline\" :key=\"item.id\" :title=\"item.title\"\n            @click.native=\"clickCarousel(item)\">\n            <el-image class=\"main-image\" :src=\"item.file\" fit=\"fill\" @mouseenter=\"setActive(index)\"\n                @mouseleave=\"setActive(activeIndex)\"></el-image>\n            <h3 class=\"bottom\" style=\"color:white\">{{ item.title }}</h3>\n        </el-carousel-item>\n    </el-carousel>\n</template>\n    \n<script>\nexport default {\n    data() {\n        return {\n            activeIndex: 0\n        }\n    },\n    methods: {\n        setActive(index) {\n            clearTimeout(this.timer);\n            this.timer = setTimeout(() => {\n                this.activeIndex = index;\n                this.$refs.carousel.setActiveItem(this.activeIndex);\n            }, 400);\n        }\n    }\n}\n</script>\n<style lang=\"less\">\n/deep/.el-carousel {\n    .el-carousel__item {\n        h3 {\n            position: absolute;\n            bottom: .5vw;\n            // right: 2vw;\n            left: 50%;\n            transform: translateX(-50%);\n            color: #fff;\n            font-size: 1vw;\n            line-height: 1.2vw;\n            margin: 0;\n            padding: .2vw;\n            background-color: rgba(0, 0, 0, 0.2);\n            border-radius: 4px;\n        }\n    }\n\n    .el-carousel__arrow {\n        background-color: rgba(31, 45, 61, .4);\n        font-size: 1.5vw;\n    }\n\n    .el-carousel__indicators--outside button {\n        margin-top: .7vw;\n        background-color: yellow;\n        height: .2vw;\n        width: 3.6vw;\n        border-radius: 3px;\n\n    }\n}\n</style>"
+        }
+      ],
+      "id": "Gb1GwSta",
+      "createdAt": 1678621301490,
+      "updatedAt": 1678709390338
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "kYeA3Yuv",
+      "tagsIds": [
+        "fyros3t1",
+        "tqUZ3fHJ",
+        "fDPIALBe",
+        "cH71p1QA",
+        "y6nX0FDZ"
+      ],
+      "description": "这个轮播图是对el-carousel的改造，添加了鼠标在两侧的mouseenter后的交互效果",
+      "name": "el-carousel",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "<template>\n    <el-carousel ref=\"carousel\" :interval=\"2500\" type=\"card\" height=\"16vw\" width=\"20vw\" :autoplay=\"true\" :loop=\"true\">\n        <el-carousel-item v-for=\"(item, index) in headline\" :key=\"item.id\" :title=\"item.title\"\n            @click.native=\"clickCarousel(item)\">\n            <el-image style=\"width:100%; height:100%\" :src=\"item.file\" fit=\"fill\" @mouseenter=\"setActive(index)\"\n                @mouseleave=\"setActive(activeIndex)\"></el-image>\n            <h3 class=\"bottom\" style=\"color:white\">{{ item.title }}</h3>\n        </el-carousel-item>\n    </el-carousel>\n</template>\n    \n<script>\nexport default {\n    data() {\n        return {\n            activeIndex: 0\n        }\n    },\n    methods: {\n        setActive(index) {\n            clearTimeout(this.timer); //注意这里的用法，先清除再set\n            this.timer = setTimeout(() => {\n                this.activeIndex = index;\n                this.$refs.carousel.setActiveItem(this.activeIndex);\n            }, 400);\n        }\n    }\n}\n</script>\n<style lang=\"less\">\n/deep/.el-carousel {\n    .el-carousel__item {\n        h3 {\n            position: absolute;\n            bottom: .5vw;\n            // right: 2vw;\n            left: 50%;\n            transform: translateX(-50%);\n            color: #fff;\n            font-size: 1vw;\n            line-height: 1.2vw;\n            margin: 0;\n            padding: .2vw;\n            background-color: rgba(0, 0, 0, 0.2);\n            border-radius: 4px;\n        }\n    }\n\n    .el-carousel__arrow {\n        background-color: rgba(31, 45, 61, .4);\n        font-size: 1.5vw;\n    }\n\n    .el-carousel__indicators--outside button {\n        margin-top: .7vw;\n        background-color: yellow;\n        height: .2vw;\n        width: 3.6vw;\n        border-radius: 3px;\n\n    }\n}\n</style>"
+        }
+      ],
+      "id": "dt-NnWPp",
+      "createdAt": 1678709326248,
+      "updatedAt": 1678975072282
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "vJCQ8FoN"
+      ],
+      "description": null,
+      "name": "Object.prototype",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "here we can add any new method to this prototype and all the arrays will then inherit it.\nwe want to create a method which returns all the unique elements of an array，so we can then call\nthat method on any array that we want,but in practice you probably not do it  \n\nconst arr = [3，6， 5.6，9，3]; // 这种创建数组的方式实际就是： new Array === [] \nArray.prototype.unique = function () {return [...new Set(this)];\nconsole.log(arr.unique());"
+        }
+      ],
+      "id": "p0bXd3RW",
+      "createdAt": 1678843214690,
+      "updatedAt": 1678844932846
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "通过 :style 动态样式实现颜色变换",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "<template>\n  <div :style=\"{ color: textColor }\">\n    {{ text }}\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      text: 'Hello, world!',\n      textColor: 'red'\n    };\n  },\n  mounted() {\n    // 在mounted钩子函数中，修改textColor的值，触发样式的更新\n    setInterval(() => {\n      this.textColor = this.textColor === 'red' ? 'blue' : 'red';\n    }, 1000);\n  }\n};\n</script>"
+        }
+      ],
+      "id": "Dxnd96bQ",
+      "createdAt": 1678954152248,
+      "updatedAt": 1678974450267
     }
   ],
   "tags": [
@@ -1026,6 +1225,42 @@
       "id": "VeWisvfJ",
       "createdAt": 1678282529320,
       "updatedAt": 1678282529320
+    },
+    {
+      "name": "数组去重",
+      "id": "vJCQ8FoN",
+      "createdAt": 1678844290405,
+      "updatedAt": 1678844290405
+    },
+    {
+      "name": "轮播图",
+      "id": "fyros3t1",
+      "createdAt": 1678974797126,
+      "updatedAt": 1678974797126
+    },
+    {
+      "name": "幻灯",
+      "id": "tqUZ3fHJ",
+      "createdAt": 1678974966076,
+      "updatedAt": 1678974966076
+    },
+    {
+      "name": "鼠标交互",
+      "id": "fDPIALBe",
+      "createdAt": 1678974982629,
+      "updatedAt": 1678974982629
+    },
+    {
+      "name": "setTimeout",
+      "id": "cH71p1QA",
+      "createdAt": 1678975008697,
+      "updatedAt": 1678975008697
+    },
+    {
+      "name": " clearTimeout",
+      "id": "y6nX0FDZ",
+      "createdAt": 1678975016786,
+      "updatedAt": 1678975016786
     }
   ]
 }
