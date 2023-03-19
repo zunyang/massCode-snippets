@@ -1091,7 +1091,7 @@
       "updatedAt": 1678364238735
     },
     {
-      "isDeleted": false,
+      "isDeleted": true,
       "isFavorites": false,
       "folderId": "kYeA3Yuv",
       "tagsIds": [],
@@ -1106,7 +1106,7 @@
       ],
       "id": "YtQR_lzz",
       "createdAt": 1678621296242,
-      "updatedAt": 1678621298348
+      "updatedAt": 1679132289379
     },
     {
       "isDeleted": false,
@@ -1163,12 +1163,12 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "here we can add any new method to this prototype and all the arrays will then inherit it.\nwe want to create a method which returns all the unique elements of an array，so we can then call\nthat method on any array that we want,but in practice you probably not do it  \n\nconst arr = [3，6， 5.6，9，3]; // 这种创建数组的方式实际就是： new Array === [] \nArray.prototype.unique = function () {return [...new Set(this)];\nconsole.log(arr.unique());"
+          "value": "here we can add any new method to this prototype and all the arrays will then inherit it.\nwe want to create a method which returns all the unique elements of an array，so we can then call\nthat method on any array that we want,but in practice you probably not do it  \n\nconst arr = [3，6， 5.6，9，3]; // 这种创建数组的方式实际就是： new Array === [] \nArray.prototype.unique = function () {return [...new Set(this)];\nconsole.log(arr.unique());\n\n// what's the point is that this 'from method' here is really a method that is attached to \nArray.from(document.querySelectorAll('h1'))"
         }
       ],
       "id": "p0bXd3RW",
       "createdAt": 1678843214690,
-      "updatedAt": 1678844932846
+      "updatedAt": 1679061380488
     },
     {
       "isDeleted": false,
@@ -1187,6 +1187,62 @@
       "id": "Dxnd96bQ",
       "createdAt": 1678954152248,
       "updatedAt": 1678974450267
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": ""
+        }
+      ],
+      "id": "j4HTUJgQ",
+      "createdAt": 1679060835539,
+      "updatedAt": 1679132256288
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "JS Class",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "//JS classes are really just a layer of obstruction over constructor functions\n    //在构造函数里需要 PersonCl.call()，而class里只需要super()\n    //super is basically the constructor function of the parent class\n    //We don't need to specify the name of the parent class again,而 PersonCl.call()里需要\n    //in super() pass in the arguments for the constructor of the parent class.\n\n//keyword extends link to PersonCl prototypes behind the scenes\nclass StudentCl extends PersonCl {\n  constructor(fullName, birthYear, course){  \n    // Always needs to happen first! then be able to access the 'this' keyword\n    super(fullName, birthYear){\n      this.course =course; //this is not necessary\n    }\n    \n    calcAge(){\n      //子对象和父对象的同名方法会覆盖父对象的方法，因为原型链先到达子对象，这个就是对象4大支柱之一的‘多态’\n    }\n}\n\nconst martha = new StudentCl( 'Martha Jones'，2012,'computer science');\n\nconst martha = new StudentCl( 'Martha Jones'，2012);\n//如果像上面一行child里没有新的属性，和父对象一样的属性，那么class里不用写 constructor(),只要extends即可"
+        }
+      ],
+      "id": "OPVIGMkU",
+      "createdAt": 1679132391010,
+      "updatedAt": 1679145808749
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "z_vLdu5R"
+      ],
+      "description": null,
+      "name": "JS OOP",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "// Constructor Functions and the new Operator\nconst Person = function (firstName, birthYear) {\n  // Instance properties\n  this.firstName = firstName;\n  this.birthYear = birthYear;\n  // Never to this!\n  // this.calcAge = function () {\n  //   console.log(2037 - this.birthYear);\n  // };\n};\nconst jonas = new Person('Jonas', 1991);\nconsole.log(jonas);\n\n// 1. New {} is created\n// 2. function is called, this = {}\n// 3. {} linked to prototype\n// 4. function automatically return {}\n\nconsole.log(jonas instanceof Person);  //true\n\nPerson.prototype.calcAge = function () {\n  console.log(2037 - this.birthYear);\n};\njonas.calcAge();\nmatilda.calcAge();\n\nconsole.log(jonas.__proto__);\nconsole.log(jonas.__proto__ === Person.prototype); //true\n\nconsole.log(Person.prototype.isPrototypeOf(jonas));//true\nconsole.log(Person.prototype.isPrototypeOf(matilda));//true\n\nconsole.log(Person.prototype.isPrototypeOf(Person));//false\n// Person.prototype.isPrototypeOf(matilda)是false, 这里的.prototype 更确切的说是.prototyeOfLinkedObjects\n\nPerson.prototype.species = 'Homo Sapiens';\nconsole.log(jonas.species, matilda.species);//Homo Sapiens Homo Sapiens\n\nconsole.log(jonas.hasOwnProperty('firstName'));//true\nconsole.log(jonas.hasOwnProperty('species'));//false\n\n//=================== Use a constructor function to implement a Car\nconst Car = function (make, speed) {\n  this.make = make;\n  this.speed = speed;\n};\nCar.prototype.accelerate = function () {\n  this.speed += 10;\n  console.log(`${this.make} is going at ${this.speed} km/h`);\n};\nCar.prototype.brake = function () {\n  this.speed -= 5;\n  console.log(`${this.make} is going at ${this.speed} km/h`);\n};\nconst bmw = new Car('BMW', 120);\nconst mercedes = new Car('Mercedes', 95);\n\nbmw.accelerate();\nbmw.accelerate();\nbmw.brake();\nbmw.accelerate();\n\n// ES6 Classes\n// Class expression\n// const PersonCl = class {}\n\n// Class declaration\nclass PersonCl {\n  constructor(fullName, birthYear) {\n    this.fullName = fullName;\n    this.birthYear = birthYear;\n  }\n  // Instance methods\n  // Methods will be added to .prototype property\n  calcAge() {\n    console.log(2037 - this.birthYear);\n  }\n  greet() {\n    console.log(`Hey ${this.fullName}`);\n  }\n  get age() {\n    return 2037 - this.birthYear;\n  }\n  // Set a property that already exists\n  set fullName(name) {\n    if (name.includes(' ')) this._fullName = name;\n    else alert(`${name} is not a full name!`);\n  }\n  get fullName() {\n    return this._fullName;\n  }\n  // Static method\n  static hey() {\n    console.log('Hey there 👋');\n    console.log(this);\n  }\n}\n"
+        }
+      ],
+      "id": "1TLTWdlL",
+      "createdAt": 1679146641540,
+      "updatedAt": 1679147974720
     }
   ],
   "tags": [
@@ -1261,6 +1317,12 @@
       "id": "y6nX0FDZ",
       "createdAt": 1678975016786,
       "updatedAt": 1678975016786
+    },
+    {
+      "name": "面向对象",
+      "id": "z_vLdu5R",
+      "createdAt": 1679146698916,
+      "updatedAt": 1679146698916
     }
   ]
 }
