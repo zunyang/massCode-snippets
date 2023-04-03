@@ -27,10 +27,10 @@
       "parentId": null,
       "isOpen": false,
       "isSystem": false,
-      "defaultLanguage": "vue",
+      "defaultLanguage": "javascript",
       "id": "-fio_qG6",
       "createdAt": 1678105368093,
-      "updatedAt": 1678975111702,
+      "updatedAt": 1679457202542,
       "index": 2
     },
     {
@@ -43,6 +43,16 @@
       "createdAt": 1678621283163,
       "updatedAt": 1678621291846,
       "index": 3
+    },
+    {
+      "name": "electron",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "javascript",
+      "id": "ejtoZnYa",
+      "createdAt": 1679982761618,
+      "updatedAt": 1679982777364
     }
   ],
   "snippets": [
@@ -255,12 +265,12 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "const [entry] = entries;\n/*这句话是ES6中解构赋值语法的一种。它的作用是把数组或对象中的值解构出来并赋值给左侧的变量。\n在这里，entries是一个数组，使用解构赋值的方式把它的第一个元素（下标为0）赋值给entry变量。\n等价于下面的写法：const entry = entries[0]; \nconst[entry,en2] = entries 这句与上一句类似，不同之处在于它使用了解构赋值的扩展语法。这里\n将数组entries中的前两个元素（下标为0和1）依次解构并赋值给entry和en2两个变量，可以理解为：\nconst entry = entries[0];\nconst en2 = entries[1];\n*/\n\n//方式一 \n//使用 map() 方法将提若干属性取到一个数组中，而不必返回整个对象\nconst data = JSON.parse(jsonString).data;\n\n//注意，如果提取的属性是惟一的就用find(),因为发现目标后会理解返回对象，不在执行遍历\nconst products = data.filter(obj => obj.product === \"DBOne\").map(obj => {\n  return {\n    product: obj.product,\n    btnUrl: obj.btnUrl\n  };\n});\n\n//方式二\n//优化方案：对象解构的方式比map更优雅，不通点：map返回的是数组，对象解构的是属性\nconst { product, btnUrl } = data.find(obj => obj.product === \"DBOne\");\n/*在这个例子中，find() 方法用于查找具有 'product' 值为 'DBOne' 的对象，\n并将其存储在一个变量中。然后，对象解构用于从该对象中提取 'product' 和\n'btnUrl' 字段，并将它们存储在 product 和 btnUrl 变量中。*/\n\n//方式三\n/*上一个方法适用于您只需要访问少量字段的情况，并且不需要修改对象。\n如果您需要修改对象，那么您可能需要返回整个对象。在这种情况下，\n您可以使用对象解构来清晰地指定要修改的字段。例如，以下代码仅修改 'product' 字段：*/\nconst obj = data.find(obj => obj.product === \"DBOne\");\nconst { product, ...rest } = obj;\n//将rest对象与修改后的product字段合并到一个新的对象modifiedObj中\nconst modifiedObj = {\n  ...rest,\n  product: \"New Product Name\"\n};\n\n//方式四 核心：obj[key]\n//将产品信息存储在一个对象中，其中键是产品名称，值是产品信息对象，如下所示：\nconst products = {\n  \"DBOne\": {\n    essentials: [\"essential1\", \"essential2\"],\n    subTitle: \"演示要点\"\n  },\n  \"DBOne Monitor\": {\n    essentials: [\"essential3\", \"essential4\"],\n    subTitle: \"演示要点\"\n  },\n  \"DBSync\": {\n    essentials: [\"essential5\", \"essential6\"],\n    subTitle: \"演示要点\"\n  },\n  //...\n};\n//然后，在代码中，您可以使用 products 对象来查找相应产品的信息，如下所示：\n//const productName = 'DBSync';\nconst productName = findProductName(queryParameters);\n//productName in products 返回布尔值\nif (productName in products) {\n  //由于products的属性是对象形式，这里productInfo会返回一个目标对象\n  const productInfo = products[productName];\n  //productInfo是对象，这里可以进行解构\n  const { essentials, subTitle } = productInfo;\n    console.log('productInfo:',productInfo)\n    console.log('essentials:',essentials)\n} else {\n  console.log(`Product not found for name '${productName}'`);\n}\n\nfunction findProductName(queryParameters) {\n  if (queryParameters.includes(\"11.0.2.10:8080\")) {\n    return \"DBOne\";\n  } else if (queryParameters.includes(\"11.0.2.14:9090\")) {\n    return \"DBOne Monitor\";\n  } else if (queryParameters.includes(\"11.0.2.17:8888\")) {\n    return \"DBSync\";\n  } else {\n    return null;\n  }\n}\nfunction findProductName(queryParameters) {\n  if (queryParameters.includes(\"11.0.2.10:8080\")) {\n    return \"DBOne\";\n  } else if (queryParameters.includes(\"11.0.2.14:9090\")) {\n    return \"DBOne Monitor\";\n  } else if (queryParameters.includes(\"11.0.2.17:8888\")) {\n    return \"DBSync\";\n  } else {\n    return null;\n  }\n}\n/*在这个版本的代码中，我们首先定义了一个名为 `products` 的对象，用于存储不同产品的信息\n。然后，我们定义了一个名为 `findProductName` 的函数，用于根据查询参数返回相应的产品名称。\n接下来，在代码中，我们首先调用 `findProductName` 函数，找到相应的产品名称。然后，我们使用\n `products` 对象来查找该产品的信息，并更新 UI 元素的内容。\n这个版本的代码更简洁、更易于维护，而且可以很容易地添加或删除产品信息，而无需修改多个 `if` 代码块。*/"
+          "value": "const [entry] = entries;\n/*这句话是ES6中解构赋值语法的一种。它的作用是把数组或对象中的值解构出来并赋值给左侧的变量。\n在这里，entries是一个数组，使用解构赋值的方式把它的第一个元素（下标为0）赋值给entry变量。\n等价于下面的写法：const entry = entries[0]; \nconst[entry,en2] = entries 这句与上一句类似，不同之处在于它使用了解构赋值的扩展语法。这里\n将数组entries中的前两个元素（下标为0和1）依次解构并赋值给entry和en2两个变量，可以理解为：\nconst entry = entries[0];\nconst en2 = entries[1];\n*/\n\n//方式一 \n//使用 map() 方法将提若干属性取到一个数组中，而不必返回整个对象\nconst data = JSON.parse(jsonString).data;\n\n//注意，如果提取的属性是惟一的就用find(),因为发现目标后会理解返回对象，不在执行遍历\nconst products = data.filter(obj => obj.product === \"DBOne\").map(obj => {\n  return {\n    product: obj.product,\n    btnUrl: obj.btnUrl\n  };\n});\n\n//方式二\n//优化方案：对象解构的方式比map更优雅，不通点：map返回的是数组，对象解构的是属性\nconst { product, btnUrl } = data.find(obj => obj.product === \"DBOne\");\n/*在这个例子中，find() 方法用于查找具有 'product' 值为 'DBOne' 的对象，\n并将其存储在一个变量中。然后，对象解构用于从该对象中提取 'product' 和\n'btnUrl' 字段，并将它们存储在 product 和 btnUrl 变量中。*/\n\n//方式三\n/*上一个方法适用于您只需要访问少量字段的情况，并且不需要修改对象。\n如果您需要修改对象，那么您可能需要返回整个对象。在这种情况下，\n您可以使用对象解构来清晰地指定要修改的字段。例如，以下代码仅修改 'product' 字段：*/\nconst obj = data.find(obj => obj.product === \"DBOne\");\nconst { product, ...rest } = obj;\n//将rest对象与修改后的product字段合并到一个新的对象modifiedObj中\nconst modifiedObj = {\n  ...rest,\n  product: \"New Product Name\"\n};\n\n//方式四 核心：obj[key]\n//将产品信息存储在一个对象中，其中键是产品名称，值是产品信息对象，如下所示：\nconst products = {\n  \"DBOne\": {\n    essentials: [\"essential1\", \"essential2\"],\n    subTitle: \"演示要点\"\n  },\n  \"DBOne Monitor\": {\n    essentials: [\"essential3\", \"essential4\"],\n    subTitle: \"演示要点\"\n  },\n  \"DBSync\": {\n    essentials: [\"essential5\", \"essential6\"],\n    subTitle: \"演示要点\"\n  },\n  //...\n};\n//然后，在代码中，您可以使用 products 对象来查找相应产品的信息，如下所示：\n//const productName = 'DBSync';\nconst productName = findProductName(queryParameters);\n//productName in products 返回布尔值\nif (productName in products) {\n  //由于products的属性是对象形式，这里productInfo会返回一个目标对象\n  const productInfo = products[productName];\n  //productInfo是对象，这里可以进行解构\n  const { essentials, subTitle } = productInfo;\n    console.log('productInfo:',productInfo)\n    console.log('essentials:',essentials)\n} else {\n  console.log(`Product not found for name '${productName}'`);\n}\n\nfunction findProductName(queryParameters) {\n  if (queryParameters.includes(\"11.0.2.10:8080\")) {\n    return \"DBOne\";\n  } else if (queryParameters.includes(\"11.0.2.14:9090\")) {\n    return \"DBOne Monitor\";\n  } else if (queryParameters.includes(\"11.0.2.17:8888\")) {\n    return \"DBSync\";\n  } else {\n    return null;\n  }\n}\nfunction findProductName(queryParameters) {\n  if (queryParameters.includes(\"11.0.2.10:8080\")) {\n    return \"DBOne\";\n  } else if (queryParameters.includes(\"11.0.2.14:9090\")) {\n    return \"DBOne Monitor\";\n  } else if (queryParameters.includes(\"11.0.2.17:8888\")) {\n    return \"DBSync\";\n  } else {\n    return null;\n  }\n}\n/*在这个版本的代码中，我们首先定义了一个名为 `products` 的对象，用于存储不同产品的信息\n。然后，我们定义了一个名为 `findProductName` 的函数，用于根据查询参数返回相应的产品名称。\n接下来，在代码中，我们首先调用 `findProductName` 函数，找到相应的产品名称。然后，我们使用\n `products` 对象来查找该产品的信息，并更新 UI 元素的内容。\n这个版本的代码更简洁、更易于维护，而且可以很容易地添加或删除产品信息，而无需修改多个 `if` 代码块。*/\n\n//其他\nconst value = document.querySelector(\"input').value;\n//可以优化为\nconst {value} = document.querySelector(\"input')"
         }
       ],
       "id": "Pfb1HxdY",
       "createdAt": 1677576889200,
-      "updatedAt": 1678337321371
+      "updatedAt": 1679988098199
     },
     {
       "isDeleted": false,
@@ -375,18 +385,18 @@
       "isFavorites": false,
       "folderId": "y-C8x3sP",
       "tagsIds": [],
-      "description": null,
+      "description": "getter method is basically so that we can get a value out of an object by simply writing a property instead of writing a method；and the same for the setter method",
       "name": "Setters and Getters",
       "content": [
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "const account = {\n   owner: 'Jonas',\n   movements: [200,530,120,300],\n   get latest() {\n       //pop()会有返回值\n      return this.movements.slice(-1).pop();\n   },\n   \n   set latest(mov) {\n      this.movements.push(mov);\n   },\n}\n//直接像属性一样调用\nconsole.log(account.latest);//300\n//setters也一样像属性一样调用\naccount.latest = 50;\nconsole.log(account.movements);// [200, 530, 120, 300, 50]"
+          "value": "const account = {\n   owner: 'Jonas',\n   movements: [200,530,120,300],\n   get latest() {\n       //pop()会有返回值\n      return this.movements.slice(-1).pop();\n   },\n   \n   set latest(mov) {\n      this.movements.push(mov);\n   },\n}\n//直接像属性一样调用,就会运行方法\nconsole.log(account.latest);//300\n//setters也一样像属性一样调用\naccount.latest = 50;\nconsole.log(account.movements);// [200, 530, 120, 300, 50]"
         }
       ],
       "id": "GMTtvAY_",
       "createdAt": 1677580193622,
-      "updatedAt": 1677580201110
+      "updatedAt": 1680318688772
     },
     {
       "isDeleted": false,
@@ -417,12 +427,12 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "// <textarea id=\"note\" cols=\"30\" rows=\"10\"></textarea><br>\n//  <input type=\"button\" id=\"save\" value=\"Save\">\nconst elmNote = document.getElementById(\"note\");\nconst elmSave = document.getElementById(\"save\");\n\nlet note = localStorage[\"note\"];\nif (note == null) {\n  note = \"\";\n}\nelmNote.value = note;\n\nelmSave.onclick = () => {\n  localStorage[\"note\"] = elmNote.value;\n};\n"
+          "value": "// <textarea id=\"note\" cols=\"30\" rows=\"10\"></textarea><br>\n//  <input type=\"button\" id=\"save\" value=\"Save\">\nconst elmNote = document.getElementById(\"note\");\nconst elmSave = document.getElementById(\"save\");\n\nlet note = localStorage[\"note\"];\nif (note == null) {\n  note = \"\";\n}\nelmNote.value = note;\n\nelmSave.onclick = () => {\n  localStorage[\"note\"] = elmNote.value;\n};\n\n//引跑项目\n user_id: window.localStorage.uid\n \n methods: {\n    getLogData() {\n      getLog({\n        'namespace': `can6-user-${this.user_id}`,\n        'containerName': 'ok'\n      }).then(res => {\n        this.tableLog = res.data.list\n      })\n}\n"
         }
       ],
       "id": "fihKW6fb",
       "createdAt": 1677581638818,
-      "updatedAt": 1677581646124
+      "updatedAt": 1679495334258
     },
     {
       "isDeleted": false,
@@ -1174,19 +1184,22 @@
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "-fio_qG6",
-      "tagsIds": [],
+      "tagsIds": [
+        "1aEWbIVG",
+        "HJZBStiS"
+      ],
       "description": null,
       "name": "通过 :style 动态样式实现颜色变换",
       "content": [
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "<template>\n  <div :style=\"{ color: textColor }\">\n    {{ text }}\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      text: 'Hello, world!',\n      textColor: 'red'\n    };\n  },\n  mounted() {\n    // 在mounted钩子函数中，修改textColor的值，触发样式的更新\n    setInterval(() => {\n      this.textColor = this.textColor === 'red' ? 'blue' : 'red';\n    }, 1000);\n  }\n};\n</script>"
+          "value": "<template>\n  <div :style=\"{ color: textColor }\">\n    {{ text }}\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      text: 'Hello, world!',\n      //如果只是在不同页面变化不同颜色只要设置这里即可，不用 mounted()那一步\n      textColor: 'red'\n    };\n  },\n  mounted() {\n    // 在mounted钩子函数中，修改textColor的值，触发样式的更新\n    setInterval(() => {\n      this.textColor = this.textColor === 'red' ? 'blue' : 'red';\n    }, 1000);\n  }\n};\n</script>"
         }
       ],
       "id": "Dxnd96bQ",
       "createdAt": 1678954152248,
-      "updatedAt": 1678974450267
+      "updatedAt": 1679278212612
     },
     {
       "isDeleted": true,
@@ -1249,6 +1262,210 @@
       "id": "1TLTWdlL",
       "createdAt": 1679146641540,
       "updatedAt": 1679232133244
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "MKyhwiT8"
+      ],
+      "description": null,
+      "name": "dispatchEvent",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "// Assuming the button has an ID attribute, you can use the following code to click the button programmatically\ndocument.getElementById(\"buttonId\").click();\n// If you want to simulate a click event using code, you can use the following code snippet\n\nvar event = new MouseEvent(\"click\", {\n  bubbles: true,\n  cancelable: true,\n  view: window //which specifies the window object that the event is associated with.\n});\n\ndocument.getElementById(\"buttonId\").dispatchEvent(event);"
+        }
+      ],
+      "id": "qYx4Mj6l",
+      "createdAt": 1679401501574,
+      "updatedAt": 1679401890092
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "vue",
+          "value": "/*管理后台不同于前台项目，会经常用到一些第三方插件，但有些插件是不得不依赖 jquery 的，如市面很多富文本基都是依赖 jquery 的，所以干脆就直接引入到项目中省事(gzip之后只有34kb，而且常年from cache,不要考虑那些吹毛求疵的大小问题，这几kb和提高的开发效率根本不能比)。但是如果第三方库的代码中出现则会直接报错。要达到类似的效果，则需要使用 webpack 内置的 ProvidePlugin 插件，配置很简单，只需要*/\n\nnew webpack.ProvidePlugin({\n  $: 'jquery' ,\n  'jQuery': 'jquery'\n})"
+        }
+      ],
+      "id": "vknEg3DC",
+      "createdAt": 1679457075706,
+      "updatedAt": 1679457226713
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "jquery 依赖问题",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "/*管理后台不同于前台项目，会经常用到一些第三方插件，但有些插件是不得不依赖 jquery 的，如市面很多富文本基都是依赖 jquery 的，所以干脆就直接引入到项目中省事(gzip之后只有34kb，而且常年from cache,不要考虑那些吹毛求疵的大小问题，这几kb和提高的开发效率根本不能比)。但是如果第三方库的代码中出现则会直接报错。要达到类似的效果，则需要使用 webpack 内置的 ProvidePlugin 插件，配置很简单，只需要*/\n\nnew webpack.ProvidePlugin({\n  $: 'jquery' ,\n  'jQuery': 'jquery'\n})\n//这样当 webpack 碰到 require 的第三方库中出现全局的$、jQeury和window.jQuery 时，就会使用 node_module 下 jquery 包 export 出来的东西了。"
+        }
+      ],
+      "id": "ZAmbhUBv",
+      "createdAt": 1679457209734,
+      "updatedAt": 1679457264785
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "VSCode 个人首选项配置",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "{\n  \"breadcrumbs.enabled\": true,\n  \"editor.tabSize\": 2,\n  \"editor.renderWhitespace\": \"boundary\",\n  \"editor.cursorBlinking\": \"smooth\",\n  \"editor.minimap.renderCharacters\": false,\n  \"editor.fontFamily\": \"'Fira Code', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'\",\n  \"editor.fontLigatures\": true,\n  \"explorer.confirmDragAndDrop\": false,\n  \"extensions.autoUpdate\": false,\n  \"files.insertFinalNewline\": true,\n  \"git.autofetch\": true,\n  \"git.path\": \"F:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\",\n  \"search.exclude\": {\n    \"**/node_modules\": true,\n    \"**/dist\": true\n  },\n  \"typescript.locale\": \"en\",\n  \"window.titleBarStyle\": \"custom\",\n  \"window.title\": \"${dirty}${activeEditorMedium}${separator}${rootName}\",\n  \"window.zoomLevel\": 1,\n  \"workbench.activityBar.visible\": true,\n  \"workbench.colorTheme\": \"Plastic - deprioritised punctuation\",\n  \"workbench.iconTheme\": \"vscode-great-icons\",\n  \"workbench.startupEditor\": \"newUntitledFile\",\n  \"eslint.autoFixOnSave\": true,\n  \"eslint.validate\": [\"javascript\", \"javascriptreact\", \"vue\"],\n  \"vsicons.projectDetection.autoReload\": true,\n  \"vsicons.dontShowNewVersionMessage\": true,\n  \"tslint.autoFixOnSave\": true,\n  \"debugwrapper.wrappers\": {\n    \"default\": \"console.log('$eSEL', $SEL)\"\n  },\n  \"prettier.tslintIntegration\": true,\n  \"cSpell.userWords\": [\n    \"Unmount\"\n  ],\n  \"jest.autoEnable\": false,\n}"
+        }
+      ],
+      "id": "xjoUkmep",
+      "createdAt": 1679457478453,
+      "updatedAt": 1679457498268
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [
+        "KdczzSfg",
+        "3_8WBEfH"
+      ],
+      "description": null,
+      "name": "router-view",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "/*different router the same component vue。真实的业务场景中，这种情况很多。我创建和编辑的页面使用的是同一个component,默认情况下当这两个页面切换时并不会触发vue的created或者mounted钩子，官方说你可以通过watch $route的变化来做处理，但其实说真的还是蛮麻烦的。后来发现其实可以简单的在 router-view上加上一个唯一的key，来保证路由切换时都会重新渲染触发钩子了。这样简单的多了。\n*/\n<router-view :key=\"key\"></router-view>\n\ncomputed: {\n    key() {\n        return this.$route.name !== undefined? this.$route.name + +new Date(): this.$route + +new Date()\n    }\n }"
+        }
+      ],
+      "id": "GQiXghAh",
+      "createdAt": 1679467460483,
+      "updatedAt": 1679467650411
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "tocBVsRT"
+      ],
+      "description": " 重点理解${person[key]，很基础很常用，另外注意模板字符串里是可以用表达式的\n using bracket notation to access the value of each key in the object.",
+      "name": "Object.keys",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "const person = {\n  name: 'John',\n  age: 30,\n  city: 'New York'\n};\n\nObject.keys(person).forEach(function(key,index) { //forEach第二个参数是索引，数组方法的许多参数都是同样的思路，很简单！\n  console.log(` ${index +1} ${key}: ${person[key]}`);\n});\n// 1 name: John\n// 2 age: 30\n// 3 city: New York\n\nconsole.log(Object.keys(person))\n//['name', 'age', 'city'] 这个没有啥复杂的很直白，获取对象person的keys，返回的是数组\nconsole.log(...Object.keys(person))\n// name age city  解构后就获取字符串了，很简单！\n\n"
+        }
+      ],
+      "id": "2_p6_pgI",
+      "createdAt": 1679472627150,
+      "updatedAt": 1679474170259
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [
+        "3SlmB-P_",
+        "_QsE2qvC"
+      ],
+      "description": null,
+      "name": "返回首页按钮",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "<el-button type=\"text\" icon=\"el-icon-back\" @click=\"goIndex\">返回首页</el-button>\n   \ngoIndex() {this.$router.push('/index'),"
+        }
+      ],
+      "id": "oXiEwFY6",
+      "createdAt": 1679712751310,
+      "updatedAt": 1679712825854
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "ejtoZnYa",
+      "tagsIds": [
+        "ppd2KRtj"
+      ],
+      "description": "第一个fragment是electron的主程序文件index.js，第二个fragment是package.json文件，第三个是index.html文件，程序主要是在主程序和子程序之间的交互\nhttps://github.com/zunyang/stephen-grider_electron-for-desktop-apps",
+      "name": "获取文件信息实例 videoinfo",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "const electron = require('electron');\nconst ffmpeg = require('fluent-ffmpeg');\n\nconst { app, BrowserWindow, ipcMain } = electron;\n\nlet mainWindow;\n\napp.on('ready', () => {\n  mainWindow = new BrowserWindow({});\n  mainWindow.loadURL(`file://${__dirname}/index.html`);\n});\n\nipcMain.on('video:submit', (event, path) => {\n  ffmpeg.ffprobe(path, (err, metadata) => {\n    mainWindow.webContents.send(\n      'video:metadata',\n      metadata.format.duration\n    );\n  });\n});"
+        },
+        {
+          "label": "Fragment 2",
+          "language": "javascript",
+          "value": "{\n  \"name\": \"videoinfo\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"electron\": \"electron .\"\n  },\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"dependencies\": {\n    \"electron\": \"^1.6.6\",\n    \"fluent-ffmpeg\": \"^2.1.2\"\n  }\n}"
+        },
+        {
+          "label": "Fragment 3",
+          "language": "javascript",
+          "value": "<head>\n</head>\n<body>\n  <h1>Video Info</h1>\n  <form>\n    <div>\n      <label>Select a video</label>\n      <input type=\"file\" accept=\"video/*\" />\n    </div>\n    <button type=\"submit\">Get Info</button>\n  </form>\n\n  <h1 id=\"result\"></h1>\n\n  <script>\n    const electron = require('electron');\n    const { ipcRenderer } = electron;\n\n    document.querySelector('form').addEventListener('submit', (event) => {\n      event.preventDefault();\n      const { path } = document.querySelector('input').files[0];\n\n      ipcRenderer.send('video:submit', path);\n    });\n\n    ipcRenderer.on('video:metadata', (event, duration) => {\n      document.querySelector('#result').innerHTML = `Video is ${duration} seconds`;\n    });\n  </script>\n</body>"
+        }
+      ],
+      "id": "A1xiclUu",
+      "createdAt": 1679982797906,
+      "updatedAt": 1679992255754
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "ejtoZnYa",
+      "tagsIds": [
+        "WSSamMkz"
+      ],
+      "description": null,
+      "name": "true or false",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "process.env.NODE_ENV = 'development'\nconst isDev = process.env.NODE_ENV !== 'production' ? true : false\nconst isMac = process.platform ==='darwin' ? true : false\n\nlet mainWindow\n\nfunction createMainWindow() {\n   mainWindow = new BrowserWindow({\n   title: 'ImageShrink',\n   width: 500,\n   height: 600,\n   icon: './assets/icons/Icon _256x256.png',\n   //注意这里的的应用\n   resizable: isDev ? true : false,\n })\n//loadURL也可用\nmainWindow.loadFile('./app/index.html')\n}\n//事件驱动\napp.on('ready',()=>{\n   createMainWindow()\n   //垃圾回收\n   mainWindow.on('ready',()=>{ mainWindow = null)\n})\n\napp.on('window-all-closed', () => {\n   if (!isMac) {\n       app.quit()\n   }\n})\n\napp.allowRendererProcessReuse = true"
+        }
+      ],
+      "id": "WF1UTwZS",
+      "createdAt": 1680259534545,
+      "updatedAt": 1680261726543
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "在特定项目中禁用 VSCode 的代码格式化",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "\n在 VSCode 中打开该项目。\n在“资源管理器”面板中，单击右键选择“新建文件”创建一个名为“.vscode”的文件夹。\n在“.vscode”文件夹中创建一个名为“settings.json”的文件。\n在“settings.json”文件中添加以下内容：\n\n{\n  \"eslint.format.enable\": false,\n  \"editor.formatOnSave\": false\n}\n\n保存并关闭“settings.json”文件。\n\n现在，VSCode 不会在保存文件时格式化您的代码。请注意，这将只影响当前项目。如果您要在其他项目中启用格式化，请在那些项目的“settings.json”文件中将“editor.formatOnSave”设置为 true。\n"
+        }
+      ],
+      "id": "3eEEIYb3",
+      "createdAt": 1680398998715,
+      "updatedAt": 1680399086439
     }
   ],
   "tags": [
@@ -1365,6 +1582,78 @@
       "id": "AI8yBMyD",
       "createdAt": 1679232133214,
       "updatedAt": 1679232133214
+    },
+    {
+      "name": "动态文字",
+      "id": "1aEWbIVG",
+      "createdAt": 1679278103457,
+      "updatedAt": 1679278103457
+    },
+    {
+      "name": "动态文本",
+      "id": "HJZBStiS",
+      "createdAt": 1679278112422,
+      "updatedAt": 1679278112422
+    },
+    {
+      "name": "自动点击",
+      "id": "MKyhwiT8",
+      "createdAt": 1679401530443,
+      "updatedAt": 1679401530443
+    },
+    {
+      "name": "组件刷新",
+      "id": "KdczzSfg",
+      "createdAt": 1679467630674,
+      "updatedAt": 1679467630674
+    },
+    {
+      "name": "路由刷新",
+      "id": "3_8WBEfH",
+      "createdAt": 1679467650358,
+      "updatedAt": 1679467650358
+    },
+    {
+      "name": "forEach",
+      "id": "tocBVsRT",
+      "createdAt": 1679472651139,
+      "updatedAt": 1679472651139
+    },
+    {
+      "name": "foreach",
+      "id": "zUBMNMx7",
+      "createdAt": 1679472660700,
+      "updatedAt": 1679472660700
+    },
+    {
+      "name": "返回首页 ",
+      "id": "3SlmB-P_",
+      "createdAt": 1679712789060,
+      "updatedAt": 1679712789060
+    },
+    {
+      "name": "返回",
+      "id": "_QsE2qvC",
+      "createdAt": 1679712795639,
+      "updatedAt": 1679712795639
+    },
+    {
+      "name": "eletron",
+      "id": "weh9OBYF",
+      "createdAt": 1679982861163,
+      "updatedAt": 1679982861163
+    },
+    {
+      "name": "electron",
+      "id": "ppd2KRtj",
+      "createdAt": 1679982875186,
+      "updatedAt": 1679982875186
+    },
+    {
+      "name": "环境判断",
+      "id": "WSSamMkz",
+      "createdAt": 1680259912498,
+      "updatedAt": 1680259912498
     }
   ]
 }
