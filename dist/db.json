@@ -38,10 +38,10 @@
       "parentId": null,
       "isOpen": false,
       "isSystem": false,
-      "defaultLanguage": "plain_text",
+      "defaultLanguage": "javascript",
       "id": "kYeA3Yuv",
       "createdAt": 1678621283163,
-      "updatedAt": 1678621291846,
+      "updatedAt": 1680870281253,
       "index": 3
     },
     {
@@ -53,6 +53,16 @@
       "id": "ejtoZnYa",
       "createdAt": 1679982761618,
       "updatedAt": 1679982777364
+    },
+    {
+      "name": "echarts",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "javascript",
+      "id": "CIqaS_Yh",
+      "createdAt": 1681288611405,
+      "updatedAt": 1681288630555
     }
   ],
   "snippets": [
@@ -234,7 +244,7 @@
       ],
       "id": "nP0dmW7J",
       "createdAt": 1677576327516,
-      "updatedAt": 1677576467876
+      "updatedAt": 1681367875602
     },
     {
       "isDeleted": false,
@@ -366,19 +376,21 @@
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "y-C8x3sP",
-      "tagsIds": [],
+      "tagsIds": [
+        "oKLYhCZS"
+      ],
       "description": null,
       "name": "String常用方法",
       "content": [
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "//去除字符串空格\nconst trim = function(str, type) { // 去除空格， type:  1-所有空格  2-前后空格  3-前空格 4-后空格\n  type = type || 1\n  switch (type) {\n    case 1:\n      return str.replace(/\\s+/g, '')\n    case 2:\n      return str.replace(/(^\\s*)|(\\s*$)/g, '')\n    case 3:\n      return str.replace(/(^\\s*)/g, '')\n    case 4:\n      return str.replace(/(\\s*$)/g, '')\n    default:\n      return str\n  }\n}\n\n//字符串大小写转换\n\nconst changeCase = function(str, type) { // 字符串大小写转换 type:  1:首字母大写  2：首页母小写  3：大小写转换  4：全部大写  5：全部小写\n  type = type || 4\n  switch (type) {\n    case 1:\n      return str.replace(/\\b\\w+\\b/g, function(word) {\n        return word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase()\n      })\n    case 2:\n      return str.replace(/\\b\\w+\\b/g, function(word) {\n        return word.substring(0, 1).toLowerCase() + word.substring(1).toUpperCase()\n      })\n    case 3:\n      return str.split('').map(function(word) {\n        if (/[a-z]/.test(word)) {\n          return word.toUpperCase()\n        } else {\n          return word.toLowerCase()\n        }\n      }).join('')\n    case 4:\n      return str.toUpperCase()\n    case 5:\n      return str.toLowerCase()\n    default:\n      return str\n  }\n}\n\n//MSN搜索技巧  搜索：msn string repalce ,后面一个关键字是你要搜索的具体方法\n// Split and join 非常重要和常用\n//从'+'处split成数组\nconsole.log('a+very+nice+string'.split('+'));//['a', 'very', 'nice', 'string']\nconsole.log('Jonas Schmedtmann'.split(' '));\nconst [firstName, lastName] = 'Jonas Schmedtmann'.split('');//['Jonas', 'Schmedtmann']\nconst newName = ['Mr.',firstName, lastName.toUpperCase()].join();\nconsole.log(newName);\n\n//综合应用 slice() replace()  join()  for of    \nconst capitalizeName = function(name){\n    const names = name.split(' ');\n    const namesUpper = [];\n    for (const n of names){//of 后面跟的是数组\n      //namesUpper.push(n[0].toUpperCase()+ n.slice(1)) 下面和这里一样的结果\n      namesUpper.push(n.replace(n[0],n[0].toUpperCase()\n))\n    }\n      console.log(namesUpper.join(' '));\n}\n    \ncapitalizeName('jessica ann smith davis');\ncapitalizeName('jonas schmedtmann');\nVM1047:8 Jessica Ann Smith Davis\n\n// replacing\nconst priceGB ='288,97f'\nconst priceUS = priceGB.replace('f','$').replace(',','.')\nconsole.log(priceUS);\n\nconst announcement ='All passengers come to boarding door 23. Boarding door 23!'\nconsole.log(announcement.replace('door' ,'gate'));//只能匹配第一个 \nconsole.log(announcement.replaceAll('door','gate'));//全部匹配\nconsole.log(announcement.replace(/door/g,'gate'));//全部匹配\n\n//padStart()  padEnd()  slice()参数负数的应用\nconst message = 'Go to gate 23!!';\n//注意链式用法\nconsole.log(message.padStart(20,'+').padEnd(30,'+'))//+++++Go to gate 23!!++++++++++\n\n//银行卡只显示后几位数\nconst maskCreditCard = function (number) {\n   const str = number + ''; //将 number 这个变量转换为字符串类型\n   const last = str.slice(-4);\n   return last.padStart(str.length, '*');\n}\nconsole.log(maskCreditCard(64637836));//****7836\nconsole.log(maskCreditCard(43378463864647384));//*************7384\nconsole.log(maskCreditCard('334859493847755'))//***********7755 \n\n//includes() 返回布尔值\nconsole.log(announcement.includes('door')); //true\n\n//startsWith()  endswith() 都返回布尔值\nconsole.log(announcement.startsWith('All')); //true\n\n// repeat()  注意${'D'.repeat(n)}的用法,会repeat前面\nconst message2 = 'Bad waether... All DepartuesDelayed...'\nconsole.log(message2.repeat(5));\n\nconst planesInLine = function (n) {\n   console.log(`There are ${n} planes in line ${'D'.repeat(n)}`);\n}\nplanesInLine(5);\nplanesInLine(3);\nplanesInLine(12);\n\n// Practice exercise\nconst checkBaggage = function (items){\n  const baggage = items.toLowerCase(); //先全部转为小写\n    \n  if (baggage.includes('knife') || baggage.includes('gun')){\n     console.log('You are NOT allowed on board');\n  }else {\n     console.log('Welcome aboard!');\n  }\n}\ncheckBaggage('I have a laptop, some Food and a pocket Knife');\ncheckBaggage('Socks and camera');\ncheckBaggage('Got some snacks and a gun for protection');\n\n// String Methods Practice，下面格式化了一段机场信息，重点是for of 的用法，\n\nconst flights =\n  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';\n\n// 🔴 Delayed Departure from FAO to TXL (11h25)\n//              Arrival from BRU to FAO (11h45)\n//   🔴 Delayed Arrival from HEL to FAO (12h05)\n//            Departure from FAO to LIS (12h30)\n\nconst getCode = str => str.slice(0, 3).toUpperCase();\n\n//of的时候可以直接split()将字符串转为数组\nfor (const flight of flights.split('+')) {\n  //要深刻理解下面一行代码,非常重要！split()将字符串转为了数组，而左边对数组进行了解构，结构的变量名是自定义的\n  //左边解构之前的前提要了解结构的目标解构，这里的字符串是四个部分所以自定义了4个变量名\n  const [type, from, to, time] = flight.split(';');\n  //注意模板字符串里可以写表达式\n  const output = `${type.startsWith('_Delayed') ? '🔴' : ''}${type.replaceAll('_',' ')} \n  ${getCode(from)} ${getCode(to)} (${time.replace(':', 'h')})`.padStart(36);\n  console.log(output);\n}"
+          "value": "//去除字符串空格\nconst trim = function(str, type) { // 去除空格， type:  1-所有空格  2-前后空格  3-前空格 4-后空格\n  type = type || 1\n  switch (type) {\n    case 1:\n      return str.replace(/\\s+/g, '')\n    case 2:\n      return str.replace(/(^\\s*)|(\\s*$)/g, '')\n    case 3:\n      return str.replace(/(^\\s*)/g, '')\n    case 4:\n      return str.replace(/(\\s*$)/g, '')\n    default:\n      return str\n  }\n}\n\n//字符串大小写转换\n\nconst changeCase = function(str, type) { // 字符串大小写转换 type:  1:首字母大写  2：首页母小写  3：大小写转换  4：全部大写  5：全部小写\n  type = type || 4\n  switch (type) {\n    case 1:\n      return str.replace(/\\b\\w+\\b/g, function(word) {\n        return word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase()\n      })\n    case 2:\n      return str.replace(/\\b\\w+\\b/g, function(word) {\n        return word.substring(0, 1).toLowerCase() + word.substring(1).toUpperCase()\n      })\n    case 3:\n      return str.split('').map(function(word) {\n        if (/[a-z]/.test(word)) {\n          return word.toUpperCase()\n        } else {\n          return word.toLowerCase()\n        }\n      }).join('')\n    case 4:\n      return str.toUpperCase()\n    case 5:\n      return str.toLowerCase()\n    default:\n      return str\n  }\n}\n\n//MSN搜索技巧  搜索：msn string repalce ,后面一个关键字是你要搜索的具体方法\n// Split and join 非常重要和常用\n//从'+'处split成数组\nconsole.log('a+very+nice+string'.split('+'));//['a', 'very', 'nice', 'string']\nconsole.log('Jonas Schmedtmann'.split(' '));\nconst [firstName, lastName] = 'Jonas Schmedtmann'.split('');//['Jonas', 'Schmedtmann']\nconst newName = ['Mr.',firstName, lastName.toUpperCase()].join();\nconsole.log(newName);\n\n//综合应用 slice() replace()  join()  for of    \nconst capitalizeName = function(name){\n    const names = name.split(' ');\n    const namesUpper = [];\n    for (const n of names){//of 后面跟的是数组\n      //namesUpper.push(n[0].toUpperCase()+ n.slice(1)) 下面和这里一样的结果\n      namesUpper.push(n.replace(n[0],n[0].toUpperCase()\n))\n    }\n      console.log(namesUpper.join(' '));\n}\n    \ncapitalizeName('jessica ann smith davis');\ncapitalizeName('jonas schmedtmann');\nVM1047:8 Jessica Ann Smith Davis\n\n// replacing\nconst priceGB ='288,97f'\nconst priceUS = priceGB.replace('f','$').replace(',','.')\nconsole.log(priceUS);\n\nconst announcement ='All passengers come to boarding door 23. Boarding door 23!'\nconsole.log(announcement.replace('door' ,'gate'));//只能匹配第一个 \nconsole.log(announcement.replaceAll('door','gate'));//全部匹配\nconsole.log(announcement.replace(/door/g,'gate'));//全部匹配\n\n//padStart()  padEnd()  slice()参数负数的应用\nconst message = 'Go to gate 23!!';\n//注意链式用法\nconsole.log(message.padStart(20,'+').padEnd(30,'+'))//+++++Go to gate 23!!++++++++++\n\n//银行卡只显示后几位数\nconst maskCreditCard = function (number) {\n   const str = number + ''; //将 number 这个变量转换为字符串类型\n   const last = str.slice(-4);\n   return last.padStart(str.length, '*');\n}\nconsole.log(maskCreditCard(64637836));//****7836\nconsole.log(maskCreditCard(43378463864647384));//*************7384\nconsole.log(maskCreditCard('334859493847755'))//***********7755 \n\n//includes() 返回布尔值\nconsole.log(announcement.includes('door')); //true\n\n//startsWith()  endswith() 都返回布尔值\nconsole.log(announcement.startsWith('All')); //true\n\n// repeat()  注意${'D'.repeat(n)}的用法,会repeat前面\nconst message2 = 'Bad waether... All DepartuesDelayed...'\nconsole.log(message2.repeat(5));\n\nconst planesInLine = function (n) {\n   console.log(`There are ${n} planes in line ${'D'.repeat(n)}`);\n}\nplanesInLine(5);\nplanesInLine(3);\nplanesInLine(12);\n\n// Practice exercise\nconst checkBaggage = function (items){\n  const baggage = items.toLowerCase(); //先全部转为小写\n    \n  if (baggage.includes('knife') || baggage.includes('gun')){\n     console.log('You are NOT allowed on board');\n  }else {\n     console.log('Welcome aboard!');\n  }\n}\ncheckBaggage('I have a laptop, some Food and a pocket Knife');\ncheckBaggage('Socks and camera');\ncheckBaggage('Got some snacks and a gun for protection');\n\n// String Methods Practice，下面格式化了一段机场信息，重点是for of 的用法，\n\nconst flights = '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';\n\n// 🔴 Delayed Departure from FAO to TXL (11h25)\n//              Arrival from BRU to FAO (11h45)\n//   🔴 Delayed Arrival from HEL to FAO (12h05)\n//            Departure from FAO to LIS (12h30)\n\nconst getCode = str => str.slice(0, 3).toUpperCase();\n\n//of的时候可以直接split()将字符串转为数组\nfor (const flight of flights.split('+')) {\n  //要深刻理解下面一行代码,非常重要！split()将字符串转为了数组，而左边对数组进行了解构，结构的变量名是自定义的\n  //左边解构之前的前提要了解结构的目标解构，这里的字符串是四个部分所以自定义了4个变量名\n  const [type, from, to, time] = flight.split(';');\n  //注意模板字符串里可以写表达式，并且可以直接写html\n  const output = `${type.startsWith('_Delayed') ? '🔴' : ''}${type.replaceAll('_',' ')} \n  ${getCode(from)} ${getCode(to)} (${time.replace(':', 'h')})`.padStart(36);\n  console.log(output);\n  //直接写模板字符串,并且可以用原始html的排列解构,数据可以用${}包裹\n  const html = ` \n    <li class=\"workout workout--${workout.name}\" data-id=\"${workout.id}\">\n        <h2 class=\"workout title\">Running on April 14</h2>\n        <div class=\"workout__details\">\n          <span claps=\"workout_ icon\">${workout.distance}</span>\n          ....\n        </li>\n     `;\n}\n//模板字符串的使用,参数的传递的用法，最基础但最常用和被轻视\nconst getCountryData = function(country){\n   ...\n   request.open('GET', `https://restcountries.eu/rest/v2/name/${country}`);\n   request.send();  \n   ...\n}\ngetCountryData('japan')//参数传递给url,可见上面使用了一个函数的唯一作用就是传递了一个参数\n\n"
         }
       ],
       "id": "_ICz9XMC",
       "createdAt": 1677580106476,
-      "updatedAt": 1678267695999
+      "updatedAt": 1680837500366
     },
     {
       "isDeleted": false,
@@ -427,12 +439,12 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "// <textarea id=\"note\" cols=\"30\" rows=\"10\"></textarea><br>\n//  <input type=\"button\" id=\"save\" value=\"Save\">\nconst elmNote = document.getElementById(\"note\");\nconst elmSave = document.getElementById(\"save\");\n\nlet note = localStorage[\"note\"];\nif (note == null) {\n  note = \"\";\n}\nelmNote.value = note;\n\nelmSave.onclick = () => {\n  localStorage[\"note\"] = elmNote.value;\n};\n\n//引跑项目\n user_id: window.localStorage.uid\n \n methods: {\n    getLogData() {\n      getLog({\n        'namespace': `can6-user-${this.user_id}`,\n        'containerName': 'ok'\n      }).then(res => {\n        this.tableLog = res.data.list\n      })\n}\n"
+          "value": "/*\nlocalStorage is a very simple APl.\n主要了解存入时对象要转成字符串，获取时字符串要转为对象,\n另外注意：objects coming from local storage，will not inherit all the methods that they did before,原因是中间有个格式转换\n\nJSON.stringify() //to convert any object in JavaScript to a string\n下面存储的对象是这样的：Key:workouts; Value:[\"date\":\"2020-08-22T07:16:54.493Z\"\"id\":\"8080614493\"\"clicks\":0..\nJSON.parse() //将对象转换为字符串*/\n\n_setLocalStorage() {\n   //第二个参数是把对象转换为字符串存入localStorage\n  localstorage.setItem('workouts', JSON,stringify(this.#workouts));\n}\n\n_getLocalStorage() {\n  //第二个参数是把字符串转换为对象然后获取\n  const data = JSON.parse(localStorage.getItem('workouts'));\n  //console.log(data);\n  if(!data) return\n  this.#workouts = data\n  this.#workouts.forEach(work => {\n    this._renderWorkout(work);\n  })\n}\n\nreset(){\n   localStorage.removeItem('workouts');\n   location.reload();\n}\n\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++\n<textarea id=\"note\" cols=\"30\" rows=\"10\"></textarea><br>\n<input type=\"button\" id=\"save\" value=\"Save\">\n\nconst elmNote = document.getElementById(\"note\");\nconst elmSave = document.getElementById(\"save\");\n\nlet note = localStorage[\"note\"];\nif (note == null) {\n  note = \"\";\n}\nelmNote.value = note;\n\nelmSave.onclick = () => {\n  localStorage[\"note\"] = elmNote.value;\n};\n\n引跑项目\n user_id: window.localStorage.uid\n \n methods: {\n    getLogData() {\n      getLog({\n        'namespace': `can6-user-${this.user_id}`,\n        'containerName': 'ok'\n      }).then(res => {\n        this.tableLog = res.data.list\n      })\n}\n"
         }
       ],
       "id": "fihKW6fb",
       "createdAt": 1677581638818,
-      "updatedAt": 1679495334258
+      "updatedAt": 1680751277626
     },
     {
       "isDeleted": false,
@@ -456,19 +468,26 @@
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "y-C8x3sP",
-      "tagsIds": [],
+      "tagsIds": [
+        "S3kIS3AR"
+      ],
       "description": null,
       "name": "fetch",
       "content": [
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "let store = [];\nasync function fetchData() {\n  try {\n    const options = {\n      method: \"GET\",\n      // timeout: 5000,\n      headers: {\n        // 'X-Custom-Header': 'Custom Value'\n      },\n    };\n    const res = await fetch(\n      // \"http://11.0.23.161/api/manage/entrance\",\n      \"https://www.fastmock.site/mock/a2de472a0f195923aab5cc1c7682ce28/api/chrome_ex\",\n      options\n    );\n    if (res.status == 200) {\n      store = await res.json();\n      console.log(\"store\", store);\n      // 动态修改页面内容\n      // document.querySelector(\".title-span\").innerHTML = store.data\n      //   .map(\n      //     (item, index) =>\n      //       `<li> ${index + 1} ${item.username} :---${item.password}</li>`\n      //   )\n      //   .join(\"\");\n    }\n  } catch (err) {\n    console.log(err);\n  }\n}\nfetchData()\n\n\n//fetch请求的封装\nconst fetch = function(url, setting) { // fetch请求的封装\n  let opts = { // 设置参数的初始值\n    method: (setting.method || 'GET').toUpperCase(), // 请求方式\n    headers: setting.headers || {}, // 请求头设置\n    credentials: setting.credentials || true, // 设置cookie是否一起发送\n    body: setting.body || {},\n    mode: setting.mode || 'no-cors', // 可以设置 cors, no-cors, same-origin\n    redirect: setting.redirect || 'follow', // follow, error, manual\n    cache: setting.cache || 'default' // 设置 cache 模式 (default, reload, no-cache)\n  }\n  let dataType = setting.dataType || 'json' // 解析方式\n  let data = setting.data || '' // 参数\n  let paramsFormat = function(obj) { // 参数格式\n    var str = ''\n    for (var i in obj) {\n      str += `${i}=${obj[i]}&`\n    }\n    return str.split('').slice(0, -1).join('')\n  }\n\n  if (opts.method === 'GET') {\n    url = url + (data ? `?${paramsFormat(data)}` : '')\n  } else {\n    setting.body = data || {}\n  }\n  return new Promise((resolve, reject) => {\n    fetch(url, opts).then(async res => {\n      let data = dataType === 'text' ? await res.text() : dataType === 'blob' ? await res.blob() : await res.json()\n      resolve(data)\n    }).catch(e => {\n      reject(e)\n    })\n  })\n}"
+          "value": "let store = [];\nasync function fetchData() {\n  try {\n    const options = {\n      method: \"GET\",\n      // timeout: 5000,\n      headers: {\n        // 'X-Custom-Header': 'Custom Value'\n      },\n    };\n    //await的magic在于其返回值，就是promise的resolve\n    const res = await fetch(\n      // \"http://11.0.23.161/api/manage/entrance\",\n      \"https://www.fastmock.site/mock/a2de472a0f195923aab5cc1c7682ce28/api/chrome_ex\",\n      options\n    );\n    if (res.status == 200) {\n      store = await res.json();\n      console.log(\"store\", store);\n      // 动态修改页面内容\n      // document.querySelector(\".title-span\").innerHTML = store.data\n      //   .map(\n      //     (item, index) =>\n      //       `<li> ${index + 1} ${item.username} :---${item.password}</li>`\n      //   )\n      //   .join(\"\");\n    }\n  } catch (err) {\n    console.log(err);\n  }\n}\nfetchData()\n\n\n//fetch请求的封装\nconst fetch = function(url, setting) { // fetch请求的封装\n  let opts = { // 设置参数的初始值\n    method: (setting.method || 'GET').toUpperCase(), // 请求方式\n    headers: setting.headers || {}, // 请求头设置\n    credentials: setting.credentials || true, // 设置cookie是否一起发送\n    body: setting.body || {},\n    mode: setting.mode || 'no-cors', // 可以设置 cors, no-cors, same-origin\n    redirect: setting.redirect || 'follow', // follow, error, manual\n    cache: setting.cache || 'default' // 设置 cache 模式 (default, reload, no-cache)\n  }\n  let dataType = setting.dataType || 'json' // 解析方式\n  let data = setting.data || '' // 参数\n  let paramsFormat = function(obj) { // 参数格式\n    var str = ''\n    for (var i in obj) {\n      str += `${i}=${obj[i]}&`\n    }\n    return str.split('').slice(0, -1).join('')\n  }\n\n  if (opts.method === 'GET') {\n    url = url + (data ? `?${paramsFormat(data)}` : '')\n  } else {\n    setting.body = data || {}\n  }\n  return new Promise((resolve, reject) => {\n    fetch(url, opts).then(async res => {\n      let data = dataType === 'text' ? await res.text() : dataType === 'blob' ? await res.blob() : await res.json()\n      resolve(data)\n    }).catch(e => {\n      reject(e)\n    })\n  })\n}"
+        },
+        {
+          "label": " 一个 getJSON 方法",
+          "language": "javascript",
+          "value": "const getJSON = function (url, errorMsg = 'Something went wrong') {\n  return fetch(url).then(response => {\n    if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);\n    return response.json();\n  });\n};\n\n//使用getJSON\nconst getCountryData = function (country) {\n  // Country 1\n  getJSON(\n    `https://restcountries.eu/rest/v2/name/${country}`,\n    'Country not found'\n  )\n    .then(data => {\n      renderCountry(data[0]);\n      const neighbour = data[0].borders[0];\n\n      if (!neighbour) throw new Error('No neighbour found!');\n\n      // Country 2\n      return getJSON(\n        `https://restcountries.eu/rest/v2/alpha/${neighbour}`,\n        'Country not found'\n      );\n    })\n\n    .then(data => renderCountry(data, 'neighbour'))\n    .catch(err => {\n      console.error(`${err} 💥💥💥`);\n      renderError(`Something went wrong 💥💥 ${err.message}. Try again!`);\n    })\n    .finally(() => {\n      countriesContainer.style.opacity = 1;\n    });\n};\n\nbtn.addEventListener('click', function () {\n  getCountryData('portugal');\n});\n\ngetCountryData('australia');"
         }
       ],
       "id": "zQnI5Oah",
       "createdAt": 1677581820829,
-      "updatedAt": 1677640169599
+      "updatedAt": 1681459381305
     },
     {
       "isDeleted": false,
@@ -905,20 +924,21 @@
       "folderId": "y-C8x3sP",
       "tagsIds": [
         "gtzXOkAc",
-        "VeWisvfJ"
+        "VeWisvfJ",
+        "nSNzxlE3"
       ],
-      "description": null,
+      "description": "Everything related to the DOM is not realy part of js,but of the web API",
       "name": "dom 操作",
       "content": [
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "用closet()查找特定祖先元素 语法：element.closest(selector) 是搭配事件代理常用的dom方法;\nconst myElement = document.querySelector('#my-element');\nconst closestDiv = myElement.closest('div');\n/*上面的代码将查找 ID 为 my-element 的元素的最近祖先 div 元素，如果找到则将其赋值给变量 closestDiv。\n如果没有找到，则 closestDiv 的值为 null。closest 方法可以方便地在DOM树中查找元素的祖先元素，\n特别是在需要找到指定元素的父级或更高层次的祖先元素时，它会非常有用。*/\n\n 用 children 获取所有sibling element\n//[...h1.parentElement.children] 将类数组转为数组\n//注意children可以获取所有子元素，思路是先到parentElement\n[...h1.parentElement.children].forEach(function (el){\n    if (el !== h1) el.style.transform = 'scale(0.5)';\n})\n\n//++++++++++++++++++++++++++++++++++++++++++++++++++ Tabbed component Tab 页切换 +++++++++++++++++++++++\n/*实现核心就是添加或去除class样式，下面案例重点：\n1) 代理的应用，就是通过父元素给下面所有子元素添加了事件监听\n2) dom元素dataset的使用：使用dataset元素可以方便地访问和修改HTML元素的自定义属性。它也可以为JavaScript应用程序提供一种简单的方法来存储额外的信息。要使用dataset元素，您需要在HTML元素上添加属性，并将其前缀“data-”。例如，要添加一个名为“color”的属性，您可以使用data-color属性，如下所示：<div data-color=\"blue\">。然后，您可以使用JavaScript来访问这个属性，如下所示：var color = element.dataset.color;\n3) if (!clicked) return; 条件不成立立即结束执行，不执行下面程序，否则报错\n4) 通过closest()操作定位dom,配合事件代理的完成\n5)使用 forEach()方法对高亮元素的操作\n*/\n\ntabsContainer.addEventListener('click', function (e) {\n  const clicked = e.target.closest('.operations__tab');\n\n  // Guard clause\n  if (!clicked) return;\n\n  // Remove active classes\n  tabs.forEach(t => t.classList.remove('operations__tab--active'));\n  tabsContent.forEach(c => c.classList.remove('operations__content--active'));\n\n  // Activate tab\n  clicked.classList.add('operations__tab--active');\n\n  // Activate content area\n  document\n    .querySelector(`.operations__content--${clicked.dataset.tab}`)\n    .classList.add('operations__content--active');\n});"
+          "value": "Everything related to the DOM is not realy part of js,but of the web API,these asynchronous tasks will all run in the web API environment of the browser.And that's why loading images in JavaScript is asynchronous.So it does not happen in the call stack. So,not in the main thread of execution,but really in the web APIs environment\n\nel = document.querySelector('img');\nel.src='dog.jpg';\nel.addEventListener('load',() => {\n  el.classList.add('fadeIn')\n});\n\nclosest() 是 JavaScript 中 DOM 元素的方法：\n是搭配事件代理常用的dom方法，比如可以实现你点击一个区域的任何地方，确保获取的是父元素，而不是你点击的子元素\n用于查找离当前元素最近的祖先元素（包括当前元素本身）中匹配指定 CSS 选择器的元素； 语法：element.closest(selector) \n\nconst myElement = document.querySelector('#my-element');\nconst closestDiv = myElement.closest('div');\n\n上面的代码将查找 ID 为 my-element 的元素的最近祖先 div 元素，如果找到则将其赋值给变量 closestDiv。\n如果没有找到，则 closestDiv 的值为 null。closest 方法可以方便地在DOM树中查找元素的祖先元素，\n特别是在需要找到指定元素的父级或更高层次的祖先元素时，它会非常有用。\n请注意，closest() 方法不仅可以用于查找祖先元素，还可以用于查找自身或后代元素中与指定选择器匹配的元素。例如，如果我们要查找当前元素自身是否具有 .inner 类，可以使用以下代码：\nconst element = document.querySelector('.inner');\nconst self = element.closest('.inner');\nconsole.log(self); // 输出 <div class=\"inner\">...</div>\n\n通过e对象获取：\nmoveToPopup(e){\n  const workoutEl = e.target.closest('.workout');\n  //console.log(workoutEl);\n  const workout = this.#workouts.find(work => work.id === workoutEl.dataset.id);//从html的data属性获取id值\n  //console.log(workout);\n}\n++++++++++++++++++++++++++++++++++++++++++++insertAdjacentHTML()\ninsertAdjacentHTML() is a JavaScript method that allows you to insert HTML code into a specific position relative to an element in the DOM (Document Object Model). It can be used to add new content to a web page without overwriting the existing content.\n\nThe method takes two arguments:\n\n1) A string that specifies the position where you want to insert the HTML code. The possible values are:\n'beforebegin': inserts the HTML code before the element itself.\n'afterbegin': inserts the HTML code as the first child of the element.\n'beforeend': inserts the HTML code as the last child of the element.\n'afterend': inserts the HTML code after the element itself.\n2) A string that contains the HTML code you want to insert.\nHere is an example of how to use insertAdjacentHTML() to insert a new paragraph after an existing one:\n\nconst existingParagraph = document.querySelector('p');\nexistingParagraph.insertAdjacentHTML('afterend', '<p>This is a new paragraph</p>');//第二个参数可以写一个变量，变量里可以用``写任何html\n\nThis code will add a new paragraph after the existing one.\n\n\n +++++++++++++++++++++++++++++++++++++++++++++用 children 获取所有sibling element\n[...h1.parentElement.children] 将类数组转为数组；注意children可以获取所有子元素，思路是先到parentElement\n\n[...h1.parentElement.children].forEach(function (el){\n    if (el !== h1) el.style.transform = 'scale(0.5)';\n})\n\n++++++++++++++++++++++++++++++++++++++++++++++++++ Tabbed component Tab 页切换 +++++++++++++++++++++++\n实现核心就是添加或去除class样式，下面案例重点：\n1) 代理的应用，就是通过父元素给下面所有子元素添加了事件监听\n2) dom元素dataset的使用：使用dataset元素可以方便地访问和修改HTML元素的自定义属性。它也可以为JavaScript应用程序提供一种简单的方法来存储额外的信息。要使用dataset元素，您需要在HTML元素上添加属性，并将其前缀“data-”。例如，要添加一个名为“color”的属性，您可以使用data-color属性，如下所示：<div data-color=\"blue\">。然后，您可以使用JavaScript来访问这个属性，如下所示：var color = element.dataset.color;\n3) if (!clicked) return; 条件不成立立即结束执行，不执行下面程序，否则报错\n4) 通过closest()操作定位dom,配合事件代理的完成\n5)使用 forEach()方法对高亮元素的操作\n\n\ntabsContainer.addEventListener('click', function (e) {\n  const clicked = e.target.closest('.operations__tab');\n\n  // Guard clause\n  if (!clicked) return;\n\n  // Remove active classes\n  tabs.forEach(t => t.classList.remove('operations__tab--active'));\n  tabsContent.forEach(c => c.classList.remove('operations__content--active'));\n\n  // Activate tab\n  clicked.classList.add('operations__tab--active');\n\n  // Activate content area\n  document\n    .querySelector(`.operations__content--${clicked.dataset.tab}`)\n    .classList.add('operations__content--active');\n});"
         }
       ],
       "id": "XEhy6_vs",
       "createdAt": 1678188833239,
-      "updatedAt": 1678283187095
+      "updatedAt": 1681367800114
     },
     {
       "isDeleted": false,
@@ -1230,12 +1250,12 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "//JS classes are really just a layer of obstruction over constructor functions\n    //在构造函数里需要 PersonCl.call()，而class里只需要super()\n    //super is basically the constructor function of the parent class\n    //We don't need to specify the name of the parent class again,而 PersonCl.call()里需要\n    //in super() pass in the arguments for the constructor of the parent class.\n\n//keyword extends link to PersonCl prototypes behind the scenes\nclass StudentCl extends PersonCl {\n  constructor(fullName, birthYear, course){  \n    // Always needs to happen first! then be able to access the 'this' keyword\n    super(fullName, birthYear){\n      this.course =course; //this is not necessary\n    }\n    \n    calcAge(){\n      //子对象和父对象的同名方法会覆盖父对象的方法，因为原型链先到达子对象，这个就是对象4大支柱之一的‘多态’\n    }\n}\n\nconst martha = new StudentCl( 'Martha Jones'，2012,'computer science');\n\nconst martha = new StudentCl( 'Martha Jones'，2012);\n//如果像上面一行child里没有新的属性，和父对象一样的属性，那么class里不用写 constructor(),只要extends即可"
+          "value": "JS classes are really just a layer of obstruction over constructor functions\n    在构造函数里需要 PersonCl.call()，而class里只需要super()\n    super is basically the constructor function of the parent class\n    We don't need to specify the name of the parent class again,而 PersonCl.call()里需要\n    in super() pass in the arguments for the constructor of the parent class.\n\nkeyword extends link to PersonCl prototypes behind the scenes\n\nclass StudentCl extends PersonCl {\n//constructor is where we have all the code that is executed right when the application loads\n  constructor(fullName, birthYear, course){  \n    // Always needs to happen first! then be able to access the 'this' keyword\n    super(fullName, birthYear){\n      this.course =course; //this is not necessary\n    }\n    \n    calcAge(){\n      //子对象和父对象的同名方法会覆盖父对象的方法，因为原型链先到达子对象，这个就是对象4大支柱之一的‘多态’\n    }\n}\n\nconst martha = new StudentCl( 'Martha Jones'，2012,'computer science');\n\nconst martha = new StudentCl( 'Martha Jones'，2012);\n//如果像上面一行child里没有新的属性，和父对象一样的属性，那么class里不用写 constructor(),只要extends即可"
         }
       ],
       "id": "OPVIGMkU",
       "createdAt": 1679132391010,
-      "updatedAt": 1679145808749
+      "updatedAt": 1680748184614
     },
     {
       "isDeleted": false,
@@ -1466,6 +1486,381 @@
       "id": "3eEEIYb3",
       "createdAt": 1680398998715,
       "updatedAt": 1680399086439
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "MsM_-3a9",
+        "oahZqjuX",
+        "sDMjHD6T",
+        "A4xczVrR"
+      ],
+      "description": "事件监听是非常重要的概念，很多应用就是基于事件监听建立的，比如electron，不过这些应用的事件监听包装成了关键字.on如，app.on(...)",
+      "name": "addEventListener",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "目标：了解各种事件监听在什么情况下使用\n在JavaScript中，我们可以使用事件监听器来监听DOM元素或者Node.js中的事件。以下是一些常见的事件监听器,但还有很多其他的事件监听器，你可以根据需要自行查找。同时，需要注意的是，不同的浏览器可能有不同的实现，需要进行兼容性处理。\n结构：第二个参数是被addEventListener调用的函数，第一个很简单就是事件名称而已！\n注意：事件处理的回调函数this是element，比如\nform.addEventListener('submit',this._newWorkout)//这里的this不会指向form之外的对象，而是form,所以需要下面这样处理\nform.addEventListener('submit',this._newWorkout.bind(this))//在一个class或对象里的都要这样处理，bind()还是会返回函数\n\n1. click：当用户点击某个元素时触发，如鼠标点击或触摸屏幕上的某个元素。\n2. mouseover：当鼠标移动到某个元素上时触发。\n3. mouseout：当鼠标移出某个元素时触发。\n4. keydown：当用户按下键盘上的某个键时触发。\n5. keyup：当用户释放键盘上的某个键时触发。\n6. submit：当用户提交表单时触发。\n7. load：当页面或图片加载完成时触发。\n8. unload：当页面卸载时触发。\n9. resize：当窗口大小发生改变时触发。\n10. scroll：当用户滚动页面时触发。\n11. focus：当元素获得焦点时触发。\n12. blur：当元素失去焦点时触发。\n13. change：当元素的值发生改变时触发，适用于表单元素（如input、select等）。\n14. input：当元素的值发生改变时触发，适用于文本输入框（input[type=\"text\"]、textarea等）。\n15. clickoutside：当用户点击页面中除了指定元素以外的任何区域时触发。\n16. contextmenu：当用户右击页面时触发。\n17. dblclick：当用户双击某个元素时触发。\n18. touchstart：当用户触摸屏幕时触发。\n19. touchmove：当用户在屏幕上滑动时触发。\n20. touchend：当用户结束触摸时触发。\n21. animationstart：当CSS动画开始播放时触发。\n22. animationiteration：当CSS动画重复播放时触发。\n23. animationend：当CSS动画结束播放时触发。\n24. transitionstart：当CSS过渡开始时触发。\n25. transitionend：当CSS过渡结束时触发。\n26. transitioncancel：当CSS过渡被取消时触发。\n27. dragstart：当用户开始拖动一个元素时触发。\n28. drag：当用户正在拖动一个元素时触发。\n29. dragend：当用户停止拖动一个元素时触发。\n30. dragenter：当拖动元素进入某个区域时触发。\n31. dragover：当拖动元素在某个区域内移动时触发。\n32. dragleave：当拖动元素离开某个区域时触发。\n33. drop：当拖动元素被放置在某个区域时触发。\n\n//change事件,以下是jonas的mapty地图应用的change监听,注意closest()和classList.toggle()的使用\ninputType.addEventListener('change'，function (){\n   inputElevation.closest('.form__row').classList.toggle('form__row--hidden')\n   inputCadence.closest('.form _row').classList.toggle('formrow--hidden')\n})\n\n//submit事件, e.preventDefault()可以避免默认的一个页面刷新\nform.addEventListener('submit', function (e) {\n   e.preventDefault();\n   // Display marker\n   console.log(mapEvent);\n   const { lat, lng }= mapEvent.lating;\n   L.marker([lat, Ingl addTo(map\n})\n\n//Example: Asynchronous image loading with event and callback\n//all this code is non-blocking\nimg.src = 'dog.jpg';\nimg.addEventListener('load'，function(){\n   img.classList.add('fadeIn');\n})\np.style.width = '300px'"
+        }
+      ],
+      "id": "mdSzKMII",
+      "createdAt": 1680487739529,
+      "updatedAt": 1680773476995
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "fHYC1zqy",
+        "vqdOKcoe"
+      ],
+      "description": null,
+      "name": "unique id ",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "date = new Date();\nid = (Date.now() + '' ).slice(-10);//根据时间的这个id实用性很有限\n\n\n//唯一值的id应用在下面的类里\nclass Workout {\n  date = new Date();\n  id = (Date.now() + '')sice(-10);\n  \n  constructor(coords, distance, duration) {\n    // this.date = ... 规范后的ES应该是这样的\n    // this.id =.\n    this.coords = coords\n    this.distance = distance; // in km\n    this.duration = duration; // in min\n    }\n}"
+        }
+      ],
+      "id": "C75l_SnB",
+      "createdAt": 1680577679066,
+      "updatedAt": 1680580035364
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "numkSBqD",
+        "cJzn_M8B",
+        "3r63DuXm",
+        "BqxVekgI"
+      ],
+      "description": null,
+      "name": "判断是否为数字",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "//1)定义两个函数; 参数(...inputs)这样写会返回数组。it takesin an arbitrary amount of inputs\n//是否为数组\nconst validInputs = (...inputs) => \n  inputs.every(inp => Number.isFinite(inp));\n//是否为正数 \nconst allPositive = (...inputs) => \n  inputs.every(inp => inp > 0);\n  \n//2)使用函数validInputs，注意在if()参数里使用函数的用法！\nif(!validInput(distance,duration,cadence)) || !allPositive(distance,duration,cadence))\n   return alert('Input have to be positive value')\n  \n\n//every()的概念：\n//理解了some()就等于理解了every(),指的是符合所有条件，如：\n//所以元素小于0才可以返回ture,否则false\nmovements.every(mov⇒mov<0)"
+        }
+      ],
+      "id": "soG0geYv",
+      "createdAt": 1680659682315,
+      "updatedAt": 1680661645282
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "GxtphJep",
+        "o0h0GUTt",
+        "p-I-pDGx"
+      ],
+      "description": null,
+      "name": "取消格式化",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "用注释如prettier-ignore可以取消全局格式化下对某一行的作用\n/*前面的_表示私有，在 JavaScript 中，通常使用下划线作为变量名前缀来表示该变量是私有的，也就是说它不应该被直接访问或修改。这种命名约定是一种代码风格，并不是 JavaScript 语言的强制规定。在实际开发中，程序员可以根据自己的需要和代码规范来决定是否使用下划线作为变量名前缀。\n请注意，虽然在 JavaScript 中使用下划线前缀可以向其他开发人员表明变量的私有性，但它并不会使该变量真正变为私有。在 JavaScript 中，所有变量都可以被访问和修改，因此开发人员必须自行采取措施来确保变量的安全性。*/\n\n_setDescription() {\n    //prettier-ignore\n    const months = ['January','FebruaryMarch', 'April','May','June','July','AugustSeptember','October','NovemberDecember'];\n}"
+        }
+      ],
+      "id": "4OJbr2qi",
+      "createdAt": 1680701896961,
+      "updatedAt": 1680703910864
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "在js里 _ 和 # 标识符的区别",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "下划线（_）通常被用作变量名的前缀或者占位符，表示该变量是一个私有变量或者临时变量，不希望被外部访问或者修改。这种约定是一种编码风格，并不是 JavaScript 语言本身的要求。在 ECMAScript 5 之前，JavaScript 并没有对私有变量提供直接的支持，因此开发者们采用这种命名约定来模拟实现私有变量的功能。\n\n例如，以下代码中的变量 _privateVar 和 _privateMethod 都是私有变量和方法，不希望被外部访问：\n\nfunction MyClass() {\n  var _privateVar = 0;\n\n  function _privateMethod() {\n    console.log(\"Private method called\");\n  }\n\n  this.publicMethod = function() {\n    _privateVar++;\n    _privateMethod();\n    console.log(\"Public method called, private var is now: \" + _privateVar);\n  };\n}\n\nvar myObj = new MyClass();\nmyObj.publicMethod(); // 输出 \"Private method called\" 和 \"Public method called, private var is now: 1\"\n\n井号（#）是 ES2015（也称为 ES6）中引入的一种新的语法，用于表示类的私有字段。私有字段是指只能在类的内部使用的字段，无法被外部访问或者修改。在类中定义私有字段时，可以使用井号作为前缀，例如：\n\nclass MyClass {\n  #privateField = 0;\n\n  #privateMethod() {\n    console.log(\"Private method called\");\n  }\n\n  publicMethod() {\n    this.#privateField++;\n    this.#privateMethod();\n    console.log(\"Public method called, private field is now: \" + this.#privateField);\n  }\n}\n\nconst myObj = new MyClass();\nmyObj.publicMethod(); // 输出 \"Private method called\" 和 \"Public method called, private field is now: 1\"\n\n在这个示例中，#privateField 和 #privateMethod 都是私有的，只能在类的内部使用，无法从外部访问。通过在类中使用井号定义私有字段和方法，我们可以避免意外修改或访问这些字段和方法，从而提高代码的可维护性和安全性。\n"
+        }
+      ],
+      "id": "GynzDzWJ",
+      "createdAt": 1680750659330,
+      "updatedAt": 1680750845602
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "YItK6iVG",
+        "6dorcrmo",
+        "YCMjJLAa"
+      ],
+      "description": null,
+      "name": "同步和异步",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "Asynchronous code is executed after a task that runs in the “background\" finishes;\nAsynchronous code is non-blocking;\nExecution doesn't wait for an asynchronous task to finish its work;\nCallback functions alone do NOT make code asynchronous! 比如：[1，2，3].map(v = v *2) 这里的回调函数并不是异步的\n\nconst p = document.querySelector('.p')\nsetTimeout(function(){ //asynchronous\n   p.textContent = 'My name is Jonas'\n}, 5000);\np.style.color = 'red' \n\n//Example: Asynchronous image loading with event and callback\n//all this code is non-blocking\nconst img = document.querySelector('.dog')\nimg.src = 'dog.jpg';\n//addEventListener does NOT automatically make code asynchronous!,只是在load执行后再执行，这个和click监听一个道理\nimg.addEventListener('load'，function(){\n   img.classList.add('fadeIn');\n})\np.style.width = '300px'\n\nAJAX:Asynchronous JavaScript And XML: \nAllows us to communicate with remote web servers in an asynchronous way. With AJAX calls, we can request data from web servers dynamically.\nall happens asynchronously in the background\n"
+        }
+      ],
+      "id": "aM0803E1",
+      "createdAt": 1680752269863,
+      "updatedAt": 1680774220422
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "kYeA3Yuv",
+      "tagsIds": [],
+      "description": null,
+      "name": "el-dialog 作为组件",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "子组件"
+        }
+      ],
+      "id": "ZftzQyEl",
+      "createdAt": 1680870152091,
+      "updatedAt": 1680870254486
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "kYeA3Yuv",
+      "tagsIds": [
+        "QbBV4zvx",
+        "jFhcfcBn"
+      ],
+      "description": null,
+      "name": "el-dialog 作为组件",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "//子组件：\n<template>\n    <el-dialog title=\"下载智信客户端\" :visible.sync=\"dialogVisible\" width=\"30%\" :before-close=\"handleClose\">\n            ...\n    </el-dialog>\n</template>\n\n<script>\nexport default {\n    props: {\n        dialogVisible: {\n            type: Boolean,\n            default: false\n        }\n    },\n    methods: {\n        handleClose() {\n            // 触发update:dialogVisible事件，将dialogVisible属性设置为false\n            this.$emit('update:dialogVisible', false);\n        }\n    }\n}\n</script>\n\n//父组件:\n<a @click=\"dialogVisible = true\">智信客户端</a>\n<imDownload :dialog-visible=\"dialogVisible\" @update:dialogVisible=\"dialogVisible = $event\"></imDownload>\n\n<script> \n  import imDownload from './imDownload.vue';\n  export default { \n    components: { imDownload }, \n    data() { \n       return { dialogVisible: false } } \n    } \n</script>\n\n\n\n"
+        }
+      ],
+      "id": "iRKaMtj_",
+      "createdAt": 1680870283472,
+      "updatedAt": 1680870955233
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "ZaUf5iYC",
+        "AHLUsvel",
+        "uyS3jGYa",
+        "UOlf7phy"
+      ],
+      "description": "geocode.xyz 这里有地图相关API可以用",
+      "name": "fetch map",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "const whereAmI = function (lat,lng) {\n    fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)\n      .then(res => res.json())\n      .then(data => {\n      console.log(data);\n     });\n}\nwhereAmI(12.508,13.381); //这里可以打印出一个地图信息相关的对象"
+        }
+      ],
+      "id": "NDr5giL8",
+      "createdAt": 1681033671697,
+      "updatedAt": 1681048600906
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "div::-webkit-scrollbar {\n    width: 10px;\n    height: 10px;\n    background: #fdfdfd;\n    padding-right: 2px;\n}\n\ndiv::-webkit-scrollbar-thumb {\n    background: #70959f;\n    border-radius: 10px;\n}"
+        }
+      ],
+      "id": "9r_A9oNo",
+      "createdAt": 1681269972458,
+      "updatedAt": 1681356146703
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [],
+      "description": null,
+      "name": "自定义滚动条",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "普通：\n/*设置宽度,轨道颜色*/\ndiv::-webkit-scrollbar {\n    width: 10px;\n    height: 10px;\n    background: #fdfdfd;\n    padding-right: 2px;\n}\n/*滚动条*/\ndiv::-webkit-scrollbar-thumb {\n    background: #70959f;\n    border-radius: 10px;\n}\n\n\n理发店招牌底纹效果：引跑218项目用过\n/*设置宽度,轨道颜色*/\ndiv::-webkit-scrollbar {\n    width: 10px;\n    height: 10px;\n    background: #0e0c0c;\n    padding-right: 2px;\n}\n\n/*滚动条*/\ndiv::-webkit-scrollbar-thumb {\n    background: #0b6b89;\n  /*理发店招牌底纹效果*/\n    background-image: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, .2) 10%, transparent 0, transparent 20%, hsla(0, 0%, 100%, .2) 0, hsla(0, 0%, 100%, .2) 30%, transparent 0, transparent 40%, hsla(0, 0%, 100%, .2) 0, hsla(0, 0%, 100%, .2) 50%, transparent 0, transparent 60%, hsla(0, 0%, 100%, .2) 0, hsla(0, 0%, 100%, .2) 70%, transparent 0, transparent 80%, hsla(0, 0%, 100%, .2) 0, hsla(0, 0%, 100%, .2) 90%, transparent 0, transparent 100%);\n    border-radius: 10px;\n}\n\n\n/*+++++++++++++++++++++++++++++++++自定义野火im 滚动条 */\n/* 滚动条样式 */\n::-webkit-scrollbar {\n  width: 8px;\n  height: 8px;\n}\n\n/* 滚动条轨道样式 */\n::-webkit-scrollbar-track {\n  background-color: #f5f5f5;\n}\n\n/* 滚动条-thumb（滑块）样式 */\n::-webkit-scrollbar-thumb {\n  background-color: #c1c1c1;\n  border-radius: 999px;\n}"
+        }
+      ],
+      "id": "gIL5zXlW",
+      "createdAt": 1681269992432,
+      "updatedAt": 1681438459610
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "CIqaS_Yh",
+      "tagsIds": [
+        "ScC0ASaK"
+      ],
+      "description": "在示例中，我们首先定义了一个 commonSubTextStyle 变量，用于设置公共的 subtextStyle 样式。然后，在每个 option 中都分别设置了特定的 subtext 和样式，并通过 subtextStyle 属性统一使用了公共的样式。最后，通过调用 setOption 方法分别渲染了两个图表。",
+      "name": "给多个option设置subtext的样式",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "//可以通过在 subtextStyle 中设置公共的样式，然后在每个 option 中分别设置其特定的 subtext\n\n// 设置公共的 subtext 样式\nvar commonSubTextStyle = {\n  color: '#999',\n  fontFamily: 'Arial',\n  fontWeight: 'bold',\n  fontSize: 12\n};\n\n// option1\nvar option1 = {\n  title: {\n    text: 'Option1'\n  },\n  series: [{\n    name: 'Series1',\n    type: 'pie',\n    data: [...],\n    // 设置特定的 subtext 和样式\n    label: {\n      show: true,\n      formatter: 'Total: {c}',\n      position: 'center',\n      color: '#333',\n      fontFamily: 'Verdana',\n      fontWeight: 'normal',\n      fontSize: 16\n    },\n    emphasis: {\n      label: {\n        show: true,\n        formatter: '{d}%'\n      }\n    }\n  }],\n  // 统一使用公共的 subtext 样式\n  subtext: 'This is option1 subtext',\n  subtextStyle: commonSubTextStyle\n};\n\n// option2\nvar option2 = {\n  title: {\n    text: 'Option2'\n  },\n  series: [{\n    name: 'Series1',\n    type: 'bar',\n    data: [...],\n    // 设置特定的 subtext 和样式\n    label: {\n      show: false\n    }\n  }],\n  // 统一使用公共的 subtext 样式\n  subtext: 'This is option2 subtext',\n  subtextStyle: commonSubTextStyle\n};\n\n// 初始化 echarts 实例并渲染图表\nvar myChart = echarts.init(document.getElementById('myChart'));\n\nmyChart.setOption(option1);\nmyChart.setOption(option2);"
+        }
+      ],
+      "id": "_oXk4vxs",
+      "createdAt": 1681288632500,
+      "updatedAt": 1681288694069
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "AH4o3Lye",
+        "63ZIwxSn",
+        "ExGKPu6S",
+        "3bRgTsPX",
+        "cH71p1QA",
+        "DxKZ2j1c",
+        "lJch_6Ci",
+        "h6VovRUY"
+      ],
+      "description": "里面有多个Fragment",
+      "name": "Promise",
+      "content": [
+        {
+          "label": "Building a Simple Promise",
+          "language": "javascript",
+          "value": "// Building a Simple Promise\nconst lotteryPromise = new Promise(function (resolve, reject) {\n  console.log('Lotter draw is happening 🔮');\n  setTimeout(function () {\n    if (Math.random() >= 0.5) {\n      resolve('You WIN 💰');\n    } else {\n    //注意new Error()即可创建一个错误实例很简单！new Error比直接输入的提示文本有更详细的信息，比如是哪里出错\n      reject(new Error('You lost your money 💩'));\n    }\n  }, 2000);\n});\n\n//consume promise\nlotteryPromise.then(res => console.log(res)).catch(err => console.error(err));\n\n// ++++++++++++++++++++++++++++++++++++ Promisifying setTimeout 一个排队函数\nconst wait = function (seconds) {\n  return new Promise(function (resolve) {\n    setTimeout(resolve, seconds * 1000); //因为是毫秒所以要乘以1000\n  });\n};\n\nwait(1)\n  .then(() => {\n    console.log('1 second passed');\n    return wait(1);\n  })\n  .then(() => {\n    console.log('2 second passed');\n    return wait(1);\n  })\n  .then(() => {\n    console.log('3 second passed');\n    return wait(1);\n  })\n  .then(() => console.log('4 second passed'));\n\n//上面的Promisifying setTimeout优化了下面的回调地狱问题\n// setTimeout(() => {\n//   console.log('1 second passed');\n//   setTimeout(() => {\n//     console.log('2 seconds passed');\n//     setTimeout(() => {\n//       console.log('3 second passed');\n//       setTimeout(() => {\n//         console.log('4 second passed');\n//       }, 1000);\n//     }, 1000);\n//   }, 1000);\n// }, 1000);\n"
+        },
+        {
+          "label": "Promisifying the Geolocation API",
+          "language": "javascript",
+          "value": "// Promisifying the Geolocation API\nconst getPosition = function () {\n  return new Promise(function (resolve, reject) {\n    // navigator.geolocation.getCurrentPosition(\n    //   position => resolve(position),\n    //   err => reject(err)\n    // );\n    //下面这一行相当于上面的几行\n    navigator.geolocation.getCurrentPosition(resolve, reject);\n  });\n};\n// getPosition().then(pos => console.log(pos));  这里可以打印出下面代码需要的对象属性信息信息。如里面有latitude、 longitude\n\nconst whereAmI = function () {\n  getPosition()\n    .then(pos => {\n      //解构之后更改名称\n      const { latitude: lat, longitude: lng } = pos.coords;\n\n      return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);\n    })\n    .then(res => {\n      if (!res.ok) throw new Error(`Problem with geocoding ${res.status}`);\n      return res.json();\n    })\n    .then(data => {\n      console.log(data);\n      console.log(`You are in ${data.city}, ${data.country}`);\n\n      return fetch(`https://restcountries.eu/rest/v2/name/${data.country}`);\n    })\n    .then(res => {\n      if (!res.ok) throw new Error(`Country not found (${res.status})`);\n\n      return res.json();\n    })\n    .then(data => renderCountry(data[0]))\n    .catch(err => console.error(`${err.message} 💥`));\n};\n\nbtn.addEventListener('click', whereAmI);"
+        },
+        {
+          "label": "一个页面插入Image()的实例",
+          "language": "javascript",
+          "value": "//一个页面插入Image()的实例\nconst imgAddress = \"https://images.dog.ceo/breeds/papillon/n02086910_2359.jpg\";\n// https://images.dog.ceo/breeds/cattledog-australian/IMG_4379.jpg\n//promify\nconst imgPromise = (url) => {\n  return new Promise((resolve, reject) => {\n    const img = new Image();\n    img.src = url;\n    //注意onload和addEventListener('load'，() =>{})的区别。onload适用于在整个页面或资源加载完毕后执行一些操作，而addEventListener('load'，() =>{})则更加灵活，可以在任何时候添加并处理特定的事件类型。\n    //用addEventListener()更好些\n    img.onload = () => {\n      resolve(img);\n    };\n    img.onerror = () => {\n      reject(newError(\"图片有误\"));\n    };\n  });\n};\n//consume promise\nimgPromise(imgAddress).then((img) => {\n  document.body.appendChild(img).catch((err) => {\n    document.body.innerHTML = err;\n  });\n});"
+        },
+        {
+          "label": "创建图像并排队展示",
+          "language": "javascript",
+          "value": "const wait = function (seconds) {\n  return new Promise(function (resolve) {\n    setTimeout(resolve, seconds * 1000);\n  });\n};\n\nconst imgContainer = document.querySelector('.images');\n\nconst createImage = function (imgPath) {\n  return new Promise(function (resolve, reject) {\n    const img = document.createElement('img');\n    img.src = imgPath;\n\n    img.addEventListener('load', function () {\n      imgContainer.append(img);\n      // resolve the promise\n      resolve(img);\n    });\n\n    img.addEventListener('error', function () {\n      reject(new Error('Image not found'));\n    });\n  });\n};\n\nlet currentImg;\n\ncreateImage('img/img-1.jpg')\n//Comsume the promise using .then\n  .then(img => {\n    currentImg = img;\n    console.log('Image 1 loaded');\n    return wait(2);\n  })\n  .then(() => {\n    currentImg.style.display = 'none';\n    return createImage('img/img-2.jpg');\n  })\n  .then(img => {\n    currentImg = img;\n    console.log('Image 2 loaded');\n    return wait(2);\n  })\n  .then(() => {\n    currentImg.style.display = 'none';\n  })\n  .catch(err => console.error(err));"
+        }
+      ],
+      "id": "Oh_SFa72",
+      "createdAt": 1681355064997,
+      "updatedAt": 1681460578811
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "///////////////////////////////////////\n// Promisifying the Geolocation API\nconst getPosition = function () {\n  return new Promise(function (resolve, reject) {\n    // navigator.geolocation.getCurrentPosition(\n    //   position => resolve(position),\n    //   err => reject(err)\n    // );\n    navigator.geolocation.getCurrentPosition(resolve, reject);\n  });\n};\n// getPosition().then(pos => console.log(pos));\n\nconst whereAmI = function () {\n  getPosition()\n    .then(pos => {\n      const { latitude: lat, longitude: lng } = pos.coords;\n\n      return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);\n    })\n    .then(res => {\n      if (!res.ok) throw new Error(`Problem with geocoding ${res.status}`);\n      return res.json();\n    })\n    .then(data => {\n      console.log(data);\n      console.log(`You are in ${data.city}, ${data.country}`);\n\n      return fetch(`https://restcountries.eu/rest/v2/name/${data.country}`);\n    })\n    .then(res => {\n      if (!res.ok) throw new Error(`Country not found (${res.status})`);\n\n      return res.json();\n    })\n    .then(data => renderCountry(data[0]))\n    .catch(err => console.error(`${err.message} 💥`));\n};\n\nbtn.addEventListener('click', whereAmI);"
+        }
+      ],
+      "id": "ldtTIB8l",
+      "createdAt": 1681363081382,
+      "updatedAt": 1681363083722
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "// Promisifying the Geolocation API\nconst getPosition = function () {\n  return new Promise(function (resolve, reject) {\n    // navigator.geolocation.getCurrentPosition(\n    //   position => resolve(position),\n    //   err => reject(err)\n    // );\n    navigator.geolocation.getCurrentPosition(resolve, reject);\n  });\n};\n// getPosition().then(pos => console.log(pos));\n\nconst whereAmI = function () {\n  getPosition()\n    .then(pos => {\n      const { latitude: lat, longitude: lng } = pos.coords;\n\n      return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);\n    })\n    .then(res => {\n      if (!res.ok) throw new Error(`Problem with geocoding ${res.status}`);\n      return res.json();\n    })\n    .then(data => {\n      console.log(data);\n      console.log(`You are in ${data.city}, ${data.country}`);\n\n      return fetch(`https://restcountries.eu/rest/v2/name/${data.country}`);\n    })\n    .then(res => {\n      if (!res.ok) throw new Error(`Country not found (${res.status})`);\n\n      return res.json();\n    })\n    .then(data => renderCountry(data[0]))\n    .catch(err => console.error(`${err.message} 💥`));\n};\n\nbtn.addEventListener('click', whereAmI);"
+        }
+      ],
+      "id": "KpuOIxpH",
+      "createdAt": 1681363098661,
+      "updatedAt": 1681363396100
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "Async/Await",
+      "content": [
+        {
+          "label": "Consuming Promises with Async/Await",
+          "language": "javascript",
+          "value": "// Consuming Promises with Async/Await\n// Error Handling With try...catch\n\nconst getPosition = function () {\n  return new Promise(function (resolve, reject) {\n    navigator.geolocation.getCurrentPosition(resolve, reject);\n  });\n};\n\n// fetch(`https://restcountries.eu/rest/v2/name/${country}`).then(res => console.log(res))\n// 注意下面await的magic在于其返回值就是resove,和上面一行的作用是一样的\n// const res = await fetch(`https://restcountries.eu/rest/v2/name/${dataGeo.country}`); \n\nconst whereAmI = async function () {\n  try {\n    // Geolocation\n    const pos = await getPosition();\n    const { latitude: lat, longitude: lng } = pos.coords;\n\n    // Reverse geocoding\n    const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);\n    if (!resGeo.ok) throw new Error('Problem getting location data');\n\n    const dataGeo = await resGeo.json();\n    console.log(dataGeo);\n\n    // Country data\n    const res = await fetch(\n      `https://restcountries.eu/rest/v2/name/${dataGeo.country}`\n    );\n\n    if (!res.ok) throw new Error('Problem getting country');\n\n    const data = await res.json();\n    console.log(data);\n    renderCountry(data[0]);\n  } catch (err) {\n    console.error(`${err} 💥`);\n    renderError(`💥 ${err.message}`);\n  }\n};\nwhereAmI();\nwhereAmI();\nwhereAmI();\nconsole.log('FIRST');"
+        },
+        {
+          "label": "Returning Values from Async Functions",
+          "language": "javascript",
+          "value": "// Returning Values from Async Functions\nconst getPosition = function () {\n  return new Promise(function (resolve, reject) {\n    navigator.geolocation.getCurrentPosition(resolve, reject);\n  });\n};\n\nconst whereAmI = async function () {\n  try {\n    // Geolocation\n    const pos = await getPosition();\n    const { latitude: lat, longitude: lng } = pos.coords;\n\n    // Reverse geocoding\n    const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);\n    if (!resGeo.ok) throw new Error('Problem getting location data');\n    const dataGeo = await resGeo.json();\n\n    // Country data\n    const res = await fetch(\n      `https://restcountries.eu/rest/v2/name/${dataGeo.country}`\n    );\n    if (!resGeo.ok) throw new Error('Problem getting country');\n    const data = await res.json();\n    renderCountry(data[0]);\n\n    return `You are in ${dataGeo.city}, ${dataGeo.country}`;\n  } catch (err) {\n    console.error(`${err} 💥`);\n    renderError(`💥 ${err.message}`);\n\n    // Reject promise returned from async function\n    throw err;\n  }\n};\n\nconsole.log('1: Will get location');\n// const city = whereAmI();\n// console.log(city);\n\n// whereAmI()\n//   .then(city => console.log(`2: ${city}`))\n//   .catch(err => console.error(`2: ${err.message} 💥`))\n//   .finally(() => console.log('3: Finished getting location'));\n\n\n//下面是用Async/Await的方式代替上面.then()的混合方式，都是可行的，根据个人习惯\n(async function () {\n  try {\n    const city = await whereAmI();\n    console.log(`2: ${city}`);\n  } catch (err) {\n    console.error(`2: ${err.message} 💥`);\n  }\n  console.log('3: Finished getting location');\n})();"
+        },
+        {
+          "label": "Running Promises in Parallel",
+          "language": "javascript",
+          "value": "const get3Countries = async function (c1, c2, c3) {\n  try {\n    // const [data1] = await getJSON(\n    //   `https://restcountries.eu/rest/v2/name/${c1}`\n    // );\n    // const [data2] = await getJSON(\n    //   `https://restcountries.eu/rest/v2/name/${c2}`\n    // );\n    // const [data3] = await getJSON(\n    //   `https://restcountries.eu/rest/v2/name/${c3}`\n    // );\n    // console.log([data1.capital, data2.capital, data3.capital]);\n\n    //注意在Promise前面加await的写法，Promise.all需要全部都resolce\n    const data = await Promise.all([\n      getJSON(`https://restcountries.eu/rest/v2/name/${c1}`),\n      getJSON(`https://restcountries.eu/rest/v2/name/${c2}`),\n      getJSON(`https://restcountries.eu/rest/v2/name/${c3}`),\n    ]);\n    console.log(data.map(d => d[0].capital));\n  } catch (err) {\n    console.error(err);\n  }\n};\nget3Countries('portugal', 'canada', 'tanzania');"
+        }
+      ],
+      "id": "hafqkq6-",
+      "createdAt": 1681460910573,
+      "updatedAt": 1681464023733
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "AOZ115q_",
+        "ctJ0RMD1",
+        "RoFzKEEw"
+      ],
+      "description": null,
+      "name": "json data",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "[\n  {\n        \"name\": \"Germany\",\n        \"topLevelDomain\": [\n            \".de\"\n        ],\n        \"alpha2Code\": \"DE\",\n        \"alpha3Code\": \"DEU\",\n        \"callingCodes\": [\n            \"49\"\n        ],\n        \"capital\": \"Berlin\",\n        \"altSpellings\": [\n            \"DE\",\n            \"Federal Republic of Germany\",\n            \"Bundesrepublik Deutschland\"\n        ],\n        \"region\": \"Europe\",\n        \"subregion\": \"Western Europe\",\n        \"population\": 81770900,\n        \"latlng\": [\n             51,\n             9\n        ],\n         \"demonym\": \"German\",\n         \"area\": 357114,\n         \"gini\":  28.3,\n         \"timezones\": [\n             \"UTC+01:00\"\n        ],\n        \"borders\": [\n            \"AUT\",\n            \"BEL\",\n            \"CZE\",\n            \"DNK\",\n            \"FRA\",\n            \"LUX\",\n            \"NLD\",\n            \"POL\",\n            \"CHE\"\n        ],\n        \"nativeName\": \"Deutschland\",\n        \"numericCode\": \"276\",\n        \"currencies\": [\n            {\n                \"code\": \"EUR\",\n                \"name\": \"Euro\",\n                \"symbol\": \"€\"\n            }\n        ],\n        \"languages\": [\n            {\n                \"iso639_1\": \"de\",\n                \"iso639_2\": \"deu\",\n                \"name\": \"German\",\n                \"nativeName\": \"Deutsch\"\n            }\n        ],\n        \"translations\": {\n            \"br\": \"Alemanha\",\n            \"de\": \"Deutschland\",\n            \"es\": \"Alemania\",\n            \"fa\": \"آلمان\",\n            \"fr\": \"Allemagne\",\n            \"hr\": \"Njemačka\",\n            \"it\": \"Germania\",\n            \"ja\": \"ドイツ\",\n            \"nl\": \"Duitsland\",\n            \"pt\": \"Alemanha\"\n        },\n        \"flag\": \"https://restcountries.eu/data/deu.svg\",\n        \"regionalBlocs\": [\n            {\n                \"acronym\": \"EU\",\n                \"name\": \"European Union\"\n            }\n        ],\n        \"cioc\": \"GER\"\n    },\n    {…}\n]"
+        }
+      ],
+      "id": "VOUuRmuI",
+      "createdAt": 1681462593714,
+      "updatedAt": 1681462751476
     }
   ],
   "tags": [
@@ -1654,6 +2049,222 @@
       "id": "WSSamMkz",
       "createdAt": 1680259912498,
       "updatedAt": 1680259912498
+    },
+    {
+      "name": "事件监听",
+      "id": "MsM_-3a9",
+      "createdAt": 1680487964881,
+      "updatedAt": 1680487964881
+    },
+    {
+      "name": "toggle",
+      "id": "oahZqjuX",
+      "createdAt": 1680488706112,
+      "updatedAt": 1680488706112
+    },
+    {
+      "name": "closest",
+      "id": "sDMjHD6T",
+      "createdAt": 1680488715915,
+      "updatedAt": 1680488715915
+    },
+    {
+      "name": ".forEach",
+      "id": "nSNzxlE3",
+      "createdAt": 1680489259115,
+      "updatedAt": 1680489259115
+    },
+    {
+      "name": "id 值",
+      "id": "fHYC1zqy",
+      "createdAt": 1680577768395,
+      "updatedAt": 1680577768395
+    },
+    {
+      "name": "唯一的id",
+      "id": "vqdOKcoe",
+      "createdAt": 1680577777282,
+      "updatedAt": 1680577777282
+    },
+    {
+      "name": "every",
+      "id": "numkSBqD",
+      "createdAt": 1680659758089,
+      "updatedAt": 1680659758089
+    },
+    {
+      "name": "数组作为参数",
+      "id": "cJzn_M8B",
+      "createdAt": 1680660260731,
+      "updatedAt": 1680660260731
+    },
+    {
+      "name": "参数数组",
+      "id": "3r63DuXm",
+      "createdAt": 1680660272650,
+      "updatedAt": 1680660272650
+    },
+    {
+      "name": "数字判断",
+      "id": "BqxVekgI",
+      "createdAt": 1680661645220,
+      "updatedAt": 1680661645220
+    },
+    {
+      "name": "bind()",
+      "id": "A4xczVrR",
+      "createdAt": 1680667123678,
+      "updatedAt": 1680667123678
+    },
+    {
+      "name": "模板字符串",
+      "id": "oKLYhCZS",
+      "createdAt": 1680692484587,
+      "updatedAt": 1680692484587
+    },
+    {
+      "name": "vscode",
+      "id": "GxtphJep",
+      "createdAt": 1680703672255,
+      "updatedAt": 1680703672255
+    },
+    {
+      "name": "代码格式化",
+      "id": "o0h0GUTt",
+      "createdAt": 1680703682291,
+      "updatedAt": 1680703682291
+    },
+    {
+      "name": "私有变量",
+      "id": "p-I-pDGx",
+      "createdAt": 1680703910822,
+      "updatedAt": 1680703910822
+    },
+    {
+      "name": "Asynchronous",
+      "id": "YItK6iVG",
+      "createdAt": 1680752307357,
+      "updatedAt": 1680752307357
+    },
+    {
+      "name": "图片加载",
+      "id": "6dorcrmo",
+      "createdAt": 1680772885340,
+      "updatedAt": 1680772885340
+    },
+    {
+      "name": "synchronous",
+      "id": "YCMjJLAa",
+      "createdAt": 1680773529537,
+      "updatedAt": 1680773529537
+    },
+    {
+      "name": "emit",
+      "id": "QbBV4zvx",
+      "createdAt": 1680870408919,
+      "updatedAt": 1680870408919
+    },
+    {
+      "name": "emit方法",
+      "id": "jFhcfcBn",
+      "createdAt": 1680870413971,
+      "updatedAt": 1680870413971
+    },
+    {
+      "name": "map",
+      "id": "ZaUf5iYC",
+      "createdAt": 1681033698635,
+      "updatedAt": 1681033698635
+    },
+    {
+      "name": "fetch",
+      "id": "AHLUsvel",
+      "createdAt": 1681033703879,
+      "updatedAt": 1681033703879
+    },
+    {
+      "name": "地图api",
+      "id": "uyS3jGYa",
+      "createdAt": 1681048590954,
+      "updatedAt": 1681048590954
+    },
+    {
+      "name": "map api",
+      "id": "UOlf7phy",
+      "createdAt": 1681048600839,
+      "updatedAt": 1681048600839
+    },
+    {
+      "name": "subtext",
+      "id": "ScC0ASaK",
+      "createdAt": 1681288694050,
+      "updatedAt": 1681288694050
+    },
+    {
+      "name": "Promise",
+      "id": "AH4o3Lye",
+      "createdAt": 1681355189178,
+      "updatedAt": 1681355189178
+    },
+    {
+      "name": "new Error",
+      "id": "63ZIwxSn",
+      "createdAt": 1681355195158,
+      "updatedAt": 1681355195158
+    },
+    {
+      "name": "Error",
+      "id": "ExGKPu6S",
+      "createdAt": 1681355200863,
+      "updatedAt": 1681355200863
+    },
+    {
+      "name": "Image()",
+      "id": "3bRgTsPX",
+      "createdAt": 1681364626330,
+      "updatedAt": 1681364626330
+    },
+    {
+      "name": "获取json",
+      "id": "S3kIS3AR",
+      "createdAt": 1681459381232,
+      "updatedAt": 1681459381232
+    },
+    {
+      "name": "队列函数",
+      "id": "DxKZ2j1c",
+      "createdAt": 1681459748319,
+      "updatedAt": 1681459748319
+    },
+    {
+      "name": "排队函数",
+      "id": "lJch_6Ci",
+      "createdAt": 1681459754946,
+      "updatedAt": 1681459754946
+    },
+    {
+      "name": "间隔函数",
+      "id": "h6VovRUY",
+      "createdAt": 1681459760127,
+      "updatedAt": 1681459760127
+    },
+    {
+      "name": "countries",
+      "id": "AOZ115q_",
+      "createdAt": 1681462639520,
+      "updatedAt": 1681462639520
+    },
+    {
+      "name": "json",
+      "id": "ctJ0RMD1",
+      "createdAt": 1681462644266,
+      "updatedAt": 1681462644266
+    },
+    {
+      "name": "API",
+      "id": "RoFzKEEw",
+      "createdAt": 1681462751425,
+      "updatedAt": 1681462751425
     }
   ]
 }
