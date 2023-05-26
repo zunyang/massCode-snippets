@@ -27,10 +27,10 @@
       "parentId": null,
       "isOpen": false,
       "isSystem": false,
-      "defaultLanguage": "javascript",
+      "defaultLanguage": "vue",
       "id": "-fio_qG6",
       "createdAt": 1678105368093,
-      "updatedAt": 1679457202542,
+      "updatedAt": 1684812999695,
       "index": 2
     },
     {
@@ -52,7 +52,8 @@
       "defaultLanguage": "javascript",
       "id": "ejtoZnYa",
       "createdAt": 1679982761618,
-      "updatedAt": 1679982777364
+      "updatedAt": 1679982777364,
+      "index": 4
     },
     {
       "name": "echarts",
@@ -62,7 +63,18 @@
       "defaultLanguage": "javascript",
       "id": "CIqaS_Yh",
       "createdAt": 1681288611405,
-      "updatedAt": 1681288630555
+      "updatedAt": 1681288630555,
+      "index": 5
+    },
+    {
+      "name": "lodash",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "uIXLFdiz",
+      "createdAt": 1682661303338,
+      "updatedAt": 1682661313945
     }
   ],
   "snippets": [
@@ -142,19 +154,27 @@
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "y-C8x3sP",
-      "tagsIds": [],
+      "tagsIds": [
+        "tocBVsRT",
+        "7N_f-tUT"
+      ],
       "description": null,
       "name": "forEach()和map()结合",
       "content": [
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "//核心：forEach()不会有返回值，但可以改变原数组对象，通过forEach()和map()给数组对象添加一个新属性\n// Data\nconst account1 = {\n  owner: 'Jonas Schmedtmann',\n  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],\n  interestRate: 1.2, // %\n  pin: 1111,\n};\n\nconst account2 = {\n  owner: 'Jessica Davis',\n  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],\n  interestRate: 1.5,\n  pin: 2222,\n};\n\nconst account3 = {\n  owner: 'Steven Thomas Williams',\n  movements: [200, -200, 340, -300, -20, 50, 400, -460],\n  interestRate: 0.7,\n  pin: 3333,\n};\n\nconst account4 = {\n  owner: 'Sarah Smith',\n  movements: [430, 1000, 700, 50, 90],\n  interestRate: 1,\n  pin: 4444,\n};\n\nconst accounts = [account1, account2, account3, account4];\n\n//function\nconst createUsernames = function (accs) {\n  accs.forEach(function (acc) {\n    //利用map返回新数组的特性给原数组添加一个新属性\n    acc.username = acc.owner\n      .toLowerCase()\n      .split(' ')\n      .map(name => name[0])\n      .join('');\n  });\n};\ncreateUsernames(accounts);\n\n\n//将会输出一个包含四个对象的数组，其中包含新创建的属性'username'\nconsole.log(accounts)"
+          "value": "核心：forEach()不会有返回值，但可以改变原数组对象，通过forEach()和map()给数组对象添加一个新属性\n// Data\nconst account1 = {\n  owner: 'Jonas Schmedtmann',\n  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],\n  interestRate: 1.2, // %\n  pin: 1111,\n};\n\nconst account2 = {\n  owner: 'Jessica Davis',\n  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],\n  interestRate: 1.5,\n  pin: 2222,\n};\n\nconst account3 = {\n  owner: 'Steven Thomas Williams',\n  movements: [200, -200, 340, -300, -20, 50, 400, -460],\n  interestRate: 0.7,\n  pin: 3333,\n};\n\nconst account4 = {\n  owner: 'Sarah Smith',\n  movements: [430, 1000, 700, 50, 90],\n  interestRate: 1,\n  pin: 4444,\n};\n\nconst accounts = [account1, account2, account3, account4];\n\n//function\nconst createUsernames = function (accs) {\n  accs.forEach(function (acc) {\n    //利用map返回新数组的特性给原数组添加一个新属性\n    acc.username = acc.owner\n      .toLowerCase()\n      .split(' ')\n      .map(name => name[0])\n      .join('');\n  });\n};\ncreateUsernames(accounts);\n\n\n//将会输出一个包含四个对象的数组，其中包含新创建的属性'username'\nconsole.log(accounts)"
+        },
+        {
+          "label": "Fragment 2",
+          "language": "javascript",
+          "value": "通过forEach添加多个事件监听\n['hashchange','load'].forEach(ev => window.addEventListener(ev, showRecipe));"
         }
       ],
       "id": "Mm1kTDnU",
       "createdAt": 1677575496707,
-      "updatedAt": 1677575512299
+      "updatedAt": 1683168247313
     },
     {
       "isDeleted": true,
@@ -268,19 +288,28 @@
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "y-C8x3sP",
-      "tagsIds": [],
+      "tagsIds": [
+        "oiiyhcXF",
+        "CH3Sh008",
+        "g7tfu6yD"
+      ],
       "description": null,
       "name": "从对象提取属性的若干方式",
       "content": [
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "const [entry] = entries;\n/*这句话是ES6中解构赋值语法的一种。它的作用是把数组或对象中的值解构出来并赋值给左侧的变量。\n在这里，entries是一个数组，使用解构赋值的方式把它的第一个元素（下标为0）赋值给entry变量。\n等价于下面的写法：const entry = entries[0]; \nconst[entry,en2] = entries 这句与上一句类似，不同之处在于它使用了解构赋值的扩展语法。这里\n将数组entries中的前两个元素（下标为0和1）依次解构并赋值给entry和en2两个变量，可以理解为：\nconst entry = entries[0];\nconst en2 = entries[1];\n*/\n\n//方式一 \n//使用 map() 方法将提若干属性取到一个数组中，而不必返回整个对象\nconst data = JSON.parse(jsonString).data;\n\n//注意，如果提取的属性是惟一的就用find(),因为发现目标后会理解返回对象，不在执行遍历\nconst products = data.filter(obj => obj.product === \"DBOne\").map(obj => {\n  return {\n    product: obj.product,\n    btnUrl: obj.btnUrl\n  };\n});\n\n//方式二\n//优化方案：对象解构的方式比map更优雅，不通点：map返回的是数组，对象解构的是属性\nconst { product, btnUrl } = data.find(obj => obj.product === \"DBOne\");\n/*在这个例子中，find() 方法用于查找具有 'product' 值为 'DBOne' 的对象，\n并将其存储在一个变量中。然后，对象解构用于从该对象中提取 'product' 和\n'btnUrl' 字段，并将它们存储在 product 和 btnUrl 变量中。*/\n\n//方式三\n/*上一个方法适用于您只需要访问少量字段的情况，并且不需要修改对象。\n如果您需要修改对象，那么您可能需要返回整个对象。在这种情况下，\n您可以使用对象解构来清晰地指定要修改的字段。例如，以下代码仅修改 'product' 字段：*/\nconst obj = data.find(obj => obj.product === \"DBOne\");\nconst { product, ...rest } = obj;\n//将rest对象与修改后的product字段合并到一个新的对象modifiedObj中\nconst modifiedObj = {\n  ...rest,\n  product: \"New Product Name\"\n};\n\n//方式四 核心：obj[key]\n//将产品信息存储在一个对象中，其中键是产品名称，值是产品信息对象，如下所示：\nconst products = {\n  \"DBOne\": {\n    essentials: [\"essential1\", \"essential2\"],\n    subTitle: \"演示要点\"\n  },\n  \"DBOne Monitor\": {\n    essentials: [\"essential3\", \"essential4\"],\n    subTitle: \"演示要点\"\n  },\n  \"DBSync\": {\n    essentials: [\"essential5\", \"essential6\"],\n    subTitle: \"演示要点\"\n  },\n  //...\n};\n//然后，在代码中，您可以使用 products 对象来查找相应产品的信息，如下所示：\n//const productName = 'DBSync';\nconst productName = findProductName(queryParameters);\n//productName in products 返回布尔值\nif (productName in products) {\n  //由于products的属性是对象形式，这里productInfo会返回一个目标对象\n  const productInfo = products[productName];\n  //productInfo是对象，这里可以进行解构\n  const { essentials, subTitle } = productInfo;\n    console.log('productInfo:',productInfo)\n    console.log('essentials:',essentials)\n} else {\n  console.log(`Product not found for name '${productName}'`);\n}\n\nfunction findProductName(queryParameters) {\n  if (queryParameters.includes(\"11.0.2.10:8080\")) {\n    return \"DBOne\";\n  } else if (queryParameters.includes(\"11.0.2.14:9090\")) {\n    return \"DBOne Monitor\";\n  } else if (queryParameters.includes(\"11.0.2.17:8888\")) {\n    return \"DBSync\";\n  } else {\n    return null;\n  }\n}\nfunction findProductName(queryParameters) {\n  if (queryParameters.includes(\"11.0.2.10:8080\")) {\n    return \"DBOne\";\n  } else if (queryParameters.includes(\"11.0.2.14:9090\")) {\n    return \"DBOne Monitor\";\n  } else if (queryParameters.includes(\"11.0.2.17:8888\")) {\n    return \"DBSync\";\n  } else {\n    return null;\n  }\n}\n/*在这个版本的代码中，我们首先定义了一个名为 `products` 的对象，用于存储不同产品的信息\n。然后，我们定义了一个名为 `findProductName` 的函数，用于根据查询参数返回相应的产品名称。\n接下来，在代码中，我们首先调用 `findProductName` 函数，找到相应的产品名称。然后，我们使用\n `products` 对象来查找该产品的信息，并更新 UI 元素的内容。\n这个版本的代码更简洁、更易于维护，而且可以很容易地添加或删除产品信息，而无需修改多个 `if` 代码块。*/\n\n//其他\nconst value = document.querySelector(\"input').value;\n//可以优化为\nconst {value} = document.querySelector(\"input')"
+          "value": "const [entry] = entries; //const entry = entries[0]\n/*这句话是ES6中解构赋值语法的一种。它的作用是把数组或对象中的值解构出来并赋值给左侧的变量。\n在这里，entries是一个数组，使用解构赋值的方式把它的第一个元素（下标为0）赋值给entry变量。\n等价于下面的写法：const entry = entries[0]; \nconst[entry,en2] = entries 这句与上一句类似，不同之处在于它使用了解构赋值的扩展语法。这里\n将数组entries中的前两个元素（下标为0和1）依次解构并赋值给entry和en2两个变量，可以理解为：\nconst entry = entries[0];\nconst en2 = entries[1];*/\n\n++++++++++++++++++++++ 方式一:使用 map() 方法将提若干属性取到一个数组中，而不必返回整个对象\nconst {data} = JSON.parse(jsonString);//const data = JSON.parse(jsonString).data;\n\n//注意，如果提取的属性是惟一的就用find(),因为发现目标后会理解返回对象，不在执行遍历\nconst products = data.filter(obj => obj.product === \"DBOne\").map(obj => {\n  //注意这里return的用法\n  return {\n    product: obj.product,\n    btnUrl: obj.btnUrl\n  };\n});\n\n++++++++++++++++++++++++++++++++方式二\n优化方案：对象解构的方式比 map更优雅，不同点：map返回的是数组，对象解构的是属性\nconst { product, btnUrl } = data.find(obj => obj.product === \"DBOne\");\n/*在这个例子中，find() 方法用于查找具有 'product' 值为 'DBOne' 的对象，\n并将其存储在一个变量中。然后，对象解构用于从该对象中提取 'product' 和\n'btnUrl' 字段，并将它们存储在 product 和 btnUrl 变量中。*/\n\n+++++++++++++++++++++++++++++++ 方式三\n/*上一个方法适用于您只需要访问少量字段的情况，并且不需要修改对象。\n如果您需要修改对象，那么您可能需要返回整个对象。在这种情况下，\n您可以使用对象解构来清晰地指定要修改的字段。例如，以下代码仅修改 'product' 字段：*/\nconst obj = data.find(obj => obj.product === \"DBOne\");\nconst { product, ...rest } = obj;\n//将rest对象与修改后的product字段合并到一个新的对象modifiedObj中\nconst modifiedObj = {\n  ...rest,\n  product: \"New Product Name\"\n};\n\n++++++++++++++++++++++++++++++ 方式四 核心：obj[key]\n//将产品信息存储在一个对象中，其中键是产品名称，值是产品信息对象，如下所示：\nconst products = {\n  \"DBOne\": {\n    essentials: [\"essential1\", \"essential2\"],\n    subTitle: \"演示要点\"\n  },\n  \"DBOne Monitor\": {\n    essentials: [\"essential3\", \"essential4\"],\n    subTitle: \"演示要点\"\n  },\n  \"DBSync\": {\n    essentials: [\"essential5\", \"essential6\"],\n    subTitle: \"演示要点\"\n  },\n  //...\n};\n//然后，在代码中，您可以使用 products 对象来查找相应产品的信息，如下所示：\n//const productName = 'DBSync';\nconst productName = findProductName(queryParameters);\n//productName in products 返回布尔值\nif (productName in products) {\n  //由于products的属性是对象形式，这里productInfo会返回一个目标对象\n  const productInfo = products[productName];\n  //productInfo是对象，这里可以进行解构\n  const { essentials, subTitle } = productInfo;\n    console.log('productInfo:',productInfo)\n    console.log('essentials:',essentials)\n} else {\n  console.log(`Product not found for name '${productName}'`);\n}\n\nfunction findProductName(queryParameters) {\n  if (queryParameters.includes(\"11.0.2.10:8080\")) {\n    return \"DBOne\";\n  } else if (queryParameters.includes(\"11.0.2.14:9090\")) {\n    return \"DBOne Monitor\";\n  } else if (queryParameters.includes(\"11.0.2.17:8888\")) {\n    return \"DBSync\";\n  } else {\n    return null;\n  }\n}\nfunction findProductName(queryParameters) {\n  if (queryParameters.includes(\"11.0.2.10:8080\")) {\n    return \"DBOne\";\n  } else if (queryParameters.includes(\"11.0.2.14:9090\")) {\n    return \"DBOne Monitor\";\n  } else if (queryParameters.includes(\"11.0.2.17:8888\")) {\n    return \"DBSync\";\n  } else {\n    return null;\n  }\n}\n/*在这个版本的代码中，我们首先定义了一个名为 `products` 的对象，用于存储不同产品的信息\n。然后，我们定义了一个名为 `findProductName` 的函数，用于根据查询参数返回相应的产品名称。\n接下来，在代码中，我们首先调用 `findProductName` 函数，找到相应的产品名称。然后，我们使用\n `products` 对象来查找该产品的信息，并更新 UI 元素的内容。\n这个版本的代码更简洁、更易于维护，而且可以很容易地添加或删除产品信息，而无需修改多个 `if` 代码块。*/\n\n//其他\nconst value = document.querySelector(\"input').value;\n//可以优化为\nconst {value} = document.querySelector(\"input')"
+        },
+        {
+          "label": "Fragment 2",
+          "language": "javascript",
+          "value": "let recipe = data.recipe\n//优化：\n//ap返回的是数组，对象解构的是属性\nlet {recipe} = data\n\nconst [entry] = entries; //const entry = entries[0]"
         }
       ],
       "id": "Pfb1HxdY",
       "createdAt": 1677576889200,
-      "updatedAt": 1679988098199
+      "updatedAt": 1682915002242
     },
     {
       "isDeleted": false,
@@ -377,20 +406,26 @@
       "isFavorites": false,
       "folderId": "y-C8x3sP",
       "tagsIds": [
-        "oKLYhCZS"
+        "oKLYhCZS",
+        "dzcTexb5"
       ],
-      "description": null,
+      "description": "模板字符串里可以写表达式，比如模板字符串里可以写map()方法等，当然也可以直接写 html",
       "name": "String常用方法",
       "content": [
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "//去除字符串空格\nconst trim = function(str, type) { // 去除空格， type:  1-所有空格  2-前后空格  3-前空格 4-后空格\n  type = type || 1\n  switch (type) {\n    case 1:\n      return str.replace(/\\s+/g, '')\n    case 2:\n      return str.replace(/(^\\s*)|(\\s*$)/g, '')\n    case 3:\n      return str.replace(/(^\\s*)/g, '')\n    case 4:\n      return str.replace(/(\\s*$)/g, '')\n    default:\n      return str\n  }\n}\n\n//字符串大小写转换\n\nconst changeCase = function(str, type) { // 字符串大小写转换 type:  1:首字母大写  2：首页母小写  3：大小写转换  4：全部大写  5：全部小写\n  type = type || 4\n  switch (type) {\n    case 1:\n      return str.replace(/\\b\\w+\\b/g, function(word) {\n        return word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase()\n      })\n    case 2:\n      return str.replace(/\\b\\w+\\b/g, function(word) {\n        return word.substring(0, 1).toLowerCase() + word.substring(1).toUpperCase()\n      })\n    case 3:\n      return str.split('').map(function(word) {\n        if (/[a-z]/.test(word)) {\n          return word.toUpperCase()\n        } else {\n          return word.toLowerCase()\n        }\n      }).join('')\n    case 4:\n      return str.toUpperCase()\n    case 5:\n      return str.toLowerCase()\n    default:\n      return str\n  }\n}\n\n//MSN搜索技巧  搜索：msn string repalce ,后面一个关键字是你要搜索的具体方法\n// Split and join 非常重要和常用\n//从'+'处split成数组\nconsole.log('a+very+nice+string'.split('+'));//['a', 'very', 'nice', 'string']\nconsole.log('Jonas Schmedtmann'.split(' '));\nconst [firstName, lastName] = 'Jonas Schmedtmann'.split('');//['Jonas', 'Schmedtmann']\nconst newName = ['Mr.',firstName, lastName.toUpperCase()].join();\nconsole.log(newName);\n\n//综合应用 slice() replace()  join()  for of    \nconst capitalizeName = function(name){\n    const names = name.split(' ');\n    const namesUpper = [];\n    for (const n of names){//of 后面跟的是数组\n      //namesUpper.push(n[0].toUpperCase()+ n.slice(1)) 下面和这里一样的结果\n      namesUpper.push(n.replace(n[0],n[0].toUpperCase()\n))\n    }\n      console.log(namesUpper.join(' '));\n}\n    \ncapitalizeName('jessica ann smith davis');\ncapitalizeName('jonas schmedtmann');\nVM1047:8 Jessica Ann Smith Davis\n\n// replacing\nconst priceGB ='288,97f'\nconst priceUS = priceGB.replace('f','$').replace(',','.')\nconsole.log(priceUS);\n\nconst announcement ='All passengers come to boarding door 23. Boarding door 23!'\nconsole.log(announcement.replace('door' ,'gate'));//只能匹配第一个 \nconsole.log(announcement.replaceAll('door','gate'));//全部匹配\nconsole.log(announcement.replace(/door/g,'gate'));//全部匹配\n\n//padStart()  padEnd()  slice()参数负数的应用\nconst message = 'Go to gate 23!!';\n//注意链式用法\nconsole.log(message.padStart(20,'+').padEnd(30,'+'))//+++++Go to gate 23!!++++++++++\n\n//银行卡只显示后几位数\nconst maskCreditCard = function (number) {\n   const str = number + ''; //将 number 这个变量转换为字符串类型\n   const last = str.slice(-4);\n   return last.padStart(str.length, '*');\n}\nconsole.log(maskCreditCard(64637836));//****7836\nconsole.log(maskCreditCard(43378463864647384));//*************7384\nconsole.log(maskCreditCard('334859493847755'))//***********7755 \n\n//includes() 返回布尔值\nconsole.log(announcement.includes('door')); //true\n\n//startsWith()  endswith() 都返回布尔值\nconsole.log(announcement.startsWith('All')); //true\n\n// repeat()  注意${'D'.repeat(n)}的用法,会repeat前面\nconst message2 = 'Bad waether... All DepartuesDelayed...'\nconsole.log(message2.repeat(5));\n\nconst planesInLine = function (n) {\n   console.log(`There are ${n} planes in line ${'D'.repeat(n)}`);\n}\nplanesInLine(5);\nplanesInLine(3);\nplanesInLine(12);\n\n// Practice exercise\nconst checkBaggage = function (items){\n  const baggage = items.toLowerCase(); //先全部转为小写\n    \n  if (baggage.includes('knife') || baggage.includes('gun')){\n     console.log('You are NOT allowed on board');\n  }else {\n     console.log('Welcome aboard!');\n  }\n}\ncheckBaggage('I have a laptop, some Food and a pocket Knife');\ncheckBaggage('Socks and camera');\ncheckBaggage('Got some snacks and a gun for protection');\n\n// String Methods Practice，下面格式化了一段机场信息，重点是for of 的用法，\n\nconst flights = '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';\n\n// 🔴 Delayed Departure from FAO to TXL (11h25)\n//              Arrival from BRU to FAO (11h45)\n//   🔴 Delayed Arrival from HEL to FAO (12h05)\n//            Departure from FAO to LIS (12h30)\n\nconst getCode = str => str.slice(0, 3).toUpperCase();\n\n//of的时候可以直接split()将字符串转为数组\nfor (const flight of flights.split('+')) {\n  //要深刻理解下面一行代码,非常重要！split()将字符串转为了数组，而左边对数组进行了解构，结构的变量名是自定义的\n  //左边解构之前的前提要了解结构的目标解构，这里的字符串是四个部分所以自定义了4个变量名\n  const [type, from, to, time] = flight.split(';');\n  //注意模板字符串里可以写表达式，并且可以直接写html\n  const output = `${type.startsWith('_Delayed') ? '🔴' : ''}${type.replaceAll('_',' ')} \n  ${getCode(from)} ${getCode(to)} (${time.replace(':', 'h')})`.padStart(36);\n  console.log(output);\n  //直接写模板字符串,并且可以用原始html的排列解构,数据可以用${}包裹\n  const html = ` \n    <li class=\"workout workout--${workout.name}\" data-id=\"${workout.id}\">\n        <h2 class=\"workout title\">Running on April 14</h2>\n        <div class=\"workout__details\">\n          <span claps=\"workout_ icon\">${workout.distance}</span>\n          ....\n        </li>\n     `;\n}\n//模板字符串的使用,参数的传递的用法，最基础但最常用和被轻视\nconst getCountryData = function(country){\n   ...\n   request.open('GET', `https://restcountries.eu/rest/v2/name/${country}`);\n   request.send();  \n   ...\n}\ngetCountryData('japan')//参数传递给url,可见上面使用了一个函数的唯一作用就是传递了一个参数\n\n"
+          "value": "//去除字符串空格\nconst trim = function(str, type) { // 去除空格， type:  1-所有空格  2-前后空格  3-前空格 4-后空格\n  type = type || 1\n  switch (type) {\n    case 1:\n      return str.replace(/\\s+/g, '')\n    case 2:\n      return str.replace(/(^\\s*)|(\\s*$)/g, '')\n    case 3:\n      return str.replace(/(^\\s*)/g, '')\n    case 4:\n      return str.replace(/(\\s*$)/g, '')\n    default:\n      return str\n  }\n}\n\n//字符串大小写转换\n\nconst changeCase = function(str, type) { // 字符串大小写转换 type:  1:首字母大写  2：首页母小写  3：大小写转换  4：全部大写  5：全部小写\n  type = type || 4\n  switch (type) {\n    case 1:\n      return str.replace(/\\b\\w+\\b/g, function(word) {\n        return word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase()\n      })\n    case 2:\n      return str.replace(/\\b\\w+\\b/g, function(word) {\n        return word.substring(0, 1).toLowerCase() + word.substring(1).toUpperCase()\n      })\n    case 3:\n      return str.split('').map(function(word) {\n        if (/[a-z]/.test(word)) {\n          return word.toUpperCase()\n        } else {\n          return word.toLowerCase()\n        }\n      }).join('')\n    case 4:\n      return str.toUpperCase()\n    case 5:\n      return str.toLowerCase()\n    default:\n      return str\n  }\n}\n\n//MSN搜索技巧  搜索：msn string repalce ,后面一个关键字是你要搜索的具体方法\n// Split and join 非常重要和常用\n//从'+'处split成数组\nconsole.log('a+very+nice+string'.split('+'));//['a', 'very', 'nice', 'string']\nconsole.log('Jonas Schmedtmann'.split(' '));\nconst [firstName, lastName] = 'Jonas Schmedtmann'.split('');//['Jonas', 'Schmedtmann']\nconst newName = ['Mr.',firstName, lastName.toUpperCase()].join();\nconsole.log(newName);\n\n//综合应用 slice() replace()  join()  for of    \nconst capitalizeName = function(name){\n    const names = name.split(' ');\n    const namesUpper = [];\n    for (const n of names){//of 后面跟的是数组\n      //namesUpper.push(n[0].toUpperCase()+ n.slice(1)) 下面和这里一样的结果\n      namesUpper.push(n.replace(n[0],n[0].toUpperCase()\n))\n    }\n      console.log(namesUpper.join(' '));\n}\n    \ncapitalizeName('jessica ann smith davis');\ncapitalizeName('jonas schmedtmann');\nVM1047:8 Jessica Ann Smith Davis\n\n// replacing\nconst priceGB ='288,97f'\nconst priceUS = priceGB.replace('f','$').replace(',','.')\nconsole.log(priceUS);\n\nconst announcement ='All passengers come to boarding door 23. Boarding door 23!'\nconsole.log(announcement.replace('door' ,'gate'));//只能匹配第一个 \nconsole.log(announcement.replaceAll('door','gate'));//全部匹配\nconsole.log(announcement.replace(/door/g,'gate'));//全部匹配\n\n//padStart()  padEnd()  slice()参数负数的应用\nconst message = 'Go to gate 23!!';\n//注意链式用法\nconsole.log(message.padStart(20,'+').padEnd(30,'+'))//+++++Go to gate 23!!++++++++++\n\n//银行卡只显示后几位数\nconst maskCreditCard = function (number) {\n   const str = number + ''; //将 number 这个变量转换为字符串类型\n   const last = str.slice(-4);\n   return last.padStart(str.length, '*');\n}\nconsole.log(maskCreditCard(64637836));//****7836\nconsole.log(maskCreditCard(43378463864647384));//*************7384\nconsole.log(maskCreditCard('334859493847755'))//***********7755 \n\n//includes() 返回布尔值\nconsole.log(announcement.includes('door')); //true\n\n//startsWith()  endswith() 都返回布尔值\nconsole.log(announcement.startsWith('All')); //true\n\n// repeat()  注意${'D'.repeat(n)}的用法,会repeat前面\nconst message2 = 'Bad waether... All DepartuesDelayed...'\nconsole.log(message2.repeat(5));\n\nconst planesInLine = function (n) {\n   console.log(`There are ${n} planes in line ${'D'.repeat(n)}`);\n}\nplanesInLine(5);\nplanesInLine(3);\nplanesInLine(12);\n\n// Practice exercise\nconst checkBaggage = function (items){\n  const baggage = items.toLowerCase(); //先全部转为小写\n    \n  if (baggage.includes('knife') || baggage.includes('gun')){\n     console.log('You are NOT allowed on board');\n  }else {\n     console.log('Welcome aboard!');\n  }\n}\ncheckBaggage('I have a laptop, some Food and a pocket Knife');\ncheckBaggage('Socks and camera');\ncheckBaggage('Got some snacks and a gun for protection');\n\n// String Methods Practice，下面格式化了一段机场信息，重点是for of 的用法，\n\nconst flights = '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';\n\n// 🔴 Delayed Departure from FAO to TXL (11h25)\n//              Arrival from BRU to FAO (11h45)\n//   🔴 Delayed Arrival from HEL to FAO (12h05)\n//            Departure from FAO to LIS (12h30)\n\nconst getCode = str => str.slice(0, 3).toUpperCase();\n\n//of的时候可以直接split()将字符串转为数组\nfor (const flight of flights.split('+')) {\n  //要深刻理解下面一行代码,非常重要！split()将字符串转为了数组，而左边对数组进行了解构，结构的变量名是自定义的\n  //左边解构之前的前提要了解结构的目标解构，这里的字符串是四个部分所以自定义了4个变量名\n  const [type, from, to, time] = flight.split(';');\n  //注意模板字符串里可以写表达式，并且可以直接写 html\n  const output = `${type.startsWith('_Delayed') ? '🔴' : ''}${type.replaceAll('_',' ')} \n  ${getCode(from)} ${getCode(to)} (${time.replace(':', 'h')})`.padStart(36);\n  console.log(output);\n  //直接写模板字符串,并且可以用原始html的排列解构,数据可以用${}包裹\n  const html = ` \n    <li class=\"workout workout--${workout.name}\" data-id=\"${workout.id}\">\n        <h2 class=\"workout title\">Running on April 14</h2>\n        <div class=\"workout__details\">\n          <span claps=\"workout_ icon\">${workout.distance}</span>\n          ....\n        </li>\n     `;\n}\n//模板字符串的使用,参数的传递的用法，最基础但最常用和被轻视\nconst getCountryData = function(country){\n   ...\n   request.open('GET', `https://restcountries.eu/rest/v2/name/${country}`);\n   request.send();  \n   ...\n}\ngetCountryData('japan')//参数传递给url,可见上面使用了一个函数的唯一作用就是传递了一个参数\n\n"
+        },
+        {
+          "label": "模板字符串等的应用",
+          "language": "javascript",
+          "value": "\nimport icons from '../img/icon.svg'//这里的 icons只是一个路径，会拼接在下面的href的路径里\n//添加一个loading\nconst renderSpinner = function(parentEl){\n  const markup = `\n     <div class=\"spinner\">\n        <svg>\n           <-- ${icons}使用的是上面imoort进来的路径 -->\n           <use href=\"${icons}#icon-loader\"></use>\n        </svg>\n     </div>\n   `;\n   parentEl.innerHTML ='';\n   parentEl.insertAdjacentHTML('afterbegin',markup)\n}\n\n//++++++++++++++++++++++++++++ 模板字符串在路径的应用\n//获取当前 URL 中的哈希值，即 # 号后面的部分,字符串的 slice() 方法，从索引为 1 的位置开始截取字符串,去除了#\nconst id = window.location.hash.slice(1);\n//注意这个return的用法,是把所有代码包裹在if{}d代码块里的优化写法，更易读易用；\nif (!id) return;//这里可以避免找不到id的时候下面一行的loading一直没完的状态\n// 1) Loading recipe\nrenderSpinner(recipeContainer);\nconst res = await fetch(\n    `https://forkify-api.herokuapp.com/api/v2/recipes/${id}`\n     const data = await res.json();\n...."
         }
       ],
       "id": "_ICz9XMC",
       "createdAt": 1677580106476,
-      "updatedAt": 1680837500366
+      "updatedAt": 1683168499265
     },
     {
       "isDeleted": false,
@@ -513,17 +548,27 @@
       "folderId": "y-C8x3sP",
       "tagsIds": [],
       "description": "监听页面滚动事件，分析clientHeight、scrollTop、scrollHeight三者的属性关系。",
-      "name": "滚动加载",
+      "name": "页面滚动相关",
       "content": [
         {
-          "label": "Fragment 1",
+          "label": "页面滚动位置",
+          "language": "javascript",
+          "value": "1.滚动到页面顶部：使用 window.scrollTo() 平滑滚动到页面顶部。\n\nconst scrollToTop = () => {\n  window.scrollTo({ top: 0, left: 0, behavior: \"smooth\" });\n};\n\n2.滚动到页面底部：当然，如果知道文档的高度，也可以平滑滚动到页面底部。\n\nconst scrollToBottom = () => {\n  window.scrollTo({\n    top: document.documentElement.offsetHeight,\n    left: 0,\n    behavior: \"smooth\",\n  });\n};\n3.将元素滚动到可见区域：使用 scrollIntoView 就足够了。\n\nconst smoothScroll = (element) => {\n  element.scrollIntoView({\n    behavior: \"smooth\",\n  });\n};"
+        },
+        {
+          "label": "滚动加载",
           "language": "javascript",
           "value": "window.addEventListener('scroll', function() {\n  const clientHeight = document.documentElement.clientHeight;\n  const scrollTop = document.documentElement.scrollTop;\n  const scrollHeight = document.documentElement.scrollHeight;\n  if (clientHeight + scrollTop >= scrollHeight) {\n    // 检测到滚动至页面底部，进行后续操作\n    // ...\n  }\n}, false);"
+        },
+        {
+          "label": "获得滚动条的滚动距离",
+          "language": "javascript",
+          "value": "function getScrollOffset() {\n    if (window.pageXOffset) {\n        return {\n            x: window.pageXOffset,\n            y: window.pageYOffset\n        }\n    } else {\n        return {\n            x: document.body.scrollLeft + document.documentElement.scrollLeft,\n            y: document.body.scrollTop + document.documentElement.scrollTop\n        }\n    }\n}"
         }
       ],
       "id": "i5D2-kdu",
       "createdAt": 1677638493940,
-      "updatedAt": 1677638530850
+      "updatedAt": 1683183194653
     },
     {
       "isDeleted": false,
@@ -582,7 +627,7 @@
       "updatedAt": 1677639397482
     },
     {
-      "isDeleted": false,
+      "isDeleted": true,
       "isFavorites": false,
       "folderId": "y-C8x3sP",
       "tagsIds": [],
@@ -597,7 +642,7 @@
       ],
       "id": "xhgrp8OR",
       "createdAt": 1677639634299,
-      "updatedAt": 1677639641271
+      "updatedAt": 1683183023355
     },
     {
       "isDeleted": false,
@@ -934,11 +979,16 @@
           "label": "Fragment 1",
           "language": "javascript",
           "value": "Everything related to the DOM is not realy part of js,but of the web API,these asynchronous tasks will all run in the web API environment of the browser.And that's why loading images in JavaScript is asynchronous.So it does not happen in the call stack. So,not in the main thread of execution,but really in the web APIs environment\n\nel = document.querySelector('img');\nel.src='dog.jpg';\nel.addEventListener('load',() => {\n  el.classList.add('fadeIn')\n});\n\nclosest() 是 JavaScript 中 DOM 元素的方法：\n是搭配事件代理常用的dom方法，比如可以实现你点击一个区域的任何地方，确保获取的是父元素，而不是你点击的子元素\n用于查找离当前元素最近的祖先元素（包括当前元素本身）中匹配指定 CSS 选择器的元素； 语法：element.closest(selector) \n\nconst myElement = document.querySelector('#my-element');\nconst closestDiv = myElement.closest('div');\n\n上面的代码将查找 ID 为 my-element 的元素的最近祖先 div 元素，如果找到则将其赋值给变量 closestDiv。\n如果没有找到，则 closestDiv 的值为 null。closest 方法可以方便地在DOM树中查找元素的祖先元素，\n特别是在需要找到指定元素的父级或更高层次的祖先元素时，它会非常有用。\n请注意，closest() 方法不仅可以用于查找祖先元素，还可以用于查找自身或后代元素中与指定选择器匹配的元素。例如，如果我们要查找当前元素自身是否具有 .inner 类，可以使用以下代码：\nconst element = document.querySelector('.inner');\nconst self = element.closest('.inner');\nconsole.log(self); // 输出 <div class=\"inner\">...</div>\n\n通过e对象获取：\nmoveToPopup(e){\n  const workoutEl = e.target.closest('.workout');\n  //console.log(workoutEl);\n  const workout = this.#workouts.find(work => work.id === workoutEl.dataset.id);//从html的data属性获取id值\n  //console.log(workout);\n}\n++++++++++++++++++++++++++++++++++++++++++++insertAdjacentHTML()\ninsertAdjacentHTML() is a JavaScript method that allows you to insert HTML code into a specific position relative to an element in the DOM (Document Object Model). It can be used to add new content to a web page without overwriting the existing content.\n\nThe method takes two arguments:\n\n1) A string that specifies the position where you want to insert the HTML code. The possible values are:\n'beforebegin': inserts the HTML code before the element itself.\n'afterbegin': inserts the HTML code as the first child of the element.\n'beforeend': inserts the HTML code as the last child of the element.\n'afterend': inserts the HTML code after the element itself.\n2) A string that contains the HTML code you want to insert.\nHere is an example of how to use insertAdjacentHTML() to insert a new paragraph after an existing one:\n\nconst existingParagraph = document.querySelector('p');\nexistingParagraph.insertAdjacentHTML('afterend', '<p>This is a new paragraph</p>');//第二个参数可以写一个变量，变量里可以用``写任何html\n\nThis code will add a new paragraph after the existing one.\n\n\n +++++++++++++++++++++++++++++++++++++++++++++用 children 获取所有sibling element\n[...h1.parentElement.children] 将类数组转为数组；注意children可以获取所有子元素，思路是先到parentElement\n\n[...h1.parentElement.children].forEach(function (el){\n    if (el !== h1) el.style.transform = 'scale(0.5)';\n})\n\n++++++++++++++++++++++++++++++++++++++++++++++++++ Tabbed component Tab 页切换 +++++++++++++++++++++++\n实现核心就是添加或去除class样式，下面案例重点：\n1) 代理的应用，就是通过父元素给下面所有子元素添加了事件监听\n2) dom元素dataset的使用：使用dataset元素可以方便地访问和修改HTML元素的自定义属性。它也可以为JavaScript应用程序提供一种简单的方法来存储额外的信息。要使用dataset元素，您需要在HTML元素上添加属性，并将其前缀“data-”。例如，要添加一个名为“color”的属性，您可以使用data-color属性，如下所示：<div data-color=\"blue\">。然后，您可以使用JavaScript来访问这个属性，如下所示：var color = element.dataset.color;\n3) if (!clicked) return; 条件不成立立即结束执行，不执行下面程序，否则报错\n4) 通过closest()操作定位dom,配合事件代理的完成\n5)使用 forEach()方法对高亮元素的操作\n\n\ntabsContainer.addEventListener('click', function (e) {\n  const clicked = e.target.closest('.operations__tab');\n\n  // Guard clause\n  if (!clicked) return;\n\n  // Remove active classes\n  tabs.forEach(t => t.classList.remove('operations__tab--active'));\n  tabsContent.forEach(c => c.classList.remove('operations__content--active'));\n\n  // Activate tab\n  clicked.classList.add('operations__tab--active');\n\n  // Activate content area\n  document\n    .querySelector(`.operations__content--${clicked.dataset.tab}`)\n    .classList.add('operations__content--active');\n});"
+        },
+        {
+          "label": "给一个li元素上添加一个文本框显示一个动态的数据",
+          "language": "plain_text",
+          "value": "// 获取要添加文本框的li元素\nconst liElement = document.querySelector('li');\n\n// 创建文本框元素\nconst inputElement = document.createElement('input');\n\n// 设置文本框属性和样式\ninputElement.setAttribute('type', 'text');\ninputElement.setAttribute('class', 'input-text');\n\n// 将文本框添加到li元素中\nliElement.appendChild(inputElement);\n\n// 动态地显示数据\ninputElement.value = '动态数据';\n\n可以使用JavaScript创建一个文本框元素，然后将其添加到指定的li元素中。具体实现步骤如下：\n\n获取要添加文本框的li元素，可以使用document.querySelector或document.getElementById方法获取。\n创建一个文本框元素，可以使用document.createElement方法创建。\n设置文本框元素的属性和样式，例如type属性为text、class属性为input-text等。\n将文本框元素添加到li元素中，可以使用appendChild方法将其添加为li元素的子元素。\n如果需要动态地显示数据，可以在需要的时候使用value属性给文本框元素赋值。\n\n在上面的代码中，我们首先使用document.querySelector方法获取了一个li元素，然后使用document.createElement方法创建了一个input元素。接着，我们设置了文本框的属性和样式，并使用appendChild方法将其添加到了li元素中。最后，我们使用value属性给文本框元素赋值，以动态地显示数据。\n\n需要注意的是，上面的示例代码只是给一个li元素添加了一个文本框，如果需要给多个li元素添加文本框，可以使用document.querySelectorAll方法获取多个元素，然后遍历每个元素，依次添加文本框。\n"
         }
       ],
       "id": "XEhy6_vs",
       "createdAt": 1678188833239,
-      "updatedAt": 1681367800114
+      "updatedAt": 1681734036066
     },
     {
       "isDeleted": false,
@@ -1371,12 +1421,12 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "/*different router the same component vue。真实的业务场景中，这种情况很多。我创建和编辑的页面使用的是同一个component,默认情况下当这两个页面切换时并不会触发vue的created或者mounted钩子，官方说你可以通过watch $route的变化来做处理，但其实说真的还是蛮麻烦的。后来发现其实可以简单的在 router-view上加上一个唯一的key，来保证路由切换时都会重新渲染触发钩子了。这样简单的多了。\n*/\n<router-view :key=\"key\"></router-view>\n\ncomputed: {\n    key() {\n        return this.$route.name !== undefined? this.$route.name + +new Date(): this.$route + +new Date()\n    }\n }"
+          "value": "different router the same component vue。真实的业务场景中，这种情况很多。我创建和编辑的页面使用的是同一个component,默认情况下当这两个页面切换时并不会触发vue的created或者mounted钩子，官方说你可以通过watch $route的变化来做处理，但其实说真的还是蛮麻烦的。后来发现其实可以简单的在 router-view上加上一个唯一的key，来保证路由切换时都会重新渲染触发钩子了。这样简单的多了。\n\n<router-view :key=\"key\"></router-view>\n\ncomputed: {\n    key() {\n        return this.$route.name !== undefined? this.$route.name + +new Date(): this.$route + +new Date()\n    }\n }"
         }
       ],
       "id": "GQiXghAh",
       "createdAt": 1679467460483,
-      "updatedAt": 1679467650411
+      "updatedAt": 1684721334900
     },
     {
       "isDeleted": false,
@@ -1430,24 +1480,24 @@
       "name": "获取文件信息实例 videoinfo",
       "content": [
         {
-          "label": "Fragment 1",
+          "label": "index.js",
           "language": "javascript",
           "value": "const electron = require('electron');\nconst ffmpeg = require('fluent-ffmpeg');\n\nconst { app, BrowserWindow, ipcMain } = electron;\n\nlet mainWindow;\n\napp.on('ready', () => {\n  mainWindow = new BrowserWindow({});\n  mainWindow.loadURL(`file://${__dirname}/index.html`);\n});\n\nipcMain.on('video:submit', (event, path) => {\n  ffmpeg.ffprobe(path, (err, metadata) => {\n    mainWindow.webContents.send(\n      'video:metadata',\n      metadata.format.duration\n    );\n  });\n});"
         },
         {
-          "label": "Fragment 2",
+          "label": "package.json",
           "language": "javascript",
           "value": "{\n  \"name\": \"videoinfo\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"electron\": \"electron .\"\n  },\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"dependencies\": {\n    \"electron\": \"^1.6.6\",\n    \"fluent-ffmpeg\": \"^2.1.2\"\n  }\n}"
         },
         {
-          "label": "Fragment 3",
+          "label": "index.html",
           "language": "javascript",
           "value": "<head>\n</head>\n<body>\n  <h1>Video Info</h1>\n  <form>\n    <div>\n      <label>Select a video</label>\n      <input type=\"file\" accept=\"video/*\" />\n    </div>\n    <button type=\"submit\">Get Info</button>\n  </form>\n\n  <h1 id=\"result\"></h1>\n\n  <script>\n    const electron = require('electron');\n    const { ipcRenderer } = electron;\n\n    document.querySelector('form').addEventListener('submit', (event) => {\n      event.preventDefault();\n      const { path } = document.querySelector('input').files[0];\n\n      ipcRenderer.send('video:submit', path);\n    });\n\n    ipcRenderer.on('video:metadata', (event, duration) => {\n      document.querySelector('#result').innerHTML = `Video is ${duration} seconds`;\n    });\n  </script>\n</body>"
         }
       ],
       "id": "A1xiclUu",
       "createdAt": 1679982797906,
-      "updatedAt": 1679992255754
+      "updatedAt": 1682243278496
     },
     {
       "isDeleted": false,
@@ -1516,7 +1566,8 @@
       "folderId": "y-C8x3sP",
       "tagsIds": [
         "fHYC1zqy",
-        "vqdOKcoe"
+        "vqdOKcoe",
+        "wvdogT73"
       ],
       "description": null,
       "name": "unique id ",
@@ -1524,12 +1575,12 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "date = new Date();\nid = (Date.now() + '' ).slice(-10);//根据时间的这个id实用性很有限\n\n\n//唯一值的id应用在下面的类里\nclass Workout {\n  date = new Date();\n  id = (Date.now() + '')sice(-10);\n  \n  constructor(coords, distance, duration) {\n    // this.date = ... 规范后的ES应该是这样的\n    // this.id =.\n    this.coords = coords\n    this.distance = distance; // in km\n    this.duration = duration; // in min\n    }\n}"
+          "value": "date = new Date();\nid = (Date.now() + '' ).slice(-10);//根据时间的这个id实用性很有限\n\n\n//唯一值的id应用在下面的类里\nclass Workout {\n  date = new Date();\n  id = (Date.now() + '')sice(-10);\n  \n  constructor(coords, distance, duration) {\n    // this.date = ... 规范后的ES应该是这样的\n    // this.id =.\n    this.coords = coords\n    this.distance = distance; // in km\n    this.duration = duration; // in min\n    }\n}\n\n//临时不完美的用法\nid: new Date().toIsoString()"
         }
       ],
       "id": "C75l_SnB",
       "createdAt": 1680577679066,
-      "updatedAt": 1680580035364
+      "updatedAt": 1685068089203
     },
     {
       "isDeleted": false,
@@ -1747,7 +1798,8 @@
         "DxKZ2j1c",
         "lJch_6Ci",
         "h6VovRUY",
-        "oXNsTNra"
+        "oXNsTNra",
+        "tocBVsRT"
       ],
       "description": "async函数是一个返回Promise对象的函数。而await操作符会暂停当前函数的执行，等待Promise对象的状态变为resolved后，将Promise对象的解析值作为await表达式的返回值。如果Promise对象的状态变为rejected，await操作符会抛出一个异常。\n可以使用await关键字来等待一个Promise对象的解析结果，然后将其作为返回值。在async函数中，可以使用try/catch语句来捕获Promise对象的reject。\nasync/await的优点在于，它让异步代码更容易理解和维护。它通过将异步操作转换为类似于同步操作的代码，使得代码更具可读性和可维护性。",
       "name": "Promise",
@@ -1775,12 +1827,17 @@
         {
           "label": "创建图像并排队展示Async/Await",
           "language": "javascript",
-          "value": "const wait = function (seconds) {\n  return new Promise(function (resolve) {\n    setTimeout(resolve, seconds * 1000);\n  });\n};\n\nconst imgContainer = document.querySelector('.images');\n\nconst createImage = function (imgPath) {\n  return new Promise(function (resolve, reject) {\n    const img = document.createElement('img');\n    img.src = imgPath;\n\n    img.addEventListener('load', function () {\n      imgContainer.append(img);\n      resolve(img);\n    });\n\n    img.addEventListener('error', function () {\n      reject(new Error('Image not found'));\n    });\n  });\n};\n\nlet currentImg;\n\n// createImage('img/img-1.jpg')\n//   .then(img => {\n//     currentImg = img;\n//     console.log('Image 1 loaded');\n//     return wait(2);\n//   })\n//   .then(() => {\n//     currentImg.style.display = 'none';\n//     return createImage('img/img-2.jpg');\n//   })\n//   .then(img => {\n//     currentImg = img;\n//     console.log('Image 2 loaded');\n//     return wait(2);\n//   })\n//   .then(() => {\n//     currentImg.style.display = 'none';\n//   })\n//   .catch(err => console.error(err));\n\n// PART 1\nconst loadNPause = async function () {\n  try {\n    // Load image 1\n    let img = await createImage('img/img-1.jpg');\n    console.log('Image 1 loaded');\n    await wait(2);\n    img.style.display = 'none';\n\n    // Load image 1\n    img = await createImage('img/img-2.jpg');\n    console.log('Image 2 loaded');\n    await wait(2);\n    img.style.display = 'none';\n  } catch (err) {\n    console.error(err);\n  }\n};\n// loadNPause();\n\n// PART 2\n//an async function will always return a promise,not just a value\nconst loadAll = async function (imgArr) {\n  try {\n  //箭头函数后面省略了return关键字，因为箭头函数只有一行代码，所以可以省略return关键字\n    const imgs = imgArr.map(async img => await createImage(img));\n    const imgsEl = await Promise.all(imgs);\n    console.log(imgsEl);\n    imgsEl.forEach(img => img.classList.add('parallel'));\n  } catch (err) {\n    console.error(err);\n  }\n};\nloadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);"
+          "value": "const wait = function (seconds) {\n  return new Promise(function (resolve) {\n    setTimeout(resolve, seconds * 1000);\n  });\n};\n\nconst imgContainer = document.querySelector('.images');\n\nconst createImage = function (imgPath) {\n  return new Promise(function (resolve, reject) {\n    const img = document.createElement('img');\n    img.src = imgPath;\n\n    img.addEventListener('load', function () {\n      imgContainer.append(img);\n      resolve(img);\n    });\n\n    img.addEventListener('error', function () {\n      reject(new Error('Image not found'));\n    });\n  });\n};\n\nlet currentImg;\n\n// createImage('img/img-1.jpg')\n//   .then(img => {\n//     currentImg = img;\n//     console.log('Image 1 loaded');\n//     return wait(2);\n//   })\n//   .then(() => {\n//     currentImg.style.display = 'none';\n//     return createImage('img/img-2.jpg');\n//   })\n//   .then(img => {\n//     currentImg = img;\n//     console.log('Image 2 loaded');\n//     return wait(2);\n//   })\n//   .then(() => {\n//     currentImg.style.display = 'none';\n//   })\n//   .catch(err => console.error(err));\n\n// PART 1\nconst loadNPause = async function () {\n  try {\n    // Load image 1\n    let img = await createImage('img/img-1.jpg');\n    console.log('Image 1 loaded');\n    await wait(2);\n    img.style.display = 'none';\n\n    // Load image 1\n    img = await createImage('img/img-2.jpg');\n    console.log('Image 2 loaded');\n    await wait(2);\n    img.style.display = 'none';\n  } catch (err) {\n    console.error(err);\n  }\n};\n// loadNPause();\n\n// PART 2\n//an async function will always return a promise,not just a value\nconst loadAll = async function (imgArr) {\n  try {\n  //箭头函数后面省略了return关键字，因为箭头函数只有一行代码，所以可以省略return关键字\n    const imgs = imgArr.map(async img => await createImage(img));\n    //map后面都要用Promise.all\n    const imgsEl = await Promise.all(imgs);\n    console.log(imgsEl);\n    //这里不用返回数组所以用forEach最合适\n    imgsEl.forEach(img => img.classList.add('parallel'));\n  } catch (err) {\n    console.error(err);\n  }\n};\nloadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);"
+        },
+        {
+          "label": "timeout 函数",
+          "language": "javascript",
+          "value": "const timeout = function (s) {\n  return new Promise(function (_, reject) {\n    setTimeout(function () {\n      reject(new Error(`Request took too long! Timeout after ${s} second`));\n    }, s * 1000);\n  });\n};\n该函数通常用于配合其他异步操作，例如网络请求或者数据库查询等，以确保应用程序不会因为某个异步操作卡死而无法响应用户输入。\n这段代码中定义了一个 timeout 函数，它返回一个 Promise 对象。该函数的作用是在指定时间内（以秒为单位）检查异步操作是否已经完成，如果超时则抛出一个错误。\n\n具体来说，该函数接受一个参数 s，表示超时时间（单位为秒）。它创建一个新的 Promise 对象，并使用 setTimeout 函数在指定的时间后调用 reject 方法，从而抛出一个 Error 对象，提示异步操作超时。需要注意的是，在 setTimeout 中使用模板字符串，可以将超时时间插入到错误消息中，以便更好地提示用户。"
         }
       ],
       "id": "Oh_SFa72",
       "createdAt": 1681355064997,
-      "updatedAt": 1681527652879
+      "updatedAt": 1684153133997
     },
     {
       "isDeleted": false,
@@ -1825,13 +1882,13 @@
       "tagsIds": [
         "0mgkAi-B"
       ],
-      "description": null,
+      "description": "Whenever possible, run promises in parallel(Promise.all) 如果不是互相依赖的关系，用Promise.all 可以加快速度\nConsume promises with async/await for best readability",
       "name": "Async/Await",
       "content": [
         {
           "label": "Consuming Promises with Async/Await",
           "language": "javascript",
-          "value": "// Consuming Promises with Async/Await\n// Error Handling With try...catch\n\nconst getPosition = function () {\n  return new Promise(function (resolve, reject) {\n    navigator.geolocation.getCurrentPosition(resolve, reject);\n  });\n};\n\n// fetch(`https://restcountries.eu/rest/v2/name/${country}`).then(res => console.log(res))\n// 注意下面await的magic在于其返回值就是resove,和上面一行的作用是一样的\n// const res = await fetch(`https://restcountries.eu/rest/v2/name/${dataGeo.country}`); \n\nconst whereAmI = async function () {\n  try {\n    // Geolocation\n    const pos = await getPosition();\n    const { latitude: lat, longitude: lng } = pos.coords;\n\n    // Reverse geocoding\n    const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);\n    if (!resGeo.ok) throw new Error('Problem getting location data');\n\n    const dataGeo = await resGeo.json();\n    console.log(dataGeo);\n\n    // Country data\n    const res = await fetch(\n      `https://restcountries.eu/rest/v2/name/${dataGeo.country}`\n    );\n\n    if (!res.ok) throw new Error('Problem getting country');\n\n    const data = await res.json();\n    console.log(data);\n    renderCountry(data[0]);\n  } catch (err) {\n    console.error(`${err} 💥`);\n    renderError(`💥 ${err.message}`);\n  }\n};\nwhereAmI();\nwhereAmI();\nwhereAmI();\nconsole.log('FIRST');"
+          "value": "// Consuming Promises with Async/Await,注意aysnc返回的是promise的pending状态，并不是具体的数据值\n// Error Handling With try...catch\n\nconst getPosition = function () {\n  return new Promise(function (resolve, reject) {\n    navigator.geolocation.getCurrentPosition(resolve, reject);\n  });\n};\n\n// fetch(`https://restcountries.eu/rest/v2/name/${country}`).then(res => console.log(res))\n// 注意下面await的magic在于其返回值就是resove,和上面一行的作用是一样的\n// const res = await fetch(`https://restcountries.eu/rest/v2/name/${dataGeo.country}`); \n\nconst whereAmI = async function () {\n  try {\n    // Geolocation\n    const pos = await getPosition();\n    const { latitude: lat, longitude: lng } = pos.coords;\n\n    // Reverse geocoding\n    const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);\n    if (!resGeo.ok) throw new Error('Problem getting location data');\n\n    const dataGeo = await resGeo.json();\n    console.log(dataGeo);\n\n    // Country data\n    const res = await fetch(\n      `https://restcountries.eu/rest/v2/name/${dataGeo.country}`\n    );\n\n    if (!res.ok) throw new Error('Problem getting country');\n\n    const data = await res.json();\n    console.log(data);\n    renderCountry(data[0]);\n  } catch (err) {\n    console.error(`${err} 💥`);\n    renderError(`💥 ${err.message}`);\n  }\n};\nwhereAmI();\nwhereAmI();\nwhereAmI();\nconsole.log('FIRST');"
         },
         {
           "label": "Returning Values from Async Functions",
@@ -1851,7 +1908,7 @@
       ],
       "id": "hafqkq6-",
       "createdAt": 1681460910573,
-      "updatedAt": 1681466470456
+      "updatedAt": 1682676147249
     },
     {
       "isDeleted": false,
@@ -1860,7 +1917,9 @@
       "tagsIds": [
         "AOZ115q_",
         "ctJ0RMD1",
-        "RoFzKEEw"
+        "RoFzKEEw",
+        "3GrbAyQg",
+        "rsoj0LnD"
       ],
       "description": null,
       "name": "json data",
@@ -1873,7 +1932,724 @@
       ],
       "id": "VOUuRmuI",
       "createdAt": 1681462593714,
-      "updatedAt": 1681462751476
+      "updatedAt": 1682672082690
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "gJiRapX3",
+        "T8D8hQN9"
+      ],
+      "description": "在前端代码中，使用递归函数遍历树形结构，计算节点数量。\n将计算出的节点数量展示到页面中。",
+      "name": "将树形结构的数量展示到页面",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "// 递归函数，用于遍历树形结构并计算节点数量\nfunction countNodes(node) {\n  let count = 1; // 当前节点算一个\n  if (node.children && node.children.length > 0) { // 如果有子节点\n    for (let i = 0; i < node.children.length; i++) { // 遍历子节点\n      count += countNodes(node.children[i]); // 递归计算子节点数量\n    }\n  }\n  return count;\n}\n\n// 在页面中展示节点数量\nlet rootNode = { // 树形结构的根节点\n  name: 'root',\n  children: [\n    { name: 'child1' },\n    { name: 'child2', children: [\n      { name: 'grandchild1' },\n      { name: 'grandchild2' }\n    ]},\n    { name: 'child3' }\n  ]\n};\nlet nodeCount = countNodes(rootNode); // 计算节点数量\ndocument.getElementById('nodeCount').innerText = nodeCount; // 将节点数量展示到页面中\n\n在上面的代码中，我们定义了一个递归函数countNodes，用于遍历树形结构并计算节点数量。该函数接受一个节点作为参数，如果该节点有子节点，则遍历子节点并递归调用countNodes函数来计算子节点数量。最终返回的数量是当前节点数量加上所有子节点数量。\n\n在页面中，我们可以将树形结构的根节点传递给countNodes函数来计算节点数量，然后将计算出的数量展示到页面中。在上面的代码中，我们使用了一个div元素来展示节点数量，其id为nodeCount。我们通过document.getElementById('nodeCount')获取该元素，并将计算出的节点数量赋值给其innerText属性来展示节点数量。\n\n如果你需要将节点数量展示在树形结构上，可以在遍历树形结构时，将节点数量保存在节点的某个属性中，然后在渲染节点时，将该属性的值展示出来。\n"
+        }
+      ],
+      "id": "hNF_6XsP",
+      "createdAt": 1681733899191,
+      "updatedAt": 1681733966756
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "SZZcOAmF"
+      ],
+      "description": "被代理的对象也会被修改\n什么是元编程：元编程（Metaprogramming）指的是在运行时动态地创建、修改和执行代码的能力。它是计算机科学中非常重要的一种编程范式，通常用于实现各种高级功能和框架。元编程可以通过很多不同的方式来实现，例如：动态生成代码：在程序运行时根据需要生成新的代码，并进行编译或解释执行。\n修改现有代码：利用反射等机制动态地修改已有的代码，以实现定制化的需求。\n定义DSL（领域特定语言）：通过元编程技术定义出一些特定领域的语法或语言，使得程序员可以更加方便地使用这些语言来描述领域模型。\n元编程通常需要使用一些特定的工具和技术，例如反射、注解、模板元编程、代码生成器等。同时，它也会涉及到一些底层的概念和机制，例如编译器、虚拟机、代码优化等。\n元编程在实际编程中被广泛应用，例如在框架、库、代码生成器、测试框架、模板引擎等领域。通过使用元编程技术，我们可以更加灵活地处理复杂的问题，并提高代码的可维护性、可扩展性和可重用性",
+      "name": "Proxy是一种元编程机制",
+      "content": [
+        {
+          "label": "Proxy的概念",
+          "language": "javascript",
+          "value": "概念\nProxy 用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”（meta programming），即对编程语言进行编程。\nProxy 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。Proxy 这个词的原意是代理，用在这里表示由它来“代理”某些操作，可以译为“代理器”\nES6 原生提供 Proxy 构造函数，用来生成 Proxy 实例。 var proxy = new Proxy(target, handler);\ntarget 参数表示所要代理的目标对象，handler 参数也是一个对象，用来定制代理拦截行为。 Proxy 对象的所有用法，都是上面这种形式，不同的只是 handler 参数的写法。其中，new Proxy() 表示生成一个Proxy实例。\n\nJavaScript中的Proxy是一种元编程机制，它允许您在运行时拦截和定义对象上的各种底层操作。通过使用Proxy，您可以对对象的默认行为进行自定义，并在访问或修改对象属性时实现更高级的逻辑。\n具体来说，Proxy包含一个目标对象（target）和一个代理处理程序（handler）。当您尝试访问或修改目标对象时，实际上会调用代理处理程序上的相应方法进行处理。代理处理程序可以定义一系列捕获器（trap），用于拦截和处理各种操作，例如属性访问、赋值、方法调用等。\n例如，以下代码演示了如何使用Proxy拦截和修改对象的属性访问：\n\nlet target = {name: 'John', age: 30};\nlet handler = {\n  get: function(target, prop) {\n    console.log('Accessing property: ' + prop);\n    return target[prop];\n  },\n  set: function(target, prop, value) {\n    console.log('Setting property: ' + prop);\n    target[prop] = value;\n  }\n};\nlet proxy = new Proxy(target, handler);\n\nconsole.log(proxy.name); // Accessing property: name  John\nproxy.age = 35; // Setting property: age\nconsole.log(proxy.age); // Accessing property: age  35\n\n在上面的代码中，我们首先定义了一个目标对象target和一个代理处理程序handler。在代理处理程序中，我们定义了两个捕获器（get和set），用于拦截目标对象的属性访问和赋值操作。然后，我们使用new关键字和Proxy构造函数创建了一个代理对象proxy，并将它指向目标对象target。\n接着，我们通过访问和修改代理对象的属性来演示了拦截器的功能。当我们访问代理对象的属性时，实际上会调用get捕获器中定义的逻辑，打印出相应的信息并返回目标对象中对应的属性值。同样地，当我们修改代理对象的属性时，实际上会调用set捕获器中定义的逻辑，打印出相应的信息并修改目标对象中对应的属性值。\n需要注意的是，虽然Proxy可以实现各种高级功能，但也可能会带来性能问题和安全隐患。因此，在使用Proxy时需要谨慎考虑，并根据具体情况进行优化和防范措施。\n\nlet obj = new Proxy(target,handler);\n//target 参数表示所要代理的目标对象，handler 参数也是一个对象，用来定制代理拦截行为。\n //自定义对象属性的获取、赋值、枚举、函数调用的等功能\n //这个target对象和下面proxy实例对象是不同的对象，但都会被修改\nvar target = { a: 1,b: 2,};\nlet proxy = new Proxy(target, {  \n//第二个参数是handler，很多函数都是这种结构，很简单！\n   get(target, prop) { // 第二个参数是属性\n     console.log(\"This is property value\" + target[prop]);\n     //或 return \"This is property value\" + target[prop]\n   },\n        \n   set(target, prop,value) {\n     target[prop] = value;\n     console.log(target[prop]);\n    },\n});\n\nconsole.log(proxy.a); //This is property value 1\nconsole.log(target.a); // 1\nproxy.b = 3; // set() 设置后这里会生效\nconsole.log('target:', target); // 被代理的对象也被修改了\n\n"
+        },
+        {
+          "label": "proxy 对数组操作",
+          "language": "javascript",
+          "value": "let arr = [\n        { name: \"小明\", age: 18 },\n        { name: \"小红\", age: 23 },\n        { name: \"小青\", age: 14 },\n        { name: \"小黄\", age: 35 },\n      ];\nlet persons = new Proxy(arr, {\n        get(arr, prop) {\n          return arr[prop];\n        },\n        set(arr, prop, value) { // set有三个参数\n          arr[prop] = value;\n        },\n});\n\nconsole.log(persons[3]); //{name: '小黄', age: 35}\npersons[1] = { name: \"小张\", age: 33 }; //将第二个对象，小红改掉\nconsole.log(persons, arr);"
+        },
+        {
+          "label": "JS中代理Proxy的简单使用",
+          "language": "javascript",
+          "value": "//下面是一个拦截读取属性行为的例子\nlet proxy = new Proxy({},{\n  get:function (target,key) {\n    // target 是要代理的对象，key 是要获取的属性\n    // 原对象的属性名称在代理之后是不会发生变化的\n    return 35\n  }\n})\n\nconsole.log(proxy.name); // 35\nconsole.log(proxy.age);  // 35\nconsole.log(proxy.time); // 35\n\n上面代码中，作为构造函数，Proxy 接受两个参数。\n\n第一个参数是所要代理的目标对象（上例是一个空对象），即如果没有 Proxy 的介入，操作原来要访问的就是这个对象；\n第二个参数是一个配置对象，对于每一个被代理的操作，需要提供一个对应的处理函数，该函数将拦截对应的操作。比如，上面代码中，配置对象有一个 get 方法，用来拦截对目标对象属性的访问请求。get 方法的两个参数分别是目标对象和所要访问的属性。\n可以看到，由于拦截函数总是返回35，所以访问任何属性都得到35。\n\n注意，要使得 Proxy 起作用，必须针对 Proxy 实例进行操作，而不是针对目标对象进行操作。\n另外，如果 Proxy 的第二个参数 handler 没有设置任何拦截，那就等同于直接通向原对象。\n\nvar target = {};\nvar handler = {};\nvar proxy = new Proxy(target, handler);\nproxy.a = 'b';\ntarget.a // \"b\"\n\n// handler 是一个空对象，没有任何拦截效果，访问 proxy 就等同于访问 target\n\n"
+        },
+        {
+          "label": "Proxy 实例的方法",
+          "language": "javascript",
+          "value": "Proxy 支持的拦截操作一共 13 种。下面介绍一下 get 和 set 的简单使用\n1、get()\nget 方法用于拦截某个属性的读取操作，可以接受三个参数，依次为目标对象、属性名和 proxy 实例本身（严格地说，是操作行为所针对的对象），其中最后一个参数可选。\n下面代码表示，如果访问目标对象不存在的属性，会抛出一个错误。如果没有这个拦截函数，访问不存在的属性，只会返回 undefined。\n\nlet person = {\n  name: 'webchang'\n}\n\nlet proxy = new Proxy(person, {\n  get(target, key) {\n    if (key in target) {\n      return target[key]\n    }\n    return new Error('属性不存在')\n  }\n})\n\nconsole.log(proxy.name);\nconsole.log(proxy.age);\n\n2、set()\nset 方法用来拦截某个属性的赋值操作，可以接受四个参数，依次为目标对象、属性名、属性值和 Proxy 实例本身，其中最后一个参数可选。\n\nlet validator = {\n  set:function (target, key, value) {\n    if (key === 'age') {\n      if (!Number.isInteger(value) || value > 150) {\n        throw new Error('数据不合法')\n      }\n    }\n\n    // 对于满足条件的 age 属性以及其他属性，直接保存\n    target[key] = value;\n  }\n}\n\nlet proxy = new Proxy({},validator);\n\nproxy.age = 89;\nconsole.log(proxy.age); // 89\n\nproxy.age = 'webchang'; // 报错\nproxy.age = 200;        // 报错\n\n上面代码中，由于设置了存值函数 set ，任何不符合要求的 age 属性赋值，都会抛出一个错误，这是数据验证的一种实现方法。\n\n有时，我们会在对象上面设置内部属性，属性名的第一个字符使用下划线开头，表示这些属性不应该被外部使用。结合 get 和 set 方法，就可以做到防止这些内部属性被外部读写。下面代码中，只要读写的属性名的第一个字符是下划线，一律抛错，从而达到禁止读写内部属性的目的。\n\nfunction invariant (key, action) {\n  if (key[0] === '_') {\n    throw new Error(`不应该在 ${action} 方法中访问 ${key} 属性`)\n  }\n}\n\nlet handler = {\n  get(target, key) {\n    invariant(key, 'get');\n    return target[key];\n  },\n  set(target, key, value) {\n    invariant(key, 'set');\n    target[key] = value;\n  }\n}\n\nlet proxy = new Proxy({}, handler);\n\nconsole.log(proxy._age);  // Uncaught Error: 不应该在 get 方法中访问 _age 属性\nproxy._name = 'webchang'; // Uncaught Error: 不应该在 set 方法中访问 _name 属性\n\n案例  1、明星经纪人案例\n// 明星对象\nlet star = { name:'webchang', age:18, phone:'12345' }\n\n// 经纪人-代理对象，第二个参数是 handler,是所有函数常见的用法，很简单！，可以单独拎出来写\nlet agent = new Proxy(star,{\n  get:function (target,key) {\n    if (key === 'phone') {\n      // 返回经纪人自己的电话，明星的电话要保密\n      return '56789';\n    }\n\n    if (key === 'price') {\n      //明星不报价，经纪人报价\n      return 120000;\n    }\n    //如果不是上边的 phone 和price，就直接返回 star 自己的属性，可能是 name 或者 age\n    return target[key];\n  },\n  set:function (target,key,value) {\n    // 谈合作价格\n    if(key === 'customPrice') {\n      if (value < 100000) {\n        throw new Error('价格太低')\n      } else {\n        target[key] = value;\n        return true;\n      }\n    }\n  }\n})\n\n//测试\nconsole.log(agent.name);     // webchang\nconsole.log(agent.age);      // 18\nconsole.log(agent.phone);    // 56789 拿到的是经纪人的电话\nconsole.log(agent.price);    // 120000\n// agent.customPrice = 9000; // 报错 Uncaught Error: 价格太低\n\nagent.customPrice = 900000;\nconsole.log(agent.customPrice); // 900000\n\n\n"
+        }
+      ],
+      "id": "CViPsepB",
+      "createdAt": 1681889303089,
+      "updatedAt": 1681953756154
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": "Axios ：是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中",
+      "name": "axios",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "下面是在 vue 项目中的配置，包含以下设置\n\n请求时显示加载动画\n携带 token\n表单验证错误错误记录到 vuex\n无权限（401）时跳转到登录界面\n\nimport axios from 'axios'\nimport store from '@/store'\nimport router from '@/router'\nimport { ElMessage, ElLoading } from 'element-plus'\n\nconst instance = axios.create({\n    headers: {\n        'Content-Type': 'application/json',\n    },\n})\n\n//加载动画\nlet loading = null\n\ninstance.interceptors.request.use(\n    function (config) {\n        const baseUrl = import.meta.env.MODE == 'development' ? 'http://houdunren.test/api' : '/'\n        config.baseURL = baseUrl\n\n        //携带令牌\n        const token = window.localStorage.getItem('token')\n        if (token) config.headers.Authorization = `Bearer ${token}`\n        //加载动画\n        loading = ElLoading.service({\n            lock: true,\n            text: '加载中...',\n            spinner: 'el-icon-loading',\n            background: 'rgba(255, 255, 255, 0)',\n        })\n        return config\n    },\n    function (error) {\n        return Promise.reject(error)\n    }\n)\n\ninstance.interceptors.response.use(\n    function (response) {\n        loading.close()\n        const { data } = response\n        if (data.message) {\n            ElMessage.success({\n                message: data.message,\n                type: 'success',\n            })\n        }\n\n        return data\n    },\n    function (error) {\n        loading.close()\n        const { status, data } = error.response\n\n        switch (status) {\n            case 422:\n                //表单验证失败\n                store.commit('error/set', data.errors)\n                break\n            case 401:\n                store.commit('user/logout')\n                router.push('/login')\n                break\n        }\n\n        return Promise.reject(error)\n    }\n)\n\nexport default instance"
+        }
+      ],
+      "id": "J4kkBfUp",
+      "createdAt": 1682234527113,
+      "updatedAt": 1682234628796
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "ejtoZnYa",
+      "tagsIds": [
+        "tkMsewzC",
+        "eWJmuiVv",
+        "tgcSxj7Y"
+      ],
+      "description": "最终会打印出node、electron、chrome版本信息",
+      "name": "使用预加载脚本preload.js通过node 的process查看软件版本的信息",
+      "content": [
+        {
+          "label": "main.js 主进程脚本",
+          "language": "javascript",
+          "value": "const { BrowserWindow, app } = require('electron')\nconst path = require('path')\n\nconst createWindow = () => {\n  const win = new BrowserWindow({\n    width: 300,\n    height: 300,\n    webPreferences: {\n    \t//预加载脚本\n      preload: path.resolve(__dirname, 'preload.js'),\n    },\n  })\n  //因为上面引用了nodeJS的path模块这里才可以实现下面到吗\n  win.loadFile(path.resolve(__dirname, 'index.html'))\n  //打开开发者工具\n  win.webContents.openDevTools()\n}\n\napp.whenReady().then(() => {\n  createWindow()\n})"
+        },
+        {
+          "label": "preload.js 预加载脚本",
+          "language": "javascript",
+          "value": "document.addEventListener('DOMContentLoaded', () => {\n  for (const soft of ['chrome', 'electron', 'node']) {\n    console.log(soft)\n    document.querySelector(`#${soft}`).innerHTML = `${soft}:` + process.versions[soft]\n  }\n})"
+        },
+        {
+          "label": "index.html 模板文件",
+          "language": "javascript",
+          "value": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; script-src 'self'\" />\n    <meta http-equiv=\"X-Content-Security-Policy\" content=\"default-src 'self'; script-src 'self'\" />\n    <title>houdunren</title>\n  </head>\n  <body>\n    <div id=\"chrome\"></div>\n    <div id=\"node\"></div>\n    <div id=\"electron\"></div>\n    <script src=\"renderer.js\"></script>\n  </body>\n</html>"
+        }
+      ],
+      "id": "cA_wT8z3",
+      "createdAt": 1682239811026,
+      "updatedAt": 1682240277150
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "ejtoZnYa",
+      "tagsIds": [],
+      "description": "下面介绍渲染进程向主进程通信，这是单向通信行为。本例实现的功能是渲染进程向主进程发送请求，更改窗口标题。",
+      "name": "进程通信：渲染进程到主进程",
+      "content": [
+        {
+          "label": "main.js",
+          "language": "javascript",
+          "value": "const { BrowserWindow, app, ipcMain } = require('electron')\nconst path = require('path')\n\nconst createWindow = () => {\n  const win = new BrowserWindow({\n    width: 300,\n    height: 300,\n    alwaysOnTop: true,\n    x: 1500,\n    y: 100,\n    webPreferences: {\n      preload: path.join(__dirname, 'preload.js'),\n    },\n  })\n  win.webContents.openDevTools()\n\n  win.loadFile(path.resolve(__dirname, 'index.html'))\n}\n\napp.whenReady().then(() => {\n  createWindow()\n\n  //主进程事件监听\n  ipcMain.on('setTitle', (event, title) => {\n    //获取用于控制网页的webContents对象\n    const webContents = event.sender\n    //获取窗口\n    const win = BrowserWindow.fromWebContents(webContents)\n    //设置窗口标题\n    win.setTitle(title)\n  })\n})"
+        },
+        {
+          "label": "preload.js",
+          "language": "javascript",
+          "value": "const { contextBridge, ipcRenderer } = require('electron')\n//为渲染进程暴露API\ncontextBridge.exposeInMainWorld('api', {\n  //该API用于向主进程事件\n  setTitle: (title) => ipcRenderer.send('setTitle', title),\n})"
+        },
+        {
+          "label": "index.html",
+          "language": "javascript",
+          "value": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; script-src 'self'\" />\n    <title>houdunren</title>\n  </head>\n  <body>\n    <input type=\"text\" name=\"title\" />\n    <button>更改标题</button>\n    <script src=\"renderer.js\"></script>\n  </body>\n</html>\n"
+        },
+        {
+          "label": "renderer.js",
+          "language": "javascript",
+          "value": "window.addEventListener('DOMContentLoaded', () => {\n  document.querySelector('button').addEventListener('click', () => {\n    const value = document.querySelector('[name=title]').value\n\n    //使用preload.js暴露出的API，触发主进程事件\n    window.api.setTitle(value)\n  })\n})"
+        }
+      ],
+      "id": "JD6syzw0",
+      "createdAt": 1682240476547,
+      "updatedAt": 1682241217799
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [],
+      "description": "主进程主动向渲染进程通信，这也是单向通信IPC。将消息从主进程发送到渲染器进程时，需要指定是哪一个渲染器接收消息。 消息需要通过 WebContents ，实例的send方法发送到渲染器进程。",
+      "name": "进程通信：主进程到渲染进程",
+      "content": [
+        {
+          "label": "main.js",
+          "language": "javascript",
+          "value": "const { BrowserWindow, app, ipcMain, Menu } = require('electron')\nconst path = require('path')\n\nconst createWindow = () => {\n  const win = new BrowserWindow({\n    width: 300,\n    height: 300,\n    alwaysOnTop: true,\n    x: 1500,\n    y: 100,\n    webPreferences: {\n      preload: path.join(__dirname, 'preload.js'),\n    },\n  })\n  //定义菜单\n  const menu = Menu.buildFromTemplate([\n    {\n      label: '菜单',\n      submenu: [\n        {\n          click: () => win.webContents.send('increment', 1),\n          label: '增加',\n        },\n      ],\n    },\n  ])\n  Menu.setApplicationMenu(menu)\n\n  //打开开发者工具\n  win.webContents.openDevTools()\n  win.loadFile(path.resolve(__dirname, 'index.html'))\n}\n\napp.whenReady().then(() => {\n  createWindow()\n})\n\n//接收渲染进程的结果\nipcMain.on('finish', (event, value) => {\n  console.log('最后结果是：' + value)\n})"
+        },
+        {
+          "label": "preload.js",
+          "language": "javascript",
+          "value": "const { contextBridge, ipcRenderer } = require('electron')\n//为渲染进程暴露API\ncontextBridge.exposeInMainWorld('api', {\n  //为渲染进程设置接口，用于接收主进程的消息\n  incrementNumber: (callback) => ipcRenderer.on('increment', callback),\n})"
+        },
+        {
+          "label": "index.html",
+          "language": "javascript",
+          "value": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'; script-src 'self'\" />\n    <title>houdunren</title>\n  </head>\n  <body>\n    <h1></h1>\n    <script src=\"renderer.js\"></script>\n  </body>\n</html>"
+        },
+        {
+          "label": "render.js",
+          "language": "javascript",
+          "value": "//向预加载脚本传递回调方法，用于处理主进程的消息\nwindow.api.incrementNumber((event, value) => {\n  const h1 = document.querySelector('h1')\n  h1.innerHTML = Number(h1.innerText) + value\n  //向主进程发送消息\n  event.sender.send('finish', h1.innerHTML)\n})"
+        }
+      ],
+      "id": "k0j_vUS9",
+      "createdAt": 1682240812534,
+      "updatedAt": 1682407930159
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "k7BDpYlW",
+        "cRFLDtUi"
+      ],
+      "description": "JavaScript中的回调函数是指将一个函数作为参数传递给另一个函数，并且在另一个函数执行完毕后执行该函数的过程。回调函数通常用于异步编程中，因为JavaScript是单线程执行的语言，不能同时执行多个任务，因此通过回调函数来实现异步编程。",
+      "name": "回调函数 callback",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "\nfunction greet(name, callback) {\n  console.log(`Hello ${name}!`);\n  //在一个函数执行完毕后执行该函数\n  const data={name:'qing',age:28}\n  callback(data); //注意参数传递数据的应用，很基本但很重要和容易困扰，这里是实参\n}\n//调用的时候第二个参数是函数，无需名称(当然也可以拎出来写个函数这里用名称调用)，但上面定义的时候必须有名称,注意括号里的是参数(形参)，不是函数名称\ngreet('okzu', (data) => {\n  console.log('bye!',data.name,data.age);\n})\n\n回调函数的用法： 1) 作为函数参数传递\nfunction foo(callback) {\n  console.log('foo');\n  //这里要调用一下\n  callback();\n}\nfunction bar() {\n  console.log('bar');\n}\nfoo(bar); // 输出：foo，bar\n\n2) 作为异步操作的回调函数：重点：有两个函数，其中一个是作为参数使用的\n//参数是一个函数，这里是形参，可以随便命名\nfunction getDataFromServer(callback) {\n  setTimeout(function() {\n    var data = {name: 'Tom', age: 18};\n    //函数在另一个函数体内调用了\n    callback(data);\n  }, 1000);\n}\n//定义一个函数，是用来作为另一个函数的参数的\nfunction handleData(data) {\n  console.log(data.name, data.age);\n}\n//调用函数，传入的是另一个定义过的函数,传入的是实参，接受的时候是形参\ngetDataFromServer(handleData);\n在上述例子中，getDataFromServer函数模拟了一个从服务器获取数据的异步操作，通过将handleData函数作为回调函数传递给getDataFromServer函数，当异步操作完成后，handleData函数会被调用来处理返回的数据。\n回调函数的优点是可以实现异步编程，避免了阻塞主线程，提高了程序的运行效率。但是，如果回调函数嵌套过多，代码可读性会变差，形成回调地狱，因此需要使用Promise、async/await等解决方案来改善。"
+        },
+        {
+          "label": "写法二",
+          "language": "javascript",
+          "value": "function greeting(name, callback) {\n  console.log('Hello, ' + name + '!');\n  callback();\n}\n\nfunction sayGoodbye() {\n  console.log('Goodbye!');\n}\n\ngreeting('John', sayGoodbye);"
+        }
+      ],
+      "id": "xEoWinXQ",
+      "createdAt": 1682350933184,
+      "updatedAt": 1682422105183
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "ejtoZnYa",
+      "tagsIds": [
+        "k7BDpYlW",
+        "cRFLDtUi"
+      ],
+      "description": "下面演示的是用electron的方式选择文件，而不是html的方式；\n思路就是渲染进程向预加载脚本发送指令，预加载脚本调用主进程的方法；弹出对话框选择文件，然后把结果返回给预加载脚本，预加载脚本进行dom操作或通过回调函数把参数传递给渲染进程，使得渲染进程获得最终结果\n这里重点了解回调函数的用法",
+      "name": "electron进程通讯的概念：invoke是双向通信的更佳方案",
+      "content": [
+        {
+          "label": "renderer.js 渲染进程文件",
+          "language": "javascript",
+          "value": "//+++++++++++++++++++ 1）选择文件的部分，这个示例演示了双路通信，其中的关键词是handle和 invoke\n//加载后执行\nwindow.addEventListener('DOMContentLoaded,()=>{\n   const btn = document.querySelector(\"#btn\")\n   btn.addEventListener('click'()=>{\n//upload()是在preload.js预加载脚本里定义的调用主进程里事件的方法\n        //这里upload里的参数()={}是一个回调函数,是由preload.js的upload方法传过来的\n       window.api.upload((file)=>{ //file是回调函数的形参\n       //通过preload.js里定义的回调函数，在这里调用后获取到结果\n       //本例中这个file是一个文件的路径，从主线程main.js通过preload.js以回调的形式传过来。也就是说这里执行调用了preload里的回调函数upload()\n          document.querySelector('input').value = file\n       })\n   })\n})\n//+++++++++++++++++++++ 2）更改窗口标题的部分,这个示例显示了怎么从渲染进程给主进程传递参数\nwindow.addEventListener('DOMContentLoaded,()=>{\n   const btn = document.querySelector(\"#btn2\")\n   btn.addEventListener('click'()=>{\n     const title = document.querySelector(\"input\").value\n     //changeTitle是预加载脚本的方法，这里是把title传递过去，然后预加载脚本再传递给主进程\n     window.api.changeTitle(title)\n   })\n})"
+        },
+        {
+          "label": "preload.js预加载脚本中使用invoke()",
+          "language": "javascript",
+          "value": "//++++++++++++++++++++++++++ 选择文件\ncontextBridge.exposeInMainWorld('api',{\n   //这里是定义了一个方法，等待别处(渲染进程)的调用\n   upload:async(callback) =>{ //注意匿名函数可以直接加async关键字，这里的参数是形参\n     //selectFile是主进程定义的事件，被预加载脚本调用\n     //return ipcRenderer.invoke('selectFile')//这里返回的是主进程里的promise对象,下面是更优的写法\n     const file = await ipcRenderer.invoke('selectFile')//await返回的是promise的resove结果\n     //console.log(file) //这里会打印出文件路径\n     //document.querySelector('input').value = file//这里进行dom操作不是最优的，应该在渲染进程完成\n     callback(file)\n   },\n})\n//++++++++++++++++++++++++++ 改变窗口标题title\ncontextBridge.exposeInMainWorld('api'，{\n   changeTitle: (newTitle) => {\n     //调用主进程事件\n     ipcRenderer.send('updateTitle',newTitle)\n   },\n})"
+        },
+        {
+          "label": "main.js",
+          "language": "javascript",
+          "value": "//主进程这里是在定义事件；注意：很多程序都是基于事件响应的，很简单的概念\n//不用之前的ipcMain.on而是ipcMain.handle\nipcMain.handle('selectFile',async (event)=>{\n  // const obj = await dialog.showOpenDialog({}}) //这里返回一个对象，下面解构其中的属性\n  //console.log(obj)\n   const {filePaths} = await dialog.showOpenDialog({}})\n   //将结果return出去，preload.js里会接收到\n   return filePaths[0] \n})\n//+++++++++++++修改窗口标题\n//updateTitle是事件对象，value是从渲染进程通过预加载脚本preload.js传递过来的标题的值\nipcMain.on('updateTitle',(event,value)=>{\n   //console.log(value) //这个value就是窗口的标题\n   //找到网页对象，然后更改他的标题\n   BrowserWindow.fromWebContents(event.sender).title=value \n   \n})"
+        },
+        {
+          "label": "html",
+          "language": "javascript",
+          "value": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <title>改变这里标题</title>\n  </head>\n  <body>\n    <input type=\"text\" />\n    <button id=\"btn\">上传文件</button>\n     \n    <input type=\"text\" />\n    <button id=\"btn2\">设置标题</button>\n    \n    <-- render.js是渲染进程代码 -->\n    <script src=\"renderer.js\"></script>\n  </body>\n</html>"
+        }
+      ],
+      "id": "Aax9Kd85",
+      "createdAt": 1682407857072,
+      "updatedAt": 1682561324112
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "将英文转换为中文",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "// 1）在 Vue 实例中定义一个名为 statusMap 的对象，用于存储 status 对应的中文翻译\n// 2) 然后，在模板中使用计算属性来获取状态的中文翻译\n<template>\n  <div>\n    状态：{{ statusText }}\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      status: {\n        status: 'HEALTH_OK' // 英文状态码\n      },\n       //1）在 Vue 实例中定义一个名为 statusMap 的对象，用于存储 status 对应的中文翻译\n      statusMap: {\n        'HEALTH_Ok': '健康', // 中文翻译\n        'HEALTH_Warn': '告警',\n        'HEALTH_Err': '错误'      \n      }\n    }\n  },\n  computed: {\n  // 2) 然后，在模板中使用计算属性来获取状态的中文翻译\n    statusText() {\n      return this.statusMap[this.status.status];\n    }\n  }\n}\n</script>"
+        }
+      ],
+      "id": "WTy1bbCe",
+      "createdAt": 1682563280234,
+      "updatedAt": 1682563598252
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "K9oTGZ3c",
+        "jPiHk23T",
+        "itTFTksg",
+        "7B1vmnZR"
+      ],
+      "description": null,
+      "name": "export/import",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "//import的代码会先执行，import的代码执行完成后才会执行自身的代码，\n//TTop level await:另外import的代码模块里用await可以不用写async,(这个叫top level await)注意await会阻断代码的执行，这个特性在某些情况下很有用，也可能在不需要的情况下有害；\n\nexport default someName  //如果是export default 过来的，那么import 的名称可以自定义"
+        }
+      ],
+      "id": "aoKbCKP3",
+      "createdAt": 1682586627971,
+      "updatedAt": 1682590824364
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "uIXLFdiz",
+      "tagsIds": [],
+      "description": null,
+      "name": "lodash install",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "npm i lodash-es\n在vscode安装后点开node_modules目录下会有lodash_es文件夹，下面有很多.js文件，是lodash的方法；\n举例：将其中的cloneDeep.js导入,点击cloneDeep.js可以查看其中内容,可以看到这个方法是export default cloneDeep出来的，这就是说，import进来的时候可以自定义名称。"
+        }
+      ],
+      "id": "4-gYIY6A",
+      "createdAt": 1682661328548,
+      "updatedAt": 1682662867017
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "uf8TkRi0",
+        "BImuQBfA",
+        "tocBVsRT",
+        "N_xlnWtn",
+        "NwaiK6Nk",
+        "nO7R5SUy",
+        "v8-YaD_f",
+        "hUnbIkaC"
+      ],
+      "description": "知识点：函数的拆分；forEach()的使用；setTimeout(）宏任务的延迟作用",
+      "name": "draggable-list 列表拖拽",
+      "content": [
+        {
+          "label": "index.html",
+          "language": "javascript",
+          "value": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Document</title>\n  <link rel=\"stylesheet\" href=\"index.css\" />\n</head>\n<body>\n  <!-- \n    1. DOM\n    2. HTML5  拖拽的API\n       dragstart dragend\n       dragover  dragenter\n       dragleave \n   -->\n  <div class=\"draggable-list-wrapper\"></div>\n\n  <script src=\"index.js\"></script>\n</body>\n</html>"
+        },
+        {
+          "label": "index.css",
+          "language": "javascript",
+          "value": "ul {\n  padding: 0;\n  margin: 0;\n  list-style: none;\n}\n\np {\n  margin: 0;\n}\n\n.draggable-list-wrapper {\n  width: 500px;\n  margin: 50px auto;\n  box-shadow: 1px 3px 5px #999;\n  background-color: #fff;\n  padding: 10px 30px 30px;\n}\n\n.draggable-item {\n  height: 50px;\n  line-height: 50px;\n  border: 1px solid #ddd;\n  margin-top: 20px;\n  padding: 0 15px;\n}\n\n.dragging {\n  opacity: 0;\n}"
+        },
+        {
+          "label": "index.js",
+          "language": "javascript",
+          "value": "const listData = [\n  '111111111111111',\n  '222222222222222',\n  '333333333333333',\n  '444444444444444'\n];\n//建立一个模块，不需要多次执行，只执行一次\n;(() => {\n  const oWrapper = document.querySelector('.draggable-list-wrapper');\n\n  const init = () => {\n    render();\n    bindEvent();\n  }\n\n  function render () {\n    const oList = createList();\n    oWrapper.appendChild(oList);\n  }\n\n  function bindEvent () {\n    const oDraggableList = oWrapper.querySelector('.draggable-list');\n    const oDraggableItems = oDraggableList.querySelectorAll('.draggable-item');\n    \n     //事件冒泡不会被阻止（false表示事件不会被捕获或停止传播）\n    oDraggableList.addEventListener('dragover', handleDragOver, false);\n    window.addEventListener('dragover', (e) => e.preventDefault(), false);\n    oDraggableList.addEventListener('dragenter', (e) => e.preventDefault(), false);\n    window.addEventListener('dragenter', (e) => e.preventDefault(), false);\n\n    oDraggableItems.forEach(item => {\n      item.addEventListener('dragstart', handleDragStart, false);\n      item.addEventListener('dragend', handleDragEnd, false);\n    })\n  }\n\n  function handleDragStart () {\n    const item = this;\n    setTimeout(() => item.classList.add('dragging'), 0);\n  }\n\n  function handleDragEnd () {\n    const item = this;\n    item.classList.remove('dragging');\n  }\n\n  function handleDragOver (e) {\n    e.preventDefault();\n\n    const oDraggableList = this;\n\n    const oDraggingItem = oDraggableList.querySelector('.dragging');\n    const oSibItems = oDraggableList.querySelectorAll('.draggable-item:not(.dragging)');\n    const oSibItem = [...oSibItems].find(item => e.clientY <= item.offsetTop + item.offsetHeight / 2);\nclassName\n    oDraggableList.insertBefore(oDraggingItem, oSibItem);\n  }\n\n  function createList () {\n    const oDraggableList = document.createElement('ul');\n    oDraggableList.className = 'draggable-list';\n    \n    //使用forEach循环遍历listData数组中的每个元素，对于每个元素都创建一个li元素（oItem）;该代码段最终的作用是在oDraggableList列表中动态地添加了多个带有item信息的可拖动的 li元素\n    listData.forEach(item => {\n      const oItem = document.createElement('li');\n      oItem.className = 'draggable-item';\n      oItem.draggable = true;\n      oItem.innerHTML = `<p>${ item }</p>`;\n      oDraggableList.appendChild(oItem);\n    });\n\n    return oDraggableList;\n  }\n\n  init();\n\n})();"
+        }
+      ],
+      "id": "2g0UUClo",
+      "createdAt": 1682909053387,
+      "updatedAt": 1682912760907
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": "该文介绍了一个名为“store”的变量，其中包含一个函数add和两个属性nextId和cache。函数add用于将函数添加到cache中以便缓存并返回true，同时会分配一个唯一的id。如果函数已经存在（根据其id判断），则不再添加并返回false。",
+      "name": "存储唯一函数集合",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "//其中包含一个函数add和两个属性nextId和cache,核心理解：函数也是可以动态添加属性的\nvar store = {\n//跟踪下一个要被赋值的Id\n  nextId: 1,\n//使用一个对象作为缓存,在其中存储函数\n  cache: {},\n  //仅当函数唯一时,将该函数加入缓存\n  add: function (fn) {\n    if (!fn.id) {\n      //给函数动态添加属性\n      fn.id = this.nextId++;\n      this.cache[fn.id] = fn;\n      return true;\n    }\n  },\n};\nfunction ninja() {}\n//assert(store.add(ninja), 'Function was safely added.');\n//assert(!store.add(ninja), 'But it was only added once.');\nstore.add(ninja)"
+        }
+      ],
+      "id": "SJQ2R0Qg",
+      "createdAt": 1683173567406,
+      "updatedAt": 1683175038916
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "获取数据类型",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "如何通过函数获取变量的数据类型？\n\nconst getType = (value) => {\n  const match = Object.prototype.toString.call(value).match(/ (\\w+)]/)\n  return match[1].toLocaleLowerCase()\n}\n\ngetType() // undefined\ngetType({}}) // object\ngetType([]) // array\ngetType(1) // number\ngetType('fatfish') // string\ngetType(true) // boolean\ngetType(/fatfish/) // regexp"
+        }
+      ],
+      "id": "O8i-87bE",
+      "createdAt": 1683183296670,
+      "updatedAt": 1683183312174
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "设置cookies",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "设置cookies：cookie 可能是我见过的最糟糕的 API，它太难用了，我们不得不重新封装它以最大限度地提高我们的开发效率。\n\nconst setCookie = (key, value, expire) => {\n  const d = new Date();\n  d.setDate(d.getDate() + expire);\n  document.cookie = `${key}=${value};expires=${d.toUTCString()}`;\n};\n\n获取 cookie：除了写入cookie之外，我们还会参与到它的读取操作中。\n\nconst getCookie = (key) => {\n  const cookieStr = unescape(document.cookie);\n  const arr = cookieStr.split(\"; \");\n  let cookieValue = \"\";\n  for (let i = 0; i < arr.length; i++) {\n    const temp = arr[i].split(\"=\");\n    if (temp[0] === key) {\n      cookieValue = temp[1];\n      break;\n    }\n  }\n  return cookieValue;\n};\n\n删除 cookie:删除cookie的想法是什么？其实只要把它的过期时间设置到这个时刻，它就会立即过期。\n\nconst delCookie = (key) => {\n  document.cookie = `${encodeURIComponent(key)}=;expires=${new Date()}`;\n};"
+        }
+      ],
+      "id": "k2U-hjYo",
+      "createdAt": 1683183363559,
+      "updatedAt": 1683183489863
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "生成随机字符串",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "生成随机字符串:不知道大家有没有遇到过需要生成随机字符串的场景。我遇到过很多次，每次都要重新google一遍，直到学会这个工具功能。\n\nconst randomString = (len) => {\n  let chars = \"ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz123456789\";\n  let strLen = chars.length;\n  let randomStr = \"\";\n  for (let i = 0; i < len; i++) {\n    randomStr += chars.charAt(Math.floor(Math.random() * strLen));\n  }\n  return randomStr;\n};\n\nrandomString(10) // pfkMfjEJ6x\nrandomString(20) // ce6tEx1km4idRNMtym2S\n\n生成指定范围内的随机数:可能出于测试目的，我经常需要生成一定范围内的随机数。\n\nconst randomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;\n\nrandomNum(1, 10) // 6\nrandomNum(10, 20) // 11\n\n从数组中获取一个随机值:之前做过一个抽奖项目，需要让数组中的奖品随机出现。\n\nconst getRandomValue = array => array[Math.floor(Math.random() * array.length)]; \nconst prizes = [  '$100', '🍫', '🍔' ]\n\ngetRandomValue(prizes) // 🍫\ngetRandomValue(prizes) // 🍔\ngetRandomValue(prizes) // 🍫"
+        }
+      ],
+      "id": "EpSY4vj6",
+      "createdAt": 1683183516150,
+      "updatedAt": 1683183656341
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "自记忆函数",
+      "content": [
+        {
+          "label": "函数和其他对象类型的相似之处",
+          "language": "javascript",
+          "value": "也许让你感到惊讶的相似之处在于我们可以给函数添加属性,因为函数可以做对象能做的任何事情\n//创建新对象并为其分配一个新属性\nvar ninja = {};\nninja.name = \"hitsuke\";\n\n//创建新函数并为其分配一个新属性\nvar wieldSword = function(){};\nwieldSword.swordType = \"katana\";\n\n我们再来看看这种特性所能做的更有趣的事：\n● 在集合中存储函数使我们轻易管理相关联的函数。例如，某些特定情况下必须\n调用的回调函数。\n● 记忆让函数能记住上次计算得到的值，从而提高后续调用的性能。\n"
+        },
+        {
+          "label": "Fragment 2",
+          "language": "javascript",
+          "value": ""
+        }
+      ],
+      "id": "qN1ThAkV",
+      "createdAt": 1683191590615,
+      "updatedAt": 1683191843441
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "函数是第一类对象",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "JavaScript 中函数拥有对象的所有能力，也因此函数可被作为任意其他类型对象来对待。当我们说函数是第一类对象的时候，就是说函数也能够实现以下功能。\n\n● 通过字面量创建：\n  function ninjaFunction() {}\n  \n● 赋值给变量，数组项或其他对象的属性\n\tvar ninjaFunction = function() {};\n  ninjaArray.push(function(){});\n  ninja.data = function() {}; //给某个对象的属性赋值为一个新函数\n  \n● 作为函数的参数来传递\n  function call(ninjaFunction){\n    ninjaFunction();\n  }\n  call(function(){}); //一个新函数作为参数传递给函数\n  \n● 作为函数的返回值。\n  function returnNewNinjaFunction() {\n    return function() {}; //返回一个新函数\n  }"
+        }
+      ],
+      "id": "ekTguYOA",
+      "createdAt": 1683192993006,
+      "updatedAt": 1683193405066
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": "给vue页面添加一个背景，可是在样式中添加了背景图片后，编译打包后，配置到服务器上时，由于路径解析的问题，图片并不能够正确的显示出来，如下CSS样式：background:url(\"../../assets/login.jpg\")，因此必须换一种方法，以下是百度得来并实践可行的两种方法",
+      "name": "给vue页面添加背景图片",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "<div class=\"login\" :style =\"login\"></div>\n\nexport default {\n  name：'login',\n  data () {\n    return () {\n        login: {\n            backgroundImage: `url(${require('@/assets/images/bg.png')})`,\n            backgroundRepeat: 'no-repeat',\n            backgroundPosition: 'top'\n        }\n   }\n}}"
+        }
+      ],
+      "id": "a79CjAzj",
+      "createdAt": 1683774739056,
+      "updatedAt": 1683774873818
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [],
+      "description": null,
+      "name": "微软雅黑字体",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": " font-family: \"Microsoft YaHei\"\n  font-family: Microsoft YaHei UI, Microsoft YaHei UI-Regular;\n"
+        }
+      ],
+      "id": "P-ZKOCqP",
+      "createdAt": 1683776214358,
+      "updatedAt": 1683776230612
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [
+        "MapSWFq2",
+        "KQaIthCu"
+      ],
+      "description": "搜索的功能方法不用写，是用后端给的filter字段去筛选即可；",
+      "name": "搜索后台数据列表项",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "<template>\n  <div class=\"content\">\n    <el-form ref=\"form\" :model=\"searchForm\" :rules=\"formRules\" class=\"search-form\" inline>\n      <el-form-item prop=\"formItem\">\n        <el-select v-model=\"searchForm.unitname\" clearable placeholder=\"请选择产品\">\n          <el-option\n            v-for=\"option in options\"\n            :key=\"option.value\"\n            :label=\"option.label\"\n            :value=\"option.value\"\n          />\n        </el-select>\n      </el-form-item>\n      <el-form-item prop=\"formItem\">\n        <el-input v-model=\"searchForm.username\" placeholder=\"请输入用户\" clearable />\n      </el-form-item>\n      <el-form-item prop=\"formItem\">\n        <el-input v-model=\"searchForm.type\" placeholder=\"请输入类型\" clearable />\n      </el-form-item>\n      <el-form-item prop=\"formItem\">\n        <el-input v-model=\"searchForm.content\" placeholder=\"请输入日志内容\" clearable />\n      </el-form-item>\n      <el-form-item prop=\"formItem\" class=\"datePick\">\n        <el-date-picker\n          v-model=\"searchForm.createTime\"\n          placeholder=\"请选择时间\"\n          type=\"datetimerange\"\n          start-placeholder=\"开始日期\"\n          end-placeholder=\"结束日期\"\n          :default-time=\"['12:00:00']\"\n          clearable\n        />\n      </el-form-item>\n      <el-form-item prop=\"formItem\">\n        <el-button type=\"primary\" @click=\"search\">查询</el-button>\n      </el-form-item>\n    </el-form>\n    <el-alert\n      v-if=\"!pageList.data || pageList.data.length === 0 || pageList.data.length === null || pageList.data.length === undefined\"\n      title=\"数据不存在\"\n      type=\"info\"\n      description=\"当前条件下没有查询到任何数据\"\n      show-icon\n      center\n    />\n    <el-table\n      ref=\"table\"\n      v-loading=\"loading\"\n      border\n      :data=\"pageList.data\"\n      class=\"atone-tbl\"\n      :max-height=\"tblHeight\"\n      size=\"middle\"\n    >\n      <el-table-column fixed type=\"selection\" />\n      <el-table-column prop=\"unitname\" label=\"产品\" min-width=\"40px\" />\n      <el-table-column prop=\"username\" label=\"用户\" min-width=\"40px\" />\n      <el-table-column prop=\"type\" label=\"类型\" min-width=\"40px\" />\n      <el-table-column prop=\"content\" label=\"日志内容\" min-width />\n      <el-table-column prop=\"createTime\" label=\"时间\" min-width=\"40px\">\n        <template slot-scope=\"scope\">\n          {{ dateFormat(scope.row.createTime) }}\n        </template>\n      </el-table-column>\n      <el-table-column prop=\"comment\" label=\"备注\" min-width=\"50px\" />\n    </el-table>\n    <el-pagination\n      :current-page.sync=\"pageRequest.pageNum\"\n      :page-sizes=\"[2,10, 20, 50, 100]\"\n      :page-size=\"pageRequest.pageSize\"\n      layout=\"total, sizes, prev, pager, next, jumper\"\n      :total=\"pageList.total\"\n      background\n      :pager-count=\"7\"\n      @size-change=\"sizeChange\"\n      @current-change=\"currentChange\"\n    />\n  </div>\n</template>\n\n<script>\nimport { timeToYYYYMMDDHHmmss } from '@/utils/date'\nimport * as useApi from '@/api/user'\nexport default {\n  name: 'User',\n  data() {\n    return {\n      options: [{\n        value: 'dbone',\n        label: 'dbone'\n      }, {\n        value: 'idb',\n        label: 'idb'\n      }, {\n        value: 'graphone',\n        label: 'graphone'\n      }],\n      tblHeight: 400,\n      loading: false,\n      pageRequest: {\n        'page': 1,\n        'pageSize': 10,\n        'planType': null,\n        'filter': {\n          'unitId': '8dd94f4607c446feb27db84943feb1c1',\n          'parentId': '37ca91777b2a4a6ca2b2846f9852e78a',\n          'name': '',\n          'content': 'key'\n        }\n      },\n      pageList: {\n        pageNum: 1,\n        pageSize: 5,\n        total: 0,\n        data: []\n      },\n      searchForm: {\n        unitname: '',\n        username: '',\n        type: '',\n        content: '',\n        createTime: []\n      },\n      formRules: {\n        unitname: [\n          { required: true, message: '请选择产品', trigger: 'change' }\n        ]\n      }\n    }\n  },\n  mounted() {\n    // 获取容器当前高度，重设表格的最大高度\n    this.getTableMaxHeight()\n    window.onresize = function() { // 用于使表格高度自适应的方法\n      this.getTableMaxHeight() // 获取容器当前高度，重设表格的最大高度\n    }\n    this.getList()\n  },\n  methods: {\n    // 获取容器当前高度，重设表格的最大高度\n    getTableMaxHeight() {\n      this.$nextTick(function() {\n        this.tblHeight = document.documentElement.clientHeight - 220\n      })\n    },\n    dateFormat(date) {\n      return timeToYYYYMMDDHHmmss(date)\n    },\n    getList() {\n      this.pageRequest.order = 'ASC'\n      this.loading = true\n      this.pageRequest.order = 'ASC'\n      this.loading = true\n      useApi.logManage(this.pageRequest)\n        .then(res => {\n          if (res.code === '0') {\n            if (res.data.data && res.data.data.length > 0) {\n              this.pageList.data = res.data.data\n              this.pageList.total = res.data.totalCount\n              console.log('%c this.pageList.data', 'background:yellow', this.pageList.data, this.pageList.data[2].type)\n            } else {\n              this.pageList.data = []\n              this.pageList.total = 0\n            }\n          } else {\n            this.pageList.data = []\n            this.pageList.total = 0\n          }\n          this.loading = false\n        })\n        .catch(err => {\n          console.log(err)\n          this.loading = false\n          this.pageList.data = []\n          this.pageList.total = 0\n        })\n    },\n    onRefresh() {\n      this.getList()\n    },\n    search() {\n      //表单验证-不能全部为空\n      if (!this.searchForm.unitname && !this.searchForm.username && !this.searchForm.type && !this.searchForm.content && (!this.searchForm.createTime || this.searchForm.createTime.length === 0)) {\n        this.$message.warning('请至少选择一个搜索条件')\n        return\n      }\n      const [startTime, endTime] = this.searchForm.createTime.map(time => timeToYYYYMMDDHHmmss(time))\n      this.pageRequest.filter = {\n        // unitId: '8dd94f4607c446feb27db84943feb1c1',\n        // parentId: '37ca91777b2a4a6ca2b2846f9852e78a',\n        unitname: this.searchForm.unitname,\n        username: this.searchForm.username,\n        type: this.searchForm.type,\n        content: this.searchForm.content,\n        createTime: startTime, // 注意这里是单独的字段，不是对象，根据是后台给个字段类型\n        comment: this.searchForm.comment\n      }\n      this.pageRequest.startTime = startTime\n      this.pageRequest.endTime = endTime\n      this.pageRequest.pageNum = 1\n      // this.pageRequest.pageSize = 0 // 如果不传这个参数，后端接口会使用默认值\n      // this.pageRequest.search = '' // 如果不传这个参数，后端接口会使用默认值\n      this.$refs.table.clearSelection()\n      this.getList()\n    },\n    sizeChange(val) {\n      this.pageRequest.pageSize = val\n      this.getList()\n    },\n    currentChange(val) {\n      this.pageRequest.pageNum = val\n      this.getList()\n    }\n  }\n}\n</script>\n<style lang=\"less\" scoped>\n/deep/.el-input__inner {\n  width: 160px;\n}\n/deep/.datePick .el-input__inner {\n  width:inherit;\n}\n/deep/.el-table{\n  overflow: hidden;\n}\n</style>\n\n"
+        }
+      ],
+      "id": "gWUSHIce",
+      "createdAt": 1683799993137,
+      "updatedAt": 1683800215058
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [
+        "0DVV1_vt",
+        "F3iRFiaA"
+      ],
+      "description": null,
+      "name": "引跑218项目路由配置",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "//若依系统的路由配置\nimport Vue from \"vue\";\nimport Router from \"vue-router\";\nimport Main from \"../views/Main.vue\";\nimport sinaMiliary from \"../views/internet/sina/sinaMain.vue\";\nimport mineindex from \"../views/mine/setting\";\n// Vue.use(VueRouter);\nVue.use(Router);\n\n/**\n * Note: 路由配置项\n *\n * hidden: true                     // 当设置 true 的时候该路由不会再侧边栏出现 如401，login等页面，或者如一些编辑页面/edit/1\n * alwaysShow: true                 // 当你一个路由下面的 children 声明的路由大于1个时，自动会变成嵌套的模式--如组件页面\n *                                  // 只有一个时，会将那个子路由当做根路由显示在侧边栏--如引导页面\n *                                  // 若你想不管路由下面的 children 声明的个数都显示你的根路由\n *                                  // 你可以设置 alwaysShow: true，这样它就会忽略之前定义的规则，一直显示根路由\n * redirect: noRedirect             // 当设置 noRedirect 的时候该路由在面包屑导航中不可被点击\n * name:'router-name'               // 设定路由的名字，一定要填写不然使用<keep-alive>时会出现各种问题\n * query: '{\"id\": 1, \"name\": \"ry\"}' // 访问路由的默认传递参数\n * roles: ['admin', 'common']       // 访问路由的角色权限\n * permissions: ['a:a:a', 'b:b:b']  // 访问路由的菜单权限\n * meta : {\n    noCache: true                   // 如果设置为true，则不会被 <keep-alive> 缓存(默认 false)\n    title: 'title'                  // 设置该路由在侧边栏和面包屑中展示的名字\n    icon: 'svg-name'                // 设置该路由的图标，对应路径src/assets/icons/svg\n    breadcrumb: false               // 如果设置为false，则不会在breadcrumb面包屑中显示\n    activeMenu: '/system/user'      // 当路由设置了该属性，则会高亮相对应的侧边栏。\n  }\n */\n// 公共路由\nexport const constantRoutes = [];\nlet routes = [\n  {\n    path: \"/im/home\",\n    component: () => import(\"@/views/im/home2\"),\n  },\n  {\n    path: \"/test\",\n    component: () => import(\"@/views/test\"),\n  },\n  {\n    path: \"/pathRedirect\",\n    name: \"pathRedirect\",\n    meta: {\n      index: 2,\n    },\n    component: () => import(\"@/views/login/pathRedirect\"),\n  },\n  {\n    path: \"/\",\n    redirect: \"/index\",\n    name: \"Main\", // 路由名称\n    component: Main, // 组件对象\n    children: [\n      {\n        path: \"/index\",\n        name: \"index\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/home/index\"),\n      },\n      {\n        path: \"/index_old\",\n        name: \"index_old\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/home\"),\n      },\n      {\n        path: \"/zl\",\n        name: \"specialColumn\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/specialColumn/index\"),\n      },\n      {\n        path: \"/course\",\n        name: \"course\",\n        /*meta: {\n          index: 1,\n          keepAlive: true,\n        },*/\n        component: () => import(\"@/views/course\"),\n      },\n      //虚拟因特网\n      {\n        path: \"/internet/index\",\n        name: \"internet\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/internet\"),\n      },\n      {\n        path: \"/resource/index\",\n        name: \"resource\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n          activeMenu: \"/resource/index\",\n        },\n        component: () => import(\"@/views/resource\"),\n        // children: [\n        //   {\n        //     path: \"/content/list\",\n        //     name: \"contentList\",\n        //     meta: {\n        //       index: 1,\n        //       keepAlive: true,\n        //     },\n        //     component: () => import(\"@/views/content/list\"),\n        //   },\n        // ],\n      },\n      {\n        path: \"/knowledge/encyclopedia\",\n        name: \"encyclopedia\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/knowledge/encyclopedia.vue\"),\n      },\n      {\n        path: \"/knowledge/encyclopedia2\",\n        name: \"encyclopedia2\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/knowledge/encyclopedia2.vue\"),\n      },\n      {\n        path: \"/knowledge/ency_detail\",\n        name: \"ency_detail\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/knowledge/ency_detail.vue\"),\n      },\n      {\n        path: \"/know\",\n        name: \"know\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/knowledge/encyclopedia_sub.vue\"),\n      },\n      {\n        path: \"/academic/index\",\n        name: \"academicindex\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/academic\"),\n      },\n      {\n        path: \"/academic/circles/:id\",\n        name: \"academiccircles\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/academic/circles.vue\"),\n      },\n      {\n        path: \"/academic/detail/:id/:columnId\",\n        name: \"academicDetail\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/academic/detail.vue\"),\n      },\n      {\n        path: \"resource/content/list\",\n        name: \"contentList\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/content/list\"),\n      },\n      {\n        path: \"/content/detail\",\n        name: \"detail\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/content/detail\"),\n      },\n      {\n        path: \"/search\",\n        name: \"search\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/search\"),\n      },\n      {\n        path: \"/subject/index\",\n        name: \"subject\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/subject\"),\n      },\n      {\n        path: \"/article\",\n        name: \"article\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/content/detail\"),\n      },\n      {\n        path: \"/pic\",\n        name: \"pic\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/home/components/Pic_detail\"),\n      },\n      {\n        path: \"/video\",\n        name: \"video\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/content/Video_detail\"),\n      },\n      // {\n      //   path: \"/clip\",\n      //   name: \"clip\",\n      //   meta: {\n      //     index: 1,\n      //     keepAlive: true,\n      //   },\n      //   component: () => import(\"@/views/home/components/Video_clips\"),\n      // },\n      {\n        path: \"/doc\",\n        name: \"docdetail\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/content/doc\"),\n      },\n      {\n        path: \"/attention\",\n        name: \"mineattention\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/content/list\"),\n      },\n      {\n        path: \"/mine/setting\",\n        name: \"mineindex\",\n        redirect: \"/mine/setting/mine\",\n        meta: {\n          index: 3,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/mine/setting\"),\n        children: [\n          {\n            path: \"/mine/setting/mine\",\n            name: \"mine\",\n            meta: {\n              index: 3,\n              keepAlive: true,\n            },\n            component: () => import(\"@/views/mine/setting/mine\"),\n          },\n          {\n            path: \"/mine/mySubscribe\",\n            name: \"mySubscribe\",\n            meta: {\n              index: 3,\n              keepAlive: true,\n            },\n            component: () => import(\"@/views/mine/mySubscribe\"),\n          },\n          {\n            path: \"/mine/myFeedback\",\n            name: \"myFeedback\",\n            meta: {\n              index: 3,\n              keepAlive: true,\n            },\n            component: () => import(\"@/views/mine/myFeedback\"),\n          },\n          {\n            path: \"/mine/academic/:type\",\n            name: \"academic\",\n            meta: {\n              index: 3,\n              keepAlive: true,\n            },\n            component: () => import(\"@/views/mine/setting/academic\"),\n          },\n          {\n            path: \"/mine/thumbsUp\",\n            name: \"thumbsUp\",\n            meta: {\n              index: 3,\n              keepAlive: true,\n            },\n            component: () => import(\"@/views/mine/setting/thumbsUp\"),\n          },\n          {\n            path: \"/mine/myfootprint\",\n            name: \"minefootprint\",\n            meta: {\n              index: 3,\n              keepAlive: true,\n            },\n            component: () => import(\"@/views/mine/setting/myfootprint\"),\n          },\n          {\n            path: \"/mine/collection\",\n            name: \"collection\",\n            meta: {\n              index: 3,\n              keepAlive: true,\n            },\n            component: () => import(\"@/views/mine/setting/collection\"),\n          },\n          {\n            path: \"/mine/VideoList\",\n            name: \"VideoList\",\n            meta: {\n              index: 3,\n              keepAlive: true,\n            },\n            component: () =>\n              import(\"@/views/mine/setting/components/VideoList\"),\n          },\n          {\n            path: \"/mine/knowledge\",\n            name: \"topicKnowledge\",\n            meta: {\n              index: 3,\n              keepAlive: true,\n            },\n            component: () => import(\"@/views/mine/setting/knowledge\"),\n          },\n        ],\n      },\n    ],\n  },\n  {\n    path: \"/knowledge/graph\",\n    component: () => import(\"@/views/knowledge/graph\"),\n  },\n  {\n    path: \"/screen\",\n    name: \"screen\",\n    meta: {\n      index: 1,\n      keepAlive: true,\n    },\n    component: () => import(\"@/views/home/components/Echarts/allScreen\"),\n  },\n  // sina military\n  {\n    path: \"/sinaMilitary\",\n    redirect: \"/sinaMilitary/sina\",\n    name: \"sinaMilitary\", // 路由名称\n    meta: {\n      index: 1,\n      keepAlive: true,\n    },\n    component: () => import(\"@/views/internet/sina/sinaMain.vue\"),\n    children: [\n      {\n        path: \"/sinaMilitary/sina\",\n        name: \"sina\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/internet/sina\"),\n      },\n      {\n        path: \"/sinaMilitary/china_info\",\n        name: \"china_info\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/internet/sina/subPage/china_info\"),\n      },\n    ],\n  },\n  // internet site\n  {\n    path: \"/internet/site\",\n    redirect: \"/internet/site\",\n    name: \"internet-site\", // 路由名称\n    meta: {\n      index: 1,\n      keepAlive: true,\n    },\n    component: () => import(\"@/views/internet/site\"),\n    children: [\n      {\n        path: \"/internet/site/:alias\",\n        name: \"internet-site-item\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/internet/site/components/Main.vue\"),\n      },\n      {\n        path: \"/internet/site/:alias/:sub\",\n        name: \"internet-site-sub-item\",\n        meta: {\n          index: 1,\n          keepAlive: true,\n        },\n        component: () => import(\"@/views/internet/site/sub\"),\n      },\n    ],\n  },\n];\nconst routerContext = require.context(\"./modules\", true, /\\.js$/);\nrouterContext.keys().forEach((route) => {\n  const routerModule = routerContext(route);\n  /**\n   * 兼容 import export 和 require module.export 两种规范\n   */\n  routes = [...routes, ...(routerModule.default || routerModule)];\n});\n\nconst originalPush = Router.prototype.push;\nRouter.prototype.push = function push(location) {\n  return originalPush.call(this, location).catch((err) => err);\n};\n\n// 动态路由，基于用户权限动态去加载\nexport const dynamicRoutes = [];\n\nconst router = new Router({\n  mode: \"history\",\n  routes: routes,\n  linkActiveClass: \"is-active\",\n  scrollBehavior(to, from, savedPosition) {\n    if (savedPosition) {\n      return savedPosition;\n    } else {\n      return {\n        x: 0,\n        y: 0,\n      };\n    }\n  },\n});\n\nexport default router;\n"
+        }
+      ],
+      "id": "jV8X96in",
+      "createdAt": 1684203943721,
+      "updatedAt": 1684204005574
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "CIqaS_Yh",
+      "tagsIds": [],
+      "description": null,
+      "name": "日期使用动态值",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "<template>\n  <div>\n    <div id=\"bar_1\" style=\"width: 100%; height: 300px\"></div>\n  </div>\n</template>\n\n<script>\nimport moment from 'moment'\n\nexport default {\n  methods: {\n    echarts_1() {\n      var myChart = this.$echarts.init(document.getElementById('bar_1'))\n      // 获取当前日期和前6天日期\n      var now = moment()\n      var dates = []\n      for (var i = 6; i >= 0; i--) {\n        var date = now.clone().subtract(i, 'days')\n        dates.push(date.format('M-D'))\n      }\n       // 指定图表的配置项和数据\n      var option = {\n        yAxis: {\n          type: 'category',\n          data: dates  //这里使用当前日期和前6天日期\n        },\n      \n ..."
+        }
+      ],
+      "id": "i6EuqACf",
+      "createdAt": 1684552902314,
+      "updatedAt": 1684553137939
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [
+        "ap7EPQjh",
+        "U4R_iTAE",
+        "LWxPHcOo"
+      ],
+      "description": null,
+      "name": "路径判断",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "// 排除一个路径，如首页\nv-if和v-show的区别：\n注意：v-if决定dom元素是否存在，而v-show是隐藏和显示\n\n<div v-show=\"$route.path !== '/index'\">\n      <portalMenu></portalMenu>\n</div>\n\n//同一个div容器，路径不同样式不同\n<div class=\"main-container\" :style=\"{'margin-left': $route.path === '/index' ? '12px' : '200px'}\">"
+        }
+      ],
+      "id": "_4zn4SsK",
+      "createdAt": 1684725573866,
+      "updatedAt": 1684809374742
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "递归函数遍历DOM",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "<div id=\"subTree\">\n  <form>\n \t\t <input type=\"text\"/>\n  </form>\n  <p>Paragraph</p>\n  <span>Span</span>\n</div>\n\n<script>\n  function traverseDOM(element, callback) {\n    //用回调函数处理当前节点\n    callback(element);\n    element = element.firstElementChild;\n    //遍历每个子树\n    while (element) {\n      traverseDOM(element, callback);\n      element = element.nextElementSibling;\n    }\n  }\n  const subTree = document.getElementById(\"subTree\");\n  //通过调用travenscDOM 方法从根节点开始遍历\n  traverseDOM(subTree, function(element) {\n  \tassert(element !== null, element.nodeName);\n  });\n</script>"
+        }
+      ],
+      "id": "JPoYSV0T",
+      "createdAt": 1684735267295,
+      "updatedAt": 1684735453115
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "assert()断言函数",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "《JavaScript忍者秘籍》中的assert()断言函数是作者自己编写并使用的一个简单断言工具。它用于检查给定表达式的值是否为真，如果不是则抛出异常。断言函数通常在测试和调试代码时非常有用，它可以帮助开发人员快速发现问题所在，并及时采取措施修复。\n\n下面是assert()函数的基本语法：\n\nfunction assert(condition, message) {\n  if (!condition) {\n    throw new Error(message || \"Assertion failed\");\n  }\n}\n/*其中，condition参数是待检查的表达式，如果该表达式的值为false，则会抛出异常；message参数是可选的错误消息，用于描述断言失败的原因。\n例如，我们可以使用assert()函数来检测函数返回值是否符合预期：*/\n\nfunction addNumbers(x, y) {\n  return x + y;\n}\n// 检查addNumbers函数返回值是否为5\nassert(addNumbers(2, 3) === 5, \"加法计算错误\");\n\n/*在这个例子中，断言函数assert()将会检查addNumbers(2, 3)的返回值是否等于5，如果不是，则抛出异常并输出错误消息\"加法计算错误\"。\n\n需要注意的是，断言函数通常只在开发环境或测试环境中使用，并且应该在生产环境中移除。虽然断言能够帮助我们快速发现代码中的问题，但它也会影响性能，并且可能暴露敏感信息。因此，在生产环境中，我们通常会使用更加健壮和可靠的错误处理机制。"
+        }
+      ],
+      "id": "MN4AipIH",
+      "createdAt": 1684736188245,
+      "updatedAt": 1684736379978
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "动态class和样式",
+      "content": [
+        {
+          "label": "动态 class",
+          "language": "javascript",
+          "value": "//动态:class的值将合并到静态class里成为：class=\"demo active\" 注意boxASelected是一个布尔值\n<div class=\"demo\" :class=\"{active: boxASelected}\" @click=\"boxSelected('A')\">\n//使用计算属性\n<div class=\"demo\" :class=\"boxBClasses\" @click=\"boxSelected('B')\">\n//如果boxASelected为true相当于 class=\"demo active\"\n<div :class=\"['demo',{active: boxASelected}]\" @click=\"boxSelected('C')\">\n\ndata(){\n  return{\n     boxASelected:false,\n     boxBSelected:false,\n     boxCSelected:false\n  }\n},\ncomputed:{\n  //如果有复杂的条件判断等，可以用computed属性简化template的代码\n  boxBClasses(){\n   if(...) return{active: this.boxBSelected}\n  }\n},\nmethods:{\n  //true or flase 判断\n}"
+        },
+        {
+          "label": "动态 :style",
+          "language": "javascript",
+          "value": "输入框输入色值改变页面元素样式\n\n<input type=\"text\" v-model=\"inputBackgroundColor\" />\n//注意：style里实际就是用的js的代码，所以css的属性名用驼峰格式不用background-color这样的写法\n<p :style=\"{backgroundColor: inputBackgroundColor}\"> style me </p>\n\ndata(){\n return{\n    inputBackgroundColor:''\n }\n}"
+        }
+      ],
+      "id": "exRFnG4Q",
+      "createdAt": 1684747582559,
+      "updatedAt": 1684807455971
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [
+        "7BPAbRet",
+        "evMV3Veq",
+        "94resVPE",
+        "IlFuQhsy",
+        "Ejq9XUle",
+        "WS4qeyy8",
+        "82l3EbqQ"
+      ],
+      "description": null,
+      "name": "添加和删除元素",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "<section id='user-goals'>\n\n  <input type='text' v-model='enteredGoalValue'/>\n  <button @click='addGoal'> Add Goal </button>\n  \n  //goals是数组所以有length属性可用\n  <p v-if='goals.length===0'> No goals have been added yet </p>\n  //v-else必须直接在v-if后面\n  <ul v-else> \n     <li v-for=\"(goal,index) in goals\" @click='removeGoal(index)'> \n       <p> {{goal}} - {{index}} <p>\n       //用.stop阻止时间冒泡，就是要点击当前元素，和其他元素无关，不要有关联\n       <input type='text' @click.stop>\n     </li>\n  </ul>\n</section>\n\n<script>\nconst app = Vue.creatApp({\n   data(){\n     return{\n        //enteredGoalValue是input里v-model的值\n        enteredGoalValue:'',\n        goals:[]\n     }\n   },\n  methods:{\n    addGoal(){\n      this.goals.push(this.enteredGoalValue)\n    },\n    //删除元素；idx是v-for传过来的index值\n    removeGoal(idx){\n      this.goals.splice(idex,1)\n    }\n  }\n});\napp.mount('#user-goals')\n</script>\n"
+        },
+        {
+          "label": "v-for 遍历对象或数字",
+          "language": "javascript",
+          "value": "//遍历对象或数组(数组不用key)\n  <li v-for=\"(value, key,index) in {name: 'Max', age: 31}\"> {{value}} - {{key}} </li>\n\n  //遍历数字\n  <li v-for=\"num in 10\">{{num }}</li>"
+        }
+      ],
+      "id": "jqCf8pXS",
+      "createdAt": 1684810775638,
+      "updatedAt": 1684813256042
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "kYeA3Yuv",
+      "tagsIds": [
+        "9HOc4GA1",
+        "Rj0DhGLo",
+        "UiLjTXux"
+      ],
+      "description": "在element ui 多选table的selection-change函数中判断，符合条件时当前行才能被选中如何实现？",
+      "name": "符合条件时当前行才能被选中",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "在这个例子中，我们创建了一个表格，并通过@selection-change事件来监听用户选择行的变化。当用户选中或取消选中某一行时，会触发handleSelectionChange方法。其中，我们使用filter()方法来过滤出符合条件的行，并调用toggleRowSelection()方法来切换行的选择状态。\n需要注意的是，在组件内部使用this.$refs可以访问到组件的 DOM 元素。在上面的例子中，我们使用this.$refs.table来访问到表格组件的实例，并调用toggleRowSelection()方法来切换行的选择状态。\n\n<template>\n  <el-table :data=\"tableData\" @selection-change=\"handleSelectionChange\">\n    <el-table-column type=\"selection\"></el-table-column>\n    <el-table-column prop=\"name\" label=\"Name\"></el-table-column>\n    <el-table-column prop=\"age\" label=\"Age\"></el-table-column>\n  </el-table>\n</template>\n\n<script>\nexport default {\n  data () {\n    return {\n      tableData: [\n        { name: 'John', age: 20 },\n        { name: 'Tom', age: 25 },\n        { name: 'Mary', age: 30 }\n      ]\n    }\n  },\n  methods: {\n    handleSelectionChange(rows) {\n      // 断条件，例如只有年龄大于等于25的才能被选中\n      const selectedRows = rows.filter(row => row.age >= 25)\n      this.$refs.table.toggleRowSelection(selectedRows)\n    }\n  }\n}\n</script>"
+        },
+        {
+          "label": "toggleRowSelection()方法是？",
+          "language": "javascript",
+          "value": "toggleRowSelection()是 Element UI 表格组件中的一个方法，用于切换表格行的选择状态。它可以接受一个参数 row，表示需要切换选择状态的行数据。以下是 toggleRowSelection() 方法的基本语法：\n\nthis.$refs.table.toggleRowSelection(row)\n\n这里的 $refs.table 是表格组件的引用名，通常在表格上添加了 ref 属性后可以通过 $refs.table 获取到表格组件的实例。\n当调用 toggleRowSelection() 方法时，会自动根据传入的行数据判断该行是否已经被选中，如果已经被选中则将其取消选择，否则将其选中。如果没有传入行数据，则会将所有行的选择状态全部切换一遍。\n需要注意的是，toggleRowSelection() 方法只能在表格组件实例上调用，而不能在表格列组件内部使用。如果需要在列组件内部控制表格行的选择状态，可以使用作用域插槽或者事件来实现对应的逻辑。"
+        }
+      ],
+      "id": "SIoGN1I4",
+      "createdAt": 1684897328911,
+      "updatedAt": 1684901393953
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [
+        "YMapeYW6",
+        "kU7jx3aE",
+        "5Dflw_1b",
+        "Fcl20gmo",
+        "QbBV4zvx",
+        "eb97zzvl",
+        "JKa1LBV-",
+        "oahZqjuX",
+        "EbtawnJh",
+        "N9T0vt1r"
+      ],
+      "description": null,
+      "name": "子组件props、自定义事件",
+      "content": [
+        {
+          "label": "概念",
+          "language": "vue",
+          "value": "props和data()里定义的数据是一样的，所以不能重名,可以对数据设置类型、初始值以及验证；\n如果要修改值，不能修改父级的原始值，但可以在data()里声明一个变量，将props的要修改的值赋给这个变量，然后修改这个变量即可\n<script>\n  export default{\n     可以是数组的简单形式,或对象形式，可以更多的设置\n    //props:['name','phoneNumber',....]\n    //props是父组件传给子组件的，而emits是子组件传给父组件的\n    props:{\n      id:{\n \t\t\t\t type:String,\n         required:true,\n      },\n      name:{\n         type:String,\n         required:true,\n         default:'okzu',\n      },\n      isFavoriate:{\n         type:String,\n          required:false,\n          default:'0',\n          validator:function(value){\n            return value==='1' ||  value==='0';\n          }\n      } \n    },\n    //emits是自定义的事件\n    emits:['toggle-favorite'], //这里不是必须的\n    data(){\n      return{\n       //通过这种形式改变props的值，注意这并没有改变父级的原始值, 所以才可以。\n       //注意对props里值的引用，其实就是在引用data()里的值。\n       Favoriate:this.isFavoriate\n      }\n    },\n    methods:{\n     toggleFavorite(){\n       //$emit是内置的方法，在父元素可以直接通过v-on: (简写为@)进行事件监听接收 \n       //$emit方法设置了一个自定义事件 'toggle-favorite',第二个参数是传递的数据，当然参数可以更多，或者将若干值包裹在一个对象里...\n        this.$emit('toggle-favorite',this.id)\n     }\n       //父元素用@接收事件：@toggle-favorite = 'toggle-favoriteState'\n       //父元素的 friendId参数就是子元素发送过来的数据，可以有多个参数：\n       // toggleFavoriteStatus(friendId) { \n            //const findId = this.friends.find(friend => friend.id === friendId);\n            //identifiedFriend.isFavorite = !identifiedFriend.isFavorite;\n       //}\n    }\n  }\n</script>"
+        },
+        {
+          "label": "Child.vue",
+          "language": "vue",
+          "value": "核心：this.$emit('自定义的事件名称',第二个参数是传递给父组件的数据)\n<template>\n    <form @submit.prevent='submitData'>\n        <input type='text' v-model='enteredName'/>\n        <input type='tel' v-model='enteredPhone'/>\n        <input type='email' v-model='enteredEmail'/>\n\n        <button>Add Contact</button>\n    </form>\n</template>\n\n<script>\n    export default {\n        emits: ['add-contact'],\n        data() {\n            return {\n              //绑定表单输入的数据,v-model的数据都要在data中声明\n               enteredName: '',\n               enteredPhone: '',\n               enteredEmail: ''\n            }\n        },\n        methods: {\n            //提交自定义事件,将表单v-model的数据通过参数传递出去\n            submitData() {\n                this.$emit('add-contact',this.enteredName, this.enteredPhone, this.enteredEmail)\n                // OR\n                // const contactData = {\n                //     name: this.enteredName,\n                //     phone: this.enteredPhone,\n                //     email: this.enteredEmail\n                // }\n                // this.$emit('add-contact', contactData)\n            }\n        },\n        \n    }\n</script>\n"
+        },
+        {
+          "label": "Parent.vue",
+          "language": "vue",
+          "value": "<template>\n    <div>\n      <!-- 监听子组件自定义事件 add-contact -->\n       <new-friend @add-contact=\"addContact\"></new-friend>\n    </div>\n</template>\n\n<script>\n    export default {\n        data() {\n           return {\n            friends:[\n              {\n                id:'manuel',\n                name:'Lorenz',\n                phone:0123 45678 90,\n                email: 'manuel.com',\n                isFavorite:true\n              },\n              {...},\n              {...}\n            ]\n           }\n        },\n        methods: {\n            //接收子组件自定义事件传递的数据\n            addContact(name, phone, email) {\n               const newContact = {\n                id: new Data().toISOString(),\n                name: name,\n                phone: phone,\n                email: email,\n                isFavorite: false\n               }\n               //push一个对象进入friends数组\n               this.friends.push(newContact)\n            }\n        }\n    }\n</script>\n"
+        }
+      ],
+      "id": "3X84iSe8",
+      "createdAt": 1684986180885,
+      "updatedAt": 1685080633583
     }
   ],
   "tags": [
@@ -2290,6 +3066,318 @@
       "id": "oXNsTNra",
       "createdAt": 1681526467007,
       "updatedAt": 1681526467007
+    },
+    {
+      "name": "树形",
+      "id": "gJiRapX3",
+      "createdAt": 1681733962071,
+      "updatedAt": 1681733962071
+    },
+    {
+      "name": "tree",
+      "id": "T8D8hQN9",
+      "createdAt": 1681733966686,
+      "updatedAt": 1681733966686
+    },
+    {
+      "name": "Proxy",
+      "id": "SZZcOAmF",
+      "createdAt": 1681889366913,
+      "updatedAt": 1681889366913
+    },
+    {
+      "name": "for of",
+      "id": "tkMsewzC",
+      "createdAt": 1682239994396,
+      "updatedAt": 1682239994396
+    },
+    {
+      "name": "跨域",
+      "id": "eWJmuiVv",
+      "createdAt": 1682240101931,
+      "updatedAt": 1682240101931
+    },
+    {
+      "name": "csp",
+      "id": "tgcSxj7Y",
+      "createdAt": 1682240122868,
+      "updatedAt": 1682240122868
+    },
+    {
+      "name": "回调函数",
+      "id": "k7BDpYlW",
+      "createdAt": 1682392250879,
+      "updatedAt": 1682392250879
+    },
+    {
+      "name": "callback",
+      "id": "cRFLDtUi",
+      "createdAt": 1682392258095,
+      "updatedAt": 1682392258095
+    },
+    {
+      "name": "es6module",
+      "id": "K9oTGZ3c",
+      "createdAt": 1682586879778,
+      "updatedAt": 1682586879778
+    },
+    {
+      "name": "导入导出",
+      "id": "jPiHk23T",
+      "createdAt": 1682586896041,
+      "updatedAt": 1682586896041
+    },
+    {
+      "name": "export",
+      "id": "itTFTksg",
+      "createdAt": 1682586915139,
+      "updatedAt": 1682586915139
+    },
+    {
+      "name": "import",
+      "id": "7B1vmnZR",
+      "createdAt": 1682586921304,
+      "updatedAt": 1682586921304
+    },
+    {
+      "name": "mock",
+      "id": "3GrbAyQg",
+      "createdAt": 1682672075442,
+      "updatedAt": 1682672075442
+    },
+    {
+      "name": "mockdata",
+      "id": "rsoj0LnD",
+      "createdAt": 1682672082643,
+      "updatedAt": 1682672082643
+    },
+    {
+      "name": "拖拽",
+      "id": "uf8TkRi0",
+      "createdAt": 1682909073832,
+      "updatedAt": 1682909073832
+    },
+    {
+      "name": "列表拖拽",
+      "id": "BImuQBfA",
+      "createdAt": 1682909077344,
+      "updatedAt": 1682909077344
+    },
+    {
+      "name": "createElement",
+      "id": "N_xlnWtn",
+      "createdAt": 1682910021716,
+      "updatedAt": 1682910021716
+    },
+    {
+      "name": "appendChild",
+      "id": "NwaiK6Nk",
+      "createdAt": 1682910027269,
+      "updatedAt": 1682910027269
+    },
+    {
+      "name": "className",
+      "id": "nO7R5SUy",
+      "createdAt": 1682910049366,
+      "updatedAt": 1682910049366
+    },
+    {
+      "name": ":not",
+      "id": "v8-YaD_f",
+      "createdAt": 1682912713863,
+      "updatedAt": 1682912713863
+    },
+    {
+      "name": "insertBefore",
+      "id": "hUnbIkaC",
+      "createdAt": 1682912760841,
+      "updatedAt": 1682912760841
+    },
+    {
+      "name": "对象解构",
+      "id": "oiiyhcXF",
+      "createdAt": 1682914768930,
+      "updatedAt": 1682914768930
+    },
+    {
+      "name": "修改对象",
+      "id": "CH3Sh008",
+      "createdAt": 1682914911183,
+      "updatedAt": 1682914911183
+    },
+    {
+      "name": "对象修改",
+      "id": "g7tfu6yD",
+      "createdAt": 1682914924126,
+      "updatedAt": 1682914924126
+    },
+    {
+      "name": "insertAdjacentHTML",
+      "id": "dzcTexb5",
+      "createdAt": 1682934855009,
+      "updatedAt": 1682934855009
+    },
+    {
+      "name": "addEventListener",
+      "id": "7N_f-tUT",
+      "createdAt": 1683168247285,
+      "updatedAt": 1683168247285
+    },
+    {
+      "name": "引跑项目",
+      "id": "MapSWFq2",
+      "createdAt": 1683800039941,
+      "updatedAt": 1683800039941
+    },
+    {
+      "name": "atone",
+      "id": "KQaIthCu",
+      "createdAt": 1683800045072,
+      "updatedAt": 1683800045072
+    },
+    {
+      "name": "router",
+      "id": "0DVV1_vt",
+      "createdAt": 1684203975738,
+      "updatedAt": 1684203975738
+    },
+    {
+      "name": "路由",
+      "id": "F3iRFiaA",
+      "createdAt": 1684203981673,
+      "updatedAt": 1684203981673
+    },
+    {
+      "name": "YQ项目",
+      "id": "ap7EPQjh",
+      "createdAt": 1684726009184,
+      "updatedAt": 1684726009184
+    },
+    {
+      "name": "动态style",
+      "id": "U4R_iTAE",
+      "createdAt": 1684747510752,
+      "updatedAt": 1684747510752
+    },
+    {
+      "name": "动态样式",
+      "id": "LWxPHcOo",
+      "createdAt": 1684747523744,
+      "updatedAt": 1684747523744
+    },
+    {
+      "name": "遍历对象",
+      "id": "7BPAbRet",
+      "createdAt": 1684810999231,
+      "updatedAt": 1684810999231
+    },
+    {
+      "name": "splice",
+      "id": "evMV3Veq",
+      "createdAt": 1684811921856,
+      "updatedAt": 1684811921856
+    },
+    {
+      "name": "splice()",
+      "id": "94resVPE",
+      "createdAt": 1684811931575,
+      "updatedAt": 1684811931575
+    },
+    {
+      "name": "删除元素",
+      "id": "IlFuQhsy",
+      "createdAt": 1684811948000,
+      "updatedAt": 1684811948000
+    },
+    {
+      "name": "v-for",
+      "id": "Ejq9XUle",
+      "createdAt": 1684812765355,
+      "updatedAt": 1684812765355
+    },
+    {
+      "name": "阻止冒泡",
+      "id": "WS4qeyy8",
+      "createdAt": 1684813144145,
+      "updatedAt": 1684813144145
+    },
+    {
+      "name": "事件冒泡",
+      "id": "82l3EbqQ",
+      "createdAt": 1684813153721,
+      "updatedAt": 1684813153721
+    },
+    {
+      "name": "selection-change",
+      "id": "9HOc4GA1",
+      "createdAt": 1684897441855,
+      "updatedAt": 1684897441855
+    },
+    {
+      "name": "filter",
+      "id": "Rj0DhGLo",
+      "createdAt": 1684897450934,
+      "updatedAt": 1684897450934
+    },
+    {
+      "name": "toggleRowSelection",
+      "id": "UiLjTXux",
+      "createdAt": 1684897459541,
+      "updatedAt": 1684897459541
+    },
+    {
+      "name": "validator",
+      "id": "YMapeYW6",
+      "createdAt": 1684987115631,
+      "updatedAt": 1684987115631
+    },
+    {
+      "name": "props",
+      "id": "kU7jx3aE",
+      "createdAt": 1684987119358,
+      "updatedAt": 1684987119358
+    },
+    {
+      "name": "子级",
+      "id": "5Dflw_1b",
+      "createdAt": 1684987128027,
+      "updatedAt": 1684987128027
+    },
+    {
+      "name": "$emit",
+      "id": "Fcl20gmo",
+      "createdAt": 1685005723747,
+      "updatedAt": 1685005723747
+    },
+    {
+      "name": "子传父",
+      "id": "eb97zzvl",
+      "createdAt": 1685005753347,
+      "updatedAt": 1685005753347
+    },
+    {
+      "name": "子组件",
+      "id": "JKa1LBV-",
+      "createdAt": 1685006359699,
+      "updatedAt": 1685006359699
+    },
+    {
+      "name": "事件发送",
+      "id": "EbtawnJh",
+      "createdAt": 1685006766737,
+      "updatedAt": 1685006766737
+    },
+    {
+      "name": "自定义事件",
+      "id": "N9T0vt1r",
+      "createdAt": 1685006807489,
+      "updatedAt": 1685006807489
+    },
+    {
+      "name": "唯一值",
+      "id": "wvdogT73",
+      "createdAt": 1685068057988,
+      "updatedAt": 1685068057988
     }
   ]
 }
