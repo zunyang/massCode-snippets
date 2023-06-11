@@ -27,10 +27,10 @@
       "parentId": null,
       "isOpen": false,
       "isSystem": false,
-      "defaultLanguage": "vue",
+      "defaultLanguage": "javascript",
       "id": "-fio_qG6",
       "createdAt": 1678105368093,
-      "updatedAt": 1684812999695,
+      "updatedAt": 1685686373029,
       "index": 2
     },
     {
@@ -75,6 +75,26 @@
       "id": "uIXLFdiz",
       "createdAt": 1682661303338,
       "updatedAt": 1682661313945
+    },
+    {
+      "name": "VSCode",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "javascript",
+      "id": "WblIddgQ",
+      "createdAt": 1685590221911,
+      "updatedAt": 1685590244394
+    },
+    {
+      "name": "HTML",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "html",
+      "id": "MqWdF2i4",
+      "createdAt": 1685696039426,
+      "updatedAt": 1685696061020
     }
   ],
   "snippets": [
@@ -270,7 +290,9 @@
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "y-C8x3sP",
-      "tagsIds": [],
+      "tagsIds": [
+        "lsitjQdf"
+      ],
       "description": null,
       "name": "从特定数组对象中获取值的函数",
       "content": [
@@ -278,11 +300,16 @@
           "label": "Fragment 1",
           "language": "javascript",
           "value": "//从特定数组对象中获取值的函数\nfunction findProductData(data, productName, property) {\n  const product = data.find(obj => obj.product === productName);\n  return product ? product[property] : null;\n}\n//You can call this function like this:\nconst data = JSON.parse(jsonString).data;\nconst product1 = findProductData(data, \"DBOne\", \"product\");\nconst btnUrl1 = findProductData(data, \"DBOne\", \"btnUrl\");\nconst product2 = findProductData(data, \"DBTwo\", \"product\");\nconst btnUrl2 = findProductData(data, \"DBTwo\", \"btnUrl\");\n\n/*n this example, `data` is the array of objects you want to search, \n`productName` is the value of the `product` property you want to find, \nand `property` is the name of the property you want to retrieve. \n\nThe `findProductData` function returns the value of the `property`\n parameter for the object that has a `product` property equal to `\n productName`. If no such object is found, the function returns `null`.*/"
+        },
+        {
+          "label": "find()方法的返回值",
+          "language": "plain_text",
+          "value": "find()方法返回的值不一定是字符串，它取决于数组中符合条件的元素的数据类型。如果数组中符合条件的元素是字符串类型，则find()方法返回该字符串；如果符合条件的元素是数字类型，则find()方法返回该数字；如果符合条件的元素是对象类型，则find()方法返回该对象。如果数组中没有符合条件的元素，则find()方法返回undefined。\n\n示例代码：\n\nconst result = arr.find((item) => item > 3);\nconsole.log(typeof result); // 输出：number\n\nconst arr2 = ['apple', 'orange', 'banana'];\nconst result2 = arr2.find((item) => item === 'orange');\nconsole.log(typeof result2); // 输出：string\n\nconst arr3 = [{name: '张三', age: 20}, {name: '李四', age: 30}];\nconst result3 = arr3.find((item) => item.age > 25);\nconsole.log(typeof result3); // 输出：object"
         }
       ],
       "id": "e8l1fG6K",
       "createdAt": 1677576778290,
-      "updatedAt": 1677576797438
+      "updatedAt": 1686372428924
     },
     {
       "isDeleted": false,
@@ -1413,20 +1440,63 @@
       "folderId": "-fio_qG6",
       "tagsIds": [
         "KdczzSfg",
-        "3_8WBEfH"
+        "3_8WBEfH",
+        "0nws0COZ",
+        "qfgXWMDf",
+        "hvD6qjEL",
+        "0DVV1_vt",
+        "FIO6bwCb",
+        "bMuiTH_t",
+        "m0SDyNJf",
+        "yETmPQp5"
       ],
-      "description": null,
-      "name": "router-view",
+      "description": "You can console.log(this.$route) to see everythingthat's in this built-in object!\n注意：this.$route 和 this.$router 是不同的",
+      "name": "router 路由相关",
       "content": [
         {
-          "label": "Fragment 1",
+          "label": "router-view",
           "language": "javascript",
           "value": "different router the same component vue。真实的业务场景中，这种情况很多。我创建和编辑的页面使用的是同一个component,默认情况下当这两个页面切换时并不会触发vue的created或者mounted钩子，官方说你可以通过watch $route的变化来做处理，但其实说真的还是蛮麻烦的。后来发现其实可以简单的在 router-view上加上一个唯一的key，来保证路由切换时都会重新渲染触发钩子了。这样简单的多了。\n\n<router-view :key=\"key\"></router-view>\n\ncomputed: {\n    key() {\n        return this.$route.name !== undefined? this.$route.name + +new Date(): this.$route + +new Date()\n    }\n }"
+        },
+        {
+          "label": "路由高亮",
+          "language": "javascript",
+          "value": "Vue Router内置的链接高亮CSS类是router-link-active。当一个<router-link>被点击并且匹配到当前路由时，它会自动添加这个类。可以通过设置linkActiveClass选项来自定义这个类名。\n但是，请注意 linkActiveClass 仅适用于 <router-link>，编程式导航和命名路由不支持该选项\nconst router = createRouter({\n    history: createwebHistory(),\n    routes: [\n      {path: '/teams', component: TeamsList },\n      { path: '/users',component: UsersList },\n    ],\n    linkActiveClass:'active'  //active这个名称是自定义的你的css类,注意可能只是在<router-link>上用\n  })\n  app.use(router)\n  \n对于编程式导航和命名路由，您需要手动控制高亮。你可以设置 data 或者计算属性来记录当前活动的路由，然后在模板中根据这个属性设置 CSS 类名。例如，你可以在父组件中使用 $route.name（当前路由名称）和 $route.path（当前路由路径）来判断哪个导航项处于激活状态，并为其添加类名。\n以下是一个简单的例子：\n<!-- 使用 linkActiveClass 的 router-link -->\n<router-link to=\"/page1\" linkActiveClass=\"active\">Page1</router-link>\n<router-link to=\"/page2\" linkActiveClass=\"active\">Page2</router-link>\n\n<!-- 使用编程式导航和命名路由, 自动判断路由激活状态 -->\n<ul>\n  <li :class=\"{'active': isActiveRoute('page1')}\">\n    <a @click=\"goToRoute('page1')\">Page1</a>\n  </li>\n  <li :class=\"{'active': isActiveRoute('page2')}\">\n    <a @click=\"goToRoute('page2')\">Page2</a>\n  </li>\n</ul>\nimport { Router } from 'vue-router';\n\nexport default {\n  methods: {\n    goToRoute(routeName) {\n      this.$router.push({ name: routeName });\n    },\n    isActiveRoute(routeName) {\n      return this.$route.name === routeName;\n    },\n  },\n};\n在这个例子中，我们使用 isActiveRoute 方法来判断当前路由是否是激活状态，并根据此为其添加 active 类。同时，我们使用 goToRoute 方法实现编程式导航。\n"
+        },
+        {
+          "label": "Vue Router的多种跳转页面的方法",
+          "language": "javascript",
+          "value": "Vue Router 提供了多种跳转页面的方法，以下是一些常用的方法：\n\n1. `<router-link>` 标签\n最常用的导航方式是使用 `<router-link>` 标签，这个标签会自动根据你的路由配置生成一个可导航的链接。\n\n<router-link to=\"/about\">关于我们</router-link>\n\n2. 编程式导航\n除了使用 `<router-link>` 标签之外，还可以通过编程式的方式实现页面跳转。Vue Router 提供了以下方法：\n- `this.$router.push(location)`: 类似于 `<router-link>`，导航到指定的 `location`。\n`location` 可以是一个字符串或者一个描述目标位置的对象。当导航成功时，浏览器的 URL 会变为对应的记录。\n\n  this.$router.push('/about');\n  // 或者\n  this.$router.push({ path: '/about' });\n  // 带有查询参数\n  this.$router.push({ path: '/about', query: { id: 1 } });\n- `this.$router.replace(location)`: 类似于 `push`，但是不会向历史记录添加新记录，而是替换掉当前的记录。\n  this.$router.replace('/about');\n  // 或者\n  this.$router.replace({ path: '/about' });\n- `this.$router.go(n)`: 可以前进或返回（通过传递一个负值）指定的步数。它调用的是浏览器的 `history.go(n)` 方法。例如：\n  this.$router.go(-1); // 后退\n  this.$router.go(1); // 前进\n\n3. 命名路由\n在配置路由时，可以给路由添加 `name` 属性，这样可以通过名称来进行页面跳转。(使用命名路由的好处是path改变的话，不用去其他地方修改命名路的name，因为这个不是经常变换的)\n\nconst routes = [\n  { path: '/about', component: About, name: 'about' },\n  { path: '/user/:id', component: User, name: 'user' },\n];\n\n//使用命名路由进行跳转：\nthis.$router.push({ name: 'about' });\n// 或者带有参数\nthis.$router.push({ name: 'user', params: { id: 1 } });\nthis.$router.push({ name: 'user', params: { teamId: this.id } });\n\n这些方法可以帮助你在 Vue 应用中实现灵活的页面跳转。"
+        },
+        {
+          "label": "不同数据对象查询显示数据",
+          "language": "javascript",
+          "value": "/*通过一个数组对象teams的数据如id,找出另一个数组里users的数据对象内容数据\n注意以下各个部分并不在一个vue文件里 */\n//------------------------------------- 动态路由：\nroutes:[\n  //浏览器输入/teams/t1 或 /teams/t2 会加载不同的数据\n  //配置props:true可以将动态值teamId传递给组件TeamMembers\n  //alias 相当于 redirect重定向,但 redirect时url是变化的，而alias不会变化url\n  //注意component可以是复数多个components:{default:TeamMembers,footer:teamsFooter} ,注意实现的是不同页面加载不同的footer\n\t{\n     path: '/teams/:teamId',\n     meta:{needsAuth:true}, //meta里可以自定义属性，然后在守卫里可以通过 to.meta.你自定义的属性;做判断依据\n     component: TeamMembers,\n     footer:Footer, alias:'/',\n     props:true\n     //或\n     //props: (route) => ({ id: route.params.id })\n  },\n  {path:'/:notFound(.*)', component: NotFound } //将匹配任何其他不是路径的字符\n  \n]\n//-------------------------------------数据部分\ndata() {\n  return {\n    teams:[\n      { id: 't1', name:'Frontend Engineers', members: ['ul' ,'2'] },\n      { id: 't2', name:'Backend Engineers',  members: ['u1' ,'u2','u3']}, \n      { id: 't3', name: 'Client Consulting', members: ['u4','u5'] },\n    users: [\n      { id: 'ul', fulIName: 'Max Schwarz', role: 'Engineer' },\n      { id: 'u2', fulIName:'Praveen Kumar', role: 'Engineer' },\n      { id: 'u3', fulName: 'Julie Jones', role: 'Engineer' },\n      { id: 'u4', fuliName: 'Alex Blackfield', role: 'Consultant' },\n      { id: 'u5', fulName: 'Marie Smith', role: 'Consultant' },\n      ]\n  }\n}\n//--------------------------------页面数据展示\n<template>\n  <section>\n    <h2>{{ teamName }}</h2>\n    <ul>\n      <user-item\n        v-for=''member in members\"\n        :key=\"member.id\"\n        :id=\"team.id\"\n        :name='member.fulIName'\n        :role='member.role'\n      ></user-item>\n    </ul>\n  </section>\n</template>\n\n<script>\n import ...\n export default{\n   inject:['users', 'teams'],\n   props:['teamId'],  //这里是重点，这个teamId值是通过在路由设置一个 props:true 使得这个动态值可以传递过来\n   data(){\n     teamName:'',\n     members:[]\n   },\n   methods:{\n     loadTeamMembers(teamId) {\n       // this.$route.path  // /teams/t1\n      //const teamId = this.$route.params.teamId; //从url获取Id值\n      //find()方法找到符合条件的元素后，会立即停止遍历并返回该元素\n      //find()方法遍历数组teams,对每个元素执行回调函数 `team => team.id === teamId`\n      const selectedTeam = this.teams.find(team => team.id === teamId);\n      const members = selectedTeam.members;// members 是一个数组\n      const selectedMembers = [];\n      for (const member of members) {\n        //find()方法只找一个符合条件的数据\n        const selectedUser = this.users.find(user => user.id === member);\n        selectedMembers.push(selectedUser);\n      }\n      this.members = selectedMembers;\n      this.teamName = selectedTeam.name;\n     }\n   },\n   created(){ \n      this.loadTeamMembers(this.teamId) //teamId是props传过来的，加this因为和用data()里的数据一样用法\n   },\n   //通过beforeRouteUpdate()这种路由的方式也可以实现下面watch()的作用，但watch()的好一点，因为不依赖路由\n   beforeRouteUpdate(to,from,next){\n      console.log('TeamMembers Cmp beforeRouteUpdate');\n      console.log(to, from);\n      this.loadTeamMembers(to.params.teamId);\n      next();\n   },\n   watch(){\n     //这里的作用是避免组件不更新,很简单就是对teamId进行watch\n     teamId(newId){\n       this.loadTeamMembers(newId)      \n     }\n   }\n }\n\n</script>\n"
+        },
+        {
+          "label": "Vue Router提供的props的属性",
+          "language": "javascript",
+          "value": "Vue Router提供了一个名为`props`的属性，允许将路由参数作为组件的props传递。这意味着我们可以在路由定义中声明一个props对象，其中包含我们想要传递给组件的属性。\n在使用`props`时，我们需要在路由定义中使用`props: true`来启用props传递。这将告诉Vue Router将路由参数作为props传递给组件。\n例如，我们可以定义一个路由如下：\n{\n  path: '/user/:id',\n  component: User,//props将通过这个 User组件传递，而不再是通过router传递\n  props: true\n}\n\n这将告诉Vue Router将路由参数中的`id`值作为`User`组件的一个props传递。在组件中，我们可以通过声明一个名为`props`的属性来接收这些props。例如：\nexport default {\n  props: ['id'],\n  // ...\n}\n\n这样，我们就可以在组件中使用`this.id`来访问路由参数中的`id`值。\n除了使用`props: true`，我们还可以使用一个函数来动态地为每个路由设置props。例如：\n\n{\n  path: '/user/:id',\n  component: User,\n  props: (route) => ({ id: route.params.id })\n}\n这将告诉Vue Router将路由参数中的`id`值作为`User`组件的一个props传递，并将其命名为`id`。\n相比之下，使用函数动态地设置props可以更加灵活。我们可以根据需要选择传递哪些props，甚至可以在函数中进行一些计算和转换，以便更好地适应我们的业务需求。此外，使用函数设置props还可以将非路由参数的props传递给组件。"
+        },
+        {
+          "label": "动态footer",
+          "language": "javascript",
+          "value": "一个路由定义多个组件，根据name选择加载的组件\n<footer>\n\t<router-view name=\"footer\"></router-view>\n</footer>\n\n\nroutes:[\n  {path:'/redirect: '/teams' },\n  {\n    name: 'teams',\n    path:'/teams',\n    //注意一般单个组件不是复数：component:,\n    components: { default: TeamsList, footer: TeamsFooter },\n  ...\n  }\n]"
+        },
+        {
+          "label": "路由对滚动位置控制",
+          "language": "javascript",
+          "value": "//可以做到的效果：跳转页面后返回，还在之前的位置；点击后跳转到指定位置，如top\n//三个参数是重点，可以打印出来看看\nscrollBehavior(to, from, savedPosition) {\n  console.log(to, from, savedPosition);\n  if (savedPosition) {\n  //如果有之前位置的信息(不是null)，回到之前位置\n  \treturn savedPosition;\n  }\n  //跳到相关位置\n   return {left: 0, top: 0 };\n }\n \n //另一个实例\n const router = new Router({\n  mode: 'history',\n  base: process.env.BASE_URL,\n  scrollBehavior: () => ({ y: 0 }), //这里省略了return\n  routes: constantRouterMap\n})"
+        },
+        {
+          "label": "路由守卫",
+          "language": "javascript",
+          "value": " beforeEach(); beforeRouteEnter();  beforeRouteUpdate(); beforeRouteLeave() ....\n\nrouter.beforeEach(function(to,from,next){}); //beforeEach的参数是一个函数,这个函数里有三个参数\n//next()里面可以灵活传参\nnext({ name: 'team-members', params: { teamId: 't2' } });\n \n 注意以下三种守卫的执行有顺序：全局>路由局部>组件里\n//-----------------------------------------引跑158项目实例\n//beforeEach() 钩子函数会在每次路由跳转前被调用\nrouter.beforeEach((to, from, next) => {\n  let url = window.location.href\n  let urls = url.split(':')\n  //这里的 urls[0] + ':' + urls[1] 代码是为了获取当前访问站点的协议和主机地址，组成一个字符串\n  let realurl = urls[0] + ':' + urls[1]\n\n  if (to.meta.title === '接口管理' && to.meta.needsAuth) { //needsAuth是meta里自定义的属性\n    let api_url = realurl + ':9230/account/login'\n    window.open(api_url, '_blank')\n    next(false) //留在当前页\n    router.push(from.path)\n  } else {\n    next()\n  }\n})\n//-------------------------上面的守卫会在所有路由触发,也可以像下面定义，特定单个路由的守卫\n{\n  path:'/user',\n  components: {default: UsersList, footer: UsersFooter},\n  //这里 beforeEnter只针对当前路由\n  beforeEnter(to, from, next) {\n    console.log('users beforeEnter');\n    console.log(to,from);\n  \tnext();\n  }\n},\n//------------------------------将守卫定义在组件里\nexport default{\n  data(){\n    return{\n    }\n  },\n  beforeRouteEnter(to, from，next) {\n    console.log('UsersList Cmp beforeRouteEnter');\n    console.log(to, from);\n    next();\n  },\n  beforeRouteLeave(to, from, next){\n    console.log('UsersList Cmp beforeRouteLeave');\n    console.log(to, from);\n    if (this.changesSaved) {\n      next();\n    } else {\n   \t\tconst userWantsToLeave = confirm('Are you sure? You got unsaved changes!');\n      next(userWantsToLeave);\n\t} \n}\n"
         }
       ],
       "id": "GQiXghAh",
       "createdAt": 1679467460483,
-      "updatedAt": 1684721334900
+      "updatedAt": 1686453889053
     },
     {
       "isDeleted": false,
@@ -2535,14 +2605,16 @@
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "-fio_qG6",
-      "tagsIds": [],
+      "tagsIds": [
+        "XIITO5Tv"
+      ],
       "description": null,
       "name": "动态class和样式",
       "content": [
         {
           "label": "动态 class",
           "language": "javascript",
-          "value": "//动态:class的值将合并到静态class里成为：class=\"demo active\" 注意boxASelected是一个布尔值\n<div class=\"demo\" :class=\"{active: boxASelected}\" @click=\"boxSelected('A')\">\n//使用计算属性\n<div class=\"demo\" :class=\"boxBClasses\" @click=\"boxSelected('B')\">\n//如果boxASelected为true相当于 class=\"demo active\"\n<div :class=\"['demo',{active: boxASelected}]\" @click=\"boxSelected('C')\">\n\ndata(){\n  return{\n     boxASelected:false,\n     boxBSelected:false,\n     boxCSelected:false\n  }\n},\ncomputed:{\n  //如果有复杂的条件判断等，可以用computed属性简化template的代码\n  boxBClasses(){\n   if(...) return{active: this.boxBSelected}\n  }\n},\nmethods:{\n  //true or flase 判断\n}"
+          "value": "//动态:class的值将合并到静态class里成为：class=\"demo active\" 注意boxASelected是一个布尔值\n<div class=\"demo\" :class=\"{active: boxASelected}\" @click=\"boxSelected('A')\">\n//使用计算属性\n<div class=\"demo\" :class=\"boxBClasses\" @click=\"boxSelected('B')\">\n//如果boxASelected为true相当于 class=\"demo active\"\n<div :class=\"['demo',{active: boxASelected}]\" @click=\"boxSelected('C')\">\n\ndata(){\n  return{\n     boxASelected:false,\n     boxBSelected:false,\n     boxCSelected:false\n  }\n},\ncomputed:{\n  //如果有复杂的条件判断等，d可以用computed属性简化template的代码\n  boxBClasses(){\n   \t if(...) return{active: this.boxBSelected}\n  },\n  //根据条件设置一个样式为无或‘flat’\n  storedResButtonMode() {\n\t\treturn this.selectedTab ==='stored-resources' ? null : 'flat';\n},\nmethods:{\n  //true or flase 判断\n}"
         },
         {
           "label": "动态 :style",
@@ -2552,7 +2624,7 @@
       ],
       "id": "exRFnG4Q",
       "createdAt": 1684747582559,
-      "updatedAt": 1684807455971
+      "updatedAt": 1685846553298
     },
     {
       "isDeleted": false,
@@ -2573,7 +2645,7 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "<section id='user-goals'>\n\n  <input type='text' v-model='enteredGoalValue'/>\n  <button @click='addGoal'> Add Goal </button>\n  \n  //goals是数组所以有length属性可用\n  <p v-if='goals.length===0'> No goals have been added yet </p>\n  //v-else必须直接在v-if后面\n  <ul v-else> \n     <li v-for=\"(goal,index) in goals\" @click='removeGoal(index)'> \n       <p> {{goal}} - {{index}} <p>\n       //用.stop阻止时间冒泡，就是要点击当前元素，和其他元素无关，不要有关联\n       <input type='text' @click.stop>\n     </li>\n  </ul>\n</section>\n\n<script>\nconst app = Vue.creatApp({\n   data(){\n     return{\n        //enteredGoalValue是input里v-model的值\n        enteredGoalValue:'',\n        goals:[]\n     }\n   },\n  methods:{\n    addGoal(){\n      this.goals.push(this.enteredGoalValue)\n    },\n    //删除元素；idx是v-for传过来的index值\n    removeGoal(idx){\n      this.goals.splice(idex,1)\n    }\n  }\n});\napp.mount('#user-goals')\n</script>\n"
+          "value": "<template>\n  <section id='user-goals'>\n    <input type='text' v-model='enteredGoalValue'/>\n    <button @click='addGoal'> Add Goal </button>\n\n    //goals是数组所以有length属性可用,v-else必须直接在v-if后面\n    <p v-if='goals.length===0'> No goals have been added yet </p>\n    <ul v-else> \n       <li v-for=\"(goal,index) in goals\" @click='removeGoal(index)'> \n         <p> {{goal}} - {{index}} <p>\n         //用.stop阻止时间冒泡，就是要点击当前元素，和其他元素无关，不要有关联\n         <input type='text' @click.stop>\n       </li>\n    </ul>\n  </section>\n</template>\n\n<script>\n   data(){\n     return{\n        //enteredGoalValue是input里v-model的值\n        enteredGoalValue:'',\n        goals:[]\n     }\n   },\n  methods:{\n    addGoal(){\n      this.goals.push(this.enteredGoalValue)\n    },\n    //删除元素；idx是v-for传过来的index值\n    removeGoal(idx){\n      this.goals.splice(idex,1)\n    }\n  }\n</script>\n"
         },
         {
           "label": "v-for 遍历对象或数字",
@@ -2583,7 +2655,7 @@
       ],
       "id": "jqCf8pXS",
       "createdAt": 1684810775638,
-      "updatedAt": 1684813256042
+      "updatedAt": 1685158476781
     },
     {
       "isDeleted": false,
@@ -2592,7 +2664,8 @@
       "tagsIds": [
         "9HOc4GA1",
         "Rj0DhGLo",
-        "UiLjTXux"
+        "UiLjTXux",
+        "iZ0i6WtJ"
       ],
       "description": "在element ui 多选table的selection-change函数中判断，符合条件时当前行才能被选中如何实现？",
       "name": "符合条件时当前行才能被选中",
@@ -2606,11 +2679,16 @@
           "label": "toggleRowSelection()方法是？",
           "language": "javascript",
           "value": "toggleRowSelection()是 Element UI 表格组件中的一个方法，用于切换表格行的选择状态。它可以接受一个参数 row，表示需要切换选择状态的行数据。以下是 toggleRowSelection() 方法的基本语法：\n\nthis.$refs.table.toggleRowSelection(row)\n\n这里的 $refs.table 是表格组件的引用名，通常在表格上添加了 ref 属性后可以通过 $refs.table 获取到表格组件的实例。\n当调用 toggleRowSelection() 方法时，会自动根据传入的行数据判断该行是否已经被选中，如果已经被选中则将其取消选择，否则将其选中。如果没有传入行数据，则会将所有行的选择状态全部切换一遍。\n需要注意的是，toggleRowSelection() 方法只能在表格组件实例上调用，而不能在表格列组件内部使用。如果需要在列组件内部控制表格行的选择状态，可以使用作用域插槽或者事件来实现对应的逻辑。"
+        },
+        {
+          "label": "$refs的用法",
+          "language": "javascript",
+          "value": "<template>\n   //用v-model或$refs都能获取到值，但结果的类型会有不同，也可以这样写v-model.number\n  <input type='number' ref='ageInput' v-model='userAge'/>\n</template>\n\n<script>\ndata(){\n  return{\n   //注意数字类型可以先赋值为null\n    userAge:null,\n  }\n},\nmounted:{\n  //注意 $refs 的值是string,而v-model的值是number,在实际开发中容易出bug，注意打印查看结果的类型，输出的颜色也是不同的\n  console.log(this.$refs.ageInput.value + 5) //这里不是数字相加而会是字符串拼接\n}\n</script>\n\n"
         }
       ],
       "id": "SIoGN1I4",
       "createdAt": 1684897328911,
-      "updatedAt": 1684901393953
+      "updatedAt": 1685884176752
     },
     {
       "isDeleted": false,
@@ -2626,30 +2704,240 @@
         "JKa1LBV-",
         "oahZqjuX",
         "EbtawnJh",
-        "N9T0vt1r"
+        "N9T0vt1r",
+        "4_xeTOND",
+        "u9pCoFM3"
       ],
       "description": null,
       "name": "子组件props、自定义事件",
       "content": [
         {
-          "label": "概念",
+          "label": "friendContact.vue ---Child-1",
           "language": "vue",
-          "value": "props和data()里定义的数据是一样的，所以不能重名,可以对数据设置类型、初始值以及验证；\n如果要修改值，不能修改父级的原始值，但可以在data()里声明一个变量，将props的要修改的值赋给这个变量，然后修改这个变量即可\n<script>\n  export default{\n     可以是数组的简单形式,或对象形式，可以更多的设置\n    //props:['name','phoneNumber',....]\n    //props是父组件传给子组件的，而emits是子组件传给父组件的\n    props:{\n      id:{\n \t\t\t\t type:String,\n         required:true,\n      },\n      name:{\n         type:String,\n         required:true,\n         default:'okzu',\n      },\n      isFavoriate:{\n         type:String,\n          required:false,\n          default:'0',\n          validator:function(value){\n            return value==='1' ||  value==='0';\n          }\n      } \n    },\n    //emits是自定义的事件\n    emits:['toggle-favorite'], //这里不是必须的\n    data(){\n      return{\n       //通过这种形式改变props的值，注意这并没有改变父级的原始值, 所以才可以。\n       //注意对props里值的引用，其实就是在引用data()里的值。\n       Favoriate:this.isFavoriate\n      }\n    },\n    methods:{\n     toggleFavorite(){\n       //$emit是内置的方法，在父元素可以直接通过v-on: (简写为@)进行事件监听接收 \n       //$emit方法设置了一个自定义事件 'toggle-favorite',第二个参数是传递的数据，当然参数可以更多，或者将若干值包裹在一个对象里...\n        this.$emit('toggle-favorite',this.id)\n     }\n       //父元素用@接收事件：@toggle-favorite = 'toggle-favoriteState'\n       //父元素的 friendId参数就是子元素发送过来的数据，可以有多个参数：\n       // toggleFavoriteStatus(friendId) { \n            //const findId = this.friends.find(friend => friend.id === friendId);\n            //identifiedFriend.isFavorite = !identifiedFriend.isFavorite;\n       //}\n    }\n  }\n</script>"
+          "value": "//这个组件将父组件传递的数据展示出来，并向父组件发送自定义事件\n\nprops和data()里定义的数据是一样的，所以不能重名,可以对数据设置类型、初始值以及验证；\n如果要修改值，不能修改父级的原始值，但可以在data()里声明一个变量，将props的要修改的值赋给这个变量，然后修改这个变量即可\n\n<template>\n   <ul>\n     //props里的值和data里的用法一样，注意不用加this关键字,这里的值都是父组件通过v-for循环一个数组后传递过来的\n    <h2>{{name}}</h2>\n    <h2>{{...}}</h2>\n   </ul>\n    // $emit也可以写在这里, 和在methods里一样,注意在模板里是不用写this关键字的，直接用用数据名\n  <button @click=\"$emit('delete',id)\"> Delete </button>\n</template>\n\n<script>\n  export default{\n     可以是数组的简单形式,或对象形式，可以更多的设置\n    //props:['name','phoneNumber',....]\n    //props是父组件传给子组件的，而emits是子组件传给父组件的\n    props:{\n      id:{\n \t\t\t\t type:String,\n         required:true,\n      },\n      name:{\n         type:String,\n         required:true,\n         default:'okzu',\n      },\n      isFavoriate:{\n         type:String,\n          required:false,\n          default:'0',\n          validator:function(value){\n            return value==='1' ||  value==='0';\n          }\n      } \n    },\n    //emits是自定义的事件\n    emits:['toggle-favorite','delete'], //这里不是必须的\n    data(){\n      return{\n       //通过这种形式改变props的值，注意这并没有改变父级的原始值, 所以才可以。\n       //注意对props里值的引用，其实就是在引用data()里的值。\n       Favoriate:this.isFavoriate\n      }\n    },\n    methods:{\n     toggleFavorite(){\n       //$emit是内置的方法，在父元素可以直接通过v-on: (简写为@)进行事件监听接收 \n       //$emit方法设置了一个自定义事件 'toggle-favorite',第二个参数是传递的数据，当然参数可以更多，或者将若干值包裹在一个对象里...\n        this.$emit('toggle-favorite',this.id)\n         //父元素用 @ 接收事件：@toggle-favorite = 'toggle-favoriteState'\n         //父元素的 friendId参数就是子元素发送过来的数据，可以有多个参数：\n         // toggleFavoriteStatus(friendId) { \n            //const findId = this.friends.find(friend => friend.id === friendId);\n            //identifiedFriend.isFavorite = !identifiedFriend.isFavorite;\n         //}\n     },\n     //这个和上面模板里写的一个作用，只是不同的写法\n     deleteFriend() {\n        this.$emit('delete',this.id);\n      }     \n    }\n  }\n</script>"
         },
         {
-          "label": "Child.vue",
+          "label": "newFriend.vue ---Child-2",
           "language": "vue",
-          "value": "核心：this.$emit('自定义的事件名称',第二个参数是传递给父组件的数据)\n<template>\n    <form @submit.prevent='submitData'>\n        <input type='text' v-model='enteredName'/>\n        <input type='tel' v-model='enteredPhone'/>\n        <input type='email' v-model='enteredEmail'/>\n\n        <button>Add Contact</button>\n    </form>\n</template>\n\n<script>\n    export default {\n        emits: ['add-contact'],\n        data() {\n            return {\n              //绑定表单输入的数据,v-model的数据都要在data中声明\n               enteredName: '',\n               enteredPhone: '',\n               enteredEmail: ''\n            }\n        },\n        methods: {\n            //提交自定义事件,将表单v-model的数据通过参数传递出去\n            submitData() {\n                this.$emit('add-contact',this.enteredName, this.enteredPhone, this.enteredEmail)\n                // OR\n                // const contactData = {\n                //     name: this.enteredName,\n                //     phone: this.enteredPhone,\n                //     email: this.enteredEmail\n                // }\n                // this.$emit('add-contact', contactData)\n            }\n        },\n        \n    }\n</script>\n"
+          "value": "//这个组件通过用户输入，利用自定义事件add-contact向父组件添加数据\n核心：this.$emit('自定义的事件名称',第二个参数是传递给父组件的数据)\n<template>\n    <form @submit.prevent='submitData'>\n        <input type='text' v-model='enteredName'/>\n        <input type='tel' v-model='enteredPhone'/>\n        <input type='email' v-model='enteredEmail'/>\n\n        <button>Add Contact</button>\n    </form>\n</template>\n\n<script>\n    export default {\n        emits: ['add-contact'],\n        data() {\n            return {\n              //绑定表单输入的数据,v-model的数据都要在data中声明\n               enteredName: '',\n               enteredPhone: '',\n               enteredEmail: ''\n            }\n        },\n        methods: {\n            //提交自定义事件,将表单v-model的数据通过参数传递出去\n            submitData() {\n                this.$emit('add-contact',this.enteredName, this.enteredPhone, this.enteredEmail)\n                // OR\n                // const contactData = {\n                //     name: this.enteredName,\n                //     phone: this.enteredPhone,\n                //     email: this.enteredEmail\n                // }\n                // this.$emit('add-contact', contactData)\n            }\n        },\n        \n    }\n</script>\n"
         },
         {
           "label": "Parent.vue",
           "language": "vue",
-          "value": "<template>\n    <div>\n      <!-- 监听子组件自定义事件 add-contact -->\n       <new-friend @add-contact=\"addContact\"></new-friend>\n    </div>\n</template>\n\n<script>\n    export default {\n        data() {\n           return {\n            friends:[\n              {\n                id:'manuel',\n                name:'Lorenz',\n                phone:0123 45678 90,\n                email: 'manuel.com',\n                isFavorite:true\n              },\n              {...},\n              {...}\n            ]\n           }\n        },\n        methods: {\n            //接收子组件自定义事件传递的数据\n            addContact(name, phone, email) {\n               const newContact = {\n                id: new Data().toISOString(),\n                name: name,\n                phone: phone,\n                email: email,\n                isFavorite: false\n               }\n               //push一个对象进入friends数组\n               this.friends.push(newContact)\n            }\n        }\n    }\n</script>\n"
+          "value": "//数据是从父组件通过props传递给子组件的\n<template>\n    <div>\n      <!-- 监听子组件自定义事件 add-contact -->\n       <new-friend @add-contact=\"addContact\"></new-friend>\n    </div>\n    <ul>\n      //friend-contact这个组件就是第一个标签页的子组件,注意v-for的用法,friends数组里的值是如何循环并传递给子组建的\n      <friend-contact\n          v-for=\"friend in friends\"\n          :key=\"friend.id\"\n          :id=\"friend.id\"\n          :name=\"friend.name\"\n          :phone-number=\"friend.phone\"\n          :email-address=\"friend.email\"\n          :is-favorite=\"friend.isFavorite\"\n          @toggle-favorite=\"toggleFavoriteStatus\"\n          @delete=\"deleteContact\"\n      >\n      </friend-contact>\n</template>\n\n<script>\n    export default {\n        data() {\n           return {\n            friends:[\n              {\n                id:'manuel',\n                name:'Lorenz',\n                phone:0123 45678 90,\n                email: 'manuel.com',\n                isFavorite:true\n              },\n              {...},\n              {...}\n            ]\n           }\n        },\n        methods: {\n            //id是从子组件的自定义方法toggle-favorite的参数里传递过来的数据\n            toggleFavoriteStatus(id) {\n                const friend = this.friends.find(friend => friend.id === id)\n                friend.isFavorite = !friend.isFavorite\n            },\n            //接收子组件自定义事件add-contact的参数里传递过来的数据\n            addContact(name, phone, email) {\n               const newContact = {\n                id: new Data().toISOString(),\n                name: name,\n                phone: phone,\n                email: email,\n                isFavorite: false\n               }\n               //push一个对象进入friends数组\n               this.friends.push(newContact)\n            },\n            deleteContact(id){\n              //通过覆盖原数组的方式删除数组中的某一项，之后重新渲染模板的friend-contact组件\n              this.friends = this.friends.filter(friend=>friend.id !== id)\n            }\n        }\n    }\n</script>\n"
+        },
+        {
+          "label": "用props设置样式",
+          "language": "javascript",
+          "value": "//---------------------------------子组件，用一个动态class接受父组件的数据\n<template>\n\t<button :class=\"mode\">\n      //slot里也是显示父组件定义的内容\n     <slot></slot>\n  </button>\n</template>\n\n<script>\n  export default {\n     props: ['mode']\n  }\n</script>\n\n<style scoped>\n button {\n   ...\n }\n</style>\n\n\n//----------------------------------父组件,逻辑很简单, 把父组件的条件数据传递给子组件, 可以是样式也可以是数据\n<template>\n\t<button :mode='storedResButtonMode'>\n  </button>\n</template>\n\n<script>\n  data(){\n    return{\n       selectedTab:'stored-resources'\n    }\n  },\n  computed:{\n    //根据条件设置一个样式为无或‘flat’\n    storedResButtonMode() {\n      return this.selectedTab ==='stored-resources' ? null : 'flat';\n    },\n</script>"
         }
       ],
       "id": "3X84iSe8",
       "createdAt": 1684986180885,
-      "updatedAt": 1685080633583
+      "updatedAt": 1685850132956
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "provide & inject",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "vue",
+          "value": "provide & inject 必须是父子关系;也可以用于事件,目的是避免跨越组件props的繁琐使用\nprovide & inject is a very helpful pattern if you want to avoid pass through componets and pass through props unnecessarily\n\n//父组件\n<script>\ndata(){\n return{\n     topics:{\n       ....\n    }\n  }\n},\nprovide(){\n  return{\n     topics.this.topics\n  }\n},\nmethods:{\n ...\n}\n\n</script>\n\n//在子组件：\n<script>\nexport default{\n  inject:['topics']\n}\n</script>"
+        }
+      ],
+      "id": "dc1NcO_0",
+      "createdAt": 1685093837135,
+      "updatedAt": 1685158236469
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [
+        "BBDSI8V5",
+        "uoTqJWq5",
+        "9H_WKuOk"
+      ],
+      "description": "provide/inject、props、slot有一个共同点就是父子组件之间的通信;\nprovide/inject是避免跨组件使用props的繁琐,两者都是对data数据的传输;\n而slot是提供html内容的出口,通过slot 我们可以在父组件为子组件添加内容",
+      "name": "provide/inject 以及 slot 和 props的区别",
+      "content": [
+        {
+          "label": "slot",
+          "language": "vue",
+          "value": "props are meant to  be used for data which a component needs;\nslot are meant to be used for html code for the template code a component needs,so here we just provide a shell with some styling we could also add some logic if this component needed to but we then allow the parent component to provide the html code that should be inside of that div,and that's the core idea behind slolts\n\nslot (父组件 在子组件<slot> </slot>处插入内容)\nVue 实现了一套内容分发的 API，将<slot>元素作为承载分发内容的出口, 这是vue文档上的说明:\n//子组件 ： (假设名为：ebutton)\n\n<template>\n   //注意 $slots 的用法\n  <div class= 'button' v-if='$slots.header'>\n      <button> </button>\n     <slot></slot>\n  //slot 可以放在任意位置，这个位置就是父组件添加内容的显示位置 \n  </div>\n</template>\n\n//父组件：（引用子组件 ebutton）\n<template>\n  <div class= 'app'>\n     <ebutton> {{ parent }}</ebutton>\n  </div>\n</template>\n<script>\n  data:{\n    parent:'父组件'\n  }\n</script>\n\n//++++++++ 有时没有在父组件内添加内容，那么slot就会显示默认值,父组件有内容会覆盖默认值,如：\n\n//子组件 ： (假设名为：ebutton)\n<template>\n  <div class= 'button'>\n      <button> </button>\n      <slot> 这就是默认值 </slot>\n  </div>\n</template>"
+        },
+        {
+          "label": "通过作用域插槽从父组件获取子组件的数据",
+          "language": "vue",
+          "value": "\n作用域插槽 \n(父组件在子组件 <slot> </slot> 处使用子组件 data)\n\n通过slot 我们可以在父组件为子组件添加内容, 通过给slot命名的方式,我们可以添加不止一个位置的内容。但是我们添加的数据都是父组件内的。上面我们说过不能直接使用子组件内的数据,但是我们是否有其他的方法让我们能够使用子组件的数据呢？ 其实我们也可以使用v-slot的方式：\n//子组件 ： (假设名为：ebutton)\n<template>\n  <div class= 'button'>\n      <button>  </button>\n      <slot name= 'one' :value1='child1'> 这就是默认值1 </slot>    //绑定child1的数据\n      <slot :value2='child2'> 这就是默认值2 </slot>  //绑定child2的数据，这里我没有命名slot\n  </div>           \n</template>\n\n<script>\nnew Vue({\n  el:'.button',\n  data:{\n    child1:'数据1',\n    child2:'数据2'\n  }\n})\n</script>\n\n//父组件：（引用子组件 ebutton）\n<template>\n  <div class= 'app'>\n     <ebutton> \n        // 通过v-slot的语法 将插槽 one 的值赋值给 slotonevalue \n        <template v-slot:one = 'slotonevalue'>  \n           {{ slotonevalue.value1 }}\n        </template>\n\n        // 同上，由于子组件没有给slot命名，默认值就为default\n        <template v-slot:default = 'slottwovalue'> \n           {{ slottwovalue.value2 }}\n        </template>\n\n     </ebutton>\n  </div>\n</template>\n\n总结来说就是：\n首先在子组件的slot上动态绑定一个值( :key='value')\n然后在父组件通过v-slot :name = 'values' 的方式将这个值赋值给 values\n最后通过{{ values.key }}的方式获取数据\n\n// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 另一个案例\n//子组件，名称为course-goals.vue\n<ul>\n  <li v-for=\"goal in goals' :key=\"goal\">\n  \t<slot :item=\"goal\" another-prop = \"...\"></slot>\n  </li>\n</ul>\n\n//父组件引入子组件course-goals\n//#default 是v-slot: 的简写,item就是子组件定义的item\n<course-goals>\n  <template #default=\"slotProps\">\n  \t<h2> {{ slotProps.item }} </h2>\n    //下面没有用点语法，因为名称里带'-'符号\n    <p> {{ slotProps['another-prop'] }} </p>\n  </template>\n</course-goals>\n\n\n"
+        },
+        {
+          "label": "provide & inject",
+          "language": "vue",
+          "value": "provide & inject 必须是父子关系;也可以用于事件,目的是避免跨越组件props的繁琐使用，就是说可以用在子组件的子组件..里\nprovide & inject is a very helpful pattern if you want to avoid pass through componets and pass through props unnecessarily\n\n//父组件\n<script>\ndata(){\n return{\n     topics:{\n       ....\n    }\n  }\n},\nprovide(){\n  return{\n     topics.this.topics\n  }\n},\nmethods:{\n ...\n}\n\n</script>\n\n//在子组件：\n<script>\nexport default{\n  inject:['topics']\n}\n</script>"
+        },
+        {
+          "label": "使用 #简化v-slot 的写法",
+          "language": "javascript",
+          "value": "//+++++++++++ 使用 #简化v-slot 的写法：在 Vue.js 2.6中，使用 # 符号来代替 v-slot 指令的名称只适用于单个默认插槽的情况，并且只能使用 #default 来代表默认插槽。但是，在 Vue.js 3.0 版本中，# 符号被引入为一个新的简化语法，可以用来代替 v-slot 指令的名称，并且可以用于任何插槽，包括具名插槽，如：\n<my-component>\n    <template #header=\"{ text }\">\n      {{ text }}\n    </template>\n    <template #footer>这是底部插槽的内容</template>\n</my-component>\n//这种新的简化语法只适用于 Vue.js 3.0 版本及以上，对于 Vue.js 2.x 版本，仍然需要使用 v-slot 指令来定义插槽作用域。\n  //子组件\n  <div>\n    <header><slot name=\"header\"></slot></header>\n    <main><slot></slot></main>\n    <footer><slot name=\"footer\"></slot></footer>\n  </div>\n  \n  //下面是一个父组件使用这个组件的示例：\n <template>\n  <my-component>\n    <h1 slot=\"header\">这是头部</h1>\n    <p>这是主要内容</p>\n    <template #default>\n      <p>这是默认插槽的内容</p>\n    </template>\n    <p slot=\"footer\">这是底部</p>\n  </my-component>\n </template>\n\n//+++++++++++ 使用 # 符号来代替 v-slot 指令的名称只适用于单个默认插槽的情况，如果有多个插槽，仍然需要使用 v-slot 指令来定义插槽作用"
+        }
+      ],
+      "id": "YUtcSzmW",
+      "createdAt": 1685150011696,
+      "updatedAt": 1685858544256
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [
+        "q717p6YY"
+      ],
+      "description": null,
+      "name": "动态组件",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "vue",
+          "value": "//目的：注意组件并没有写入模板里,这样避免了将全部组件写入模板里然后v-if去判断的繁琐;\n//核心；就是用内置的关键字 component 以及绑定 :is;\n\n<button @click=\"setSelectedComponent('active-goals')\">Active Goals</button>\n<button @click=\"setSelectedComponent('manage-goals')\">manage Goals</button>\n\n//keep-alive 常常在动态组件里应用\n<keep-alive>\n\t<component :is=\"selectedComponent\"></component>\n</keep-alive>\n\n<script>\nimport activeGoals from ...\nimport manageGoals from ...\n data(){\n   return{\n     //默认显示组件 activeGoals\n     selectedComponent:'active-goals',\n   }\n },\n methods:{\n   //动态组件切换\n   selectedComponent(cmp){\n     this.selectedComponent = cmp; \n   }\n }\n</script>"
+        },
+        {
+          "label": "引跑 graphone 项目",
+          "language": "vue",
+          "value": "<template>\n  <div class=\"el-container\"> \n    <h4 style=\"color:red\">main page</h4>  \n    <div class=\"panel panel-default\">\n      <el-tabs v-model=\"activeName\" type=\"card\" @tab-click=\"handleClick\">\n        <el-tab-pane label=\"任务列表\" name=\"first\"></el-tab-pane>\n        <el-tab-pane label=\"新增任务\" name=\"second\"></el-tab-pane>\n        <el-tab-pane label=\"数据源管理\" name=\"third\"></el-tab-pane>\n  </el-tabs>\n\n    <section>\n        //属性:is决定那个组件动态显示出来\n        <component :is=\"isComponents\"></component>\n     </section>\n    </div>\n  </div>\n</template>\n\n<script>\nimport importList from '@/page/database/components/dataImport/taskList'\nimport tabs from '@/page/database/components/dataImport/addImport'\nimport datasource from '@/page/database/source'\n\nexport default {\n   components: { \n      importList,\n      tabs,\n      datasource\n  },\n  data(){\n    return{\n       activeName: 'first',\n       componentsList: {\n          first:importList,\n          second:tabs,\n          third:datasource\n        }   \n    }\n  },\n  methods: {\n     handleClick(tab, event) {\n    }\n  },\n  computed: {\n    isComponents() {\n         return this.componentsList[this.activeName];\n     }\n    }\n}\n</script>\n\n<style lang=\"less\" scoped>\n .el-container{\n   display: block;\n   .panel{\n   padding:10px 30px;\n   }\n }\n</style>"
+        }
+      ],
+      "id": "7MeKvDeL",
+      "createdAt": 1685163272158,
+      "updatedAt": 1685170291839
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "kYeA3Yuv",
+      "tagsIds": [
+        "AyqVhk7R"
+      ],
+      "description": "在这个代码中，我们新增了一个退出全屏按钮，并在标题栏上动态绑定 v-if 指令来控制其显示和隐藏。当窗口进入全屏模式时，退出全屏按钮会显示出来；当窗口退出全屏模式时，退出全屏按钮会被隐藏。\n\n需要注意的是，在 exitFullscreen 方法中，我们调用了 document.exitFullscreen() 方法来退出全屏模式。而不是像之前错误回答中给出的 BrowserWindow.unmaximize() 方法。另外，我们还在 toggleFullscreen 方法中删除了进入全屏模式时的调用，以避免在窗口已经处于全屏模式时再次尝试进入全屏模式，从而导致报错。",
+      "name": "el-dialog 全屏切换",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "//以下是引跑atone项目代码，通过chatgpt给出的方案，可行\n<template>\n  <el-dialog :title=\"dialogTitle\" :fullscreen=\"isFullscreen\" @fullscreen=\"fullscreenChanged\">\n    <!-- ... -->\n    <div slot=\"title\" class=\"dialog-title\" :style=\"{ paddingTop: isFullscreen ? 'calc(3vw + 20px)' : '20px' }\">\n      {{ dialogTitle }}\n      <el-button icon=\"el-icon-full-screen\" class=\"fullscreen-btn\"  @click=\"toggleFullscreen\"></el-button>\n      <el-button v-if=\"isFullscreen\" icon=\"el-icon-copy-document\"  @click=\"exitFullscreen\"></el-button>\n    </div>\n  </el-dialog>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      isFullscreen: false,\n      dialogTitle: '新建用例'\n    }\n  },\n  methods: {\n    toggleFullscreen() {\n      this.isFullscreen = !this.isFullscreen\n    },\n    enterFullscreen() {\n      document.documentElement.requestFullscreen()\n      this.isFullscreen = true\n    },\n    exitFullscreen() {\n      document.exitFullscreen()\n      this.isFullscreen = false\n    },\n    fullscreenChanged(isFullscreen) {\n      this.isFullscreen = isFullscreen\n    }\n  }\n}\n</script>\n\n<style scoped>\n.dialog-title {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  position: relative;\n}\n.fullscreen-btn {\n  margin-left: 10px;\n  position: absolute;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n</style>"
+        }
+      ],
+      "id": "ODRpW_Ei",
+      "createdAt": 1685502414868,
+      "updatedAt": 1685502635881
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "WblIddgQ",
+      "tagsIds": [],
+      "description": "在项目的根目录添加一个.vscode文件夹，将这个json格式的文件放里面即可排除相关的搜索",
+      "name": "settings.json",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "{\n    \"search.exclude\": {\n        \"**/dist\": true,\n        \"**/node_modules\": true,\n        \"**/.svn\": true\n    }\n}"
+        }
+      ],
+      "id": "C-0kX73z",
+      "createdAt": 1685590245600,
+      "updatedAt": 1685590384730
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [
+        "F3iRFiaA",
+        "Vzi-lwKq",
+        "MgYAa9Ky"
+      ],
+      "description": "这段代码中，beforeEach() 钩子函数会在每次路由跳转前被调用。如果目标路由的 meta 属性中的 title 值为 '接口管理'，那么会打开一个新的窗口访问 realurl + ':9230/account/login'，并阻止路由跳转，将当前路由重定向到来源路由。\n\n这里的 urls[0] + ':' + urls[1] 代码是为了获取当前访问站点的协议和主机地址，组成一个字符串。例如，如果当前访问的站点为 http://localhost:8080，那么 realurl 的值就是 http://localhost。这个值将被用于拼接登录页面的 URL。\n\n注意，这里的代码依赖于全局变量 window 和 router，请确保它们已经正确引入。\n\n另外，因为该钩子函数会在每次路由跳转前都会被调用，所以需要特别注意不要陷入无限循环的情况，否则可能会导致浏览器崩溃。",
+      "name": "引跑dataone_158项目路由router/index.js 文件",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "vue",
+          "value": "import Vue from 'vue'\nimport Router from 'vue-router'\nimport { constantRouterMap } from '@/config/router.config'\n\nconst originalPush = Router.prototype.push\nRouter.prototype.push = function push(location) {\n  return originalPush.call(this, location).catch((err) => err)\n}\n\nVue.use(Router)\n\nconst router = new Router({\n  mode: 'history',\n  base: process.env.BASE_URL,\n  scrollBehavior: () => ({ y: 0 }),\n  routes: constantRouterMap\n})\n//beforeEach() 钩子函数会在每次路由跳转前被调用\nrouter.beforeEach((to, from, next) => {\n  let url = window.location.href\n  let urls = url.split(':')\n  //这里的 urls[0] + ':' + urls[1] 代码是为了获取当前访问站点的协议和主机地址，组成一个字符串\n  let realurl = urls[0] + ':' + urls[1]\n\n  if (to.meta.title === '接口管理') {\n    let api_url = realurl + ':9230/account/login'\n    window.open(api_url, '_blank')\n    next(false)\n    router.push(from.path)\n  } else {\n    next()\n  }\n})\n\nexport default router\n"
+        }
+      ],
+      "id": "NVIXeJPX",
+      "createdAt": 1685686183611,
+      "updatedAt": 1685693108057
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "MqWdF2i4",
+      "tagsIds": [
+        "nGiQa5U6"
+      ],
+      "description": null,
+      "name": "dialog",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "html",
+          "value": "<dialog open>\n  //这样就可以生成一个弹框\n</dialog>"
+        }
+      ],
+      "id": "1ED1YHPV",
+      "createdAt": 1685696064002,
+      "updatedAt": 1685696123739
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [
+        "0J7JvK0e"
+      ],
+      "description": null,
+      "name": "form表单",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "// v-model和 $refs都可以获取表单的输入值， $refs.value默认是String类型\n//表单里多选框用数组，checkbox用布尔值，提交后在方法里清空输入\n<template>\n  //重点 @submit.prevent=\"submitForm'  @表示监听事件'.prevent'表示阻止默认的提交刷新页面行为\n  <form @submit.prevent=\"submitForm'>\n      <div class=\"form-control\">\n         <label for=\"user-name\">Your Name</label>\n         //blur是内置事件\n         <input id=\"user-name\" name=\"user-name\" type=\"text\" v-model='userName' @blur='validateInput'/>\n      </div>\n      <div class=\"form-control\">\n          <label for=\"age\">Your Age (Years)</label>\n          //可以这样 v-model.number\n          <input id=\"age\" name=\"age\" type=\"number\" v-model='userAge' ref='ageInput'/>\n      </div>\n      \n      <div class=\"form-control\">\n          <label for=\"referrer\">How did you hear about us?</label>\n              <select id=\"referrer\" name=\"referrer\" v-model='referrer'>\n              \t<option value=\"google\">Google</option>\n                <option value=\"wom\">Word of mouth</option>\n                <option value=\"newspaper\">Newspaper</option>\n\t\t\t\t\t\t\t</select>\n\t\t\t</div>\n   </form>\n</template>\n\n<script>\n  data(){\n    return{\n      userName:'',\n      userAge:null,  //nul表示目前没有值\n      referrer:'wom'\n    }\n  },\n  methods:{\n\t\tsubmitForm(){\n      console.log('userName:',this.userName)\n      this.uesrName = '',\n      console.log('userAge:',this.userAge + 5) //v-model这里输出的是number类型\n      console.log('ageInput这里显示的是String类型:',this.$refs.ageInput.value + 5)//$refs这里输出的是String类型\n      this.referrer = 'wom'\n    },\n    validateInput(){\n    \n    }\n  }\n</script>"
+        },
+        {
+          "label": "formatter属性",
+          "language": "javascript",
+          "value": "<el-table-column\n  prop=\"status\"\n  label=\"状态\"\n  width=\"80px\"\n  show-overflow-tooltip\n  sortable=\"custom\"\n  :formatter=\"formatStatus\"\n/>\n\nmethods: {\n    formatStatus (row, column, cellValue, index) {\n      if (cellValue === 0) {\n        return '有效'\n      } else if (cellValue === 1) {\n        return '删除'\n      } else {\n        return ''\n      }\n    }\n  }\nformatter是一个表格列的属性，用于自定义表格中某一列的显示内容。它是一个函数，接收四个参数：\nrow：当前行的数据对象- column：当前列的属性配置对象- cellValue：当前单元格的数据值- index：当前行的索引\n函数需要返回一个字符串，用于在表格中显示。\n通过设置formatter属性，我们可以自定义表格中某一列的显示内容，比如将某一列的数值转换为对应的文本、格式化日期、添加链接等。\n\nformatStatus是一个自定义方法，用于将表格中的status属性值转换为对应的文本值，以便于在表格中显示。\n\n该方法接收四个参数：\nrow：当前行的数据对象- column：当前列的属性配置对象- cellValue：当前单元格的数据值\nindex：当前行的索引\n在这个方法中，我们首先判断cellValue的值，如果为0，则返回“有效”，如果为1，则返回“删除”，否则返回空字符串。\n在表格中，当formatter属性被设置为一个方法时，这个方法会接收上述四个参数，并返回一个字符串，用于在表格中显示。"
+        }
+      ],
+      "id": "O9PZYCen",
+      "createdAt": 1685873098925,
+      "updatedAt": 1686047754849
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": ""
+        }
+      ],
+      "id": "5lstTJVz",
+      "createdAt": 1686047655684,
+      "updatedAt": 1686047655684
     }
   ],
   "tags": [
@@ -3378,6 +3666,132 @@
       "id": "wvdogT73",
       "createdAt": 1685068057988,
       "updatedAt": 1685068057988
+    },
+    {
+      "name": "组件通信",
+      "id": "4_xeTOND",
+      "createdAt": 1685084989537,
+      "updatedAt": 1685084989537
+    },
+    {
+      "name": "组件通讯",
+      "id": "u9pCoFM3",
+      "createdAt": 1685085016855,
+      "updatedAt": 1685085016855
+    },
+    {
+      "name": "slot",
+      "id": "BBDSI8V5",
+      "createdAt": 1685152286632,
+      "updatedAt": 1685152286632
+    },
+    {
+      "name": "slots",
+      "id": "uoTqJWq5",
+      "createdAt": 1685152290921,
+      "updatedAt": 1685152290921
+    },
+    {
+      "name": "作用域插槽 ",
+      "id": "9H_WKuOk",
+      "createdAt": 1685157523378,
+      "updatedAt": 1685157523378
+    },
+    {
+      "name": "keep-alive",
+      "id": "q717p6YY",
+      "createdAt": 1685164030576,
+      "updatedAt": 1685164030576
+    },
+    {
+      "name": "chatgpt答案",
+      "id": "AyqVhk7R",
+      "createdAt": 1685502581246,
+      "updatedAt": 1685502581246
+    },
+    {
+      "name": "路由跳转",
+      "id": "Vzi-lwKq",
+      "createdAt": 1685686415393,
+      "updatedAt": 1685686415393
+    },
+    {
+      "name": "url拼接",
+      "id": "MgYAa9Ky",
+      "createdAt": 1685693108000,
+      "updatedAt": 1685693108000
+    },
+    {
+      "name": "弹窗",
+      "id": "nGiQa5U6",
+      "createdAt": 1685696123691,
+      "updatedAt": 1685696123691
+    },
+    {
+      "name": "computed",
+      "id": "XIITO5Tv",
+      "createdAt": 1685845795818,
+      "updatedAt": 1685845795818
+    },
+    {
+      "name": "v-model",
+      "id": "0J7JvK0e",
+      "createdAt": 1685873345263,
+      "updatedAt": 1685873345263
+    },
+    {
+      "name": "$refs",
+      "id": "iZ0i6WtJ",
+      "createdAt": 1685881363991,
+      "updatedAt": 1685881363991
+    },
+    {
+      "name": "linkActiveClass",
+      "id": "0nws0COZ",
+      "createdAt": 1686195073596,
+      "updatedAt": 1686195073596
+    },
+    {
+      "name": "菜单高亮",
+      "id": "qfgXWMDf",
+      "createdAt": 1686195086794,
+      "updatedAt": 1686195086794
+    },
+    {
+      "name": "highlight",
+      "id": "hvD6qjEL",
+      "createdAt": 1686195095339,
+      "updatedAt": 1686195095339
+    },
+    {
+      "name": "数据查询",
+      "id": "FIO6bwCb",
+      "createdAt": 1686370966409,
+      "updatedAt": 1686370966409
+    },
+    {
+      "name": "find()方法",
+      "id": "bMuiTH_t",
+      "createdAt": 1686371919939,
+      "updatedAt": 1686371919939
+    },
+    {
+      "name": "find()",
+      "id": "lsitjQdf",
+      "createdAt": 1686372428873,
+      "updatedAt": 1686372428873
+    },
+    {
+      "name": "动态路由",
+      "id": "m0SDyNJf",
+      "createdAt": 1686376122829,
+      "updatedAt": 1686376122829
+    },
+    {
+      "name": "数组查询",
+      "id": "yETmPQp5",
+      "createdAt": 1686376246971,
+      "updatedAt": 1686376246971
     }
   ]
 }
