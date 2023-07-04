@@ -95,6 +95,16 @@
       "id": "MqWdF2i4",
       "createdAt": 1685696039426,
       "updatedAt": 1685696061020
+    },
+    {
+      "name": "NodeJS",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "TGQqRGFr",
+      "createdAt": 1687255378341,
+      "updatedAt": 1687255395684
     }
   ],
   "snippets": [
@@ -342,26 +352,38 @@
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "y-C8x3sP",
-      "tagsIds": [],
+      "tagsIds": [
+        "nNH97xs5"
+      ],
       "description": null,
-      "name": "Mapping Product Names",
+      "name": "map() 方法",
       "content": [
         {
-          "label": "Fragment 1",
+          "label": "Mapping Product Names",
           "language": "javascript",
-          "value": "const productMap = {\n      \"11.0.2.10:8080\": \"DBOne\",\n      \"11.0.2.14:9090\": \"DBOne Monitor\",\n      \"11.0.2.17:8888\": \"DBSync\",\n      \"11.0.2.15:9090\": \"DBMigrate\",\n      \"11.0.2.28:9090\": \"DDMOne\",\n      \"11.0.2.50:8080\": \"StoreOne\",\n      \"11.0.0.34:8888\": \"AnalyzeOne\",\n      \"11.0.2.20:8002\": \"DataOne\",\n      \"11.0.24.121:8002\": \"DataOne\",\n      \"11.0.2.91:8888\": \"LogOne\",\n      \"11.0.1.149:9090\": \"UIOne\",\n      \"11.0.2.40:83\": \"GraphOne\",\n      \"11.0.2.41:9080\": \"KGOne\",\n      \"11.0.4.127:9080\": \"KGOne\",\n      //TODO: CanOne 业务系统\n      \"11.0.2.37:38800/\": \"CanOne\",\n      \"11.0.2.37:38900\": \"CanOne\",\n      \"11.0.0.160:8080\": \"InforOne\",\n      \"11.0.2.30:38100\": \"BinOne\",\n      \"11.0.2.30:38200\": \"BinOne\",\n      // TODO: RangeOne 管理员\n      \"11.0.1.54\": \"RangeOne\",\n      \"11.0.2.91:9090\": \"RS-Training\",\n    };\n    //注意Object.keys()的简单用法，另外find()返回的是对象，includes()返回的是布尔值\n    let includesKey = Object.keys(productMap).find((key) =>\n      queryParameters.includes(key)\n    );\n    if (includesKey) { //includesKey 是相关页面的url地址\n      const productName = productMap[includesKey];//这里就很简单了，是键值对的值，基础知识都很简单但很容易迷惑\n      updateUI(productName, formatEssentials);\n    }"
+          "value": "//对象 +字典模式\nconst productMap = {\n      \"11.0.2.10:8080\": \"DBOne\",\n      \"11.0.2.14:9090\": \"DBOne Monitor\",\n      \"11.0.2.17:8888\": \"DBSync\",\n      \"11.0.2.15:9090\": \"DBMigrate\",\n      \"11.0.2.28:9090\": \"DDMOne\",\n      \"11.0.2.50:8080\": \"StoreOne\",\n      \"11.0.0.34:8888\": \"AnalyzeOne\",\n      \"11.0.2.20:8002\": \"DataOne\",\n      \"11.0.24.121:8002\": \"DataOne\",\n      \"11.0.2.91:8888\": \"LogOne\",\n      \"11.0.1.149:9090\": \"UIOne\",\n      \"11.0.2.40:83\": \"GraphOne\",\n      \"11.0.2.41:9080\": \"KGOne\",\n      \"11.0.4.127:9080\": \"KGOne\",\n      //TODO: CanOne 业务系统\n      \"11.0.2.37:38800/\": \"CanOne\",\n      \"11.0.2.37:38900\": \"CanOne\",\n      \"11.0.0.160:8080\": \"InforOne\",\n      \"11.0.2.30:38100\": \"BinOne\",\n      \"11.0.2.30:38200\": \"BinOne\",\n      // TODO: RangeOne 管理员\n      \"11.0.1.54\": \"RangeOne\",\n      \"11.0.2.91:9090\": \"RS-Training\",\n    };\n    //注意Object.keys()的简单用法，另外find()返回的是对象，includes()返回的是布尔值\n    let includesKey = Object.keys(productMap).find((key) =>\n      queryParameters.includes(key)\n    );\n    if (includesKey) { //includesKey 是相关页面的url地址\n      const productName = productMap[includesKey];//这里就很简单了，是键值对的值，基础知识都很简单但很容易迷惑\n      updateUI(productName, formatEssentials);\n    }"
+        },
+        {
+          "label": "对象 +字典模式",
+          "language": "javascript",
+          "value": "将学生的考试成绩转化为用ABCD表示的等级:60-70为D;...70-80为C...\n\n/* 最优版本 使用对象 +字典模式*/\nfunction transformScore(score) {\n  var resultMap = {\n    '6':'D',\n    '7':'C',\n    '8':'B',\n    '9':'A',\n    '10':'A'\n  }\n\treturn resultMap[Math.floor(score/10) //将 score 除以 10 再向下取整\n}\n\n/* 版本一 直译业务逻辑 --初级程序员特征：用代码翻译业务逻辑 */\nfunction transformScore(score){\n  if(score >= 60 && score < 70) return 'D';\n  if(score >= 70 && score < 80) return 'C';\n  if(score >= 80 && score < 90) return 'B';\n  if(score >= 90 && score <= 100) return 'A';\n}\n\n/*版本三 使用字符串 +字典模式*/\nfunction transformScore(score) {\n\treturn 'DCBAA'[(Math.floor(score / 10)) - 6];\n}"
+        },
+        {
+          "label": "数组字段的值用逗号连接起来",
+          "language": "javascript",
+          "value": "var dataList = [{\n    id:0,\n    name:'Tony',\n    food:['apple', 'peach', 'coconut']\n},{...},{...}];\n\n//需要将所有food字段的值用逗号连接起来，拼成一个字符串后发送给后台\n\n/*版本三*/\nresult = dataList.map(item=>item.food.join(',')).join(',');\n\n\n/*版本一*/\nvar result = '';\nfor (var i = 0; i < dataList.length; i++){\n    for (var j = 0; j < dataList[i].food.length; j++){\n        result = result + dataList[i].food[j] + ',';\n    }\n}\nresult = result.slice(0,-1);\n\n/*版本二*/\nvar result = [];\nfor (var i = 0; i < dataList.length; i++){\n    for (var j = 0; j < dataList[i].food.length; j++){\n        result.push(dataList[i].food[j]);\n    }\n}\nresult = result.join(',');\n\n"
         }
       ],
       "id": "Hr3Ejo-4",
       "createdAt": 1677576967090,
-      "updatedAt": 1677576977969
+      "updatedAt": 1687329725575
     },
     {
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "y-C8x3sP",
       "tagsIds": [],
-      "description": null,
+      "description": "简单来说，高阶函数是以其他函数为操作对象的函数。Higher-order Function:是指可以接受其他函数作为参数，或者返回一个函数的函数\n在JavaScript中，函数被视为一等公民（First-class Citizen），意味着函数可以像任何其他值一样被赋值给变量、传递给函数，以及从函数中返回。因此，JavaScript非常适合使用高阶函数的编程风格。\n高阶数组方法：如 map、filter、reduce 等方法，它们接受其他函数作为参数，并对数组进行处理。\n高阶函数的使用可以提高代码的可读性、灵活性和重用性，让我们能够更好地组织和抽象复杂的逻辑",
       "name": "高阶函数",
       "content": [
         {
@@ -372,7 +394,7 @@
       ],
       "id": "-ca1xOVn",
       "createdAt": 1677578180579,
-      "updatedAt": 1677579693550
+      "updatedAt": 1688094470513
     },
     {
       "isDeleted": false,
@@ -494,19 +516,36 @@
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "y-C8x3sP",
-      "tagsIds": [],
+      "tagsIds": [
+        "sCWt0xKF"
+      ],
       "description": null,
       "name": "localStorage",
       "content": [
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "/*\nlocalStorage is a very simple APl.\n主要了解存入时对象要转成字符串，获取时字符串要转为对象,\n另外注意：objects coming from local storage，will not inherit all the methods that they did before,原因是中间有个格式转换\n\nJSON.stringify() //to convert any object in JavaScript to a string\n下面存储的对象是这样的：Key:workouts; Value:[\"date\":\"2020-08-22T07:16:54.493Z\"\"id\":\"8080614493\"\"clicks\":0..\nJSON.parse() //将对象转换为字符串*/\n\n_setLocalStorage() {\n   //第二个参数是把对象转换为字符串存入localStorage\n  localstorage.setItem('workouts', JSON,stringify(this.#workouts));\n}\n\n_getLocalStorage() {\n  //第二个参数是把字符串转换为对象然后获取\n  const data = JSON.parse(localStorage.getItem('workouts'));\n  //console.log(data);\n  if(!data) return\n  this.#workouts = data\n  this.#workouts.forEach(work => {\n    this._renderWorkout(work);\n  })\n}\n\nreset(){\n   localStorage.removeItem('workouts');\n   location.reload();\n}\n\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++\n<textarea id=\"note\" cols=\"30\" rows=\"10\"></textarea><br>\n<input type=\"button\" id=\"save\" value=\"Save\">\n\nconst elmNote = document.getElementById(\"note\");\nconst elmSave = document.getElementById(\"save\");\n\nlet note = localStorage[\"note\"];\nif (note == null) {\n  note = \"\";\n}\nelmNote.value = note;\n\nelmSave.onclick = () => {\n  localStorage[\"note\"] = elmNote.value;\n};\n\n引跑项目\n user_id: window.localStorage.uid\n \n methods: {\n    getLogData() {\n      getLog({\n        'namespace': `can6-user-${this.user_id}`,\n        'containerName': 'ok'\n      }).then(res => {\n        this.tableLog = res.data.list\n      })\n}\n"
+          "value": "\nlocalStorage is a very simple APl.主要了解存入时对象要转成字符串，获取时字符串要转为对象,\n另外注意：objects coming from local storage，will not inherit all the methods that they did before,原因是中间有个格式转换\n\nJSON.stringify() //to convert any object in JavaScript to a string\n//下面存储的对象是这样的：Key:workouts; Value:[\"date\":\"2020-08-22T07:16:54.493Z\"\"id\":\"8080614493\"\"clicks\":0..\nJSON.parse() //将对象转换为字符串\n\n_setLocalStorage() {\n   //第二个参数是把对象转换为字符串存入localStorage\n  localstorage.setItem('workouts', JSON,stringify(this.#workouts));\n}\n\n_getLocalStorage() {\n  //第二个参数是把字符串转换为对象然后获取\n  const data = JSON.parse(localStorage.getItem('workouts'));\n  //console.log(data);\n  if(!data) return\n  this.#workouts = data\n  this.#workouts.forEach(work => {\n    this._renderWorkout(work);\n  })\n}\n\nreset(){\n   localStorage.removeItem('workouts');\n   location.reload();\n}\n\n\n// +++++++++++++++++++++++++++++++++++++++++++++++++++\n<textarea id=\"note\" cols=\"30\" rows=\"10\"></textarea><br>\n<input type=\"button\" id=\"save\" value=\"Save\">\n\nconst elmNote = document.getElementById(\"note\");\nconst elmSave = document.getElementById(\"save\");\n\nlet note = localStorage[\"note\"];\nif (note == null) {\n  note = \"\";\n}\nelmNote.value = note;\n\nelmSave.onclick = () => {\n  localStorage[\"note\"] = elmNote.value;\n};\n\n================================== 引跑项目\n//获取localStorage 还可以是document.localStorage.uid (document的方式更适合iframe)或localStorage.getItem(\"uid\");\n\n user_id: window.localStorage.uid\n\n methods: {\n    getLogData() {\n      getLog({\n        'namespace': `can6-user-${this.user_id}`,\n        'containerName': 'ok'\n      }).then(res => {\n        this.tableLog = res.data.list\n      })\n}\n"
+        },
+        {
+          "label": "init(); //进入页面就获取localStorage",
+          "language": "javascript",
+          "value": "//存储localStorage\nconst persistBookmarks = function (){\n\tlocalStorage.setItem('bookmarks', JSON.stringify(statebookmarks));\n}\npersistBookmarks()\n\n//获取localStorage\nconst init = function(){\n\tconst storage = localStorage.getItem('bookmarks');\n  if (storage) state.bookmarks = JSON.parse(storage);//将localStorage存入某个对象变量\n};\ninit(); //进入页面就获取localStorage\nconsole.log(state.bookmarks)"
+        },
+        {
+          "label": "将座位的index数组存入localStorage",
+          "language": "javascript",
+          "value": "const selectedSeats = document.querySelectorAll('.row ,seat.selected')\n\nconst seatsIndex = [...selectedSeats].map(seat => [...seats].index0f(seat)); //这里是重点\nlocalStorage.setItem('selectedSeats', JSON.stringify(seatsIndex));"
+        },
+        {
+          "label": "获取localStorage",
+          "language": "javascript",
+          "value": "1) getItem()方法:\n\n如果你在localStorage中存储了一个名为\"username\"的键值对，你可以通过以下代码获取它的值：\nvar username = localStorage.getItem(\"username\");\nconsole.log(username);\n它是浏览器提供的 Web API，用于在客户端存储和访问数据，如果你想要获取所有存储在localStorage中的键值对，可以使用localStorage对象的length属性来获取存储的数量，然后通过循环遍历来获取每个键值对的值。localStorage 不是一个数组或类似数组的对象，而是一个类似字典或哈希表的对象。所以不能使用数组的方法如forEach、map等方法\n\nfor (var i = 0; i < localStorage.length; i++) {\n  var key = localStorage.key(i);\n  var value = localStorage.getItem(key);\n  console.log(key + \": \" + value);\n}\n这将会遍历localStorage中的每个键值对，并在控制台输出它们的键和值。\n\n2) 直接使用 localStorage 变量\n\nlocalStorage 是一个全局变量，可以直接通过它来访问本地存储对象。例如：\n\nvar uid = localStorage.uid;\n\nlocalStorage 对象也可以通过 document.localStorage 来访问。这种方式在某些情况下可能会更适合，特别是当你需要在 iframe 中访问父窗口的 localStorage 时。例如：\nvar uid = document.localStorage.uid;\n还可以使用 \nvar uid = window.localStorage.uid"
         }
       ],
       "id": "fihKW6fb",
       "createdAt": 1677581638818,
-      "updatedAt": 1680751277626
+      "updatedAt": 1688348212389
     },
     {
       "isDeleted": false,
@@ -545,11 +584,16 @@
           "label": " 一个 getJSON 方法",
           "language": "javascript",
           "value": "const getJSON = function (url, errorMsg = 'Something went wrong') {\n  return fetch(url).then(response => {\n    if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);\n    return response.json();\n  });\n};\n\n//使用getJSON\nconst getCountryData = function (country) {\n  // Country 1\n  getJSON(\n    `https://restcountries.eu/rest/v2/name/${country}`,\n    'Country not found'\n  )\n    .then(data => {\n      renderCountry(data[0]);\n      const neighbour = data[0].borders[0];\n\n      if (!neighbour) throw new Error('No neighbour found!');\n\n      // Country 2\n      return getJSON(\n        `https://restcountries.eu/rest/v2/alpha/${neighbour}`,\n        'Country not found'\n      );\n    })\n\n    .then(data => renderCountry(data, 'neighbour'))\n    .catch(err => {\n      console.error(`${err} 💥💥💥`);\n      renderError(`Something went wrong 💥💥 ${err.message}. Try again!`);\n    })\n    .finally(() => {\n      countriesContainer.style.opacity = 1;\n    });\n};\n\nbtn.addEventListener('click', function () {\n  getCountryData('portugal');\n});\n\ngetCountryData('australia');"
+        },
+        {
+          "label": "用fetch()获取本地json",
+          "language": "javascript",
+          "value": "function caclulate() {\n  fetch('items.json')\n    .then( res => res.json()) //这里是重点\n    .then(data => console.log(data)); //data可以用其他名称，如res\n}\n\ncaclulate();"
         }
       ],
       "id": "zQnI5Oah",
       "createdAt": 1677581820829,
-      "updatedAt": 1681459381305
+      "updatedAt": 1688437907418
     },
     {
       "isDeleted": false,
@@ -777,7 +821,7 @@
       ],
       "id": "jYr35fvG",
       "createdAt": 1677640256411,
-      "updatedAt": 1677643591268
+      "updatedAt": 1687919692212
     },
     {
       "isDeleted": false,
@@ -997,7 +1041,9 @@
       "tagsIds": [
         "gtzXOkAc",
         "VeWisvfJ",
-        "nSNzxlE3"
+        "nSNzxlE3",
+        "sDMjHD6T",
+        "CZ0PBSsq"
       ],
       "description": "Everything related to the DOM is not realy part of js,but of the web API",
       "name": "dom 操作",
@@ -1005,17 +1051,27 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "Everything related to the DOM is not realy part of js,but of the web API,these asynchronous tasks will all run in the web API environment of the browser.And that's why loading images in JavaScript is asynchronous.So it does not happen in the call stack. So,not in the main thread of execution,but really in the web APIs environment\n\nel = document.querySelector('img');\nel.src='dog.jpg';\nel.addEventListener('load',() => {\n  el.classList.add('fadeIn')\n});\n\nclosest() 是 JavaScript 中 DOM 元素的方法：\n是搭配事件代理常用的dom方法，比如可以实现你点击一个区域的任何地方，确保获取的是父元素，而不是你点击的子元素\n用于查找离当前元素最近的祖先元素（包括当前元素本身）中匹配指定 CSS 选择器的元素； 语法：element.closest(selector) \n\nconst myElement = document.querySelector('#my-element');\nconst closestDiv = myElement.closest('div');\n\n上面的代码将查找 ID 为 my-element 的元素的最近祖先 div 元素，如果找到则将其赋值给变量 closestDiv。\n如果没有找到，则 closestDiv 的值为 null。closest 方法可以方便地在DOM树中查找元素的祖先元素，\n特别是在需要找到指定元素的父级或更高层次的祖先元素时，它会非常有用。\n请注意，closest() 方法不仅可以用于查找祖先元素，还可以用于查找自身或后代元素中与指定选择器匹配的元素。例如，如果我们要查找当前元素自身是否具有 .inner 类，可以使用以下代码：\nconst element = document.querySelector('.inner');\nconst self = element.closest('.inner');\nconsole.log(self); // 输出 <div class=\"inner\">...</div>\n\n通过e对象获取：\nmoveToPopup(e){\n  const workoutEl = e.target.closest('.workout');\n  //console.log(workoutEl);\n  const workout = this.#workouts.find(work => work.id === workoutEl.dataset.id);//从html的data属性获取id值\n  //console.log(workout);\n}\n++++++++++++++++++++++++++++++++++++++++++++insertAdjacentHTML()\ninsertAdjacentHTML() is a JavaScript method that allows you to insert HTML code into a specific position relative to an element in the DOM (Document Object Model). It can be used to add new content to a web page without overwriting the existing content.\n\nThe method takes two arguments:\n\n1) A string that specifies the position where you want to insert the HTML code. The possible values are:\n'beforebegin': inserts the HTML code before the element itself.\n'afterbegin': inserts the HTML code as the first child of the element.\n'beforeend': inserts the HTML code as the last child of the element.\n'afterend': inserts the HTML code after the element itself.\n2) A string that contains the HTML code you want to insert.\nHere is an example of how to use insertAdjacentHTML() to insert a new paragraph after an existing one:\n\nconst existingParagraph = document.querySelector('p');\nexistingParagraph.insertAdjacentHTML('afterend', '<p>This is a new paragraph</p>');//第二个参数可以写一个变量，变量里可以用``写任何html\n\nThis code will add a new paragraph after the existing one.\n\n\n +++++++++++++++++++++++++++++++++++++++++++++用 children 获取所有sibling element\n[...h1.parentElement.children] 将类数组转为数组；注意children可以获取所有子元素，思路是先到parentElement\n\n[...h1.parentElement.children].forEach(function (el){\n    if (el !== h1) el.style.transform = 'scale(0.5)';\n})\n\n++++++++++++++++++++++++++++++++++++++++++++++++++ Tabbed component Tab 页切换 +++++++++++++++++++++++\n实现核心就是添加或去除class样式，下面案例重点：\n1) 代理的应用，就是通过父元素给下面所有子元素添加了事件监听\n2) dom元素dataset的使用：使用dataset元素可以方便地访问和修改HTML元素的自定义属性。它也可以为JavaScript应用程序提供一种简单的方法来存储额外的信息。要使用dataset元素，您需要在HTML元素上添加属性，并将其前缀“data-”。例如，要添加一个名为“color”的属性，您可以使用data-color属性，如下所示：<div data-color=\"blue\">。然后，您可以使用JavaScript来访问这个属性，如下所示：var color = element.dataset.color;\n3) if (!clicked) return; 条件不成立立即结束执行，不执行下面程序，否则报错\n4) 通过closest()操作定位dom,配合事件代理的完成\n5)使用 forEach()方法对高亮元素的操作\n\n\ntabsContainer.addEventListener('click', function (e) {\n  const clicked = e.target.closest('.operations__tab');\n\n  // Guard clause\n  if (!clicked) return;\n\n  // Remove active classes\n  tabs.forEach(t => t.classList.remove('operations__tab--active'));\n  tabsContent.forEach(c => c.classList.remove('operations__content--active'));\n\n  // Activate tab\n  clicked.classList.add('operations__tab--active');\n\n  // Activate content area\n  document\n    .querySelector(`.operations__content--${clicked.dataset.tab}`)\n    .classList.add('operations__content--active');\n});"
+          "value": "Everything related to the DOM is not realy part of js,but of the web API,these asynchronous tasks will all run in the web API environment of the browser.And that's why loading images in JavaScript is asynchronous.So it does not happen in the call stack. So,not in the main thread of execution,but really in the web APIs environment\n\n++++++++++++++++++++++++++++++++++++++++++++insertAdjacentHTML()\ninsertAdjacentHTML() is a JavaScript method that allows you to insert HTML code into a specific position relative to an element in the DOM (Document Object Model). It can be used to add new content to a web page without overwriting the existing content.\n\nThe method takes two arguments:\n\n1) A string that specifies the position where you want to insert the HTML code. The possible values are:\n'beforebegin': inserts the HTML code before the element itself.\n'afterbegin': inserts the HTML code as the first child of the element.\n'beforeend': inserts the HTML code as the last child of the element.\n'afterend': inserts the HTML code after the element itself.\n2) A string that contains the HTML code you want to insert.\nHere is an example of how to use insertAdjacentHTML() to insert a new paragraph after an existing one:\n\nconst existingParagraph = document.querySelector('p');\nexistingParagraph.insertAdjacentHTML('afterend', '<p>This is a new paragraph</p>');//第二个参数可以写一个变量，变量里可以用``写任何html\nThis code will add a new paragraph after the existing one.\n\n\n +++++++++++++++++++++++++++++++++++++++++++++用 children 获取所有sibling element\n[...h1.parentElement.children] 将类数组转为数组；注意children可以获取所有子元素，思路是先到parentElement\n\n[...h1.parentElement.children].forEach(function (el){\n    if (el !== h1) el.style.transform = 'scale(0.5)';\n})\n\n++++++++++++++++++++++++++++++++++++++++++++++++++ Tabbed component Tab 页切换 +++++++++++++++++++++++\n实现核心就是添加或去除class样式，下面案例重点：\n1) 代理的应用，就是通过父元素给下面所有子元素添加了事件监听\n2) dom元素dataset的使用：使用dataset元素可以方便地访问和修改HTML元素的自定义属性。它也可以为JavaScript应用程序提供一种简单的方法来存储额外的信息。要使用dataset元素，您需要在HTML元素上添加属性，并将其前缀“data-”。例如，要添加一个名为“color”的属性，您可以使用data-color属性，如下所示：<div data-color=\"blue\">。然后，您可以使用JavaScript来访问这个属性，如下所示：var color = element.dataset.color;\n3) if (!clicked) return; 条件不成立立即结束执行，不执行下面程序，否则报错\n4) 通过closest()操作定位dom,配合事件代理的完成\n5)使用 forEach()方法对高亮元素的操作\n\n\ntabsContainer.addEventListener('click', function (e) {\n  const clicked = e.target.closest('.operations__tab');\n\n  // Guard clause\n  if (!clicked) return;\n\n  // Remove active classes\n  tabs.forEach(t => t.classList.remove('operations__tab--active'));\n  tabsContent.forEach(c => c.classList.remove('operations__content--active'));\n\n  // Activate tab\n  clicked.classList.add('operations__tab--active');\n\n  // Activate content area\n  document\n    .querySelector(`.operations__content--${clicked.dataset.tab}`)\n    .classList.add('operations__content--active');\n});"
+        },
+        {
+          "label": "classList",
+          "language": "javascript",
+          "value": "JavaScript 中的 classList 是 DOM 元素对象的一个属性，它提供了一组方法来操作元素的类名。通过 classList，可以方便地添加、删除、切换和检查元素的类名；classList 提供了以下几个常用的方法：add() remove() toggle() contains()\n\n //==============例1\n //这段代码的作用是选取一个图片元素，将其来源更改为 \"dog.jpg\"，然后当图片加载完成时为其添加淡入动画效果。\nel = document.querySelector('img'); //选取dom元素\nel.src='dog.jpg'; //给src属性赋值\n\nel.addEventListener('load',() => {//监听load\n  el.classList.add('fadeIn') //添加fadeIn样式\n});\n\n//============== 例2 包含toggle() contains()\ncontainer.addEventListener('click'){\n\tif (\n     e.target.classList.contains('seat') && !e.target.classList.contains('occupied')\n  ){\n\t\te.target.classList.toggle('selected');\n\t\tupdateSelectedCount()\n    }\n})\n//==================例3\n//change事件,以下是jonas的mapty地图应用的change监听,注意closest()和classList.toggle()的使用\ninputType.addEventListener('change'，function (){\n   inputElevation.closest('.form__row').classList.toggle('form__row--hidden')\n   inputCadence.closest('.form _row').classList.toggle('formrow--hidden')\n})"
         },
         {
           "label": "给一个li元素上添加一个文本框显示一个动态的数据",
-          "language": "plain_text",
-          "value": "// 获取要添加文本框的li元素\nconst liElement = document.querySelector('li');\n\n// 创建文本框元素\nconst inputElement = document.createElement('input');\n\n// 设置文本框属性和样式\ninputElement.setAttribute('type', 'text');\ninputElement.setAttribute('class', 'input-text');\n\n// 将文本框添加到li元素中\nliElement.appendChild(inputElement);\n\n// 动态地显示数据\ninputElement.value = '动态数据';\n\n可以使用JavaScript创建一个文本框元素，然后将其添加到指定的li元素中。具体实现步骤如下：\n\n获取要添加文本框的li元素，可以使用document.querySelector或document.getElementById方法获取。\n创建一个文本框元素，可以使用document.createElement方法创建。\n设置文本框元素的属性和样式，例如type属性为text、class属性为input-text等。\n将文本框元素添加到li元素中，可以使用appendChild方法将其添加为li元素的子元素。\n如果需要动态地显示数据，可以在需要的时候使用value属性给文本框元素赋值。\n\n在上面的代码中，我们首先使用document.querySelector方法获取了一个li元素，然后使用document.createElement方法创建了一个input元素。接着，我们设置了文本框的属性和样式，并使用appendChild方法将其添加到了li元素中。最后，我们使用value属性给文本框元素赋值，以动态地显示数据。\n\n需要注意的是，上面的示例代码只是给一个li元素添加了一个文本框，如果需要给多个li元素添加文本框，可以使用document.querySelectorAll方法获取多个元素，然后遍历每个元素，依次添加文本框。\n"
+          "language": "javascript",
+          "value": "// 获取要添加文本框的li元素\nconst liElement = document.querySelector('li');\n\n// 创建文本框元素\nconst inputElement = document.createElement('input');\n\n// 设置文本框属性和样式\ninputElement.setAttribute('type', 'text');\ninputElement.setAttribute('class', 'input-text');\n\n// 将文本框添加到li元素中\nliElement.appendChild(inputElement);\n\n// 动态地显示数据\ninputElement.value = '动态数据';\n\n可以使用JavaScript创建一个文本框元素，然后将其添加到指定的li元素中。具体实现步骤如下：\n获取要添加文本框的li元素，可以使用document.querySelector或document.getElementById方法获取。\n创建一个文本框元素，可以使用document.createElement方法创建。\n设置文本框元素的属性和样式，例如type属性为text、class属性为input-text等。\n将文本框元素添加到li元素中，可以使用appendChild方法将其添加为li元素的子元素。\n如果需要动态地显示数据，可以在需要的时候使用value属性给文本框元素赋值。\n\n在上面的代码中，我们首先使用document.querySelector方法获取了一个li元素，然后使用document.createElement方法创建了一个input元素。接着，我们设置了文本框的属性和样式，并使用appendChild方法将其添加到了li元素中。最后，我们使用value属性给文本框元素赋值，以动态地显示数据。\n\n需要注意的是，上面的示例代码只是给一个li元素添加了一个文本框，如果需要给多个li元素添加文本框，可以使用document.querySelectorAll方法获取多个元素，然后遍历每个元素，依次添加文本框。\n"
+        },
+        {
+          "label": "closest()",
+          "language": "javascript",
+          "value": "closest() 是 JavaScript 中 DOM 元素的方法：\n是搭配事件代理常用的dom方法，比如可以实现你点击一个区域的任何地方，确保获取的是父元素，而不是你点击的子元素\n用于查找离当前元素最近的祖先元素（包括当前元素本身）中匹配指定 CSS 选择器的元素； 语法：element.closest(selector) \n\nconst myElement = document.querySelector('#my-element');\nconst closestDiv = myElement.closest('div');\n\n上面的代码将查找 ID 为 my-element 的元素的最近祖先 div 元素，如果找到则将其赋值给变量 closestDiv。\n如果没有找到，则 closestDiv 的值为 null。closest 方法可以方便地在DOM树中查找元素的祖先元素，\n特别是在需要找到指定元素的父级或更高层次的祖先元素时，它会非常有用。\n请注意，closest() 方法不仅可以用于查找祖先元素，还可以用于查找自身或后代元素中与指定选择器匹配的元素。例如，如果我们要查找当前元素自身是否具有 .inner 类，可以使用以下代码：\nconst element = document.querySelector('.inner');\nconst self = element.closest('.inner');\nconsole.log(self); // 输出 <div class=\"inner\">...</div>\n\n通过e对象获取：\nmoveToPopup(e){\n  const workoutEl = e.target.closest('.workout');\n  //console.log(workoutEl);\n  const workout = this.#workouts.find(work => work.id === workoutEl.dataset.id);//从html的data属性获取id值\n  //console.log(workout);\n}"
         }
       ],
       "id": "XEhy6_vs",
       "createdAt": 1678188833239,
-      "updatedAt": 1681734036066
+      "updatedAt": 1688093293979
     },
     {
       "isDeleted": false,
@@ -1167,17 +1223,17 @@
       "folderId": "3BVGYMMN",
       "tagsIds": [],
       "description": null,
-      "name": "属性选择",
+      "name": "属性选择器",
       "content": [
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "\nconst imgTargets = document.querySelectorAll('img[data-src]')"
+          "value": "\nconst imgTargets = document.querySelectorAll('img[data-src]')\n\ninput[type=\"text\"]{\n  margin: 10px ;\n  display: block;\n}\n这种用法是CSS中的属性选择器，它可以根据元素的属性值来选择元素并设置样式。\n除了[type=\"text\"]外，还有一些其他常见的属性选择器，例如：\n\n[href]：选择具有 href 属性的元素\n[target=\"_blank\"]：选择 target 属性为 \"_blank\" 的链接元素\n[class^=\"box\"]：选择 class 属性以 \"box\" 开头的元素，如 class=\"box1\" 或 class=\"box2\"\n[data-color~=\"red\"]：选择 data-color 属性值包含 \"red\" 的元素\n这些选择器可以在CSS中灵活地应用于不同的场景。"
         }
       ],
       "id": "eLvZiojw",
       "createdAt": 1678359553335,
-      "updatedAt": 1678359636115
+      "updatedAt": 1686885423264
     },
     {
       "isDeleted": false,
@@ -1456,7 +1512,7 @@
         {
           "label": "router-view",
           "language": "javascript",
-          "value": "different router the same component vue。真实的业务场景中，这种情况很多。我创建和编辑的页面使用的是同一个component,默认情况下当这两个页面切换时并不会触发vue的created或者mounted钩子，官方说你可以通过watch $route的变化来做处理，但其实说真的还是蛮麻烦的。后来发现其实可以简单的在 router-view上加上一个唯一的key，来保证路由切换时都会重新渲染触发钩子了。这样简单的多了。\n\n<router-view :key=\"key\"></router-view>\n\ncomputed: {\n    key() {\n        return this.$route.name !== undefined? this.$route.name + +new Date(): this.$route + +new Date()\n    }\n }"
+          "value": "different router the same component vue。真实的业务场景中，这种情况很多。\n我创建和编辑的页面使用的是同一个component,默认情况下当这两个页面切换时并不会触发vue的created或者mounted钩子，\n官方说你可以通过watch $route的变化来做处理，但其实说真的还是蛮麻烦的。后来发现其实可以简单的在 router-view上加上一个唯一的key，\n来保证路由切换时都会重新渲染触发钩子了。这样简单的多了。\n\n<router-view :key=\"key\"></router-view>\n\ncomputed: {\n    key() {\n        return this.$route.name !== undefined? this.$route.name + +new Date(): this.$route + +new Date()\n    }\n }"
         },
         {
           "label": "路由高亮",
@@ -1496,7 +1552,7 @@
       ],
       "id": "GQiXghAh",
       "createdAt": 1679467460483,
-      "updatedAt": 1686453889053
+      "updatedAt": 1686982281262
     },
     {
       "isDeleted": false,
@@ -1623,12 +1679,12 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "目标：了解各种事件监听在什么情况下使用\n在JavaScript中，我们可以使用事件监听器来监听DOM元素或者Node.js中的事件。以下是一些常见的事件监听器,但还有很多其他的事件监听器，你可以根据需要自行查找。同时，需要注意的是，不同的浏览器可能有不同的实现，需要进行兼容性处理。\n结构：第二个参数是被addEventListener调用的函数，第一个很简单就是事件名称而已！\n注意：事件处理的回调函数this是element，比如\nform.addEventListener('submit',this._newWorkout)//这里的this不会指向form之外的对象，而是form,所以需要下面这样处理\nform.addEventListener('submit',this._newWorkout.bind(this))//在一个class或对象里的都要这样处理，bind()还是会返回函数\n\n1. click：当用户点击某个元素时触发，如鼠标点击或触摸屏幕上的某个元素。\n2. mouseover：当鼠标移动到某个元素上时触发。\n3. mouseout：当鼠标移出某个元素时触发。\n4. keydown：当用户按下键盘上的某个键时触发。\n5. keyup：当用户释放键盘上的某个键时触发。\n6. submit：当用户提交表单时触发。\n7. load：当页面或图片加载完成时触发。\n8. unload：当页面卸载时触发。\n9. resize：当窗口大小发生改变时触发。\n10. scroll：当用户滚动页面时触发。\n11. focus：当元素获得焦点时触发。\n12. blur：当元素失去焦点时触发。\n13. change：当元素的值发生改变时触发，适用于表单元素（如input、select等）。\n14. input：当元素的值发生改变时触发，适用于文本输入框（input[type=\"text\"]、textarea等）。\n15. clickoutside：当用户点击页面中除了指定元素以外的任何区域时触发。\n16. contextmenu：当用户右击页面时触发。\n17. dblclick：当用户双击某个元素时触发。\n18. touchstart：当用户触摸屏幕时触发。\n19. touchmove：当用户在屏幕上滑动时触发。\n20. touchend：当用户结束触摸时触发。\n21. animationstart：当CSS动画开始播放时触发。\n22. animationiteration：当CSS动画重复播放时触发。\n23. animationend：当CSS动画结束播放时触发。\n24. transitionstart：当CSS过渡开始时触发。\n25. transitionend：当CSS过渡结束时触发。\n26. transitioncancel：当CSS过渡被取消时触发。\n27. dragstart：当用户开始拖动一个元素时触发。\n28. drag：当用户正在拖动一个元素时触发。\n29. dragend：当用户停止拖动一个元素时触发。\n30. dragenter：当拖动元素进入某个区域时触发。\n31. dragover：当拖动元素在某个区域内移动时触发。\n32. dragleave：当拖动元素离开某个区域时触发。\n33. drop：当拖动元素被放置在某个区域时触发。\n\n//change事件,以下是jonas的mapty地图应用的change监听,注意closest()和classList.toggle()的使用\ninputType.addEventListener('change'，function (){\n   inputElevation.closest('.form__row').classList.toggle('form__row--hidden')\n   inputCadence.closest('.form _row').classList.toggle('formrow--hidden')\n})\n\n//submit事件, e.preventDefault()可以避免默认的一个页面刷新\nform.addEventListener('submit', function (e) {\n   e.preventDefault();\n   // Display marker\n   console.log(mapEvent);\n   const { lat, lng }= mapEvent.lating;\n   L.marker([lat, Ingl addTo(map\n})\n\n//Example: Asynchronous image loading with event and callback\n//all this code is non-blocking\nimg.src = 'dog.jpg';\nimg.addEventListener('load'，function(){\n   img.classList.add('fadeIn');\n})\np.style.width = '300px'"
+          "value": "目标：了解各种事件监听在什么情况下使用\n在JavaScript中，我们可以使用事件监听器来监听DOM元素或者Node.js中的事件。以下是一些常见的事件监听器,但还有很多其他的事件监听器，你可以根据需要自行查找。同时，需要注意的是，不同的浏览器可能有不同的实现，需要进行兼容性处理。\n结构：第二个参数是被addEventListener调用的函数，第一个很简单就是事件名称而已！\n注意：事件处理的回调函数this是element，比如\nform.addEventListener('submit',this._newWorkout)//这里的this不会指向form之外的对象，而是form,所以需要下面这样处理\nform.addEventListener('submit',this._newWorkout.bind(this))//在一个class或对象里的都要这样处理，bind()还是会返回函数\n\n1. click：当用户点击某个元素时触发，如鼠标点击或触摸屏幕上的某个元素。\n2. mouseover：当鼠标移动到某个元素上时触发。\n3. mouseout：当鼠标移出某个元素时触发。\n4. keydown：当用户按下键盘上的某个键时触发。\n5. keyup：当用户释放键盘上的某个键时触发。\n6. submit：当用户提交表单时触发。\n7. load：当页面或图片加载完成时触发。\n8. unload：当页面卸载时触发。\n9. resize：当窗口大小发生改变时触发。\n10. scroll：当用户滚动页面时触发。\n11. focus：当元素获得焦点时触发。\n12. blur：当元素失去焦点时触发。\n13. change：当元素的值发生改变时触发，适用于表单元素（如input、select等）。\n14. input：当元素的值发生改变时触发，适用于文本输入框（input[type=\"text\"]、textarea等）。\n15. clickoutside：当用户点击页面中除了指定元素以外的任何区域时触发。\n16. contextmenu：当用户右击页面时触发。\n17. dblclick：当用户双击某个元素时触发。\n18. touchstart：当用户触摸屏幕时触发。\n19. touchmove：当用户在屏幕上滑动时触发。\n20. touchend：当用户结束触摸时触发。\n21. animationstart：当CSS动画开始播放时触发。\n22. animationiteration：当CSS动画重复播放时触发。\n23. animationend：当CSS动画结束播放时触发。\n24. transitionstart：当CSS过渡开始时触发。\n25. transitionend：当CSS过渡结束时触发。\n26. transitioncancel：当CSS过渡被取消时触发。\n27. dragstart：当用户开始拖动一个元素时触发。\n28. drag：当用户正在拖动一个元素时触发。\n29. dragend：当用户停止拖动一个元素时触发。\n30. dragenter：当拖动元素进入某个区域时触发。\n31. dragover：当拖动元素在某个区域内移动时触发。\n32. dragleave：当拖动元素离开某个区域时触发。\n33. drop：当拖动元素被放置在某个区域时触发。\n\n//change事件,以下是jonas的mapty地图应用的change监听,注意closest()和classList.toggle()的使用\ninputType.addEventListener('change'，function (){\n   inputElevation.closest('.form__row').classList.toggle('form__row--hidden')\n   inputCadence.closest('.form _row').classList.toggle('formrow--hidden')\n})\n// 从下拉选择不同的影片，页面同时显示不同的价格\nmovieSelect.addEventListener('change', e =>{ //注意箭头函数的简洁写法\n\tticketPrice = +e.target.value; //这里的类型转换 + 是个重点\n  updateSelectedCount();\n});\n\n//submit事件, e.preventDefault()可以避免默认的一个页面刷新\nform.addEventListener('submit', function (e) {\n   e.preventDefault();\n   // Display marker\n   console.log(mapEvent);\n   const { lat, lng }= mapEvent.lating;\n   L.marker([lat, Ingl addTo(map\n})\n\n//Example: Asynchronous image loading with event and callback\n//all this code is non-blocking\nimg.src = 'dog.jpg';\nimg.addEventListener('load'，function(){\n   img.classList.add('fadeIn');\n})\np.style.width = '300px'"
         }
       ],
       "id": "mdSzKMII",
       "createdAt": 1680487739529,
-      "updatedAt": 1680773476995
+      "updatedAt": 1688093512896
     },
     {
       "isDeleted": false,
@@ -2038,7 +2094,7 @@
         {
           "label": "Proxy的概念",
           "language": "javascript",
-          "value": "概念\nProxy 用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”（meta programming），即对编程语言进行编程。\nProxy 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。Proxy 这个词的原意是代理，用在这里表示由它来“代理”某些操作，可以译为“代理器”\nES6 原生提供 Proxy 构造函数，用来生成 Proxy 实例。 var proxy = new Proxy(target, handler);\ntarget 参数表示所要代理的目标对象，handler 参数也是一个对象，用来定制代理拦截行为。 Proxy 对象的所有用法，都是上面这种形式，不同的只是 handler 参数的写法。其中，new Proxy() 表示生成一个Proxy实例。\n\nJavaScript中的Proxy是一种元编程机制，它允许您在运行时拦截和定义对象上的各种底层操作。通过使用Proxy，您可以对对象的默认行为进行自定义，并在访问或修改对象属性时实现更高级的逻辑。\n具体来说，Proxy包含一个目标对象（target）和一个代理处理程序（handler）。当您尝试访问或修改目标对象时，实际上会调用代理处理程序上的相应方法进行处理。代理处理程序可以定义一系列捕获器（trap），用于拦截和处理各种操作，例如属性访问、赋值、方法调用等。\n例如，以下代码演示了如何使用Proxy拦截和修改对象的属性访问：\n\nlet target = {name: 'John', age: 30};\nlet handler = {\n  get: function(target, prop) {\n    console.log('Accessing property: ' + prop);\n    return target[prop];\n  },\n  set: function(target, prop, value) {\n    console.log('Setting property: ' + prop);\n    target[prop] = value;\n  }\n};\nlet proxy = new Proxy(target, handler);\n\nconsole.log(proxy.name); // Accessing property: name  John\nproxy.age = 35; // Setting property: age\nconsole.log(proxy.age); // Accessing property: age  35\n\n在上面的代码中，我们首先定义了一个目标对象target和一个代理处理程序handler。在代理处理程序中，我们定义了两个捕获器（get和set），用于拦截目标对象的属性访问和赋值操作。然后，我们使用new关键字和Proxy构造函数创建了一个代理对象proxy，并将它指向目标对象target。\n接着，我们通过访问和修改代理对象的属性来演示了拦截器的功能。当我们访问代理对象的属性时，实际上会调用get捕获器中定义的逻辑，打印出相应的信息并返回目标对象中对应的属性值。同样地，当我们修改代理对象的属性时，实际上会调用set捕获器中定义的逻辑，打印出相应的信息并修改目标对象中对应的属性值。\n需要注意的是，虽然Proxy可以实现各种高级功能，但也可能会带来性能问题和安全隐患。因此，在使用Proxy时需要谨慎考虑，并根据具体情况进行优化和防范措施。\n\nlet obj = new Proxy(target,handler);\n//target 参数表示所要代理的目标对象，handler 参数也是一个对象，用来定制代理拦截行为。\n //自定义对象属性的获取、赋值、枚举、函数调用的等功能\n //这个target对象和下面proxy实例对象是不同的对象，但都会被修改\nvar target = { a: 1,b: 2,};\nlet proxy = new Proxy(target, {  \n//第二个参数是handler，很多函数都是这种结构，很简单！\n   get(target, prop) { // 第二个参数是属性\n     console.log(\"This is property value\" + target[prop]);\n     //或 return \"This is property value\" + target[prop]\n   },\n        \n   set(target, prop,value) {\n     target[prop] = value;\n     console.log(target[prop]);\n    },\n});\n\nconsole.log(proxy.a); //This is property value 1\nconsole.log(target.a); // 1\nproxy.b = 3; // set() 设置后这里会生效\nconsole.log('target:', target); // 被代理的对象也被修改了\n\n"
+          "value": "概念\nProxy 用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”（meta programming），即对编程语言进行编程。\nProxy 可以理解成，在目标对象之前架设一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。Proxy 这个词的原意是代理，用在这里表示由它来“代理”某些操作，可以译为“代理器”\nES6 原生提供 Proxy 构造函数，用来生成 Proxy 实例。 var proxy = new Proxy(target, handler);\ntarget 参数表示所要代理的目标对象，handler 参数也是一个对象，用来定制代理拦截行为。 Proxy 对象的所有用法，都是上面这种形式，不同的只是 handler 参数的写法。其中，new Proxy() 表示生成一个Proxy实例。\n\nJavaScript中的Proxy是一种元编程机制，它允许您在运行时拦截和定义对象上的各种底层操作。通过使用Proxy，您可以对对象的默认行为进行自定义，并在访问或修改对象属性时实现更高级的逻辑。\n具体来说，Proxy包含一个目标对象（target）和一个代理处理程序（handler）。当您尝试访问或修改目标对象时，实际上会调用代理处理程序上的相应方法进行处理。代理处理程序可以定义一系列捕获器（trap），用于拦截和处理各种操作，例如属性访问、赋值、方法调用等。\n例如，以下代码演示了如何使用Proxy拦截和修改对象的属性访问：\n\nlet target = {name: 'John', age: 30};\nlet handler = {\n  get: function(target, prop) {\n    console.log('Accessing property: ' + prop);\n    return target[prop];\n  },\n  set: function(target, prop, value) {\n    console.log('Setting property: ' + prop);\n    target[prop] = value;\n  }\n};\nlet proxy = new Proxy(target, handler);\n\nconsole.log(proxy.name); // Accessing property: name  John\nproxy.age = 35; // Setting property: age\nconsole.log(proxy.age); // Accessing property: age  35\n\n在上面的代码中，我们首先定义了一个目标对象target和一个代理处理程序handler。在代理处理程序中，我们定义了两个捕获器（get和set），用于拦截目标对象的属性访问和赋值操作。然后，我们使用new关键字和Proxy构造函数创建了一个代理对象proxy，并将它指向目标对象target。\n接着，我们通过访问和修改代理对象的属性来演示了拦截器的功能。当我们访问代理对象的属性时，实际上会调用get捕获器中定义的逻辑，打印出相应的信息并返回目标对象中对应的属性值。同样地，当我们修改代理对象的属性时，实际上会调用set捕获器中定义的逻辑，打印出相应的信息并修改目标对象中对应的属性值。\n需要注意的是，虽然Proxy可以实现各种高级功能，但也可能会带来性能问题和安全隐患。因此，在使用Proxy时需要谨慎考虑，并根据具体情况进行优化和防范措施。\n\nlet obj = new Proxy(target,handler);\ntarget 参数表示所要代理的目标对象，handler 参数也是一个对象，用来定制代理拦截行为。\n自定义对象属性的获取、赋值、枚举、函数调用的等功能\n这个target对象和下面proxy实例对象是不同的对象，但都会被修改\nvar target = { a: 1,b: 2,};\nlet proxy = new Proxy(target, {  \n//第二个参数是handler，很多函数都是这种结构，很简单！\n   get(target, prop) { // 第二个参数是属性\n     console.log(\"This is property value\" + target[prop]);\n     //或 return \"This is property value\" + target[prop]\n   },\n        \n   set(target, prop,value) {\n     target[prop] = value;\n     console.log(target[prop]);\n    },\n});\n\nconsole.log(proxy.a); //This is property value 1\nconsole.log(target.a); // 1\nproxy.b = 3; // set() 设置后这里会生效\nconsole.log('target:', target); // 被代理的对象也被修改了\n\n"
         },
         {
           "label": "proxy 对数组操作",
@@ -2058,7 +2114,7 @@
       ],
       "id": "CViPsepB",
       "createdAt": 1681889303089,
-      "updatedAt": 1681953756154
+      "updatedAt": 1687248966773
     },
     {
       "isDeleted": false,
@@ -2708,13 +2764,13 @@
         "4_xeTOND",
         "u9pCoFM3"
       ],
-      "description": null,
+      "description": "we can use props customize the behavior of a component similar to how HTML attributes change the behavior of an element\nprops is short for properties\n另外注意，在父组件定义回调函数，然后在子组件调用也可以实现$emit的功能，但用$emit更好些，在devtool里通过Timeline可以debug,回调函数不行",
       "name": "子组件props、自定义事件",
       "content": [
         {
           "label": "friendContact.vue ---Child-1",
           "language": "vue",
-          "value": "//这个组件将父组件传递的数据展示出来，并向父组件发送自定义事件\n\nprops和data()里定义的数据是一样的，所以不能重名,可以对数据设置类型、初始值以及验证；\n如果要修改值，不能修改父级的原始值，但可以在data()里声明一个变量，将props的要修改的值赋给这个变量，然后修改这个变量即可\n\n<template>\n   <ul>\n     //props里的值和data里的用法一样，注意不用加this关键字,这里的值都是父组件通过v-for循环一个数组后传递过来的\n    <h2>{{name}}</h2>\n    <h2>{{...}}</h2>\n   </ul>\n    // $emit也可以写在这里, 和在methods里一样,注意在模板里是不用写this关键字的，直接用用数据名\n  <button @click=\"$emit('delete',id)\"> Delete </button>\n</template>\n\n<script>\n  export default{\n     可以是数组的简单形式,或对象形式，可以更多的设置\n    //props:['name','phoneNumber',....]\n    //props是父组件传给子组件的，而emits是子组件传给父组件的\n    props:{\n      id:{\n \t\t\t\t type:String,\n         required:true,\n      },\n      name:{\n         type:String,\n         required:true,\n         default:'okzu',\n      },\n      isFavoriate:{\n         type:String,\n          required:false,\n          default:'0',\n          validator:function(value){\n            return value==='1' ||  value==='0';\n          }\n      } \n    },\n    //emits是自定义的事件\n    emits:['toggle-favorite','delete'], //这里不是必须的\n    data(){\n      return{\n       //通过这种形式改变props的值，注意这并没有改变父级的原始值, 所以才可以。\n       //注意对props里值的引用，其实就是在引用data()里的值。\n       Favoriate:this.isFavoriate\n      }\n    },\n    methods:{\n     toggleFavorite(){\n       //$emit是内置的方法，在父元素可以直接通过v-on: (简写为@)进行事件监听接收 \n       //$emit方法设置了一个自定义事件 'toggle-favorite',第二个参数是传递的数据，当然参数可以更多，或者将若干值包裹在一个对象里...\n        this.$emit('toggle-favorite',this.id)\n         //父元素用 @ 接收事件：@toggle-favorite = 'toggle-favoriteState'\n         //父元素的 friendId参数就是子元素发送过来的数据，可以有多个参数：\n         // toggleFavoriteStatus(friendId) { \n            //const findId = this.friends.find(friend => friend.id === friendId);\n            //identifiedFriend.isFavorite = !identifiedFriend.isFavorite;\n         //}\n     },\n     //这个和上面模板里写的一个作用，只是不同的写法\n     deleteFriend() {\n        this.$emit('delete',this.id);\n      }     \n    }\n  }\n</script>"
+          "value": "//这个组件将父组件传递的数据展示出来，并向父组件发送自定义事件\n\nprops和data()里定义的数据是一样的，所以不能重名,可以对数据设置类型、初始值以及验证；\n如果要修改值，不能修改父级的原始值，但可以在data()里声明一个变量，将props的要修改的值赋给这个变量，然后修改这个变量即可\n\n<template>\n   <ul>\n     //props里的值和data里的用法一样，注意不用加this关键字,这里的值都是父组件通过v-for循环一个数组后传递过来的\n    <h2>{{name}}</h2>\n    <h2>{{...}}</h2>\n   </ul>\n    // $emit也可以写在这里, 和在methods里一样,注意在模板里是不用写this关键字的，直接用用数据名\n  <button @click=\"$emit('delete',id)\"> Delete </button>\n</template>\n\n<script>\n  export default{\n     可以是数组的简单形式,或对象形式，可以更多的设置\n    //props:['name','phoneNumber',....]\n    //props是父组件传给子组件的，而emits是子组件传给父组件的\n    props:{\n     isFavoriate:{\n         type:String,\n          required:false,\n          default:'0',\n          validator(value){ //validator作为验证返回true或false\n            return value === '1' ||  value==='0';\n          }\n          /* validator(value){\n            return value < 130\n          } */\n      },\n      id:{\n \t\t\t\t type:String,\n         required:true,\n      },\n      name:{\n         type:String,\n         //required:true,\n         default:'okzu',\n      },\n     \n    },\n    //emits是自定义的事件\n    emits:['toggle-favorite','delete'], //这里不是必须的，但不加的的话控制台有报错\n    data(){\n      return{\n       //通过这种形式改变props的值，注意这并没有改变父级的原始值, 所以才可以。\n       //注意对props里值的引用，其实就是在引用data()里的值。\n       Favoriate:this.isFavoriate\n      }\n    },\n    methods:{\n     toggleFavorite(){\n       //$emit是内置的方法，在父元素可以直接通过v-on: (简写为@)进行事件监听接收 \n       //$emit方法设置了一个自定义事件 'toggle-favorite',第二个参数是传递的数据，当然参数可以更多，或者将若干值包裹在一个对象里...\n        this.$emit('toggle-favorite',this.id)\n         //父元素用 @ 接收事件：@toggle-favorite = 'toggle-favoriteState'\n         //父元素的 friendId参数就是子元素发送过来的数据，可以有多个参数：\n         // toggleFavoriteStatus(friendId) { \n            //const findId = this.friends.find(friend => friend.id === friendId);\n            //identifiedFriend.isFavorite = !identifiedFriend.isFavorite;\n         //}\n     },\n     //这个和上面模板里写的一个作用，只是不同的写法\n     deleteFriend() {\n        this.$emit('delete',this.id);\n      }     \n    }\n  }\n</script>"
         },
         {
           "label": "newFriend.vue ---Child-2",
@@ -2734,7 +2790,7 @@
       ],
       "id": "3X84iSe8",
       "createdAt": 1684986180885,
-      "updatedAt": 1685850132956
+      "updatedAt": 1687408613759
     },
     {
       "isDeleted": true,
@@ -2810,11 +2866,16 @@
           "label": "引跑 graphone 项目",
           "language": "vue",
           "value": "<template>\n  <div class=\"el-container\"> \n    <h4 style=\"color:red\">main page</h4>  \n    <div class=\"panel panel-default\">\n      <el-tabs v-model=\"activeName\" type=\"card\" @tab-click=\"handleClick\">\n        <el-tab-pane label=\"任务列表\" name=\"first\"></el-tab-pane>\n        <el-tab-pane label=\"新增任务\" name=\"second\"></el-tab-pane>\n        <el-tab-pane label=\"数据源管理\" name=\"third\"></el-tab-pane>\n  </el-tabs>\n\n    <section>\n        //属性:is决定那个组件动态显示出来\n        <component :is=\"isComponents\"></component>\n     </section>\n    </div>\n  </div>\n</template>\n\n<script>\nimport importList from '@/page/database/components/dataImport/taskList'\nimport tabs from '@/page/database/components/dataImport/addImport'\nimport datasource from '@/page/database/source'\n\nexport default {\n   components: { \n      importList,\n      tabs,\n      datasource\n  },\n  data(){\n    return{\n       activeName: 'first',\n       componentsList: {\n          first:importList,\n          second:tabs,\n          third:datasource\n        }   \n    }\n  },\n  methods: {\n     handleClick(tab, event) {\n    }\n  },\n  computed: {\n    isComponents() {\n         return this.componentsList[this.activeName];\n     }\n    }\n}\n</script>\n\n<style lang=\"less\" scoped>\n .el-container{\n   display: block;\n   .panel{\n   padding:10px 30px;\n   }\n }\n</style>"
+        },
+        {
+          "label": "动态组件传参给同一个子组件",
+          "language": "javascript",
+          "value": "==========在父组件中，你需要传递一个布尔值:is-success=\"true\"给子组件 ，而不是字符串,如下：\n<el-tab-pane label=\"活动状态\" name=\"actionCase\">\n  <component :is=\"'ActionCase'\" ref=\"refActionCase\" :is-success=\"true\" :height=\"tabHeight\" @clickActionCase=\"onClickActionCaseNme\" />\n</el-tab-pane>\n<el-tab-pane label=\"未通过==\" name=\"actionFailed\">\n  <component :is=\"'ActionCase'\" ref=\"refActionCase\" :is-success=\"false\" :height=\"tabHeight\" @clickActionCase=\"onClickActionCaseNme\" />\n</el-tab-pane>\n\n=========在子组件中，你需要接收一个布尔值，所以你需要在子组件中修改props的声明，如下：\nprops: {\n  isSuccess: {\n    type: Boolean,\n    default: true\n  },\n}\n\n==========然后你需要在子组件的getActionCases方法中根据isSuccess的值来过滤数据，如下：\ngetActionCases() {\n  const param = {\n    actionId: this.actionId\n  }\n  apiScheduler.listActionAllCases(param).then(res => {\n    if (res.code === '0') {\n      const filteredCases = []\n      for (let i = 0; i < res.data.length; i++) {\n        const casesData = res.data[i]\n        if (casesData.status !== null && casesData.status === (this.isSuccess ? 'success' : 'failed')) {\n          casesData.actionState = planState[casesData.status]\n          casesData.planState = planState[casesData.status]\n          casesData.statusStr = planState[casesData.status].zh\n          casesData.color = planState[casesData.status].color\n          casesData.icon = planState[casesData.status].icon\n          casesData.num = filteredCases.length + 1\n          filteredCases.push(casesData)\n        }\n      }\n      this.actionCaseData = filteredCases\n    }\n  })\n}\n这样，当你在父组件中设置isSuccess为true时，子组件会显示状态为'success'的数据，当你设置isSuccess为false时，子组件会显示状态为'failed'的数据。\n\nAI - 10:49:59  -此内容由AI生成，真假自辨\n\n// 上面的需求后来有了变化：我希望this.isSuccess是true的时候，返回casesData.status的所有数据，而不仅是success的数据，同时要判断如果this.isSuccess是false的时候就只返回false的数据，怎么写？ \n\n//您可以使用条件语句来根据this.isSuccess的值进行筛选，如下所示：\ngetActionCases() {\n  const param = {\n    actionId: this.actionId\n  }\n  apiScheduler.listActionAllCases(param).then(res => {\n    if (res.code === '0') {\n      const filteredCases = []\n      for (let i = 0; i < res.data.length; i++) {\n        const casesData = res.data[i]\n        console.log('%c casesData.status', 'background:yellow', casesData.status)\n\n        if (this.isSuccess) {\n          // 当 this.isSuccess 是 true 时，返回所有数据\n          if (casesData.status !== null) {\n            casesData.actionState = planState[casesData.status]\n            casesData.planState = planState[casesData.status]\n            casesData.statusStr = planState[casesData.status].zh\n            casesData.color = planState[casesData.status].color\n            casesData.icon = planState[casesData.status].icon\n            casesData.num = filteredCases.length + 1\n            filteredCases.push(casesData)\n          }\n        } else {\n          // 当 this.isSuccess 是 false 时，只返回与 casesData.status 匹配的数据\n          if (casesData.status === 'failed') {\n            casesData.actionState = planState[casesData.status]\n            casesData.planState = planState[casesData.status]\n            casesData.statusStr = planState[casesData.status].zh\n            casesData.color = planState[casesData.status].color\n            casesData.icon = planState[casesData.status].icon\n            casesData.num = filteredCases.length + 1\n            filteredCases.push(casesData)\n          }\n        }\n      }\n      this.actionCaseData = filteredCases\n    }\n  })\n},\n在上面的代码中，我们使用了条件语句来判断this.isSuccess的值。当this.isSuccess为真时，将所有数据都添加到filteredCases数组中。当this.isSuccess为假时，只添加casesData.status为failed的数据。所以，这样就可以根据this.isSuccess的值返回相应的数据了。\n\n"
         }
       ],
       "id": "7MeKvDeL",
       "createdAt": 1685163272158,
-      "updatedAt": 1685170291839
+      "updatedAt": 1688373918987
     },
     {
       "isDeleted": false,
@@ -2922,7 +2983,7 @@
       "updatedAt": 1686047754849
     },
     {
-      "isDeleted": false,
+      "isDeleted": true,
       "isFavorites": false,
       "folderId": "-fio_qG6",
       "tagsIds": [],
@@ -2937,7 +2998,409 @@
       ],
       "id": "5lstTJVz",
       "createdAt": 1686047655684,
-      "updatedAt": 1686047655684
+      "updatedAt": 1687231113428
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "transition component 动画",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "//transition也有Events如@before-enter等,并且含有参数\n<transition\n  :css='false' //可以禁用css动画，使用js的\n  @before-enter='beforeEnter' \n\t@enter='enter'\n  @after-enter='afterEnter'\n\t@before-leave=\"beforeLeave\" \n\t@leave='leave'\n  @enter-cancelled=\"enterCancelled\" //这个事件可以立即取消之前的事件，避免抖动\n  @leave-cancelled=\"leaveCancelled\"\n> //transition只允许一个child\n// <transition name='para'> \n  \t<p> 上面添加name后,css里的.v-enter-from名称就可以自定义了 para-enter-from</p>\n</transition>\n\n<transition name=\"fade-button\" mode=\"out-in\"> //mode有两个状态in-out和out-in\n\t<button @click=\"showUsers\" v-if=\"!usersAreVisible\"> Show User </button>\n  <button @click=\"hideUsers\" v-else> Hide Users </button>\n</transition>\n\n<transition-group> //加group可以对对多元素进行动画\n  <li v-for=\"user in users\" :key=\"user\" @click=\"removeUser(user)\"></li>\n</transition-group>\n\n<script>\n  data(){\n    return{\n       enterInterVal:null\n    }\n  },\n  methods:{\n    beforeEnter(el) { //el内置参数可以获取dom\n      console.log('beforeEnter');\n      console.log(el);\n      el.style.opacity = 0;\n    },\n    enter(el,done){ //done是vue内置的参数\n      console.log('enter');\n      console.log(el);\n      let round = 1;\n      //setInterval的回调用的箭头函数，否则this指向有问题\n      this.enterInterVal = setInterval(()=> { //将enterInterVal放在上面data里这样别的方法可以访问到\n        el.style.opacity = round * 0.01;\n        round++;\n        if (round > 100) {\n           clearInterval(this.enterInterVal);\n           done();//这个是调用上面第二个参数，告诉vue,这个事件完成了\n        }\n      },20);\n    }\n  }\n</script>\n\n<style>\n  //vue的内置三个css状态：\n  .v-enter-from {\n    opacity: 0;\n    transform: translateY(-30px);\n  }\n  .v-enter-active{\n    transition: all 0.3s ease-out;\n  }\n  .v-enter-to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n\n  //------ leave \n  .v-leave-from {\n    opacity: 1;\n    transform: translateY(0);\n  }\n  .v-leave-active {\n    transition: all 0.3s ease-in;\n  }\n  .v-leave-to{\n    opacity: 1;\n    transform: translateY(30px);\n  }\n</style>"
+        }
+      ],
+      "id": "-ZLzDs6M",
+      "createdAt": 1686456204600,
+      "updatedAt": 1686820821704
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [
+        "kzDE3A3E"
+      ],
+      "description": null,
+      "name": "[type=\"text\"]",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "input[type=\"text\"]{\n  margin: 10px ;\n  display: block;\n}"
+        }
+      ],
+      "id": "BEbqFjZn",
+      "createdAt": 1686885138589,
+      "updatedAt": 1686885345884
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "computed & watchers",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "Computed properties are similar to watchers and that they watch our data for changes.\nwatch:  whenever you want to perform asynchronous tasks.\nComputed: Computed properties can never be asynchronous, or at least they shouldn't be.You expect the value to be returned from the computed properties function.However watchers don't bear that responsibility.\n\n// by using watchers, we can run additional logic when a value changes.\n// 以下代码在两秒后会改变页面的值\nwatch: {\n  age(newVal,oldVal) {\n    setTimeout(() => {\n      this.age = 20\n    },2000)\n  }\n}"
+        }
+      ],
+      "id": "UcD_qK3D",
+      "createdAt": 1686982363596,
+      "updatedAt": 1686982967592
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "MqWdF2i4",
+      "tagsIds": [],
+      "description": null,
+      "name": "input 有很多实用type",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "html",
+          "value": "<label>perspectiv:{{perspectiv}} px </label>\n<input type='range' min='0' max='999' v-model='perspective'>"
+        }
+      ],
+      "id": "AV0wDPkA",
+      "createdAt": 1687162238093,
+      "updatedAt": 1687162392408
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": ""
+        }
+      ],
+      "id": "2rIetmnR",
+      "createdAt": 1687230339185,
+      "updatedAt": 1687230339185
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "07hR6-Qz"
+      ],
+      "description": null,
+      "name": "拷贝内容到剪切板 navigator.clipboard.writeText()",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "//该函数依赖于浏览器的剪贴板 API，只有在支持该 API 的浏览器中才能正常工作\nasync copy(){\n  let text = `transform:${this.box.transform}`\n  //由于该方法返回的是一个 Promise 对象，因此需要使用 await 等待其完成\n  await navigator.clipboard.writeText(text)\n  \n  alert(\"css Copied to Clipboard!\")\n}\n======= 详细解释 navigator.clipboard.writeText()\nnavigator.clipboard.writeText() 是一个 Web API，它允许前端开发者将文本内容写入到用户的剪贴板中。\n该方法接受一个字符串作为参数，将该字符串的内容写入到剪贴板中。它返回一个 Promise 对象，该对象在写入操作完成后会被 resolve。如果写入操作失败，则会被 reject。\n在使用该方法之前，需要先检查浏览器是否支持该 API。可以通过检查 navigator.clipboard 对象是否存在来判断。\n以下是使用 navigator.clipboard.writeText() 的示例代码：\n\nif (navigator.clipboard) {\n  navigator.clipboard.writeText('Hello, World!')\n    .then(() => {\n      console.log('文本已成功写入剪贴板');\n    })\n    .catch((error) => {\n      console.error('写入剪贴板失败:', error);\n    });\n} else {\n  console.error('当前浏览器不支持 navigator.clipboard API');\n}\n\n在上述示例中，我们首先检查浏览器是否支持 navigator.clipboard API。如果支持，我们调用 writeText() 方法并传入要写入剪贴板的文本内容。然后，我们使用 Promise 的 then() 方法来处理成功写入剪贴板的情况，并使用 catch() 方法来处理写入失败的情况。如果浏览器不支持 navigator.clipboard API，则会在控制台打印错误消息。\n需要注意的是，由于安全性考虑，该方法只能在用户交互的上下文中调用，例如在点击按钮、触发事件等操作中。否则会抛出权限错误。"
+        }
+      ],
+      "id": "mlxpI8XS",
+      "createdAt": 1687243967884,
+      "updatedAt": 1687244484057
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [
+        "R7WFWPun"
+      ],
+      "description": null,
+      "name": "Vite",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "npm create vite@latest\n\nnpm run build\n\nnpm run preview\n\nnpm install sass  //后缀名为scss\n\nnpm install autoprefixer --save-dev  //postcss相关，This module is a plugin for post CSS。lt will scan our CSS properties for missing vendors.这里没有站桩postcss因为vite自带了\n\n"
+        },
+        {
+          "label": "postcss.config.cjs",
+          "language": "javascript",
+          "value": "postcss.config.cjs是自己在vite项目里建立的一个文件，vite会自动查询该文件对postcss进行相关设置;\npostcss is a tool you can configure with plugins to transform the output of your CSS\npostcss会对css进行处理，然后再编译成css\n\nmodule.exports = {\n  plugins:[require('autoprefixer')] //需要先安装：npm install autoprefixer --save-dev\n}\n\n\n//==========下面不属于配置文件内容，是一个示例\nPostCSS can handle adding the prefixes during compilation.比如自动添加火狐浏览器适用的前缀,\n下面的::placeholder在编译后会添加火狐浏览器适用的前缀\n\n//可以更改placeholder的样式\n::placeholder{\n\tcolor:red;\n}"
+        }
+      ],
+      "id": "L9KsPt00",
+      "createdAt": 1687250925085,
+      "updatedAt": 1687318697409
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "TGQqRGFr",
+      "tagsIds": [],
+      "description": null,
+      "name": "基本概念",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "Node.js并不是一个用于实现具体功能的第三方工具库，而是JavaScript程序的运行环境。\nNode.js是一个基于Chrome V8引擎的JavaScript运行环境。Node.js使用了一个事件驱动的、非阻塞式I/O的模型，轻量又高效，它的底层是用C/C++编写的。\nNode.js是一个基于Chrome V8引擎的JavaScript运行环境。Node.js使用了一个事件驱动的、非阻塞式I/O的模型，轻量又高效，它的底层是用C/C++编写的。\n由于Node.js底层使用的是异步非阻塞的I/O机制，因此它更适合于I/O密集、少量业务逻辑和计算消耗的场景。尽管解释型脚本语言本身并不适合执行计算型任务，但Node.js底层是由C/C++代码编写的，并且提供了JavaScript代码层与C/C++代码交互的接口，面对计算密集型任务时，Node.js只需要作为启动脚本调用底层C/C++程序来完成计算密集型任务就可以了。\n毫不夸张地说，Node.js对前端开发的推动作用简直就像“工业革命”对生产力的推进作用一样。十几年前，JavaScript连最基本的模块化规范都没有，代码的优化也只能依赖于IDE的简陋工具和手动优化。现今的前端开发工作流则已经拥有了全生命周期的自动化工具支持："
+        }
+      ],
+      "id": "pxRMCzn1",
+      "createdAt": 1687255400292,
+      "updatedAt": 1687256943348
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [
+        "0Hny-xOz",
+        "WORBBpq9"
+      ],
+      "description": "后缀名为scss",
+      "name": "sass less postcs",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "darken() 函数：\nh1{\n\tcolor:#CC3244;\n  &:hover {\n\tcolor: darken(#CC3244，15%);\n }\n}\n"
+        },
+        {
+          "label": "Sass、Less 和 PostCSS的不同点",
+          "language": "css",
+          "value": "Sass、Less 和 PostCSS 都是前端 CSS 预处理器，用于提高 CSS 的可维护性和可扩展性。下面是它们的主要不同之处：\n\nSass\nSass 是一种基于 Ruby 的 CSS 预处理器，使用 .scss 扩展名。Sass 具有以下特点：\n\n支持变量、嵌套规则、混入（Mixin）、函数等强大的功能，可以让 CSS 更加模块化和易于维护。\n提供了一个类似编程语言的语法，支持条件语句、循环语句等高级语法，可以实现更复杂的逻辑判断和计算。\n可以通过 @import 导入其他 Sass 文件或 CSS 文件，使样式表更加组件化和灵活。\nLess\nLess 是一种基于 JavaScript 的 CSS 预处理器，使用 .less 扩展名。Less 具有以下特点：\n\n与 Sass 相比，Less 的语法更加简洁明了，更接近原生 CSS 语法，学习曲线较低。\n支持变量、嵌套规则、混入（Mixin）等功能，但相对于 Sass 功能较为简单。\n可以在浏览器端使用，通过 JavaScript 解析 Less 样式表并动态生成 CSS。\nPostCSS\nPostCSS 不同于 Sass 和 Less，它是一种基于 JavaScript 的 CSS 后处理器，使用插件来实现各种功能。PostCSS 具有以下特点：\n\n不提供预处理器的语法和功能，而是通过插件对 CSS 进行转换、优化和扩展。\n可以与大多数现代前端工具集成，如 webpack、gulp 等，使得对 CSS 的处理变得更加灵活和可配置。\n插件丰富，支持自动添加浏览器前缀、转换 CSS 新特性语法、优化样式表等各种功能。\n总之，Sass 和 Less 更加侧重于提供一种新的 CSS 编写方式，可以使 CSS 更加模块化和易于维护；而 PostCSS 则更加注重对 CSS 进行后处理，以提高样式表的可读性、可维护性和性能。"
+        },
+        {
+          "label": "Less",
+          "language": "css",
+          "value": "在 Less 中，@ 符号代表变量的声明。在 @base-color 这个变量中，@ 表示这是一个 Less 变量的声明，它用于存储一个颜色值，并可以在样式表中多次引用该颜色值。\nLess 变量可以包含任何有效的 CSS 值，如颜色、长度、字体等。使用 Less 变量可以提高代码的可维护性和便捷性，因为我们可以通过修改变量值来改变所有引用该变量的地方，而无需手动逐一更改。\n例如，我们可以定义一个名为 @color-primary 的变量，将其设置为主题色，在需要使用该颜色的地方直接使用变量名即可：\n\n@color-primary: #0080FF; // 定义主题色\n.button {\n  background-color: @color-primary; // 使用主题色\n}\n\n这样，在需要修改主题色时，只需要修改一次 @color-primary 的值，就可以自动更新整个页面中所有使用该颜色的元素的样式。\n\n除了 darken() 函数，在 Less 中还有很多其他实用的函数和方法，下面是一些常用的函数和方法：\n\nlighten() 函数：用于调亮颜色值，与 darken() 函数的作用相反。\n@base-color: #3498db;\n@light-color: lighten(@base-color, 10%);\nsaturate() 函数：用于增加颜色的饱和度。\n@base-color: #3498db;\n@saturated-color: saturate(@base-color, 20%);\ndesaturate() 函数：用于降低颜色的饱和度。\n@base-color: #3498db;\n@desaturated-color: desaturate(@base-color, 20%);\nspin() 函数：用于旋转颜色的色相。\n@base-color: #3498db;\n@rotated-color: spin(@base-color, 180deg);\nmix() 函数：用于混合两种颜色，返回一个新的颜色。\n@color1: #f44336;\n@color2: #2196f3;\n@mixed-color: mix(@color1, @color2, 50%);\ncalc() 函数：用于进行数学计算。\n@width: 200px;\n@padding: 10px;\n.box {\n  width: calc(@width - 2 * @padding); // 计算宽度\n}\nrem() 函数：将像素转换为 rem 值。\n@font-size: 16px;\nh1 {\n  font-size: rem(@font-size); // 将像素转换为 rem 值\n}\n除了上述函数和方法外，Less 还提供了许多实用的工具和功能，如混合（Mixin）、变量（Variable）、嵌套规则（Nested Rules）等"
+        }
+      ],
+      "id": "Mlw4dPHX",
+      "createdAt": 1687314510215,
+      "updatedAt": 1687342871577
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "使用ESLint规范编程风格",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "editorconfig只对程序文件的通用基本格式进行了限制，并不关心某个编程语言自身的语法特性，而ESLint可以说是专为JavaScript服务的代码检查工具。ESLint通过对工程目录中的js或jsx文件执行自动扫描来查找常见的语法和代码风格错误（安装插件后即可支持ts和tsx），并根据用户设定的报警等级给出提示，甚至还可以配置自动修复策略。\n它的整体架构是一个插件平台，这就意味着我们可以只让自己期望的检测规范生效，或者编写自己团队专属的检测规范，而不是被动地接受某些设定。当然，如果你觉得配置很烦琐，也可以直接下载一些知名的前端技术团队开源的配置文件来使用。\n另一方面，ESLint的流行得益于其广泛支持的集成方式，我们不仅可以通过编辑器插件使用它，也可以直接在命令行中启用它，或者配合各种自动化构建工具及API通过编写代码的方式将它接入自己的前端工程化体系中。ESLint具有如此广泛的适用性，可以称得上是业界良心了。\n\nESLint可以支持如下两种配置方式。\n● 注释配置：直接使用JavaScript注释把配置信息嵌入代码源文件中。\n● 文件配置：使用JavaScript、JSON或YAML文件格式为整个目录配置“.eslintrc.*”文件来存放配置信息。\n\n规则集的配置格式如下：\nrules:{\n    \"规则名\" : [规则值, 规则配置]\n}\n//规则值支持:\"off\"或0表示关闭，\"warn\"或1表示告警，\"error\"或2表示错误\n\n=========下面展示的是一份配置好的“.eslintrc.js”文件（以JS格式为例）：\nmodule.exports = {\n    //根级设置，全局生效\n    \"root\":true,\n    //设置支持的环境，支持的环境激活后会提供一组特定环境的预定义全局变量\n    \"env\":{\n        \"browser\":true,\n        \"node\":true\n    },\n    //要检查的规则集\n    \"rules\":{\n        // 进行条件判断时，强制使用\"===\"或\"！==\"，告警级别为\"错误\"\n        \"eqeqeq\" : 2,\n        // 禁止在条件表达式中出现赋值语句，告警级别为\"错误\"\n        \"no-cond-assign\" : 2,\n        // 禁止使用alert()方法，告警级别为\"警告\"\n        \"no-alert\" : 1,\n        // 禁止使用eval方法，告警级别为\"错误\"\n        \"no-eval\" : 2\n    }\n}\n把上面的配置文件放在项目的根目录下，通过任何一种方式启用ESLint对代码进行检查，都会得到上述几个规则的检测结果，开发者一般会选择在IDE中安装ESLint插件的方式来使用。官方提供的可选检测规则多达200条，我们可以从中筛选出自己需要的规则，或者下载共享配置文件，然后通过配置文件中的“extends”字段来启用官方推荐的规则，或者使用某些知名的前端团队提供的开源规则集。例如，下面的配置就会默认启用ESLint官方推荐的规则（即官方网站的规则集中所有带有绿色对号标记的规则）：\n\"extends\" : \"eslint:recommended\"\n如果在某些特殊场景中，需要有针对性地避开某些检测规则（而不是对整个工程禁用某项检测），则可以使用下面的语法在源代码中进行注释：\nalert('foo'); /* eslint-disable-line no-alert*/\n/*eslint-disable-next-line no-alert*/\nalert('foo');"
+        },
+        {
+          "label": "Prettier",
+          "language": "javascript",
+          "value": "“使用Prettier最大的理由就是它可以终止所有现存的有关格式的争论”\nPrettier可用于扫描文件中的格式问题，并自动重新格式化代码，以确保缩进、间距、分号、单双引号等遵循一致的规则，可以将它看作升级版的editorconfig，但Prettier的使用方式更加多元化，对于排版格式的控制粒度也更细，支持命令行、nodeAPI、ESLint插件等多种引入方式，是一个非常适合前端开发的新秀工具\nESLint和Prettier是非常好的搭档，尽管有时候因为配置的问题可能会在检查项上出现冲突，这种时候根据实际要求关闭其中一个的检查项即可。总之，ESLint更倾向于发现和修复语言本身相关的漏洞或风险，而Prettier关注的则是格式和排版风格方面的一致性，两者各司其职。\n一个典型的“.prettierrc”配置文件是下面这样的（完整的配置项可以查阅官方文档）：\n{\n    \"printWidth\":80,             //每一行字符数，超出后会启用换行策略\n    \"tabWidth\":4,                //每个Tab代表几个空格\n    \"useTabs\":false,             //是否使用Tab进行缩进，默认为false，即使用空格进行缩进\n    \"semi\":false,                //是否在语句后强制加分号\n    \"singleQuote\":true,          //字符串是否使用单引号\n    \"trailingComma\":none,        //是否去除末尾逗号\n    \"bracketSpacing\":true,       //对象字面量的大括号与内容之间是否自动添加空格\n}"
+        }
+      ],
+      "id": "I4hIMkEj",
+      "createdAt": 1687331072067,
+      "updatedAt": 1687336027294
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [],
+      "description": null,
+      "name": "devTools",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "Checking the dev tools is a great way to verify if a component is being registered successfully.前提是给组件的name赋值\nexport default{\n  name:\"Greeting\",\n  data(){\n    ...\n  }\n}\n============ inspect\n有了name在devTools的inspect里可以查看组件是否加载了\n\n=========== Timeline\nThe time line tool will display a list of events emitted by our app,  it'll even display events emitted by the browser"
+        }
+      ],
+      "id": "-vkC7yLL",
+      "createdAt": 1687342036741,
+      "updatedAt": 1687408378564
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": "export \\ import + 模板语法拼接其他值",
+      "name": "config.js & helpers.js 文件之间数据导入导出",
+      "content": [
+        {
+          "label": "config.js",
+          "language": "javascript",
+          "value": "//config.js,下面大写是配置文件常用的写法\nexport const API_URL = 'https://forkify-api.herokuapp.com/api/v2/recipes';\nexport const TIMEOUT_SEC = 10;\n\n\n//在另一个文件使用：\nimport {API_URL} from './config.js'\n\n...\n  const res = await fetch(`${API_URL}/${id}`);\n  const data = await res.json();\n"
+        },
+        {
+          "label": "helpers.js",
+          "language": "javascript",
+          "value": "import {TIMEOUT_SEC} from './config.js'  //将配置的值用大写字母明示,方便阅读理解和配置\n\nconst timeout = function (s) {\n  return new Promise(function (_, reject) {//某个位置的参数忽略但又要占位，就要这么写 '_',这里不需要resolved\n     setTimeout(function () {\n    \t reject(new Error(`Request took too long! Timeout after ${s} second`));\n      }, s * 1000);\n   });\n};\n\nexport const getJSON = async function (url){\n  try {\n      //因为是promise对象所以必须await,用了race,这样实现了超时功能\n      const res = await Promise.race([fetch(url), timeout(TIMEOUT_SEC)]); //TIMEOUT_SEC的值是10\n      const data = await res.json(); //这)里会返回一个resovled 的值\n\n      if (!res.ok) throw new Error(`${data.message} (${res.status})`);\n      return data;//返回resovled 的值\n   }catch (err){\n      throw err;\n  }\n};"
+        },
+        {
+          "label": "model.js 这里导入另外两个js的数据",
+          "language": "javascript",
+          "value": "/*在导出模块时，可以使用 export default 语句来将一个函数、对象或者类作为默认导出导出到模块中。在导入模块时，不使用花括号 {} 来引用被默认导出的模块。需要特别注意的是，每个模块只能有一个默认导出。因此，在同一个模块中，不能同时使用命名导出和默认导出的方式。*/\nimport {getJSON} from './helper.js'\nimport {API_URL} from './config.js'\n\nexport const loadRecipe = async function (id) {\n  try {\n  //注意这里使用了另一个JS文件helpers.js的函数getJSON()\n  \tconst data = await getJSON(`$(API URL}/${id}`);\n    \n \t\tconst {recipe } = data.data;\n    state.recipe = {\n    \tid: recipe.id,\n      title: recipe.title,\n      sourceUrl: recipe.source_url,\n      image: recipe.image_url,\n      ingredients: recipe.ingredients,\n    }\n\t\t\tconsole.log(state.recipe);\n    } catch (err){\n    // Temp erro handling\n    \tconsole.error(`${err}`)\n      throw err\n    }\n}"
+        }
+      ],
+      "id": "M0NOPeCB",
+      "createdAt": 1687588715891,
+      "updatedAt": 1687847184109
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "TwMzSlbz",
+        "V_npm_YK",
+        "9XW5Mpot",
+        "9C5XAC_v",
+        "ZCfYVnNs",
+        "sYJYnob2",
+        "7l5V15ey"
+      ],
+      "description": "在一个Vue项目中，通常会使用MVC（Model-View-Controller）或者MVVM（Model-View-ViewModel）的架构模式来组织代码。\n\nmodel.js（模型）：主要负责与数据相关的逻辑，包括数据的获取、处理和存储等。它定义了数据的结构和操作方法，可以是一个单独的文件或者一个模块。\n\ncontroller.js（控制器）：负责处理业务逻辑和用户交互，接收来自视图的输入，并根据输入调用模型和更新视图。它一般包含了各种事件处理函数、请求处理和数据操作等。\n\nview.js（视图）：负责展示数据和用户界面，通常是一个Vue组件或者模板。它只关注数据的展示和用户的交互，不包含业务逻辑。\n这些文件分别代表了MVC或MVVM模式中的不同角色，通过分离不同的责任，可以使代码更加清晰、可维护和可扩展。当然，具体的命名和组织方式可能会因项目的规模和团队的约定而有所不同。\n\npublisher subscriber pattern.",
+      "name": "MVC架构模式以及类的实例",
+      "content": [
+        {
+          "label": "controller.js",
+          "language": "javascript",
+          "value": "controller.js（控制器）：负责处理业务逻辑和用户交互，接收来自视图的输入，并根据输入调用模型和更新视图。它一般包含了各种事件处理函数、请求处理和数据操作等。\n//文件定义了几个方法，然后在init方法里进行了调用,这个文件作为controller不处理UI渲染\n\nimport * as model from './model.js' //将整个模块作为一个对象引入\nimport recipeView from './views/recipeView.js\nimport searchView from './views/searchView.js'\nimport resultsView from './views/resultsView.js'\nimport paginationView from './views/paginationView.js'\n\n //省略 ....\n \nconst controlRecipes = async function () {\n  try{\n    const id = window.location.hash.slice(1);\n    \n    if (!id) return;\n    //使用上面导入的recipeView文件里的renderSpinner方法\n    recipeView.renderSpinner();\n    \n    // 1) Loading recipe\n    await model.loadRecipe(id);\n    \n    // 2) Rendering recipe\n    recipeView.render(model.state.recipe);\n  } catch (err) {\n  \trecipeView.renderError();\n  }\n};\n\nconst controlSearchResults = async function(){\n  try {\n    resultsView.renderSpinner(); //Loading\n    \n    // 1)get search query\n    const query = searchView.getQuery();\n    if (!query) return;\n    \n    // 2)load search results\n    await model.loadSearchResults(query);\n    \n    // 3) render results\n    console.log(model.state.search.results);\n    //resultsView.render(model.state.search.results) 没有分页前\n     resultsView.render(model.getSearchResultsPage())\n     \n     // 4) Render initia pagination buttons\n     paginationView.render(model.state.search) //将model里的整个search对象作为参数\n    } catch (err) {\n    \tconsole.log(err);\n    }\n };\n \nconst controlPagination = function(goToPage) {//goToPage是从pagenationView.js传过来的页码数字\n  //console.log(goToPage);\n   // 1) render NEW results\n   resultsView.render(model.getSearchResultsPage(goToPage))\n     \n   // 2) Render NEW pagination buttons\n   paginationView.render(model.state.search) //将model里的整个search对象作为参数\n}\n\nconst controlServings = function(newServing) {\n   // Update the recipe servings (in state)\n   model.updateServings(newServing);\n   // Update the recipe view\n   //recipeView.render(model.state.recipe);\n   recipeView.updata(model.state.recipe); //局部更新，避免页面闪烁\n}\n \n//调用上面定义的方法\nconst init = function () {\n  recipeView.addHandlerRender(controlRecipes)\n  recipeView.addHandlerUpdateServings(controlServings)\n  searchView.addHandlerSearch(controlSearchResults)\n  paginationView.addHandlerClick(controlPagination)\n}\n\ninit();"
+        },
+        {
+          "label": "searchView.js",
+          "language": "javascript",
+          "value": "class SearchView {\n  //#和_开头的变量命名都是一种约定俗成的规范，用来表示该属性是私有（private）的。但是，它们在语言层面上是没有特殊意义的，只是一种书写习惯。\n  //#parentEl = document.querySelector('.search');\n  _parentEl = document.querySelector('.search');\n  getQuery() {\n  \tconst query = this.#parentEl.querySelector('.search_field').value;\n    this.#clearInput();\n    return query;\n  }\n  \n  _clearInput() {\n\t\tthis.#parentEl.querySelector('search__field').value =''\n   }\n    \n  //这里addHandlerSearch是发布者 publisher\n  addHandlerSearch(handler){ \n  \tthis.#parentEl.addEventListener('submit,function(e) {\n    \te.preventDefault();\n      handler();//这里是订阅者，执行的是controller.js里的controlSearchResults函数\n    });\n  }\n}\n//注意对于class在export时加了new 因为要实例化，普通的函数等是不加new的\nexport default new SearchView();"
+        },
+        {
+          "label": "recipeView",
+          "language": "javascript",
+          "value": "import View from './View.js'\nimport icons from  'url:../../img/icons.svg';\nimport { Fraction } from 'fractional'; //z这是一个将小数点数字转变为分子分母类型的npm上的第三方库\n\nclass RecipeView extends View {\n  _parentElement = document.querySelector('.recipe');\n  _errorMessage = 'We could not find that recipe. Please try another one!';\n  _message ='';\n  \n  addHandlerRender(handler) {\n  \t['hashchange','load'].forEach(ev => window.addEventListener(ev, handler));\n  }\n  //用了事件代理，closest()方法和事件代理是好搭档\n  //发布者\n  addHandlerUpdateServings(handler) {\n\t\tthis._parentElement.addEventListener('click', function (e){ \n    \tconst btn = e.target.closest('.btn--tiny');\n      if (!btn) return;//守卫\n      console.log(btn);\n      //updateTo这个dataset值在html的属性里是这样的：data-update-to='xxx'\n      const { updateTo } = btn.dataset; //相当于const updateTo = btn.dataset.updateTo;\n      //订阅者\n      if(+updateTo>0) handler(+updateTo);\n    })\n  }\n  \n  generateMarkup() {\n    return `\n   \t <figure class=\"recipe_fig\"><img src=\"${this._data.image}\" alt=\"${this._data.title}\"\n    \t....\n"
+        },
+        {
+          "label": "View.js",
+          "language": "javascript",
+          "value": "view.js（视图）：负责展示数据和用户界面，通常是一个Vue组件或者模板。它只关注数据的展示和用户的交互，不包含业务逻辑。\n//view是作为父文件想下面的相关文件提供方法和数据\n\nimport icons from  'url:../../img/icons.svg';\n\nexport default class View {\n  _data;\n  \n  render(data) {\n    // 没有数据 || 有数据但不是数组 && 数据为空\n    if(!data || (Array.isArray(data) && data.length === 0)) \n      return this.rederError(); //注意这个用法,作为守卫，返回一个错误信息\n  \n    this._data = data;\n    const markup = this._generateMarkup();\n    this._clear(); //这里很关键，会删除之前的数据，已方便用新的数据覆盖上去\n    this._parentElementinsertAdjacentHTML('afterbegin', markup);\n  }\n  \n  updata(data){\n    // 没有数据 || 有数据但不是数组 && 数据为空\n    if(!data || (Array.isArray(data) && data.length === 0)) \n      return this.rederError(); //注意这个用法,作为守卫，返回一个错误信息\n  \n    this._data = data;\n    const newMarkup = this._generateMarkup();\n    ... //这里省略许多有关局部更新页面的逻辑(对比DOM和虚拟dom)。核心是使用一些dom的方法并通过Array.from()将nodelist转化为数组\n  }\n  \n  clear() {\n    this._parentElement.innerHTML ='';\n  }\n  \n  renderSpinner(){\n    const markup =`\n      <div class=\"spinner\">\n     \t\t <svg><use href=\"${icons}#icon-loader\"></use></svg>\n      </div>\n     `;\n    this._clear();\n    this._parentElement.insertAdjacentHTML('afterbegin',markup)\n  }\n  \n  renderError(message = this._errorMessage){\n    const markup =`\n      <div class=\"error\">\n          <div>\n             <svg><use href=\"${icons}#icon-alert-triangle\"></use></svg>\n          </div>\n          <p>${message}</p>\n      </div>\n     `;\n     this._clear();\n     this._parentElement.insertAdjacentHTML('afterbegin',markup)\n   }\n\n}"
+        },
+        {
+          "label": "resultsView.js",
+          "language": "javascript",
+          "value": "import View from './View.js'\n\n\n//这个文件继承自View.js，所以用了extends View,其中会带有父文件的所有方法，如 renderSpinner()\nclass ResultsView extends View {\n\t_parentElement = document.querySelector('.results');\n  _errorMessage = 'No recipes found for your query! Please try again'\n  _message = ''\n  \n  _generateMarkup(){\n    console.log(this._data) //这个_data是View.js传过来的\n    //使用map方法遍历this._data数组，对每个元素调用_generateMarkupPreview方法生成一个预览的HTML字符串\n    return this._data.map(this._generateMarkupPreview).join('');\n    \n    _generateMarkupPreview(result) {\n      return `\n        <li class=\"preview\">\n          <a class=\"preview_link preview  link--active\" href=\"#${results.id}\">\n              <figure class=\"preview fig\"><img src=\"${results.images}\" alt=\"Test\" /></figure>\n              <div class=\"preview data'\">\n                  <h4 class=\"preview__title\">${results.title}</h4>\n                  <p class=\"preview_publisher\">${results.publisher}</p>\n              </div>\n          </a>\n         </li>\n       `;\n      }\n    }\n}\n\nexport default new ResultsView();"
+        },
+        {
+          "label": "model.js",
+          "language": "javascript",
+          "value": "model.js（模型）：主要负责与数据相关的逻辑，包括数据的获取、处理和存储等。它定义了数据的结构和操作方法，可以是一个单独的文件或者一个模块\n\nimport { API_URL, RES_PER_PAGE } from './config.js'\nimport { getJSON } from './helpers.js'\n\nexport const state = {\n  recipe:{}\n  search:{\n    query:'',\n    results: [],\n    page:1,\n    resultsPerPage:RES_PER_PAGE\n   }\n };\n \n export const loadRecipe = async function (id) {\n   try {\n      const data = await getJSON(`$(API_URL}${id}`);\n      const { recipe } = data.data;\n       state.recipe = {\n           id: recipe.id,\n           title: recipe.title,\n           publisher: recipe.publisher,\n           sourceUrl: recipe.source_url,\n           image: recipe.image_url,\n           servings: recipe.servings,\n           ...\n         }\n         console.log(state.recipe);\n       }catch (err){\n          console.error(`${err}`)\n          throw err;\n       }\n     };\n     \n   export const loadSearchResults = async function (query) {\n    try {\n        state.search.query = query;\n\n        const data = await getJSON(`$(API_URL}?search=${query}`);\n        console.log(data);\n\n        state.search.results = data.data.recipes map(rec => {\n          return {\n             id: rec.id,\n             title: rec.title,\n             publisher: rec.publisher,\n             image: rec.image_url,\n          }\n        })\n     } catch (err) { \n      throw err\n     }\n   };\n   \n   export const getSearchResultsPage = function (page = state.search.page){ //page是页码，如1、2、4 ...\n     state.search.page = page;\n     \n     const start = (page - 1) * state.search.resultsPerPage; // 这里根据页码会有不同的值，如0、10、20、30... \n     const end = page * state.search.resultsPerPage; // 同上\n     \n     return state.search.results.slice(start, end);\n   }\n   \n   export const updateServings = function (newServings){\n   \t\tstate.recipe.ingredients.forEach(ing => {\n        ing.quantity = (ing.quantity * newServings) / state.recipe.servings\n        // newQt = oldQt *newServings / oldServings   // 2*8 /4=4;\n      })\n\t\t\tstate.recipe.servings = newServings\n   }\n\n     "
+        },
+        {
+          "label": "config.js",
+          "language": "javascript",
+          "value": "//这里是配置文件\nexport const API_URL = 'https://forkify-api.herokuapp.com/api/v2/recipes/';\nexport const TIMEOUT SEC = 10;\nexport const RES_PER_PAGE = 10;"
+        },
+        {
+          "label": "pagenationView.js",
+          "language": "javascript",
+          "value": "//这个文件是分页的显示,分页按钮的显示逻辑很简单，根据不同的页码，显示不同的导航button\n\nimport View from './View.js';\nimport icons from 'url:../../img/icons.svg'; // Parcel 2\n\nclass PaginationView extends View {\n  parentElement = document.querySelector('.pagination');\n  \n   //发布者与订阅者模式，发布者就是个函数，其回调函数就是订阅者\n   //这里使用了事件代理，通过父元素控制左右导航的两个按钮\n  addHandlerClick(handler){\n    this._parentElement.addEventListener('click', function(e){\n      //closest()是很关键的用法, 可以用来选择父元素\n    \tconst btn = e.target.closest('.btn--inline');\n      if(!btn) return; //这里是个守卫，没有值就跳出，以免执行下面代码出现报错\n      \n      //+号是为了转换为数字类型,从浏览器的console的返回值颜色可以判断值的类型是字符还是数字\n      //dataset可以获取在html里自定义的data值\n      const goToPage = +btn.dataset.goto \n      //goToPage是页码\n      handler(goToPage);\n    });\n  }\n  \n  _generateMarkup(){\n     const curPage = this._data.page;\n     const numPages = Math.ceil(this._data.results.length / this._data.resultsPerPage); \n     console.log(numPages);\n     \n   \t\t// Page 1, and there are other pages\n     if (curPage === 1 && numPages > 1 ){\n      return `\n        //这里添加了自定义属性 data-goto\n        <button data-goto=\"${curPage + 1}\" class=\"btn--inline pagination__btn--next\">\n          <span>Page ${curPage + 1}</span>\n          <svg class=\"search__icon\">\n            <use href=\"${icons}#icon-arrow-right\"></use>\n           </svg>\n        </button>\n      `;\n     }\n    // Last page\n     if (curPage === numPages && numPages > 1 ){\n      return `\n       \t<buttondata-goto=\"${curPage - 1}\" data-goto=\"${curPage + 1}\" class=\"btn--inline pagination__btn--prev\">\n        \t<svg class=\"search__icon\">\n          \t\t<use href=\"${icons}#icon-arrow-left\"></use>\n          </svg>\n\t\t\t\t\t<span>Page ${curPage - 1}</span>\n        </button>\n      `;\n     }\n    // Other page\n      if (curPage < numPages){\n       return `\n       \t<button class=\"btn--inline pagination__btn--prev\">\n        \t<svg class=\"search__icon\">\n          \t\t<use href=\"${icons}#icon-arrow-left\"></use>\n          </svg>\n\t\t\t\t\t<span>Page ${curPage - 1}</span>\n        </button>\n        <button class=\"btn--inline pagination__btn--next\">\n          <span>Page ${curPage + 1}</span>\n          <svg class=\"search__icon\">\n            <use href=\"${icons}#icon-arrow-right\"></use>\n           </svg>\n        </button>\n      `;\n     }\n      // Page 1, and there are NO other pages,Only one page\n      //只有一页就不显示任何导航按钮\n       return ''; \n    }\n}\n\nexport default new PaginationView();\n    "
+        }
+      ],
+      "id": "R_in17Yr",
+      "createdAt": 1687850654011,
+      "updatedAt": 1687945747065
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "ES6的模块化语法",
+      "content": [
+        {
+          "label": "*  将整个模块作为一个对象引入",
+          "language": "javascript",
+          "value": "import * as model from './model. js'  //这句什么意思?\n\n这个语句使用ES6的模块化语法，将./model.js模块中导出的所有内容都导入到一个名为model的对象中，可以理解为将整个模块作为一个对象引入。例如，如果./model.js中有如下代码：\n\nexport const name = 'Tom';\nexport const age = 18;\nexport function sayHello() {\n  console.log(`Hello, my name is ${name}, I am ${age} years old`);\n}\n\n//那么在另一个文件中，你可以按照以下方式导入和使用这些方法：\n\nimport * as model from './model.js';\n\nconsole.log(model.name); // 输出 'Tom'\nconsole.log(model.age); // 输出 18\nmodel.sayHello(); // 输出 'Hello, my name is Tom, I am 18 years old'\n\n这里的*通配符表示导入模块中的所有内容，并将它们作为一个对象导入到model命名空间中。因此，在使用导入的方法时需要通过model.来进行访问。需要注意的是，使用这种方式导入模块中的所有内容可能会导致变量名冲突或者产生不必要的代码量。因此，在实际开发中，推荐只导入需要的模块成员，而非导入整个模块。"
+        },
+        {
+          "label": "Fragment 2",
+          "language": "javascript",
+          "value": ""
+        }
+      ],
+      "id": "VzA1P3WQ",
+      "createdAt": 1687856018621,
+      "updatedAt": 1687856091233
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [],
+      "description": null,
+      "name": "css自定义变量",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "双减号（--）用于表示自定义属性（custom property）。它允许开发者定义自己的变量，并在整个样式表中重复使用这些变量\n//自定义变量\n:root{\n  --success-color:#2ecc71;\n}\n\n//使用自定义变量\n.form-control.success input {\n\tborder-color: var(--success-color);\n}"
+        }
+      ],
+      "id": "Z9ID9FzV",
+      "createdAt": 1688017985582,
+      "updatedAt": 1688018318249
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "J2CKWazz",
+        "udbxbqmP",
+        "cJzn_M8B"
+      ],
+      "description": "知识点：选择父元素；定义函数并传参；给css添加类；",
+      "name": "JS表单验证",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "<form id=\"form\" class=\"form\">\n  <div class=\"form-control\">\n    <input type=\"text\" id=\"username\" placeholder=\"Enter username\"/>\n    <small>Error message</small>\n  </div>\n  \n  <div class=\"form-control\">\n  ...\n  \n\n  //------------------------------js 文件\n  // Show input error message\n  function showError(input, message) { //定义函数和其中的形参\n    //注意，事件代理在选择共同的父元素的时候用closet()\n  \tconst formControl = input.parentElement; //这个parentElement选择的就是html里的 form-control\n    formControl.className = 'form-control error';//给html添加css类，显示红色\n    const small = formControl.querySelector('small');\n    small.innerText = message; //应用实参到innerText\n   }\n   \n   // Show success outline\n   function showSuccess(input) {\n      const formControl = input.parentElement;\n      formControl.className = 'form-control success';\n   }\n  \n  // Event listeners\n  form.addEventListener('submit', function(e) {\n    e.preventDefault();\n\n    if (username.value === '') {\n      showError(username,'Username is required');//调用函数并传递实参\n    } else {\n      showSuccess(username);//调用函数并传递实参\n   }\n})\n  </script>"
+        },
+        {
+          "label": "升级版-给函数的参数传递数组",
+          "language": "javascript",
+          "value": " // Check required fields\nfunction checkRequired(inputArr) {\n\tinputArr.forEach(function(input){//(input是形参\n  \tif (input.value.trim() === '') {\n    \tshowError(input,`${getFieldName(input)} is required`);\n\t\t}else{\n\t\t\tshowSuccess(input);\n  \t}\n  })\n}\n \n // Check input length\nfunction checkLength(input, min,max) {\n\tif (input.value.length < min){\n  \tshowError(input,`${getFieldName(input)} must be at least $(min} characters`);\n\t}else if (input.value.length > max){\n  \tshowError(input,`$getFieldName(input)} must be less than $(max} characters`);\n\t}else{\n\t\tshowSuccess(input);\n }\n}\n\n // Get fieldname 并将首字母大写，input.id是html的id值\nfunction getFieldName(input) {\n\treturn input.id.charAt(0).toupperCase() + input.id.slice(1);\n}\n \n// Event listeners\nform.addEventListener('submit', function(e) {\n  e.preventDefault();\n    \n  checkRequired([username, email，password，password2]);\n  checkLength(username,3,15)\n  checkLength(password,6,25)\n});"
+        }
+      ],
+      "id": "T0GdZyq1",
+      "createdAt": 1688019405342,
+      "updatedAt": 1688023961058
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "spread 扩展运算符",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "const arr =[1,2,3]\nconst arr2 =[...arr,4,5]\n\narr2.forEach(function(item) {\n\tconsole.log(item + 'Hello')\n})\n\nconst arr3 = arr2.map(function(item) {\n\treturn item * 2\n})\nconsole.log(arr3) //返回 Array[2,4,6,8,10]"
+        }
+      ],
+      "id": "B6XmkKpr",
+      "createdAt": 1688094538039,
+      "updatedAt": 1688094768466
     }
   ],
   "tags": [
@@ -3792,6 +4255,108 @@
       "id": "yETmPQp5",
       "createdAt": 1686376246971,
       "updatedAt": 1686376246971
+    },
+    {
+      "name": "[type=\"text\"]",
+      "id": "kzDE3A3E",
+      "createdAt": 1686885176220,
+      "updatedAt": 1686885176220
+    },
+    {
+      "name": "copy",
+      "id": "07hR6-Qz",
+      "createdAt": 1687244101731,
+      "updatedAt": 1687244101731
+    },
+    {
+      "name": "sass",
+      "id": "0Hny-xOz",
+      "createdAt": 1687314582369,
+      "updatedAt": 1687314582369
+    },
+    {
+      "name": "scss",
+      "id": "WORBBpq9",
+      "createdAt": 1687314588863,
+      "updatedAt": 1687314588863
+    },
+    {
+      "name": "postcss",
+      "id": "R7WFWPun",
+      "createdAt": 1687317753770,
+      "updatedAt": 1687317753770
+    },
+    {
+      "name": "字典模式",
+      "id": "nNH97xs5",
+      "createdAt": 1687329433750,
+      "updatedAt": 1687329433750
+    },
+    {
+      "name": "发布者",
+      "id": "TwMzSlbz",
+      "createdAt": 1687851225985,
+      "updatedAt": 1687851225985
+    },
+    {
+      "name": "数组判断",
+      "id": "V_npm_YK",
+      "createdAt": 1687919266851,
+      "updatedAt": 1687919266851
+    },
+    {
+      "name": "数据判断",
+      "id": "9XW5Mpot",
+      "createdAt": 1687919609540,
+      "updatedAt": 1687919609540
+    },
+    {
+      "name": "MVC",
+      "id": "9C5XAC_v",
+      "createdAt": 1687920644153,
+      "updatedAt": 1687920644153
+    },
+    {
+      "name": "分页",
+      "id": "ZCfYVnNs",
+      "createdAt": 1687922259286,
+      "updatedAt": 1687922259286
+    },
+    {
+      "name": "分页的算法",
+      "id": "sYJYnob2",
+      "createdAt": 1687922270022,
+      "updatedAt": 1687922270022
+    },
+    {
+      "name": "dataset",
+      "id": "7l5V15ey",
+      "createdAt": 1687934585447,
+      "updatedAt": 1687934585447
+    },
+    {
+      "name": "parentElement",
+      "id": "J2CKWazz",
+      "createdAt": 1688020044266,
+      "updatedAt": 1688020044266
+    },
+    {
+      "name": "首字母大写",
+      "id": "udbxbqmP",
+      "createdAt": 1688023003363,
+      "updatedAt": 1688023003363
+    },
+    {
+      "name": "classList",
+      "id": "CZ0PBSsq",
+      "createdAt": 1688091761066,
+      "updatedAt": 1688091761066
+    },
+    {
+      "name": "for循环",
+      "id": "sCWt0xKF",
+      "createdAt": 1688269410167,
+      "updatedAt": 1688269410167
     }
   ]
 }
