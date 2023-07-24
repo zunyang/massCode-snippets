@@ -173,12 +173,12 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "const orders = [{ id: 1, amount: 10 }, { id: 2, amount: 12 }, { id: 3, amount: 5 }]\nconst totalAmount = orders.reduce((sum, order) => sum + order.amount, 0); // 27\n/*累加可以，那么 加减乘除 中其他三个的原理是一样的，这里不用多说，肯定是可以的，\n甚至加上 与 、非的计算也是可以的，比如*/\n[true, true, false, true].reduce((a, b) => a & b); // 有false，按照与逻辑，一定会是false"
+          "value": "reduce()是JavaScript中数组的一个高阶函数。它接收一个回调函数作为参数，用来处理数组中的每个元素，并将结果累积为单个值。\nreduce()方法的语法如下：\narr.reduce(callback[, initialValue])\n\nconst orders = [{ id: 1, amount: 10 }, { id: 2, amount: 12 }, { id: 3, amount: 5 }]\n\nconst totalAmount = orders.reduce((sum, order) => sum + order.amount, 0); // 27\n\n累加可以，那么 加减乘除 中其他三个的原理是一样的，这里不用多说，肯定是可以的，\n甚至加上 与 、非的计算也是可以的，比如\n\n[true, true, false, true].reduce((a, b) => a & b); // 有false，按照与逻辑，一定会是false"
         }
       ],
       "id": "bf6LnPoL",
       "createdAt": 1677575451164,
-      "updatedAt": 1677575460255
+      "updatedAt": 1690167932791
     },
     {
       "isDeleted": false,
@@ -194,7 +194,7 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "核心：forEach()不会有返回值，但可以改变原数组对象，通过forEach()和map()给数组对象添加一个新属性\n// Data\nconst account1 = {\n  owner: 'Jonas Schmedtmann',\n  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],\n  interestRate: 1.2, // %\n  pin: 1111,\n};\n\nconst account2 = {\n  owner: 'Jessica Davis',\n  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],\n  interestRate: 1.5,\n  pin: 2222,\n};\n\nconst account3 = {\n  owner: 'Steven Thomas Williams',\n  movements: [200, -200, 340, -300, -20, 50, 400, -460],\n  interestRate: 0.7,\n  pin: 3333,\n};\n\nconst account4 = {\n  owner: 'Sarah Smith',\n  movements: [430, 1000, 700, 50, 90],\n  interestRate: 1,\n  pin: 4444,\n};\n\nconst accounts = [account1, account2, account3, account4];\n\n//function\nconst createUsernames = function (accs) {\n  accs.forEach(function (acc) {\n    //利用map返回新数组的特性给原数组添加一个新属性\n    acc.username = acc.owner\n      .toLowerCase()\n      .split(' ')\n      .map(name => name[0])\n      .join('');\n  });\n};\ncreateUsernames(accounts);\n\n\n//将会输出一个包含四个对象的数组，其中包含新创建的属性'username'\nconsole.log(accounts)"
+          "value": "forEach方法是数组的一个方法，不能直接用在对象上。对象不是可迭代的，因此无法使用forEach方法对其进行遍历。如果想要遍历对象的属性，可以使用for...in循环或Object.keys方法来实现\n核心：forEach()不会有返回值，但可以改变原数组对象，通过forEach()和map()给数组对象添加一个新属性\n// Data\nconst account1 = {\n  owner: 'Jonas Schmedtmann',\n  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],\n  interestRate: 1.2, // %\n  pin: 1111,\n};\n\nconst account2 = {\n  owner: 'Jessica Davis',\n  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],\n  interestRate: 1.5,\n  pin: 2222,\n};\n\nconst account3 = {\n  owner: 'Steven Thomas Williams',\n  movements: [200, -200, 340, -300, -20, 50, 400, -460],\n  interestRate: 0.7,\n  pin: 3333,\n};\n\nconst account4 = {\n  owner: 'Sarah Smith',\n  movements: [430, 1000, 700, 50, 90],\n  interestRate: 1,\n  pin: 4444,\n};\n\nconst accounts = [account1, account2, account3, account4];\n\n//function\nconst createUsernames = function (accs) {\n  accs.forEach(function (acc) {\n    //利用map返回新数组的特性给原数组添加一个新属性\n    acc.username = acc.owner\n      .toLowerCase()\n      .split(' ')\n      .map(name => name[0])\n      .join('');\n  });\n};\ncreateUsernames(accounts);\n\n\n//将会输出一个包含四个对象的数组，其中包含新创建的属性'username'\nconsole.log(accounts)"
         },
         {
           "label": "Fragment 2",
@@ -204,7 +204,7 @@
       ],
       "id": "Mm1kTDnU",
       "createdAt": 1677575496707,
-      "updatedAt": 1683168247313
+      "updatedAt": 1688958701810
     },
     {
       "isDeleted": true,
@@ -258,7 +258,7 @@
       ],
       "id": "ddCyDVGE",
       "createdAt": 1677576234823,
-      "updatedAt": 1677576469891
+      "updatedAt": 1690167767350
     },
     {
       "isDeleted": true,
@@ -586,14 +586,14 @@
           "value": "const getJSON = function (url, errorMsg = 'Something went wrong') {\n  return fetch(url).then(response => {\n    if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);\n    return response.json();\n  });\n};\n\n//使用getJSON\nconst getCountryData = function (country) {\n  // Country 1\n  getJSON(\n    `https://restcountries.eu/rest/v2/name/${country}`,\n    'Country not found'\n  )\n    .then(data => {\n      renderCountry(data[0]);\n      const neighbour = data[0].borders[0];\n\n      if (!neighbour) throw new Error('No neighbour found!');\n\n      // Country 2\n      return getJSON(\n        `https://restcountries.eu/rest/v2/alpha/${neighbour}`,\n        'Country not found'\n      );\n    })\n\n    .then(data => renderCountry(data, 'neighbour'))\n    .catch(err => {\n      console.error(`${err} 💥💥💥`);\n      renderError(`Something went wrong 💥💥 ${err.message}. Try again!`);\n    })\n    .finally(() => {\n      countriesContainer.style.opacity = 1;\n    });\n};\n\nbtn.addEventListener('click', function () {\n  getCountryData('portugal');\n});\n\ngetCountryData('australia');"
         },
         {
-          "label": "用fetch()获取本地json",
+          "label": "用fetch()获取本地 json",
           "language": "javascript",
-          "value": "function caclulate() {\n  fetch('items.json')\n    .then( res => res.json()) //这里是重点\n    .then(data => console.log(data)); //data可以用其他名称，如res\n}\n\ncaclulate();"
+          "value": "function caclulate() {\n  fetch('items.json')\n    .then( res => res.json()) //这里是重点\n    .then(data => console.log(data)); //打印出json文件，data可以用其他名称，如res\n    //.then(data => (document.body.innerHTML = data[0].text)) //将获取到的json文件信息显示在页面\n}\n\ncaclulate();"
         }
       ],
       "id": "zQnI5Oah",
       "createdAt": 1677581820829,
-      "updatedAt": 1688437907418
+      "updatedAt": 1688438357276
     },
     {
       "isDeleted": false,
@@ -1384,11 +1384,16 @@
           "label": "Fragment 1",
           "language": "javascript",
           "value": "JS classes are really just a layer of obstruction over constructor functions\n    在构造函数里需要 PersonCl.call()，而class里只需要super()\n    super is basically the constructor function of the parent class\n    We don't need to specify the name of the parent class again,而 PersonCl.call()里需要\n    in super() pass in the arguments for the constructor of the parent class.\n\nkeyword extends link to PersonCl prototypes behind the scenes\n\nclass StudentCl extends PersonCl {\n//constructor is where we have all the code that is executed right when the application loads\n  constructor(fullName, birthYear, course){  \n    // Always needs to happen first! then be able to access the 'this' keyword\n    super(fullName, birthYear){\n      this.course =course; //this is not necessary\n    }\n    \n    calcAge(){\n      //子对象和父对象的同名方法会覆盖父对象的方法，因为原型链先到达子对象，这个就是对象4大支柱之一的‘多态’\n    }\n}\n\nconst martha = new StudentCl( 'Martha Jones'，2012,'computer science');\n\nconst martha = new StudentCl( 'Martha Jones'，2012);\n//如果像上面一行child里没有新的属性，和父对象一样的属性，那么class里不用写 constructor(),只要extends即可"
+        },
+        {
+          "label": "构造函数和类的比较",
+          "language": "javascript",
+          "value": "下面这样下面这样声明一个Book 类的方式。\n\n//这个是构造函数\nfunction Book(title, pages, isbn) { // {1} \n  this.title = title; \n  this.pages = pages; \n  this.isbn = isbn; \n}\n\nBook.prototype.printTitle = function() {\n\tconsole.log(this.title); \n};\n\n//我们可以用 ES2015 把语法简化，如下所示。\nclass Book { // {2} \n  constructor(title, pages, isbn) { \n    this.title = title;\n    this.pages = pages;\n    this.isbn = isbn; \n\t} \n\tprintIsbn() { \n\t\tconsole.log(this.isbn); \n  } \n}\n只需要使用class关键字，声明一个有constructor函数和诸如 printIsbn 等其他函数的类。ES2015的类是基于原型语法的语法糖。行{1}声明Book类的代码与行{2}声明的代码具有相同的效果和输出。\n\nlet book = new Book('title', 'pag', 'isbn'); \nconsole.log(book.title); // 输出图书标题 \nbook.title ='new title'; // 更新图书标题 \nconsole.log(book.title); // 输出图书标题"
         }
       ],
       "id": "OPVIGMkU",
       "createdAt": 1679132391010,
-      "updatedAt": 1680748184614
+      "updatedAt": 1688982872238
     },
     {
       "isDeleted": false,
@@ -1507,7 +1512,7 @@
         "yETmPQp5"
       ],
       "description": "You can console.log(this.$route) to see everythingthat's in this built-in object!\n注意：this.$route 和 this.$router 是不同的",
-      "name": "router 路由相关",
+      "name": "router 路由相关-1",
       "content": [
         {
           "label": "router-view",
@@ -1552,7 +1557,7 @@
       ],
       "id": "GQiXghAh",
       "createdAt": 1679467460483,
-      "updatedAt": 1686982281262
+      "updatedAt": 1690034028272
     },
     {
       "isDeleted": false,
@@ -1966,7 +1971,7 @@
       "updatedAt": 1684153133997
     },
     {
-      "isDeleted": false,
+      "isDeleted": true,
       "isFavorites": false,
       "folderId": "",
       "tagsIds": [],
@@ -1981,7 +1986,7 @@
       ],
       "id": "ldtTIB8l",
       "createdAt": 1681363081382,
-      "updatedAt": 1681363083722
+      "updatedAt": 1689141367142
     },
     {
       "isDeleted": true,
@@ -2651,11 +2656,16 @@
           "label": "Fragment 1",
           "language": "javascript",
           "value": "《JavaScript忍者秘籍》中的assert()断言函数是作者自己编写并使用的一个简单断言工具。它用于检查给定表达式的值是否为真，如果不是则抛出异常。断言函数通常在测试和调试代码时非常有用，它可以帮助开发人员快速发现问题所在，并及时采取措施修复。\n\n下面是assert()函数的基本语法：\n\nfunction assert(condition, message) {\n  if (!condition) {\n    throw new Error(message || \"Assertion failed\");\n  }\n}\n/*其中，condition参数是待检查的表达式，如果该表达式的值为false，则会抛出异常；message参数是可选的错误消息，用于描述断言失败的原因。\n例如，我们可以使用assert()函数来检测函数返回值是否符合预期：*/\n\nfunction addNumbers(x, y) {\n  return x + y;\n}\n// 检查addNumbers函数返回值是否为5\nassert(addNumbers(2, 3) === 5, \"加法计算错误\");\n\n/*在这个例子中，断言函数assert()将会检查addNumbers(2, 3)的返回值是否等于5，如果不是，则抛出异常并输出错误消息\"加法计算错误\"。\n\n需要注意的是，断言函数通常只在开发环境或测试环境中使用，并且应该在生产环境中移除。虽然断言能够帮助我们快速发现代码中的问题，但它也会影响性能，并且可能暴露敏感信息。因此，在生产环境中，我们通常会使用更加健壮和可靠的错误处理机制。"
+        },
+        {
+          "label": "通过浏览器控制台打印断言Log",
+          "language": "javascript",
+          "value": "function greaterThan(x, y){\n\tconsole.assert(\n    //条件 ,只有 x < y 第二个参数才会输出\n  \tx > y,  \n    //message, 这里是json\n  \t{\"message\":\"x is not greater than y\", \"x\":x ,y\": y} \n  );\n}\ngreaterThan(4,5);"
         }
       ],
       "id": "MN4AipIH",
       "createdAt": 1684736188245,
-      "updatedAt": 1684736379978
+      "updatedAt": 1688462237982
     },
     {
       "isDeleted": false,
@@ -2913,7 +2923,7 @@
       ],
       "id": "C-0kX73z",
       "createdAt": 1685590245600,
-      "updatedAt": 1685590384730
+      "updatedAt": 1689213418619
     },
     {
       "isDeleted": false,
@@ -3320,7 +3330,10 @@
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "y-C8x3sP",
-      "tagsIds": [],
+      "tagsIds": [
+        "njDRzcoh",
+        "4LLYvAFl"
+      ],
       "description": null,
       "name": "ES6的模块化语法",
       "content": [
@@ -3328,16 +3341,11 @@
           "label": "*  将整个模块作为一个对象引入",
           "language": "javascript",
           "value": "import * as model from './model. js'  //这句什么意思?\n\n这个语句使用ES6的模块化语法，将./model.js模块中导出的所有内容都导入到一个名为model的对象中，可以理解为将整个模块作为一个对象引入。例如，如果./model.js中有如下代码：\n\nexport const name = 'Tom';\nexport const age = 18;\nexport function sayHello() {\n  console.log(`Hello, my name is ${name}, I am ${age} years old`);\n}\n\n//那么在另一个文件中，你可以按照以下方式导入和使用这些方法：\n\nimport * as model from './model.js';\n\nconsole.log(model.name); // 输出 'Tom'\nconsole.log(model.age); // 输出 18\nmodel.sayHello(); // 输出 'Hello, my name is Tom, I am 18 years old'\n\n这里的*通配符表示导入模块中的所有内容，并将它们作为一个对象导入到model命名空间中。因此，在使用导入的方法时需要通过model.来进行访问。需要注意的是，使用这种方式导入模块中的所有内容可能会导致变量名冲突或者产生不必要的代码量。因此，在实际开发中，推荐只导入需要的模块成员，而非导入整个模块。"
-        },
-        {
-          "label": "Fragment 2",
-          "language": "javascript",
-          "value": ""
         }
       ],
       "id": "VzA1P3WQ",
       "createdAt": 1687856018621,
-      "updatedAt": 1687856091233
+      "updatedAt": 1688869376123
     },
     {
       "isDeleted": false,
@@ -3401,6 +3409,229 @@
       "id": "B6XmkKpr",
       "createdAt": 1688094538039,
       "updatedAt": 1688094768466
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": "节流函数和防抖函数都是用于限制函数的执行频率，但它们实现的机制略有不同。\n\n防抖函数的作用是当一个事件连续触发时，在一定的时间延迟后才执行最后一次触发的事件。如果在延迟时间内又有新的事件触发，则重新计时延迟时间。这样可以避免事件频繁触发时造成过多的函数执行。\n\n而节流函数的作用是当一个事件连续触发时，在一定的时间间隔内只执行一次事件处理函数。无论事件触发频率如何，节流函数会按照固定的时间间隔执行函数。这样可以控制函数的执行频率，保证函数在一定时间间隔内被均匀调用。\n因此，虽然节流函数和防抖函数都是用于限制函数的执行频率，但它们的具体实现和应用场景有所不同。需要根据具体的需求选择使用节流函数还是防抖函数。",
+      "name": "节流和防抖函数",
+      "content": [
+        {
+          "label": "节流函数",
+          "language": "javascript",
+          "value": "function throttle(fn, delay) {\n  var t = null,\n    begin = new Date().getTime();\n\n  return function() {\n    var _self = this,\n      args = arguments,\n      cur = new Date().getTime();\n\n    clearTimeout(t);\n\n    if (cur - begin >= delay) {\n      fn.apply(_self, args);\n      begin = cur;\n    } else {\n      t = setTimeout(function() {\n        fn.apply(_self, args);\n      }, delay);\n    }\n  };\n}\nexport { throttle };\n\n//可以通过以下方式使用导出的throttle函数：\n\nimport { throttle } from '@/libs/utils/throttle.js';\n\nconst myFunction = () => {\n  // 要执行的函数逻辑\n};\n\nconst throttledFunction = throttle(myFunction, 1000); // 创建一个节流版本的函数\n\n// 在需要限制执行频率的地方调用节流函数\nthrottledFunction();"
+        },
+        {
+          "label": "防抖函数",
+          "language": "javascript",
+          "value": "//以下是一个简单的实现防抖函数的例子：\nfunction debounce(fn, delay) {\n  let timerId;\n\n  return function(...args) {\n    clearTimeout(timerId);\n\n    timerId = setTimeout(() => {\n      fn.apply(this, args);\n    }, delay);\n  };\n}\n\nexport { debounce };\n\n//使用方法示例：\nimport { debounce } from './debounce.js';\n\nconst myFunction = () => {\n  // 要执行的函数逻辑\n};\n\nconst debouncedFunction = debounce(myFunction, 1000); // 创建一个防抖版本的函数\n\n// 在需要限制执行频率的地方调用防抖函数\ndebouncedFunction();"
+        }
+      ],
+      "id": "XWVeHpG_",
+      "createdAt": 1688967884934,
+      "updatedAt": 1688968245043
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": "JavaScript中的对象解构和数组解构有一些相似之处，但它们实际上是不同的概念",
+      "name": "解构和扩展运算符",
+      "content": [
+        {
+          "label": "对象解构",
+          "language": "javascript",
+          "value": "对象解构（Object Destructuring）：对象解构允许我们从一个对象中提取属性，并将它们赋值给对应的变量。这样可以更方便地获取和使用对象的特定属性。对象解构使用花括号 {} 来表示，变量名与对象的属性名对应。例如：\n注意解构赋值中的变量名必须与要解构的对象中的属性名匹配;\n\nconst obj = { x: 1, y: 2 };\nconst { x, y } = obj;\nconsole.log(x); // 输出 1\nconsole.log(y); // 输出 2\n\n属性简写，它是对象解构的另一种方式：\n\nlet [x, y] = ['a', 'b'];\nlet obj = { x, y }; \nconsole.log(obj); // { x: \"a\", y: \"b\" }\n\n以上代码和下面代码的效果是相同的\n\nvar x = 'a';\nvar y= 'b';\nvar obj2 = {x: x, y: y};\nconsole.log(obj2); // [ x:\"a\",y:\"b\"}"
+        },
+        {
+          "label": "数组解构",
+          "language": "javascript",
+          "value": "数组解构（Array Destructuring）：数组解构允许我们从一个数组中提取元素，并将它们赋值给对应的变量。这样可以更方便地获取和使用数组中的特定元素。数组解构使用方括号 [] 来表示，变量名与数组的索引对应。例如：\n\nconst arr = [1, 2, 3];\nconst [a, b, c] = arr;\nconsole.log(a); // 输出 1\nconsole.log(b); // 输出 2\nconsole.log(c); // 输出 3"
+        },
+        {
+          "label": "对象解构与扩展运算符",
+          "language": "javascript",
+          "value": "扩展运算符和解构有一定的关系。\n对象解构与扩展运算符：\n当使用对象解构时，可以通过扩展运算符将剩余的属性复制到一个新的对象中。\n\nconst obj = { a: 1, b: 2, c: 3, d: 4 };\nconst { a, b, ...rest } = obj;\nconsole.log(a); // 输出 1\nconsole.log(b); // 输出 2\nconsole.log(rest); // 输出 { c: 3, d: 4 }\n\n数组解构与扩展运算符：\n当使用数组解构时，可以通过扩展运算符将剩余的元素复制到一个新的数组中。\nconst arr = [1, 2, 3, 4, 5];\nconst [first, second, ...rest] = arr;\nconsole.log(first); // 输出 1\nconsole.log(second); // 输出 2\nconsole.log(rest); // 输出 [3, 4, 5]\n\n因此，扩展运算符可以与解构一起使用，用于将对象或数组中的剩余属性或元素复制到新的对象或数组中\n\n\n++++++++++++++++++++++++ 对象上的扩展运算符用于浅拷贝对象的可枚举属性到一个新对象\nconst obj1 = { a: 1, b: 2 };\nconst obj2 = { ...obj1, c: 3 };\nconsole.log(obj2); // 输出 { a: 1, b: 2, c: 3 }\n注意事项：\n如果被复制的对象中含有相同的属性，后面的属性会覆盖前面的属性。\n扩展运算符只能用于浅拷贝，即它只会复制原始对象的一级属性值，如果属性值是引用类型，则复制后的新对象仍然引用同一个内存地址。\n\n++++++++++++++++++++++++ 数组上的扩展运算符用于将一个数组展开为逗号分隔的多个参数。\nconst arr1 = [1, 2, 3];\nconst arr2 = [...arr1, 4, 5];\nconsole.log(arr2); // 输出 [1, 2, 3, 4, 5]\n注意事项：\n扩展运算符只会展开一层，如果数组中的元素是引用类型，则复制后的新数组仍然引用同一个内存地址。\n\n"
+        }
+      ],
+      "id": "boFdQWa_",
+      "createdAt": 1689040757355,
+      "updatedAt": 1689042957228
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "WblIddgQ",
+      "tagsIds": [],
+      "description": null,
+      "name": "VSCode 必装插件",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "console Ninja  //在vscode里直接返回调试结果\nRandom Everything  //先alt+多选 然后 shift + ctrl + p 输入random 可以选择插入的random数据类型\nQuokka.js //avaScript and TypeScript playground in your editor.Quokka.js is a powerful tool for JavaScript developers that enhances productivity by providing real-time feedback and visibility into code execution.\n//注意 ctrl+shift+p 调出面板输入Quokka后会有各种选项；\n//在代码行后面输入 //? 后有结果\n//ctrl + k  j 新建一个JavaScript文件并启动Quokka\n//ctrl + k q 在当前JavaScript文件下启动运行Quokka\n//ctrl + k e 结束当前文件Quokka\n//ctrl + shift + u 打开output窗口\n别名路径跳转 ：别名路径跳转插件，支持任何项目，可以自由配置映射规则，自由配置可缺省后缀名列表"
+        }
+      ],
+      "id": "lKwo4RaA",
+      "createdAt": 1689062868857,
+      "updatedAt": 1689835311916
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "",
+      "tagsIds": [],
+      "description": null,
+      "name": "",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "value": "Random Everything",
+          "language": "plain_text"
+        }
+      ],
+      "id": "htmGgI9J",
+      "createdAt": 1689063659387,
+      "updatedAt": 1689141350141
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "",
+      "tagsIds": [],
+      "description": null,
+      "name": "create snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "value": "电脑",
+          "language": "plain_text"
+        }
+      ],
+      "id": "9Kz0MuXZ",
+      "createdAt": 1689063776967,
+      "updatedAt": 1689141345484
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "",
+      "tagsIds": [],
+      "description": null,
+      "name": "",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "value": "电脑",
+          "language": "plain_text"
+        }
+      ],
+      "id": "8wyOUwFe",
+      "createdAt": 1689063800821,
+      "updatedAt": 1689141337410
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "",
+      "tagsIds": [],
+      "description": null,
+      "name": "",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "value": "电脑",
+          "language": "plain_text"
+        }
+      ],
+      "id": "n0GSXkcC",
+      "createdAt": 1689063958305,
+      "updatedAt": 1689141334573
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "map 数据的使用",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "let cartMap = new Map(); //创建map\n\n//addTo()是一个按钮点击事件，获取的参数item是一个对象类型\n addTo(item) {\n    let mapItem = cartMap.get(item.id); //get方法是map的方法，用来获取map中的值\n    if (mapItem) {\n        mapItem.num += 1; //\n     } else {\n       let obj = {\n          ...item, // 这里的...item是展开运算符，相当于把item中的所有属性都展开了\n          num: 1,\n        };\n        this.cartList.push(obj);\n        cartMap.set(item.id, obj); // 这里的set方法是map的方法，用来设置map中的值,这里的item.id是key，obj是value\n     }\n }"
+        }
+      ],
+      "id": "yJfGP3L9",
+      "createdAt": 1689153144410,
+      "updatedAt": 1689153629054
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "6vOxmQF6",
+        "sUpoZMyz",
+        "MtywOPyV"
+      ],
+      "description": null,
+      "name": "数据结构 ",
+      "content": [
+        {
+          "label": "stack 栈结构",
+          "language": "javascript",
+          "value": " //Stack的实际例子就是一碟盘子，last In First Out (LIFO)\n // push()  pop() 是相反的操作，都是对数组的最后一个元素的操作\n class Stack {\n  //constructor()`构造函数用于初始化栈\n  constructor() {\n    this.items = [];\n    this.count = 0;\n  }\n  \n  //下面全部是方法\n  // Add element to top of stack\n  push(element) {\n    this.items[this.count] = element;\n    console.log(`${element} added to ${this.count}`);\n    this.count += 1; // increment count\n    return this.count - 1; // return the size of the stack\n  }\n  // Return and remove top element in stack\n  // Return undefined if stack is empty\n  pop() {\n    if (this.count == 0) return undefined;\n    console.log(this.count);\n    let deleteItem = this.items[this.count - 1]; // save last element\n    this.count -= 1; // decrement count,count是自定义的，不是数组的\n    console.log(`${deleteItem} removed`);\n    return deleteItem;\n  }\n\n  // Check top element in stack,返回栈顶元素,不改变栈, peek()是自定义的方法，不是内置的方法\n  peek() {\n    console.log(`Top element is ${this.items[this.count - 1]}`);\n    return this.items[this.count - 1];\n  }\n\n  // Check if stack is empty,isEmpty()是自定义的方法\n  isEmpty() {\n    console.log(this.count == 0 ? \"Stack is empty\" : \"Stack is NOT empty\");\n    return this.count == 0;\n  }\n\n  // Check size of stack\n  size() {\n    console.log(`${this.count} elements in stack`);\n    return (this.count = 0);\n  }\n\n  // Print elements in stack\n  print() {\n    let str = \"\";\n    for (let i = 0; i < this.count; i++) {\n      str += this.items[i] + \" \";\n    }\n    return str;\n  }\n\n  // Clear stack\n  clear() {\n    this.items = [];\n    this.count = 0;\n    console.log(\"Stack cleared..\");\n    return this.items;\n  }\n}\n\nconst stack = new Stack();\n\nstack.isEmpty(); //Stack is empty\n\nstack.push(100); // 100 added to 0\n\nstack.push(200); // 200 added to 1\nstack.peek(); // return 200\nstack.push(300); // 300 added to 2,后面的在stack的顶部\n\nconsole.log(stack.print()); // 100,200,300\n\nstack.pop(); // remove 300,从顶部移除\nstack.peek(); // return 200\nstack.pop(); // remove 200\n\nstack.size(); // 1 elements in stack\n\nstack.peek(); // 100\n\nstack.isEmpty(); // Stack is NOT empty\n\nstack.size(); // 1 elements in stack\n\nstack.clear(); // Stack cleared..\n\nstack.size(); // 0 elements in stack\n\n\n这段代码定义了一个名为`Stack`的类，实现了栈的基本功能。下面是每个方法的功能解释：\n- `constructor()`构造函数用于初始化栈，它创建了一个空数组`items`和一个计数器`count`，初始值为0。\n\n- `push(element)`方法用于把元素添加到栈的顶部。它将元素存储在数组`items`的索引为`count`的位置，并将计数器`count`增加1。同时，它会打印出添加的元素和当前栈的大小，并返回栈的大小（即`count - 1`）。\n\n- `pop()`方法用于返回并移除栈顶的元素。如果栈为空，即`count`为0，那么它返回`undefined`。否则，它会保存栈顶的元素到变量`deleteItem`中，并将计数器`count`减少1。同时，它会打印出被移除的元素，并返回该元素的值。\n\n- `peek()`方法用于返回栈顶的元素，但不对栈进行修改。它打印出栈顶的元素，并返回该元素的值。\n\n- `isEmpty()`方法用于检查栈是否为空。如果栈为空，即`count`为0，它会打印出\"Stack is empty\"，并返回`true`；否则，它会打印出\"Stack is NOT empty\"，并返回`false`。\n\n- `size()`方法用于返回栈的大小，即栈中元素的个数。它打印出栈的元素个数，并将计数器`count`重置为0，并返回0。\n\n总之，这段代码实现了一个简单的栈数据结构，并提供了基本的栈操作方法。"
+        },
+        {
+          "label": "queue 队列",
+          "language": "javascript",
+          "value": "//queue:first in first out or FIFO data structures\n//现实的例子：printer queue \n\nclass Queue\n{\n    constructor()\n    {\n        this.items = []\n    }\n\n    enqueue(value)\n    {\n        this.items.push(value) // add to the end,如果想将数据放在数组的前面，可以使用unshift()方法。\n    }\n\n    dequeue()\n    {\n        if(this.items.length > 0)\n            return this.items.shift() // remove the first element\n    }\n\n    peek()\n    {\n        if(this.items.length > 0)\n            return this.items[0]\n    }\n\n    print()\n    {\n        for(let i = 0; i < this.items.length; i++)\n            console.log(this.items[i])\n    }\n}\n\nconst q = new Queue()\n\nq.enqueue(10)\nq.enqueue(20)\nq.enqueue(30)\n\nq.dequeue(30) // 10 20 30\n\nconsole.log(q.peek()) // 20 \n\nq.print() // 20 30"
+        },
+        {
+          "label": "Sets",
+          "language": "javascript",
+          "value": "const numbers = [2,2,3,5,6,2,3,3,4,4]\nconst refinedNumbers = new Set(numbers)\nconsole.log(refinedNumbers) // Set { 2, 3, 5, 6, 4 }\n\n//方法has()用于判断Set结构中是否包含某个元素\nconsole.log(refinedNumbers.has(2)) // true\n\nconst newNumbersArray = [...refinedNumbers]\nconsole.log(newNumbersArray) // [ 2, 3, 5, 6, 4 ]\n\n\n在JavaScript中，Set是一种数据类型，用于存储一组唯一的值。以下是Set数据类型的主要方法：\n\nadd(value)：向Set中添加一个值。\ndelete(value)：从Set中删除一个值。\nhas(value)：判断Set中是否存在某个值。\nclear()：清空Set中的所有值。\nsize：返回Set中值的个数。\nkeys()：返回一个包含Set中所有键的迭代器对象。\nvalues()：返回一个包含Set中所有值的迭代器对象。\nentries()：返回一个包含Set中所有键值对的迭代器对象。\nforEach(callbackFn, thisArg)：对Set中的每个值执行一个回调函数。\n这些方法可以帮助你对Set数据类型进行增删改查操作。\n"
+        },
+        {
+          "label": "Map vs Object in JavaScript",
+          "language": "javascript",
+          "value": "const map = new Map([\n    //key在map可以是任何数据类型，相比object的key只能是string\n    [1, \"one\"],\n    [2, \"two\"]\n]);\n\nconst obj = {\n    //key 在object只能是string,如果是number会被转换成string\n    1: \"one\",\n    2: \"two\"\n}\nconsole.log({ map, obj }); // { map: Map(2) { 1 => 'one', 2 => 'two' }, obj: { '1': 'one', '2': 'two' } }\n\n// Set\nmap.set(3, \"three\");\nobj[3] = \"three\";\n\nconsole.log(map);// Map(3) { 1 => 'one', 2 => 'two', 3 => 'three' }\nconsole.log(obj);// { '1': 'one', '2': 'two', '3': 'three' }\n\n// Get\nconsole.log(\"map get:\", map.get(3)); // map get: three\nconsole.log(\"obj get:\", obj[3]);// obj get: three\n\n// Delete\nmap.delete(3); \ndelete obj[3];\n\n// Keys\nconsole.log(\"map keys:\", map.keys()); // map keys: MapIterator { 1, 2 }\nconsole.log(\"obj keys:\", Object.keys(obj)); // obj keys: [ '1', '2' ]\n\n// Has\nconsole.log(\"map has key 1:\", map.has(2)); // map has key 1 true\nconsole.log(\"obj has key 1:\", 2 in obj);// obj has key 1: true\nconsole.log(\"obj has key 1:\", obj.hasOwnProperty(2))// obj has key 1: true\n\n// Values\nconsole.log(\"map values:\", map.values()); // map values: MapIterator\nconsole.log(\"obj values:\", Object.values(obj)); // obj values: [ 'one', 'two' ]\n\n// Entries\nconsole.log(\"map entries:\", map.entries()); // map entries: MapIterator\nconsole.log(\"obj entries:\", Object.entries(obj));// obj entries: [ [ '1', 'one' ], [ '2', 'two' ] ]\n// Length\nconsole.log(\"map size:\", map.size);// map size: 2\nconsole.log(\"obj size:\",Object.keys(obj).length);// obj size: 2\n\n// Iteration for 在遍历map数据的时候可以保证数据的顺序，而object的顺序是不确定的\nfor (const [key, value] of map) {\n  console.log({ key, value }); // { key: 1, value: 'one' } { key: 2, value: 'two' }\n}\n\nfor (const [key, value] of Object.entries(obj)) {\n  console.log({ key, value }); //  { key: '1', value: 'one' } { key: '2', value: 'two' }\n}\nconst obj1 = { a: 1, b: 2, c: 3 };\n\nfor (let key in obj1) {\n  console.log(key, obj1[key]);\n}\n\n// Iteration forEach\nmap.forEach((value, key) => console.log({ key, value })); //{ key: 1, value: 'one' } { key: 2, value: 'two' }\n\n//entries 返回一个数组，数组的每一项是一个键值对\nObject.entries(obj).forEach((entry) => console.log(entry)); // [ '1', 'one' ] [ '2', 'two' ]\n\n//[key, value] 解构赋值\nObject.entries(obj).forEach(([key, value]) => console.log({ key, value })); // { key: '1', value: 'one' } { key: '2', value: 'two' }\n\n// Swap Keys & Values \n//这段代码是用来创建一个新的 Map 对象，并将原始 Map 对象中的键值对进行交换的操作。\n// Array.from(map) 将 Map 对象转换为数组的目的是为了使用数组的 reduce() 方法来进行迭代和操作,虽然 Map 对象本身是可迭代的，但是它的迭代器只能返回键值对的数组，而不能返回键或值的数组。\n//reduce()的参数是一个函数，这个函数接受四个参数，分别是累加器、当前值、当前索引、源数组，返回值是累加器\nconst swapMap = Array.from(map).reduce((acc, [key, value]) => {\n  //\n  acc.set(value, key);\n  return acc;\n}, new Map()); // new Map()是reduce的第二个参数，是一个空的map对象,初始值为一个新的 Map 对象 new Map()\n//在 reduce 方法的回调函数中，通过解构赋值的方式将子数组的第一个元素作为键，第二个元素作为值。然后，将值作为新 Map 对象的键，原始键作为值，最终将结果保存在累加器 acc 中。\n\nconsole.log(swapMap); // Map(2) { 'one' => 1, 'two' => 2 }\n\nconst swapObj = Object.entries(obj).reduce((acc, [key, value]) =>\n // { acc[value] = key; return acc; },\n({ ...acc,[value]:key }),\n{}); \nconsole.log(swapObj);//{ one: '1', two: '2' }\n\n\n\n/*Map数据类型有以下方法：\n\nset(key, value): 向Map中添加一个键值对。\nget(key): 根据键获取对应的值。\nhas(key): 判断Map中是否存在指定的键。\ndelete(key): 根据键删除对应的键值对。\nclear(): 清空Map中的所有键值对。\nsize: 返回Map中键值对的数量。\nkeys(): 返回一个包含Map中所有键的迭代器对象。\nvalues(): 返回一个包含Map中所有值的迭代器对象。\nentries(): 返回一个包含Map中所有键值对的迭代器对象。\nforEach(callbackFn, thisArg): 遍历Map中的每个键值对，执行指定的回调函数。\n这些方法可以帮助我们在Map数据类型中进行键值对的增删改查操作，并且可以方便地遍历Map中的所有键值对。\n*/\n\njs 如何遍历一个对象？ 要遍历一个对象，你可以使用 JavaScript 中的不同方法。以下是几种常用的遍历对象的方式：\n\n1) 使用 for...in 循环：\nconst obj = { a: 1, b: 2, c: 3 };\n\nfor (let key in obj) {\n  console.log(key, obj[key]);\n}\n\n2)使用 Object.keys() 方法结合 forEach 循环：\nconst obj = { a: 1, b: 2, c: 3 };\n\nObject.keys(obj).forEach(key => {\n  console.log(key, obj[key]);\n});\n\n3)使用 Object.entries() 方法结合 forEach 循环（ES8+）：\nconst obj = { a: 1, b: 2, c: 3 };\n\nObject.entries(obj).forEach(([key, value]) => {\n  console.log(key, value);\n});\n\n4)使用 for...of 循环（ES6+，适用于可迭代对象）：\nconst obj = { a: 1, b: 2, c: 3 };\n\nfor (let [key, value] of Object.entries(obj)) {\n//当你使用 for...of 循环来遍历对象时，你需要使用 Object.entries(obj) 或 Object.keys(obj) 等方法将对象转换为可迭代的形式。Object.entries(obj) 方法将对象的每个键值对都转换为一个数组 [key, value]，它们可以被 for...of 循环逐个迭代。而直接使用 obj 是无法进行迭代的。如果你只关心对象的键，而不需要访问对应的值，你可以使用 Object.keys(obj) 方法获取对象的键数组\n  console.log(key, value);\n}\n\n无论你选择哪种方式，它们都可以帮助你遍历对象的属性和值。请根据你的具体需求选择适合的方法。注意，在使用 for...in 或 for...of 循环时，需要注意属性的遍历顺序可能不会与定义时的顺序一致。\n\n"
+        }
+      ],
+      "id": "_Zeq1ccR",
+      "createdAt": 1689823186954,
+      "updatedAt": 1690166906409
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [
+        "MapSWFq2",
+        "A6GXFH-I",
+        "a43hQOW6"
+      ],
+      "description": null,
+      "name": "router 路由相关-2",
+      "content": [
+        {
+          "label": "ATOne 项目JDBC页面",
+          "language": "javascript",
+          "value": "<template>\n  <el-container>\n    <el-aside width=\"120px\">\n      <el-menu :default-active=\"active\" active-text-color=\"#5faeff\" router>\n        <el-menu-item\n          v-for=\"item in leftMenu\"\n          :key=\"item.route\"\n          :index=\"item.route\"\n          :route=\"item.route\"\n        >\n          <i :class=\"[item.icon]\" />{{ item.name }}\n        </el-menu-item>\n      </el-menu>\n    </el-aside>\n    <el-main style=\"padding-left: 12px; padding-top: 12px\">\n      <router-view />\n    </el-main>\n  </el-container>\n</template>\n\n<script>\nimport { permissionCheck } from '@/utils/permissionCheck'\n\nexport default {\n  name: 'JdbcManagement',\n  data() {\n    return {\n      active: this.$route.path, //重点\n      leftMenu: [\n        {\n          name: '用例管理',\n          route: '/jdbc/plan',\n          icon: 'iconfont icon-banben',\n          permission: 'jdbcSql'\n        },\n        {\n          name: '执行记录',\n          route: '/jdbc/runRecord',\n          icon: 'el-icon-trophy',\n          permission: 'jdbcRunRecord'\n        },\n        {\n          name: '执行计划',\n          route: '/jdbc/RunPlan',\n          icon: 'iconfont icon-xitongguanli_canshushezhi',\n          permission: 'jdbcRunRecord'\n        }\n      ]\n    }\n  },\n  mounted() {\n    if (\n      this.$route.path === '/jdbc/management' ||\n      this.$route.path === '/jdbc/func/' ||\n      this.$route.path === '/jdbc/case/'\n    ) {\n      this.active = '/jdbc/plan'\n    } else if (this.$route.path.includes('/jdbc/runRecord')) {\n      this.active = '/jdbc/runRecord'\n    }\n    this.leftMenu = permissionCheck(\n      this.$store.getters.getRolePermissions(),\n      this.leftMenu,\n      'permission'\n    )\n  }\n}\n</script>\n\n<style scoped>\n.el-main {\n  margin: 0;\n  padding: 0;\n}\n\n.el-container {\n  height: calc(100vh - 70px);\n}\n.el-aside {\n  border-right: solid 1px #e6e6e6;\n}\n</style>\n\n\n//  import { permissionCheck } from '@/utils/permissionCheck.js' 这个js文件\nexport const permissionCheck = function(rolePermissions, menus, permissionCol) {\n  return menus.filter((item) => {\n    if (rolePermissions) {\n      return rolePermissions.indexOf(item[permissionCol]) > -1  // > -1 表示有\n    }\n  })\n}\n"
+        },
+        {
+          "label": "Fragment 2",
+          "language": "javascript",
+          "value": ""
+        }
+      ],
+      "id": "25Y802Po",
+      "createdAt": 1690033918620,
+      "updatedAt": 1690034249302
     }
   ],
   "tags": [
@@ -4357,6 +4588,42 @@
       "id": "sCWt0xKF",
       "createdAt": 1688269410167,
       "updatedAt": 1688269410167
+    },
+    {
+      "name": "模块",
+      "id": "njDRzcoh",
+      "createdAt": 1688869334372,
+      "updatedAt": 1688869334372
+    },
+    {
+      "name": "模块化",
+      "id": "4LLYvAFl",
+      "createdAt": 1688869376074,
+      "updatedAt": 1688869376074
+    },
+    {
+      "name": "class",
+      "id": "6vOxmQF6",
+      "createdAt": 1689839805912,
+      "updatedAt": 1689839805912
+    },
+    {
+      "name": "侧边栏",
+      "id": "A6GXFH-I",
+      "createdAt": 1690033998554,
+      "updatedAt": 1690033998554
+    },
+    {
+      "name": "路由高亮",
+      "id": "a43hQOW6",
+      "createdAt": 1690034014496,
+      "updatedAt": 1690034014496
+    },
+    {
+      "name": "对象遍历",
+      "id": "MtywOPyV",
+      "createdAt": 1690105307053,
+      "updatedAt": 1690105307053
     }
   ]
 }
