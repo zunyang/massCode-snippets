@@ -1,15 +1,49 @@
 {
   "folders": [
     {
+      "name": "NodeJS",
+      "parentId": "y-C8x3sP",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "TGQqRGFr",
+      "createdAt": 1687255378341,
+      "updatedAt": 1692155838072,
+      "index": 0
+    },
+    {
+      "name": "lodash",
+      "parentId": "y-C8x3sP",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "uIXLFdiz",
+      "createdAt": 1682661303338,
+      "updatedAt": 1692155838042,
+      "index": 1
+    },
+    {
+      "name": "小技巧",
+      "parentId": "y-C8x3sP",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "javascript",
+      "id": "MFd514cI",
+      "createdAt": 1692155892160,
+      "updatedAt": 1692159025498,
+      "index": 2
+    },
+    {
       "name": "javascript",
       "parentId": null,
-      "isOpen": false,
+      "isOpen": true,
       "isSystem": false,
       "defaultLanguage": "javascript",
       "id": "y-C8x3sP",
       "createdAt": 1677574921501,
-      "updatedAt": 1677574968878,
-      "index": 0
+      "updatedAt": 1692155838033,
+      "index": 0,
+      "icon": "3d"
     },
     {
       "name": "CSS",
@@ -19,7 +53,7 @@
       "defaultLanguage": "css",
       "id": "3BVGYMMN",
       "createdAt": 1677579960490,
-      "updatedAt": 1678974417347,
+      "updatedAt": 1692155838041,
       "index": 1
     },
     {
@@ -30,7 +64,7 @@
       "defaultLanguage": "javascript",
       "id": "-fio_qG6",
       "createdAt": 1678105368093,
-      "updatedAt": 1685686373029,
+      "updatedAt": 1692155838041,
       "index": 2
     },
     {
@@ -41,7 +75,7 @@
       "defaultLanguage": "javascript",
       "id": "kYeA3Yuv",
       "createdAt": 1678621283163,
-      "updatedAt": 1680870281253,
+      "updatedAt": 1692155838041,
       "index": 3
     },
     {
@@ -52,7 +86,7 @@
       "defaultLanguage": "javascript",
       "id": "ejtoZnYa",
       "createdAt": 1679982761618,
-      "updatedAt": 1679982777364,
+      "updatedAt": 1692155838042,
       "index": 4
     },
     {
@@ -63,18 +97,8 @@
       "defaultLanguage": "javascript",
       "id": "CIqaS_Yh",
       "createdAt": 1681288611405,
-      "updatedAt": 1681288630555,
+      "updatedAt": 1692155838042,
       "index": 5
-    },
-    {
-      "name": "lodash",
-      "parentId": null,
-      "isOpen": false,
-      "isSystem": false,
-      "defaultLanguage": "plain_text",
-      "id": "uIXLFdiz",
-      "createdAt": 1682661303338,
-      "updatedAt": 1682661313945
     },
     {
       "name": "VSCode",
@@ -84,7 +108,8 @@
       "defaultLanguage": "javascript",
       "id": "WblIddgQ",
       "createdAt": 1685590221911,
-      "updatedAt": 1685590244394
+      "updatedAt": 1692155838072,
+      "index": 6
     },
     {
       "name": "HTML",
@@ -94,17 +119,8 @@
       "defaultLanguage": "html",
       "id": "MqWdF2i4",
       "createdAt": 1685696039426,
-      "updatedAt": 1685696061020
-    },
-    {
-      "name": "NodeJS",
-      "parentId": null,
-      "isOpen": false,
-      "isSystem": false,
-      "defaultLanguage": "plain_text",
-      "id": "TGQqRGFr",
-      "createdAt": 1687255378341,
-      "updatedAt": 1687255395684
+      "updatedAt": 1692155838072,
+      "index": 7
     }
   ],
   "snippets": [
@@ -148,37 +164,56 @@
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "y-C8x3sP",
-      "tagsIds": [],
-      "description": null,
+      "tagsIds": [
+        "a_KWSk9m"
+      ],
+      "description": "js的classList.toggle方法可以将一个css类在存在和去除之间通过点击切换\n此外classList后面可以跟add、remove等",
       "name": "Toggle",
       "content": [
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "let sorted = false;\nbtnSort.addEventListener('click', function (e){\n  e.preventDefault(); //阻止默认的表单提交刷新页面\n  displayMovements(currentAccount.movements,!sorted);\n  sorted = !sorted;\n})"
+          "value": "let sorted = false;\nbtnSort.addEventListener('click', function (e){\n  e.preventDefault(); //阻止默认的表单提交刷新页面\n  displayMovements(currentAccount.movements,!sorted);\n  sorted = !sorted;\n})\n\n//========================= 侧边栏伸缩效果\n\nconst toggle = document.getElementById('toggle');\nconst modal = document.getElementById('modal');\n// Toggle nav;\ntoggle.addEventListener('click',() =>\n  document.body.classList.toggle('show-nav')\n}\n\n// Hide modal on outside click\nwindow.addEventListener('click', e => \n e.target == modal ? modal.classList.remove('show-modal') : false\n)\n\n// css\nbody{\n  //dom变化时平滑处理\n  transition: transform 0.3s ease;\n}\nbody.show-nav{\n  /* Width of nav */\n  transform: translateX(200px)\n} "
+        },
+        {
+          "label": "Fragment 2",
+          "language": "javascript",
+          "value": ""
         }
       ],
       "id": "4YRe80Xi",
       "createdAt": 1677575412067,
-      "updatedAt": 1677575419032
+      "updatedAt": 1690539473358
     },
     {
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "y-C8x3sP",
-      "tagsIds": [],
+      "tagsIds": [
+        "CTWrptR8"
+      ],
       "description": null,
       "name": "reduce()",
       "content": [
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "reduce()是JavaScript中数组的一个高阶函数。它接收一个回调函数作为参数，用来处理数组中的每个元素，并将结果累积为单个值。\nreduce()方法的语法如下：\narr.reduce(callback[, initialValue])\n\nconst orders = [{ id: 1, amount: 10 }, { id: 2, amount: 12 }, { id: 3, amount: 5 }]\n\nconst totalAmount = orders.reduce((sum, order) => sum + order.amount, 0); // 27\n\n累加可以，那么 加减乘除 中其他三个的原理是一样的，这里不用多说，肯定是可以的，\n甚至加上 与 、非的计算也是可以的，比如\n\n[true, true, false, true].reduce((a, b) => a & b); // 有false，按照与逻辑，一定会是false"
+          "value": "const people = [\n  { id: \"1\", name: \"Leigh\", age: 35 },\n  { id: \"2\", name: \"Jenny\", age: 30 },\n  { id: \"3\", name: \"Heather\", age: 28 },\n];\n\nlet result;\n//count\nresult = people.reduce((acc, person) => acc + 1, 0);\nconsole.log(result); // 3\n\n//sum ages\nresult = people.reduce((acc, person) => acc + person.age, 0);\nconsole.log(result); // 93\n\n// array of names(map)\nresult = people.reduce((acc, person) => [...acc, person.name], []);\nconsole.log(result); // [\"Leigh\", \"Jenny\", \"Heather\"]\n\n//log\nresult = people.reduce((acc, person) => {\n  //参数person.name是要迭代的元素，而...acc是要累加的数组。在这个表达式中，...acc表示将已经累加的数组展开，然后再添加上person.name作为新的元素，最终返回一个新的累加数组。\n  const newAcc = [...acc, person.name]; // 更新累积值,acc 是一个累积的结果数组，初始值为一个空数组 [],每次迭代中，...acc 会展开之前累积的结果数组，然后将当前 person 对象的 name 属性插入到新数组中。因此，打印...acc 的值会是一个包含之前迭代过程中所有人名的数组。\n  console.log(newAcc); // 输出每次迭代的结果 // [\"Leigh\"] // [\"Leigh\", \"Jenny\"] // [\"Leigh\", \"Jenny\", \"Heather\"]\n  return newAcc; // 返回更新的累积值\n}, []);\n\nconsole.log(result); // 输出最终的 result // [\"Leigh\", \"Jenny\", \"Heather\"]\n\n// convert to id => person lookup (dict) 以id为key，person为value,这样就可以通过id来查找person了,是更好的数据结构\nresult = people.reduce((acc, person) => {\n  return { ...acc, [person.id]: person };\n}, {});\nconsole.log(result); // {1: {…}, 2: {…}, 3: {…}}\nconsole.log(result[\"3\"]); // {id: \"3\", name: \"Heather\", age: 28}\n\n// max age\nresult = people.reduce((acc, person) => {\n  if (acc === null || person.age > acc) return person.age;\n  return acc;\n}, null);\nconsole.log(result); //35\n\n// min age\nresult = people.reduce((acc, person) => {\n  if (acc === null || person.age < acc) return person.age;\n  return acc;\n}, null);\nconsole.log(result); //28\n\n// find by name\nresult = people.reduce((acc, person) => {\n  //首先检查累加器是否已经被赋值，如果是则直接返回累加器的值，这样就可以避免在后续的迭代中再次查找到匹配的 person 对象。\n  if (acc !== null) return acc;\n  if (person.name === \"Leigh\") return person;\n  return null;\n}, null);\nconsole.log(result); //{id: \"1\", name: \"Leigh\", age: 35}\n\n//age all over 18 (every())\nresult = people.reduce((acc, person) => {\n  //如果累加器acc的值为false（即之前已经有一个对象的年龄小于等于27岁），则直接返回false，不再继续遍历数组节省时间和资源\n  if (!acc) return false;\n  return person.age > 18;\n}, true);\n\n//result = people.every(person => person.age>28); //如果有任何元素不符合条件，every() 方法会立即停止遍历，并返回 false。如果所有元素都符合条件，则返回 true。\nconsole.log(result); // true\n\n//any over 18 (some())\nresult = people.reduce((acc, person) => {\n  if (acc) return true; //如果累加器 acc 的值为真（即非空、非零、非假），则直接返回 true，不再继续遍历数组节省时间和资源。\n  return person.age > 18;\n}, false);\nconsole.log(result); //true\n\n//result = people.some(person => person.age > 18); //用some()是更好的实现，如果有任何元素符合条件，some() 方法会立即停止遍历，并返回 true。如果所有元素都不符合条件，则返回 false。\n\n//其他===========================\nconst orders = [{ id: 1, amount: 10 }, { id: 2, amount: 12 }, { id: 3, amount: 5 }]\n\nconst totalAmount = orders.reduce((sum, order) => sum + order.amount, 0); // 27\n\n累加可以，那么 加减乘除 中其他三个的原理是一样的，这里不用多说，肯定是可以的，\n甚至加上 与 、非的计算也是可以的，比如\n\n[true, true, false, true].reduce((a, b) => a & b); // 有false，按照与逻辑，一定会是false"
+        },
+        {
+          "label": "reduce 概念",
+          "language": "javascript",
+          "value": "reduce()是JavaScript中数组的一个高阶函数。它接收一个回调函数作为参数，用来处理数组中的每个元素，并将结果累积为单个值。\nreduce()方法的语法如下：\n\narr.reduce(callback[, initialValue])\n\n其中，callback是一个回调函数，它可以接收四个参数：accumulator（累加器）、currentValue（当前元素的值）、currentIndex（当前元素的索引）和array（原始数组）。initialValue是可选参数，用来指定累加器的初始值。\n\n回调函数的作用是对数组中的每个元素进行操作，并将结果累积到累加器中。回调函数的返回值会作为下一次迭代的累加器值。最后，reduce()方法返回累加器的最终值。\n\n下面是一个使用reduce()方法计算数组元素之和的示例：\n\nvar numbers = [1, 2, 3, 4, 5];\nvar sum = numbers.reduce(function(accumulator, currentValue) {\n  return accumulator + currentValue;\n}, 0);\n\nconsole.log(sum); // 输出15```\n\n在上面的示例中，初始累加器的值为0，回调函数每次将当前元素与累加器相加，并将结果作为下一次迭代的累加器值。最终得到数组元素之和为15。\nreduce()方法还可以用于其他一些场景，例如计算数组元素的乘积、查找数组中的最大值或最小值等。通过在回调函数中实现不同的逻辑，可以实现各种不同的功能。\n\n需要注意的是，reduce()方法只对非空数组有效。如果数组为空且没有提供初始值，将会抛出一个TypeError。因此，在使用reduce()方法时，最好先检查数组是否为空，或者提供一个初始值来避免错误。"
+        },
+        {
+          "label": "一个处理header的案例",
+          "language": "javascript",
+          "value": "data = data.toString();\n        \nif(data.match(/Upgrade: websocket/)){ // 说明要升级成websocket协议\n  let rows = data.split('\\r\\n');// split()返回的是一个数组，而join()是将数组转换成字符串\n  // console.log(rows); //打印header報文,是一个数组, slice(1,-2)去掉第一行和最后两行\n\n  const headers = rows.slice(1, -2).reduce((memo, row) => {\n      console.log('(memo:',memo); //memo 是上一次回调函数的返回值\n      console.log('row:',row);    //row 是数组 rows 中当前正在处理的元素\n\n      let [key,value] = row.split(': ') //数组的解构赋值,将一个数组拆分成多个变量，row.split(': ') 是对字符串 row 进行拆分\n      //拆分后的结果是一个由两个元素组成的数组，第一个元素是键（key），第二个元素是值（value）\n      memo[key.toLowerCase()] = value;\n      return memo\n  }, {});\n  console.log(headers);\n  ...\n}\n\n const headers里这段代码使用了 reduce() 方法对数组 rows 进行操作，并最终返回一个对象 headers。\n首先，slice(1, -2) 对数组 rows 进行切片操作，从索引为 1 的元素开始，到倒数第二个元素结束。这样做的目的是去掉数组中的第一个和最后两个元素。\n然后，reduce() 方法接收一个回调函数和一个初始值 {}。回调函数接收两个参数：memo 和 row。memo 是上一次回调函数的返回值，初始值为一个空对象 {}。row 是数组 rows 中当前正在处理的元素。\n在每次迭代中，回调函数将会把 row 拆分成键值对，使用冒号和空格进行拆分，并将其赋值给变量 [key, value]。然后，它将会把 key 转换为小写，并将 value 添加到 memo 对象中，以 key 作为属性名。\n最后，回调函数返回更新后的 memo 对象。当所有元素都被迭代完毕后，最终的 memo 对象将作为结果存储在变量 headers 中。\n总结起来，这个过程可以理解为通过遍历数组并逐步构建对象的方式，将数组转换成对象。"
         }
       ],
       "id": "bf6LnPoL",
       "createdAt": 1677575451164,
-      "updatedAt": 1690167932791
+      "updatedAt": 1691573104749
     },
     {
       "isDeleted": false,
@@ -197,14 +232,14 @@
           "value": "forEach方法是数组的一个方法，不能直接用在对象上。对象不是可迭代的，因此无法使用forEach方法对其进行遍历。如果想要遍历对象的属性，可以使用for...in循环或Object.keys方法来实现\n核心：forEach()不会有返回值，但可以改变原数组对象，通过forEach()和map()给数组对象添加一个新属性\n// Data\nconst account1 = {\n  owner: 'Jonas Schmedtmann',\n  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],\n  interestRate: 1.2, // %\n  pin: 1111,\n};\n\nconst account2 = {\n  owner: 'Jessica Davis',\n  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],\n  interestRate: 1.5,\n  pin: 2222,\n};\n\nconst account3 = {\n  owner: 'Steven Thomas Williams',\n  movements: [200, -200, 340, -300, -20, 50, 400, -460],\n  interestRate: 0.7,\n  pin: 3333,\n};\n\nconst account4 = {\n  owner: 'Sarah Smith',\n  movements: [430, 1000, 700, 50, 90],\n  interestRate: 1,\n  pin: 4444,\n};\n\nconst accounts = [account1, account2, account3, account4];\n\n//function\nconst createUsernames = function (accs) {\n  accs.forEach(function (acc) {\n    //利用map返回新数组的特性给原数组添加一个新属性\n    acc.username = acc.owner\n      .toLowerCase()\n      .split(' ')\n      .map(name => name[0])\n      .join('');\n  });\n};\ncreateUsernames(accounts);\n\n\n//将会输出一个包含四个对象的数组，其中包含新创建的属性'username'\nconsole.log(accounts)"
         },
         {
-          "label": "Fragment 2",
+          "label": "通过forEach添加多个事件监听",
           "language": "javascript",
           "value": "通过forEach添加多个事件监听\n['hashchange','load'].forEach(ev => window.addEventListener(ev, showRecipe));"
         }
       ],
       "id": "Mm1kTDnU",
       "createdAt": 1677575496707,
-      "updatedAt": 1688958701810
+      "updatedAt": 1691660274839
     },
     {
       "isDeleted": true,
@@ -372,11 +407,16 @@
           "label": "数组字段的值用逗号连接起来",
           "language": "javascript",
           "value": "var dataList = [{\n    id:0,\n    name:'Tony',\n    food:['apple', 'peach', 'coconut']\n},{...},{...}];\n\n//需要将所有food字段的值用逗号连接起来，拼成一个字符串后发送给后台\n\n/*版本三*/\nresult = dataList.map(item=>item.food.join(',')).join(',');\n\n\n/*版本一*/\nvar result = '';\nfor (var i = 0; i < dataList.length; i++){\n    for (var j = 0; j < dataList[i].food.length; j++){\n        result = result + dataList[i].food[j] + ',';\n    }\n}\nresult = result.slice(0,-1);\n\n/*版本二*/\nvar result = [];\nfor (var i = 0; i < dataList.length; i++){\n    for (var j = 0; j < dataList[i].food.length; j++){\n        result.push(dataList[i].food[j]);\n    }\n}\nresult = result.join(',');\n\n"
+        },
+        {
+          "label": "map出list",
+          "language": "javascript",
+          "value": "<ul>\n   ${ingredients.map(ing => `<li>${ing}</li>`).join('')}\n</ul>"
         }
       ],
       "id": "Hr3Ejo-4",
       "createdAt": 1677576967090,
-      "updatedAt": 1687329725575
+      "updatedAt": 1690771754729
     },
     {
       "isDeleted": false,
@@ -474,7 +514,7 @@
       ],
       "id": "_ICz9XMC",
       "createdAt": 1677580106476,
-      "updatedAt": 1683168499265
+      "updatedAt": 1690627609462
     },
     {
       "isDeleted": false,
@@ -570,7 +610,9 @@
       "isFavorites": false,
       "folderId": "y-C8x3sP",
       "tagsIds": [
-        "S3kIS3AR"
+        "S3kIS3AR",
+        "uyS3jGYa",
+        "UOlf7phy"
       ],
       "description": null,
       "name": "fetch",
@@ -589,11 +631,16 @@
           "label": "用fetch()获取本地 json",
           "language": "javascript",
           "value": "function caclulate() {\n  fetch('items.json')\n    .then( res => res.json()) //这里是重点\n    .then(data => console.log(data)); //打印出json文件，data可以用其他名称，如res\n    //.then(data => (document.body.innerHTML = data[0].text)) //将获取到的json文件信息显示在页面\n}\n\ncaclulate();"
+        },
+        {
+          "label": "fetch map",
+          "language": "javascript",
+          "value": "const whereAmI = function (lat,lng) {\n    fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)\n      .then(res => res.json())\n      .then(data => {\n      console.log(data);\n     });\n}\nwhereAmI(12.508,13.381); //这里可以打印出一个地图信息相关的对象"
         }
       ],
       "id": "zQnI5Oah",
       "createdAt": 1677581820829,
-      "updatedAt": 1688438357276
+      "updatedAt": 1690771512090
     },
     {
       "isDeleted": false,
@@ -635,11 +682,16 @@
           "label": "获得滚动条的滚动距离",
           "language": "javascript",
           "value": "function getScrollOffset() {\n    if (window.pageXOffset) {\n        return {\n            x: window.pageXOffset,\n            y: window.pageYOffset\n        }\n    } else {\n        return {\n            x: document.body.scrollLeft + document.documentElement.scrollLeft,\n            y: document.body.scrollTop + document.documentElement.scrollTop\n        }\n    }\n}"
+        },
+        {
+          "label": "showLoading",
+          "language": "javascript",
+          "value": "window.addEventListener('scroll', () => {\n  //从document.documentElement里获取三个属性\n  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;\n\n  if (scrollTop + clientHeight >= scrollHeight - 5) {\n    showLoading();\n  }\n});\n\n// Show loader & fetch more posts\nfunction showLoading() {\n  loading.classList.add('show');\n\n  setTimeout(() => {\n    loading.classList.remove('show');\n\n    setTimeout(() => {\n      //page变量由于在函数外定义过，所以这里可以重定义这个变量\n      page++;\n      showPosts();\n    }, 300);\n  }, 1000);\n}"
         }
       ],
       "id": "i5D2-kdu",
       "createdAt": 1677638493940,
-      "updatedAt": 1683183194653
+      "updatedAt": 1691374211803
     },
     {
       "isDeleted": false,
@@ -713,7 +765,7 @@
       ],
       "id": "xhgrp8OR",
       "createdAt": 1677639634299,
-      "updatedAt": 1683183023355
+      "updatedAt": 1691374053630
     },
     {
       "isDeleted": false,
@@ -1056,7 +1108,7 @@
         {
           "label": "classList",
           "language": "javascript",
-          "value": "JavaScript 中的 classList 是 DOM 元素对象的一个属性，它提供了一组方法来操作元素的类名。通过 classList，可以方便地添加、删除、切换和检查元素的类名；classList 提供了以下几个常用的方法：add() remove() toggle() contains()\n\n //==============例1\n //这段代码的作用是选取一个图片元素，将其来源更改为 \"dog.jpg\"，然后当图片加载完成时为其添加淡入动画效果。\nel = document.querySelector('img'); //选取dom元素\nel.src='dog.jpg'; //给src属性赋值\n\nel.addEventListener('load',() => {//监听load\n  el.classList.add('fadeIn') //添加fadeIn样式\n});\n\n//============== 例2 包含toggle() contains()\ncontainer.addEventListener('click'){\n\tif (\n     e.target.classList.contains('seat') && !e.target.classList.contains('occupied')\n  ){\n\t\te.target.classList.toggle('selected');\n\t\tupdateSelectedCount()\n    }\n})\n//==================例3\n//change事件,以下是jonas的mapty地图应用的change监听,注意closest()和classList.toggle()的使用\ninputType.addEventListener('change'，function (){\n   inputElevation.closest('.form__row').classList.toggle('form__row--hidden')\n   inputCadence.closest('.form _row').classList.toggle('formrow--hidden')\n})"
+          "value": "JavaScript 中的 classList 是 DOM 元素对象的一个属性，它提供了一组方法来操作元素的类名。通过 classList，可以方便地添加、删除、切换和检查元素的类名；classList 提供了以下几个常用的方法：add() remove() toggle() contains()\n\n //==============例1\n //这段代码的作用是选取一个图片元素，将其来源更改为 \"dog.jpg\"，然后当图片加载完成时为其添加淡入动画效果。\nel = document.querySelector('img'); //选取dom元素\nel.src='dog.jpg'; //给src属性赋值\n\nel.addEventListener('load',() => {//监听load\n  el.classList.add(el.src ? 'fadeIn' : 'fadeOut') //这里只是为了展示参数里可以写表达式\n});\n//============== 例2 包含toggle() contains()\ncontainer.addEventListener('click'){\n\tif (\n     e.target.classList.contains('seat') && !e.target.classList.contains('occupied')\n  ){\n\t\te.target.classList.toggle('selected');\n\t\tupdateSelectedCount()\n    }\n})\n//==================例3\n//change事件,以下是jonas的mapty地图应用的change监听,注意closest()和classList.toggle()的使用\ninputType.addEventListener('change'，function (){\n   inputElevation.closest('.form__row').classList.toggle('form__row--hidden')\n   inputCadence.closest('.form _row').classList.toggle('formrow--hidden')\n})"
         },
         {
           "label": "给一个li元素上添加一个文本框显示一个动态的数据",
@@ -1067,11 +1119,16 @@
           "label": "closest()",
           "language": "javascript",
           "value": "closest() 是 JavaScript 中 DOM 元素的方法：\n是搭配事件代理常用的dom方法，比如可以实现你点击一个区域的任何地方，确保获取的是父元素，而不是你点击的子元素\n用于查找离当前元素最近的祖先元素（包括当前元素本身）中匹配指定 CSS 选择器的元素； 语法：element.closest(selector) \n\nconst myElement = document.querySelector('#my-element');\nconst closestDiv = myElement.closest('div');\n\n上面的代码将查找 ID 为 my-element 的元素的最近祖先 div 元素，如果找到则将其赋值给变量 closestDiv。\n如果没有找到，则 closestDiv 的值为 null。closest 方法可以方便地在DOM树中查找元素的祖先元素，\n特别是在需要找到指定元素的父级或更高层次的祖先元素时，它会非常有用。\n请注意，closest() 方法不仅可以用于查找祖先元素，还可以用于查找自身或后代元素中与指定选择器匹配的元素。例如，如果我们要查找当前元素自身是否具有 .inner 类，可以使用以下代码：\nconst element = document.querySelector('.inner');\nconst self = element.closest('.inner');\nconsole.log(self); // 输出 <div class=\"inner\">...</div>\n\n通过e对象获取：\nmoveToPopup(e){\n  const workoutEl = e.target.closest('.workout');\n  //console.log(workoutEl);\n  const workout = this.#workouts.find(work => work.id === workoutEl.dataset.id);//从html的data属性获取id值\n  //console.log(workout);\n}"
+        },
+        {
+          "label": "js动态添加dom的4中方法",
+          "language": "javascript",
+          "value": "1）createElement()和appendChild()：//使用document.createElement()方法创建新的元素节点，然后使用parentElement.appendChild()将其添加到指定的父元素节点中。\n\nvar parentElement = document.getElementById(\"parent\");\nvar newElement = document.createElement(\"div\");\nnewElement.textContent = \"新的DOM元素\";\nparentElement.appendChild(newElement);\n\n2）innerHTML：//使用innerHTML属性设置父元素的HTML内容，可以包含新的DOM元素。\n\nvar parentElement = document.getElementById(\"parent\");\nparentElement.innerHTML += \"<div>新的DOM元素</div>\";\n\n3）insertAdjacentHTML()：//使用insertAdjacentHTML()方法在指定位置插入HTML内容。\nvar parentElement = document.getElementById(\"parent\");\nparentElement.insertAdjacentHTML(\"beforeend\", \"<div>新的DOM元素</div>\");\n\n insertAdjacentHTML()方法有四个参数，用于指定插入位置和插入的HTML内容。\n\n    position（位置）：指定要插入的位置，可以是以下四个值之一：\n\n    \"beforebegin\"：在当前元素之前插入HTML内容。\n    \"afterbegin\"：在当前元素内部的起始位置插入HTML内容。\n    \"beforeend\"：在当前元素内部的结束位置插入HTML内容。\n    \"afterend\"：在当前元素之后插入HTML内容。\n    html（HTML内容）：要插入的HTML内容，可以是任何有效的HTML字符串。\n\n    element.insertAdjacentHTML(position, html);\n\n4）insertBefore()：//使用parentElement.insertBefore()方法在指定节点之前插入新的DOM元素。\n\nvar parentElement = document.getElementById(\"parent\");\nvar referenceNode = document.getElementById(\"reference\");\nvar newElement = document.createElement(\"div\");\nnewElement.textContent = \"新的DOM元素\";\nparentElement.insertBefore(newElement, referenceNode);\n//将newElement插入到referenceNode之前。意味着在DOM结构中，newElement将成为referenceNode的前一个兄弟节点。\n\n//这些方法都可以根据需要选择适合的方式来动态添加DOM元素。"
         }
       ],
       "id": "XEhy6_vs",
       "createdAt": 1678188833239,
-      "updatedAt": 1688093293979
+      "updatedAt": 1690775168209
     },
     {
       "isDeleted": false,
@@ -1228,12 +1285,12 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "\nconst imgTargets = document.querySelectorAll('img[data-src]')\n\ninput[type=\"text\"]{\n  margin: 10px ;\n  display: block;\n}\n这种用法是CSS中的属性选择器，它可以根据元素的属性值来选择元素并设置样式。\n除了[type=\"text\"]外，还有一些其他常见的属性选择器，例如：\n\n[href]：选择具有 href 属性的元素\n[target=\"_blank\"]：选择 target 属性为 \"_blank\" 的链接元素\n[class^=\"box\"]：选择 class 属性以 \"box\" 开头的元素，如 class=\"box1\" 或 class=\"box2\"\n[data-color~=\"red\"]：选择 data-color 属性值包含 \"red\" 的元素\n这些选择器可以在CSS中灵活地应用于不同的场景。"
+          "value": "\nconst imgTargets = document.querySelectorAll('img[data-src]')\n\ninput[type=\"text\"]{\n//input[type=\"submit\"]\n  margin: 10px ;\n  display: block;\n}\n这种用法是CSS中的属性选择器，它可以根据元素的属性值来选择元素并设置样式。\n除了[type=\"text\"]外，还有一些其他常见的属性选择器，例如：\n\n[href]：选择具有 href 属性的元素\n[target=\"_blank\"]：选择 target 属性为 \"_blank\" 的链接元素\n[class^=\"box\"]：选择 class 属性以 \"box\" 开头的元素，如 class=\"box1\" 或 class=\"box2\"\n[data-color~=\"red\"]：选择 data-color 属性值包含 \"red\" 的元素\n这些选择器可以在CSS中灵活地应用于不同的场景。"
         }
       ],
       "id": "eLvZiojw",
       "createdAt": 1678359553335,
-      "updatedAt": 1686885423264
+      "updatedAt": 1690535494358
     },
     {
       "isDeleted": false,
@@ -1376,24 +1433,32 @@
       "isDeleted": false,
       "isFavorites": false,
       "folderId": "y-C8x3sP",
-      "tagsIds": [],
+      "tagsIds": [
+        "0BWL9dRi",
+        "Ti7JWPw0"
+      ],
       "description": null,
       "name": "JS Class",
       "content": [
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "JS classes are really just a layer of obstruction over constructor functions\n    在构造函数里需要 PersonCl.call()，而class里只需要super()\n    super is basically the constructor function of the parent class\n    We don't need to specify the name of the parent class again,而 PersonCl.call()里需要\n    in super() pass in the arguments for the constructor of the parent class.\n\nkeyword extends link to PersonCl prototypes behind the scenes\n\nclass StudentCl extends PersonCl {\n//constructor is where we have all the code that is executed right when the application loads\n  constructor(fullName, birthYear, course){  \n    // Always needs to happen first! then be able to access the 'this' keyword\n    super(fullName, birthYear){\n      this.course =course; //this is not necessary\n    }\n    \n    calcAge(){\n      //子对象和父对象的同名方法会覆盖父对象的方法，因为原型链先到达子对象，这个就是对象4大支柱之一的‘多态’\n    }\n}\n\nconst martha = new StudentCl( 'Martha Jones'，2012,'computer science');\n\nconst martha = new StudentCl( 'Martha Jones'，2012);\n//如果像上面一行child里没有新的属性，和父对象一样的属性，那么class里不用写 constructor(),只要extends即可"
+          "value": "JS classes are really just a layer of obstruction over constructor functions\n\n    在构造函数里需要 PersonCl.call()，而class里只需要super()\n    super is basically the constructor function of the parent class\n    We don't need to specify the name of the parent class again,而 PersonCl.call()里需要\n    in super() pass in the arguments for the constructor of the parent class.\n\nkeyword extends link to PersonCl prototypes behind the scenes\n\nclass StudentCl extends PersonCl {\n//constructor is where we have all the code that is executed right when the application loads\n  constructor(fullName, birthYear, course){  \n    // Always needs to happen first! then be able to access the 'this' keyword\n    super(fullName, birthYear){\n      this.course =course; //this is not necessary\n    }\n    \n    calcAge(){\n      //子对象和父对象的同名方法会覆盖父对象的方法，因为原型链先到达子对象，这个就是对象4大支柱之一的‘多态’\n    }\n}\n\nconst martha = new StudentCl( 'Martha Jones'，2012,'computer science');\n\nconst martha = new StudentCl( 'Martha Jones'，2012);\n//如果像上面一行child里没有新的属性，和父对象一样的属性，那么class里不用写 constructor(),只要extends即可"
         },
         {
           "label": "构造函数和类的比较",
           "language": "javascript",
-          "value": "下面这样下面这样声明一个Book 类的方式。\n\n//这个是构造函数\nfunction Book(title, pages, isbn) { // {1} \n  this.title = title; \n  this.pages = pages; \n  this.isbn = isbn; \n}\n\nBook.prototype.printTitle = function() {\n\tconsole.log(this.title); \n};\n\n//我们可以用 ES2015 把语法简化，如下所示。\nclass Book { // {2} \n  constructor(title, pages, isbn) { \n    this.title = title;\n    this.pages = pages;\n    this.isbn = isbn; \n\t} \n\tprintIsbn() { \n\t\tconsole.log(this.isbn); \n  } \n}\n只需要使用class关键字，声明一个有constructor函数和诸如 printIsbn 等其他函数的类。ES2015的类是基于原型语法的语法糖。行{1}声明Book类的代码与行{2}声明的代码具有相同的效果和输出。\n\nlet book = new Book('title', 'pag', 'isbn'); \nconsole.log(book.title); // 输出图书标题 \nbook.title ='new title'; // 更新图书标题 \nconsole.log(book.title); // 输出图书标题"
+          "value": "过去，函数有着两种调用方式:\nfunction A(){}  //构造函数首字母大写只是管理，对程序并没有实际影响\n\nA();  // 直接调用\nnew A(); // 作为构造函数调用\n\n// 旧的写法 ===================================\nfunction User(firstName, lastName){\n  this.firstName = firstName;\n  this.lastName = lastName;\n  this.fullName = `${firstName} ${lastName}`\n}\n// 静态方法：方法附着的位置是在函数本身上的\nUser.isUser = function(u){\n\treturn !!u && !!u.fullName\n}\n//调用静态方法：通过构造函数本身调用\nUser.isUser(xxxx)\n\n//原型方法也就实例方法\nUser.prototype.sayHello = function(){\n\tconsole.log(Hello, my name is `&{this.fullName}`);\n}\nconst u = new User() // u是User的一个实例\nconst u2 = new User()\nu.sayHello() // 必须通过实例去调用的方法就是实例方法或原型方法，和静态方法是不同的\n\n新的等效写法：用class关键字的类写法,和java、C#相同的写法\nclass User{\n   constructor(firstName, lastName){ //构造器\n      this.firstName = firstName;\n      this.lastName = lastName;\n      this.fullName = `${firstName} ${lastName}`\n    }\n    \n    //静态方法\n    static isUser = function(u){ \n      return !!u && !!u.fullName\n    }\n    \n    //直接写名称就是实例方(原型方法)\n    sayHello(){\n      console.log(Hello, my name is `&{this.fullName}`);\n    }\n}\n\n\n\n另外一个实例 ==================================================================\n下面这样声明一个Book 类的方式。\n//这个是构造函数\nfunction Book(title, pages, isbn) { // {1} \n  this.title = title; \n  this.pages = pages; \n  this.isbn = isbn; \n}\n\nBook.prototype.printTitle = function() {\n\tconsole.log(this.title); \n};\n\n//我们可以用 ES2015 把语法简化，如下所示。\nclass Book { // {2} \n  constructor(title, pages, isbn) { \n    this.title = title;\n    this.pages = pages;\n    this.isbn = isbn; \n\t} \n\tprintIsbn() { \n\t\tconsole.log(this.isbn); \n  } \n}\n只需要使用class关键字，声明一个有constructor函数和诸如 printIsbn 等其他函数的类。ES2015的类是基于原型语法的语法糖。行{1}声明Book类的代码与行{2}声明的代码具有相同的效果和输出。\n\nlet book = new Book('title', 'pag', 'isbn'); \nconsole.log(book.title); // 输出图书标题 \nbook.title ='new title'; // 更新图书标题 \nconsole.log(book.title); // 输出图书标题"
+        },
+        {
+          "label": "Untitled fragment",
+          "language": "javascript",
+          "value": "obstruction"
         }
       ],
       "id": "OPVIGMkU",
       "createdAt": 1679132391010,
-      "updatedAt": 1688982872238
+      "updatedAt": 1690436562751
     },
     {
       "isDeleted": false,
@@ -1706,12 +1771,12 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "date = new Date();\nid = (Date.now() + '' ).slice(-10);//根据时间的这个id实用性很有限\n\n\n//唯一值的id应用在下面的类里\nclass Workout {\n  date = new Date();\n  id = (Date.now() + '')sice(-10);\n  \n  constructor(coords, distance, duration) {\n    // this.date = ... 规范后的ES应该是这样的\n    // this.id =.\n    this.coords = coords\n    this.distance = distance; // in km\n    this.duration = duration; // in min\n    }\n}\n\n//临时不完美的用法\nid: new Date().toIsoString()"
+          "value": "date = new Date();\nid = (Date.now() + '' ).slice(-10);//根据时间的这个id实用性很有限\n\n\n//唯一值的id应用在下面的类里\nclass Workout {\n  date = new Date();\n  id = (Date.now() + '').sice(-10);\n  \n  constructor(coords, distance, duration) {\n    // this.date = ... 规范后的ES应该是这样的\n    // this.id =.\n    this.coords = coords\n    this.distance = distance; // in km\n    this.duration = duration; // in min\n    }\n}\n\n//临时不完美的用法\nid: new Date().toIsoString()\n\n// 其他不完美写法 Generate random ID\nfunction generateID() {\n\treturn Math.floor(Math.random() * 100000000);\n}\n//使用：\nid:generateID()"
         }
       ],
       "id": "C75l_SnB",
       "createdAt": 1680577679066,
-      "updatedAt": 1685068089203
+      "updatedAt": 1690788492801
     },
     {
       "isDeleted": false,
@@ -1838,7 +1903,7 @@
       "updatedAt": 1680870955233
     },
     {
-      "isDeleted": false,
+      "isDeleted": true,
       "isFavorites": false,
       "folderId": "y-C8x3sP",
       "tagsIds": [
@@ -1858,7 +1923,7 @@
       ],
       "id": "NDr5giL8",
       "createdAt": 1681033671697,
-      "updatedAt": 1681048600906
+      "updatedAt": 1690771603614
     },
     {
       "isDeleted": true,
@@ -2133,11 +2198,26 @@
           "label": "Fragment 1",
           "language": "javascript",
           "value": "下面是在 vue 项目中的配置，包含以下设置\n\n请求时显示加载动画\n携带 token\n表单验证错误错误记录到 vuex\n无权限（401）时跳转到登录界面\n\nimport axios from 'axios'\nimport store from '@/store'\nimport router from '@/router'\nimport { ElMessage, ElLoading } from 'element-plus'\n\nconst instance = axios.create({\n    headers: {\n        'Content-Type': 'application/json',\n    },\n})\n\n//加载动画\nlet loading = null\n\ninstance.interceptors.request.use(\n    function (config) {\n        const baseUrl = import.meta.env.MODE == 'development' ? 'http://houdunren.test/api' : '/'\n        config.baseURL = baseUrl\n\n        //携带令牌\n        const token = window.localStorage.getItem('token')\n        if (token) config.headers.Authorization = `Bearer ${token}`\n        //加载动画\n        loading = ElLoading.service({\n            lock: true,\n            text: '加载中...',\n            spinner: 'el-icon-loading',\n            background: 'rgba(255, 255, 255, 0)',\n        })\n        return config\n    },\n    function (error) {\n        return Promise.reject(error)\n    }\n)\n\ninstance.interceptors.response.use(\n    function (response) {\n        loading.close()\n        const { data } = response\n        if (data.message) {\n            ElMessage.success({\n                message: data.message,\n                type: 'success',\n            })\n        }\n\n        return data\n    },\n    function (error) {\n        loading.close()\n        const { status, data } = error.response\n\n        switch (status) {\n            case 422:\n                //表单验证失败\n                store.commit('error/set', data.errors)\n                break\n            case 401:\n                store.commit('user/logout')\n                router.push('/login')\n                break\n        }\n\n        return Promise.reject(error)\n    }\n)\n\nexport default instance"
+        },
+        {
+          "label": "axios封装",
+          "language": "javascript",
+          "value": "//引入axios\nimport axios from \"axios\";\n\n//创建实例\nconst api = axios.create({\n  //请求地址的公共部分\n  baseURL: \"\",\n  //请求的超时时间\n  timeout: 3000,\n});\n\n//请求拦截器\napi.interceptors.request.use(\n  (config) => {\n    //config 请求的信息\n    return config;\n  },\n  (err) => {\n    //抛出错误\n    Promise.reject(err);\n  }\n);\n\n//响应拦截器\napi.interceptors.response.use(\n  (res) => {\n    //res 响应的信息\n    console.log(res);\n    return Promise.resolve(res);\n  },\n  (err) => {\n    //抛出错误\n    Promise.reject(err);\n  }\n);\n\nexport default api;\n\n\n==================================== 以上是myAxios.js文件,下面在request.js文件封装接口\nimport api from 'myAxios.js'\n\nexport const login = () => api({\n  url: '',\n  method: 'get',\n  params: params\n})\n\n===================================下面是使用\nimport { login } from 'request.js'\n\nmethod: {\n  //是基于promise的所以这里可以用then()\n  login().then(res => {\n    console.log(res)\n  })\n}\n\n\n"
+        },
+        {
+          "label": "atone的request.js文件",
+          "language": "javascript",
+          "value": "// atone使用的模板是vue Admin Template\nimport axios from 'axios'\nimport { Message } from 'element-ui'\n// import store from '@/store'\n// import { getToken } from '@/utils/auth'\n\n// create an axios instance\nconst service = axios.create({\n    baseURL: process.env.VUE_APP_BASE_API,\n    // withCredentials: true, // send cookies when cross-domain requests\n    timeout: 10000 // request timeout\n})\n\n// request interceptor\nservice.interceptors.request.use(\n    config => {\n        // do something before request is sent\n\n        if (window.localStorage.token) {\n            config.headers['Authorization'] = 'Bearer ' + window.localStorage.token\n        }\n        if (window.localStorage.uid) {\n            config.headers['X-Forwarded-User'] = window.localStorage.uid\n        }\n        if (window.localStorage.teamid) {\n            config.headers['X-Forwarded-Team'] = window.localStorage.teamid\n        }\n        return config\n    },\n    error => {\n        // do something with request error\n        console.log(error) // for debug\n        return Promise.reject(error)\n    }\n)\n\n// response interceptor\nservice.interceptors.response.use(\n    /**\n     * If you want to get http information such as headers or status\n     * Please return  response => response\n     */\n\n    /**\n     * Determine the request status by custom code\n     * Here is just an example\n     * You can also judge the status by HTTP Status Code\n     */\n    response => {\n        const res = response.data\n\n        // if the custom code is not 20000, it is judged as an error.\n\n        if (res.code !== 0) {\n            Message({\n                message: res.msg || 'Error',\n                type: 'error',\n                duration: 1 * 1000\n            })\n\n\n            // }\n            return Promise.resolve(res)\n                // return Promise.reject(new Error(res.message || 'Error'))\n        } else {\n            return res\n        }\n    },\n    error => {\n        console.log(error) // for debug\n        if (error.response) {\n            if (error.response.status === 502) {\n                Message({\n                    message: '服务暂时不可用',\n                    type: 'error',\n                    duration: 5 * 1000\n                })\n            } else if (error.response.status === 500 || error.response.status === 400 || error.response.status === 404) {\n                let msg = '服务接口调用出错 ' + error.response.status + '：' + error.response.config.url\n                if (error.response.data.msg) {\n                    msg = error.response.data.msg\n                }\n                Message({\n                    message: msg,\n                    type: 'error',\n                    duration: 5 * 1000\n                })\n            } else if (error.response.status === 401) {\n                Message({\n                    message: '用户授权已失效，请重新登陆系统。可能原因：长时间未操作或该账号已在其它位置登录。',\n                    type: 'error',\n                    duration: 5 * 1000\n                })\n                setTimeout(() => {\n                    delete window.localStorage.username\n                    delete window.localStorage.uid\n                    delete window.localStorage.teamid\n                    delete window.localStorage.token\n                    delete window.localStorage.isMaster\n                    delete window.localStorage.parentName\n                    location.reload()\n                }, 5000)\n            } else {\n                Message({\n                    message: error.response.data.msg ? error.response.data.msg : error.response.data,\n                    type: 'error',\n                    duration: 5 * 1000\n                })\n            }\n        } else {\n            Message({\n                message: error.message,\n                type: 'error',\n                duration: 5 * 1000\n            })\n        }\n    }\n)\n\nexport default service"
+        },
+        {
+          "label": "axios封装2",
+          "language": "javascript",
+          "value": "// 把axios发送请求的公共信息进行提取\nlet instance = axios.create();\n// 创建axios实例,这样在把此代码加入项目里不会和已有的axios封装冲突\ninstance.defaults.baseURL = 'http://127.0.0.1:8888';\n// 设置基础URL\ninstance.defaults.headers['Content-Type'] ='multipart/form-data';\n// 设置请求头\ninstance.defaults.transformRequest = (data, headers) => {\n    const contentType = headers['Content-Type'];\n    // 如果请求头中包含Content-Type，则使用Qs.stringify()方法将data转换为字符串\n    if (contentType === \"application/x-www-form-urlencoded\") return Qs.stringify(data);\n    // 否则直接返回data\n    return data;\n};\n// 设置响应拦截处理\ninstance.interceptors.response.use(response => {\n    // 响应处理\n    return response.data;\n});"
         }
       ],
       "id": "J4kkBfUp",
       "createdAt": 1682234527113,
-      "updatedAt": 1682234628796
+      "updatedAt": 1692106011790
     },
     {
       "isDeleted": false,
@@ -2202,7 +2282,7 @@
       ],
       "id": "JD6syzw0",
       "createdAt": 1682240476547,
-      "updatedAt": 1682241217799
+      "updatedAt": 1692066332270
     },
     {
       "isDeleted": false,
@@ -2297,7 +2377,7 @@
       ],
       "id": "Aax9Kd85",
       "createdAt": 1682407857072,
-      "updatedAt": 1682561324112
+      "updatedAt": 1692066350927
     },
     {
       "isDeleted": false,
@@ -2411,7 +2491,7 @@
       ],
       "id": "SJQ2R0Qg",
       "createdAt": 1683173567406,
-      "updatedAt": 1683175038916
+      "updatedAt": 1690788522956
     },
     {
       "isDeleted": false,
@@ -2775,12 +2855,12 @@
         "u9pCoFM3"
       ],
       "description": "we can use props customize the behavior of a component similar to how HTML attributes change the behavior of an element\nprops is short for properties\n另外注意，在父组件定义回调函数，然后在子组件调用也可以实现$emit的功能，但用$emit更好些，在devtool里通过Timeline可以debug,回调函数不行",
-      "name": "子组件props、自定义事件",
+      "name": "组件之间通信-1 子组件props、自定义事件",
       "content": [
         {
           "label": "friendContact.vue ---Child-1",
           "language": "vue",
-          "value": "//这个组件将父组件传递的数据展示出来，并向父组件发送自定义事件\n\nprops和data()里定义的数据是一样的，所以不能重名,可以对数据设置类型、初始值以及验证；\n如果要修改值，不能修改父级的原始值，但可以在data()里声明一个变量，将props的要修改的值赋给这个变量，然后修改这个变量即可\n\n<template>\n   <ul>\n     //props里的值和data里的用法一样，注意不用加this关键字,这里的值都是父组件通过v-for循环一个数组后传递过来的\n    <h2>{{name}}</h2>\n    <h2>{{...}}</h2>\n   </ul>\n    // $emit也可以写在这里, 和在methods里一样,注意在模板里是不用写this关键字的，直接用用数据名\n  <button @click=\"$emit('delete',id)\"> Delete </button>\n</template>\n\n<script>\n  export default{\n     可以是数组的简单形式,或对象形式，可以更多的设置\n    //props:['name','phoneNumber',....]\n    //props是父组件传给子组件的，而emits是子组件传给父组件的\n    props:{\n     isFavoriate:{\n         type:String,\n          required:false,\n          default:'0',\n          validator(value){ //validator作为验证返回true或false\n            return value === '1' ||  value==='0';\n          }\n          /* validator(value){\n            return value < 130\n          } */\n      },\n      id:{\n \t\t\t\t type:String,\n         required:true,\n      },\n      name:{\n         type:String,\n         //required:true,\n         default:'okzu',\n      },\n     \n    },\n    //emits是自定义的事件\n    emits:['toggle-favorite','delete'], //这里不是必须的，但不加的的话控制台有报错\n    data(){\n      return{\n       //通过这种形式改变props的值，注意这并没有改变父级的原始值, 所以才可以。\n       //注意对props里值的引用，其实就是在引用data()里的值。\n       Favoriate:this.isFavoriate\n      }\n    },\n    methods:{\n     toggleFavorite(){\n       //$emit是内置的方法，在父元素可以直接通过v-on: (简写为@)进行事件监听接收 \n       //$emit方法设置了一个自定义事件 'toggle-favorite',第二个参数是传递的数据，当然参数可以更多，或者将若干值包裹在一个对象里...\n        this.$emit('toggle-favorite',this.id)\n         //父元素用 @ 接收事件：@toggle-favorite = 'toggle-favoriteState'\n         //父元素的 friendId参数就是子元素发送过来的数据，可以有多个参数：\n         // toggleFavoriteStatus(friendId) { \n            //const findId = this.friends.find(friend => friend.id === friendId);\n            //identifiedFriend.isFavorite = !identifiedFriend.isFavorite;\n         //}\n     },\n     //这个和上面模板里写的一个作用，只是不同的写法\n     deleteFriend() {\n        this.$emit('delete',this.id);\n      }     \n    }\n  }\n</script>"
+          "value": "这个组件将父组件传递的数据展示出来，并向父组件发送自定义事件\n\nprops和data()里定义的数据是一样的，所以不能重名,可以对数据设置类型、初始值以及验证；\n如果要修改值，不能修改父级的原始值，但可以在data()里声明一个变量，将props的要修改的值赋给这个变量，然后修改这个变量即可\n\n<template>\n   <ul>\n     //props里的值和data里的用法一样，注意不用加this关键字,这里的值都是父组件通过v-for循环一个数组后传递过来的\n    <h2>{{name}}</h2>\n    <h2>{{...}}</h2>\n   </ul>\n    // $emit也可以写在这里, 和在methods里一样,注意在模板里是不用写this关键字的，直接用数据名\n  <button @click=\"$emit('delete',id)\"> Delete </button>\n</template>\n\n<script>\n  export default{\n     可以是数组的简单形式,或对象形式，可以更多的设置\n    //props:['name','phoneNumber',....]\n    //props是父组件传给子组件的，而emits是子组件传给父组件的\n    props:{\n     isFavoriate:{\n         type:String,\n          required:false,\n          default:'0',\n          validator(value){ //validator作为验证返回true或false\n            return value === '1' ||  value==='0';\n          }\n          /* validator(value){\n            return value < 130\n          } */\n      },\n      id:{\n \t\t\t\t type:String,\n         required:true,\n      },\n      name:{\n         type:String,\n         //required:true,\n         default:'okzu',\n      },\n     \n    },\n    //emits是自定义的事件\n    emits:['toggle-favorite','delete'], //这里不是必须的，但不加的的话控制台有报错\n    data(){\n      return{\n       通过这种形式改变props的值，注意这并没有改变父级的原始值, 所以才可以。\n       注意对props里值的引用，其实就是在引用data()里的值。\n       \n       Favoriate:this.isFavoriate\n      }\n    },\n    methods:{\n     toggleFavorite(){\n       $emit是内置的方法，在父元素可以直接通过v-on: (简写为@)进行事件监听接收 \n       $emit方法设置了一个自定义事件'toggle-favorite',第二个参数是传递的数据，当然参数可以更多，或者将若干值包裹在一个对象里...\n       \n       this.$emit('toggle-favorite',this.id)\n        \n       父元素用 @ 接收事件：@toggle-favorite = 'toggle-favoriteState'\n       \n        //父元素的friendId参数就是子元素发送过来的数据，可以有多个参数：\n         // toggleFavoriteStatus(friendId) { \n            //const findId = this.friends.find(friend => friend.id === friendId);\n            //identifiedFriend.isFavorite = !identifiedFriend.isFavorite;\n         //}\n     },\n     这个和上面模板里写的一个作用，只是不同的写法\n     deleteFriend() {\n        this.$emit('delete',this.id);\n      }     \n    }\n  }\n</script>"
         },
         {
           "label": "newFriend.vue ---Child-2",
@@ -2790,17 +2870,17 @@
         {
           "label": "Parent.vue",
           "language": "vue",
-          "value": "//数据是从父组件通过props传递给子组件的\n<template>\n    <div>\n      <!-- 监听子组件自定义事件 add-contact -->\n       <new-friend @add-contact=\"addContact\"></new-friend>\n    </div>\n    <ul>\n      //friend-contact这个组件就是第一个标签页的子组件,注意v-for的用法,friends数组里的值是如何循环并传递给子组建的\n      <friend-contact\n          v-for=\"friend in friends\"\n          :key=\"friend.id\"\n          :id=\"friend.id\"\n          :name=\"friend.name\"\n          :phone-number=\"friend.phone\"\n          :email-address=\"friend.email\"\n          :is-favorite=\"friend.isFavorite\"\n          @toggle-favorite=\"toggleFavoriteStatus\"\n          @delete=\"deleteContact\"\n      >\n      </friend-contact>\n</template>\n\n<script>\n    export default {\n        data() {\n           return {\n            friends:[\n              {\n                id:'manuel',\n                name:'Lorenz',\n                phone:0123 45678 90,\n                email: 'manuel.com',\n                isFavorite:true\n              },\n              {...},\n              {...}\n            ]\n           }\n        },\n        methods: {\n            //id是从子组件的自定义方法toggle-favorite的参数里传递过来的数据\n            toggleFavoriteStatus(id) {\n                const friend = this.friends.find(friend => friend.id === id)\n                friend.isFavorite = !friend.isFavorite\n            },\n            //接收子组件自定义事件add-contact的参数里传递过来的数据\n            addContact(name, phone, email) {\n               const newContact = {\n                id: new Data().toISOString(),\n                name: name,\n                phone: phone,\n                email: email,\n                isFavorite: false\n               }\n               //push一个对象进入friends数组\n               this.friends.push(newContact)\n            },\n            deleteContact(id){\n              //通过覆盖原数组的方式删除数组中的某一项，之后重新渲染模板的friend-contact组件\n              this.friends = this.friends.filter(friend=>friend.id !== id)\n            }\n        }\n    }\n</script>\n"
+          "value": "//数据是从父组件通过props传递给子组件的\n<template>\n    <div>\n       //监听子组件自定义事件 add-contact\n       <new-friend @add-contact=\"addContact\"></new-friend>\n    </div>\n    <ul>\n      //friend-contact这个组件就是第一个标签页的子组件,注意v-for的用法,friends数组里的值是如何循环并传递给子组建的\n      <friend-contact\n          v-for=\"friend in friends\"\n          :key=\"friend.id\"\n          :id=\"friend.id\"\n          :name=\"friend.name\"\n          :phone-number=\"friend.phone\"\n          :email-address=\"friend.email\"\n          :is-favorite=\"friend.isFavorite\"\n          @toggle-favorite=\"toggleFavoriteStatus\"\n          @delete=\"deleteContact\"\n      >\n      </friend-contact>\n</template>\n\n<script>\n    export default {\n        data() {\n           return {\n            friends:[\n              {\n                id:'manuel',\n                name:'Lorenz',\n                phone:0123 45678 90,\n                email: 'manuel.com',\n                isFavorite:true\n              },\n              {...},\n              {...}\n            ]\n           }\n        },\n        methods: {\n            id是从子组件的自定义方法toggle-favorite的参数里传递过来的数据\n            toggleFavoriteStatus(id) {\n                const friend = this.friends.find(friend => friend.id === id)\n                friend.isFavorite = !friend.isFavorite\n            },\n            接收子组件自定义事件add-contact的参数里传递过来的数据\n            addContact(name, phone, email) {\n               const newContact = {\n                id: new Data().toISOString(),\n                name: name,\n                phone: phone,\n                email: email,\n                isFavorite: false\n               }\n               push一个对象进入friends数组\n               this.friends.push(newContact)\n            },\n            deleteContact(id){\n              通过覆盖原数组的方式删除数组中的某一项，之后重新渲染模板的friend-contact组件\n              this.friends = this.friends.filter(friend=>friend.id !== id)\n            }\n        }\n    }\n</script>"
         },
         {
           "label": "用props设置样式",
           "language": "javascript",
-          "value": "//---------------------------------子组件，用一个动态class接受父组件的数据\n<template>\n\t<button :class=\"mode\">\n      //slot里也是显示父组件定义的内容\n     <slot></slot>\n  </button>\n</template>\n\n<script>\n  export default {\n     props: ['mode']\n  }\n</script>\n\n<style scoped>\n button {\n   ...\n }\n</style>\n\n\n//----------------------------------父组件,逻辑很简单, 把父组件的条件数据传递给子组件, 可以是样式也可以是数据\n<template>\n\t<button :mode='storedResButtonMode'>\n  </button>\n</template>\n\n<script>\n  data(){\n    return{\n       selectedTab:'stored-resources'\n    }\n  },\n  computed:{\n    //根据条件设置一个样式为无或‘flat’\n    storedResButtonMode() {\n      return this.selectedTab ==='stored-resources' ? null : 'flat';\n    },\n</script>"
+          "value": "子组件，用一个动态class接受父组件的数据\n\n<template>\n\t<button :class=\"mode\">\n     slot里也是显示父组件定义的内容\n     <slot></slot>\n  </button>\n</template>\n\n<script>\n  export default {\n     props: ['mode']\n  }\n</script>\n\n<style scoped>\n button {\n   ...\n }\n</style>\n\n\n//----------------------------------父组件,逻辑很简单, 把父组件的条件数据传递给子组件, 可以是样式也可以是数据\n<template>\n\t<button :mode='storedResButtonMode'>\n  </button>\n</template>\n\n<script>\n  data(){\n    return{\n       selectedTab:'stored-resources'\n    }\n  },\n  computed:{\n    根据条件设置一个样式为无或‘flat’\n    storedResButtonMode() {\n      return this.selectedTab ==='stored-resources' ? null : 'flat';\n    },\n</script>"
         }
       ],
       "id": "3X84iSe8",
       "createdAt": 1684986180885,
-      "updatedAt": 1687408613759
+      "updatedAt": 1690449121340
     },
     {
       "isDeleted": true,
@@ -3426,12 +3506,12 @@
         {
           "label": "防抖函数",
           "language": "javascript",
-          "value": "//以下是一个简单的实现防抖函数的例子：\nfunction debounce(fn, delay) {\n  let timerId;\n\n  return function(...args) {\n    clearTimeout(timerId);\n\n    timerId = setTimeout(() => {\n      fn.apply(this, args);\n    }, delay);\n  };\n}\n\nexport { debounce };\n\n//使用方法示例：\nimport { debounce } from './debounce.js';\n\nconst myFunction = () => {\n  // 要执行的函数逻辑\n};\n\nconst debouncedFunction = debounce(myFunction, 1000); // 创建一个防抖版本的函数\n\n// 在需要限制执行频率的地方调用防抖函数\ndebouncedFunction();"
+          "value": "1）只传一个参数的实用版\n函数防抖是指在一定时间内，只执行最后一次操作，而忽略之前的操作。\n这个版本和第二个带参数的版本在使用上没有太大的不同，但是在实现上有一些细微的差异。\n在这个版本中，我们没有使用剩余参数语法(...args)，而是直接定义了一个没有参数的匿名函数。这意味着在调用debounce函数时，我们只能传入一个函数作为参数，而不能传入任意数量的参数。\n另外，这个版本中的定时器的回调函数直接调用了fn函数，而不是使用apply方法来传递参数。这意味着在调用fn函数时，不会传递任何参数。\n\nfunction debounce(fn, delay) {\n  var timerId;\n  return function() {\n    clearTimeout(timerId);//清除之前的等待时间\n    timerId = setTimeout(fn, delay);\n  };\n}\n//使用：\nvar func = debounce(layout，1000);\nwindow.onresize = func  //在改变窗口的时候不会频繁调用函数，让页面卡顿\n\n\n\n2）带参数传递的版本：\n//以下是一个简单的实现防抖函数的例子：在这个函数中，我们使用了闭包来保存一个定时器的ID，并在每次函数被调用时清除之前的定时器。然后，再设置一个新的定时器来延迟执行函数。这样做的目的是为了确保在一定时间内，如果函数被连续调用多次，只有最后一次调用会被执行。\nfunction debounce(fn, delay) {\n  let timerId;\n\n  return function(...args) {\n    clearTimeout(timerId);//清除之前的等待时间\n\n    timerId = setTimeout(() => {\n      fn.apply(this, args);\n    }, delay);\n  };\n}\n\nexport { debounce };\n\n//使用方法示例：\nimport { debounce } from './debounce.js';\n\nconst myFunction = () => {\n  // 要执行的函数逻辑\n};\n\nconst debouncedFunction = debounce(myFunction, 1000); // 创建一个防抖版本的函数\n\n// 在需要限制执行频率的地方调用防抖函数\ndebouncedFunction();\n\n\n"
         }
       ],
       "id": "XWVeHpG_",
       "createdAt": 1688967884934,
-      "updatedAt": 1688968245043
+      "updatedAt": 1690425268605
     },
     {
       "isDeleted": false,
@@ -3449,17 +3529,22 @@
         {
           "label": "数组解构",
           "language": "javascript",
-          "value": "数组解构（Array Destructuring）：数组解构允许我们从一个数组中提取元素，并将它们赋值给对应的变量。这样可以更方便地获取和使用数组中的特定元素。数组解构使用方括号 [] 来表示，变量名与数组的索引对应。例如：\n\nconst arr = [1, 2, 3];\nconst [a, b, c] = arr;\nconsole.log(a); // 输出 1\nconsole.log(b); // 输出 2\nconsole.log(c); // 输出 3"
+          "value": "数组解构（Array Destructuring）：数组解构允许我们从一个数组中提取元素，并将它们赋值给对应的变量。这样可以更方便地获取和使用数组中的特定元素。数组解构使用方括号 [] 来表示，变量名与数组的索引对应。例如：\n\nconst arr = [1, 2, 3];\nconst [a, b, c] = arr;\nconsole.log(a); // 输出 1\nconsole.log(b); // 输出 2\nconsole.log(c); // 输出 3\n\n//====================数组本质上也是对象，所以使用对象解构赋值的方式也可以解构数组：\nconst numbers =[\"a\",\"b\",\"c\",\"d\",{a:1,b:2}]\n\nconst {\n  0: n1, //因为数字不是合法的变量名，这里要赋值给字符变量\n  3: n2\n} = numbers;\n\nconsole.log(n1,n2) //a,b\n\n//当然简洁的写法是：\nconst [n1,n2] = numbers//注意[]里面的变量是按照下标顺序的，如果要跳过，需要用空位[, , n, m, , ,]\n//解构数组中的对象属性值\nconst{b} = numbers[4]\nconsole.log(b)//2"
         },
         {
           "label": "对象解构与扩展运算符",
           "language": "javascript",
           "value": "扩展运算符和解构有一定的关系。\n对象解构与扩展运算符：\n当使用对象解构时，可以通过扩展运算符将剩余的属性复制到一个新的对象中。\n\nconst obj = { a: 1, b: 2, c: 3, d: 4 };\nconst { a, b, ...rest } = obj;\nconsole.log(a); // 输出 1\nconsole.log(b); // 输出 2\nconsole.log(rest); // 输出 { c: 3, d: 4 }\n\n数组解构与扩展运算符：\n当使用数组解构时，可以通过扩展运算符将剩余的元素复制到一个新的数组中。\nconst arr = [1, 2, 3, 4, 5];\nconst [first, second, ...rest] = arr;\nconsole.log(first); // 输出 1\nconsole.log(second); // 输出 2\nconsole.log(rest); // 输出 [3, 4, 5]\n\n因此，扩展运算符可以与解构一起使用，用于将对象或数组中的剩余属性或元素复制到新的对象或数组中\n\n\n++++++++++++++++++++++++ 对象上的扩展运算符用于浅拷贝对象的可枚举属性到一个新对象\nconst obj1 = { a: 1, b: 2 };\nconst obj2 = { ...obj1, c: 3 };\nconsole.log(obj2); // 输出 { a: 1, b: 2, c: 3 }\n注意事项：\n如果被复制的对象中含有相同的属性，后面的属性会覆盖前面的属性。\n扩展运算符只能用于浅拷贝，即它只会复制原始对象的一级属性值，如果属性值是引用类型，则复制后的新对象仍然引用同一个内存地址。\n\n++++++++++++++++++++++++ 数组上的扩展运算符用于将一个数组展开为逗号分隔的多个参数。\nconst arr1 = [1, 2, 3];\nconst arr2 = [...arr1, 4, 5];\nconsole.log(arr2); // 输出 [1, 2, 3, 4, 5]\n注意事项：\n扩展运算符只会展开一层，如果数组中的元素是引用类型，则复制后的新数组仍然引用同一个内存地址。\n\n"
+        },
+        {
+          "label": "参数位置的解构",
+          "language": "javascript",
+          "value": "参数位置的解构是es6应用最多的场景\n\nfunction ajax({\n\tmethod = \"get\", //解构的同时给了一个默认参数\n  url = \"/\",\n  data //可以没有默认值\n}){\n   console.log(method, url)\n}\n\n//ajax的参数是一个对象\najax({\n  url:\"/abc\",\n})\n\n\n//===================看另一个不传参的版本,给参数一个空对象作为默认值，不会报错\nfunction ajax({\n\tmethod = \"get\",\n  url = \"/\",\n  parm\n}={}){ //就是给一个匿名参数了一个默认值，而对象里面的是具名参数\n   console.log(method, url)\n}\n\n//ajax没有参数传递的就是undefined,将会报错，但参数给个默认值就不会报错了\najax()"
         }
       ],
       "id": "boFdQWa_",
       "createdAt": 1689040757355,
-      "updatedAt": 1689042957228
+      "updatedAt": 1691637101761
     },
     {
       "isDeleted": false,
@@ -3578,7 +3663,7 @@
         "sUpoZMyz",
         "MtywOPyV"
       ],
-      "description": null,
+      "description": "object有许多内置属性和方法容易导致错误，而map没有这些；map是可以保持顺序的",
       "name": "数据结构 ",
       "content": [
         {
@@ -3600,11 +3685,16 @@
           "label": "Map vs Object in JavaScript",
           "language": "javascript",
           "value": "const map = new Map([\n    //key在map可以是任何数据类型，相比object的key只能是string\n    [1, \"one\"],\n    [2, \"two\"]\n]);\n\nconst obj = {\n    //key 在object只能是string,如果是number会被转换成string\n    1: \"one\",\n    2: \"two\"\n}\nconsole.log({ map, obj }); // { map: Map(2) { 1 => 'one', 2 => 'two' }, obj: { '1': 'one', '2': 'two' } }\n\n// Set\nmap.set(3, \"three\");\nobj[3] = \"three\";\n\nconsole.log(map);// Map(3) { 1 => 'one', 2 => 'two', 3 => 'three' }\nconsole.log(obj);// { '1': 'one', '2': 'two', '3': 'three' }\n\n// Get\nconsole.log(\"map get:\", map.get(3)); // map get: three\nconsole.log(\"obj get:\", obj[3]);// obj get: three\n\n// Delete\nmap.delete(3); \ndelete obj[3];\n\n// Keys\nconsole.log(\"map keys:\", map.keys()); // map keys: MapIterator { 1, 2 }\nconsole.log(\"obj keys:\", Object.keys(obj)); // obj keys: [ '1', '2' ]\n\n// Has\nconsole.log(\"map has key 1:\", map.has(2)); // map has key 1 true\nconsole.log(\"obj has key 1:\", 2 in obj);// obj has key 1: true\nconsole.log(\"obj has key 1:\", obj.hasOwnProperty(2))// obj has key 1: true\n\n// Values\nconsole.log(\"map values:\", map.values()); // map values: MapIterator\nconsole.log(\"obj values:\", Object.values(obj)); // obj values: [ 'one', 'two' ]\n\n// Entries\nconsole.log(\"map entries:\", map.entries()); // map entries: MapIterator\nconsole.log(\"obj entries:\", Object.entries(obj));// obj entries: [ [ '1', 'one' ], [ '2', 'two' ] ]\n// Length\nconsole.log(\"map size:\", map.size);// map size: 2\nconsole.log(\"obj size:\",Object.keys(obj).length);// obj size: 2\n\n// Iteration for 在遍历map数据的时候可以保证数据的顺序，而object的顺序是不确定的\nfor (const [key, value] of map) {\n  console.log({ key, value }); // { key: 1, value: 'one' } { key: 2, value: 'two' }\n}\n\nfor (const [key, value] of Object.entries(obj)) {\n  console.log({ key, value }); //  { key: '1', value: 'one' } { key: '2', value: 'two' }\n}\nconst obj1 = { a: 1, b: 2, c: 3 };\n\nfor (let key in obj1) {\n  console.log(key, obj1[key]);\n}\n\n// Iteration forEach\nmap.forEach((value, key) => console.log({ key, value })); //{ key: 1, value: 'one' } { key: 2, value: 'two' }\n\n//entries 返回一个数组，数组的每一项是一个键值对\nObject.entries(obj).forEach((entry) => console.log(entry)); // [ '1', 'one' ] [ '2', 'two' ]\n\n//[key, value] 解构赋值\nObject.entries(obj).forEach(([key, value]) => console.log({ key, value })); // { key: '1', value: 'one' } { key: '2', value: 'two' }\n\n// Swap Keys & Values \n//这段代码是用来创建一个新的 Map 对象，并将原始 Map 对象中的键值对进行交换的操作。\n// Array.from(map) 将 Map 对象转换为数组的目的是为了使用数组的 reduce() 方法来进行迭代和操作,虽然 Map 对象本身是可迭代的，但是它的迭代器只能返回键值对的数组，而不能返回键或值的数组。\n//reduce()的参数是一个函数，这个函数接受四个参数，分别是累加器、当前值、当前索引、源数组，返回值是累加器\nconst swapMap = Array.from(map).reduce((acc, [key, value]) => {\n  //\n  acc.set(value, key);\n  return acc;\n}, new Map()); // new Map()是reduce的第二个参数，是一个空的map对象,初始值为一个新的 Map 对象 new Map()\n//在 reduce 方法的回调函数中，通过解构赋值的方式将子数组的第一个元素作为键，第二个元素作为值。然后，将值作为新 Map 对象的键，原始键作为值，最终将结果保存在累加器 acc 中。\n\nconsole.log(swapMap); // Map(2) { 'one' => 1, 'two' => 2 }\n\nconst swapObj = Object.entries(obj).reduce((acc, [key, value]) =>\n // { acc[value] = key; return acc; },\n({ ...acc,[value]:key }),\n{}); \nconsole.log(swapObj);//{ one: '1', two: '2' }\n\n\n\n/*Map数据类型有以下方法：\n\nset(key, value): 向Map中添加一个键值对。\nget(key): 根据键获取对应的值。\nhas(key): 判断Map中是否存在指定的键。\ndelete(key): 根据键删除对应的键值对。\nclear(): 清空Map中的所有键值对。\nsize: 返回Map中键值对的数量。\nkeys(): 返回一个包含Map中所有键的迭代器对象。\nvalues(): 返回一个包含Map中所有值的迭代器对象。\nentries(): 返回一个包含Map中所有键值对的迭代器对象。\nforEach(callbackFn, thisArg): 遍历Map中的每个键值对，执行指定的回调函数。\n这些方法可以帮助我们在Map数据类型中进行键值对的增删改查操作，并且可以方便地遍历Map中的所有键值对。\n*/\n\njs 如何遍历一个对象？ 要遍历一个对象，你可以使用 JavaScript 中的不同方法。以下是几种常用的遍历对象的方式：\n\n1) 使用 for...in 循环：\nconst obj = { a: 1, b: 2, c: 3 };\n\nfor (let key in obj) {\n  console.log(key, obj[key]);\n}\n\n2)使用 Object.keys() 方法结合 forEach 循环：\nconst obj = { a: 1, b: 2, c: 3 };\n\nObject.keys(obj).forEach(key => {\n  console.log(key, obj[key]);\n});\n\n3)使用 Object.entries() 方法结合 forEach 循环（ES8+）：\nconst obj = { a: 1, b: 2, c: 3 };\n\nObject.entries(obj).forEach(([key, value]) => {\n  console.log(key, value);\n});\n\n4)使用 for...of 循环（ES6+，适用于可迭代对象）：\nconst obj = { a: 1, b: 2, c: 3 };\n\nfor (let [key, value] of Object.entries(obj)) {\n//当你使用 for...of 循环来遍历对象时，你需要使用 Object.entries(obj) 或 Object.keys(obj) 等方法将对象转换为可迭代的形式。Object.entries(obj) 方法将对象的每个键值对都转换为一个数组 [key, value]，它们可以被 for...of 循环逐个迭代。而直接使用 obj 是无法进行迭代的。如果你只关心对象的键，而不需要访问对应的值，你可以使用 Object.keys(obj) 方法获取对象的键数组\n  console.log(key, value);\n}\n\n无论你选择哪种方式，它们都可以帮助你遍历对象的属性和值。请根据你的具体需求选择适合的方法。注意，在使用 for...in 或 for...of 循环时，需要注意属性的遍历顺序可能不会与定义时的顺序一致。\n\n"
+        },
+        {
+          "label": "将对象ID转换为key",
+          "language": "javascript",
+          "value": "通过将对象的id转化为key，已字典的形式再查询更加高效\nconst people = [\n  { id: \"1\", name: \"Leigh\", age: 35 },\n  { id: \"2\", name: \"Jenny\", age: 30 },\n  { id: \"3\", name: \"Heather\", age: 28 },\n];\n\n// convert to id => person lookup (dict) 以id为key，person为value,这样就可以通过id来查找person了,是更好的数据结构\nresult = people.reduce((acc, person) => {\n    return {...acc, [person.id]: person}\n}, {});\nconsole.log(result); // {1: {…}, 2: {…}, 3: {…}}\n\n现在的查询效率比循环要高效多了：\nconsole.log(result[\"3\"]);// {id: \"3\", name: \"Heather\", age: 28}"
         }
       ],
       "id": "_Zeq1ccR",
       "createdAt": 1689823186954,
-      "updatedAt": 1690166906409
+      "updatedAt": 1690188958328
     },
     {
       "isDeleted": false,
@@ -3624,14 +3714,302 @@
           "value": "<template>\n  <el-container>\n    <el-aside width=\"120px\">\n      <el-menu :default-active=\"active\" active-text-color=\"#5faeff\" router>\n        <el-menu-item\n          v-for=\"item in leftMenu\"\n          :key=\"item.route\"\n          :index=\"item.route\"\n          :route=\"item.route\"\n        >\n          <i :class=\"[item.icon]\" />{{ item.name }}\n        </el-menu-item>\n      </el-menu>\n    </el-aside>\n    <el-main style=\"padding-left: 12px; padding-top: 12px\">\n      <router-view />\n    </el-main>\n  </el-container>\n</template>\n\n<script>\nimport { permissionCheck } from '@/utils/permissionCheck'\n\nexport default {\n  name: 'JdbcManagement',\n  data() {\n    return {\n      active: this.$route.path, //重点\n      leftMenu: [\n        {\n          name: '用例管理',\n          route: '/jdbc/plan',\n          icon: 'iconfont icon-banben',\n          permission: 'jdbcSql'\n        },\n        {\n          name: '执行记录',\n          route: '/jdbc/runRecord',\n          icon: 'el-icon-trophy',\n          permission: 'jdbcRunRecord'\n        },\n        {\n          name: '执行计划',\n          route: '/jdbc/RunPlan',\n          icon: 'iconfont icon-xitongguanli_canshushezhi',\n          permission: 'jdbcRunRecord'\n        }\n      ]\n    }\n  },\n  mounted() {\n    if (\n      this.$route.path === '/jdbc/management' ||\n      this.$route.path === '/jdbc/func/' ||\n      this.$route.path === '/jdbc/case/'\n    ) {\n      this.active = '/jdbc/plan'\n    } else if (this.$route.path.includes('/jdbc/runRecord')) {\n      this.active = '/jdbc/runRecord'\n    }\n    this.leftMenu = permissionCheck(\n      this.$store.getters.getRolePermissions(),\n      this.leftMenu,\n      'permission'\n    )\n  }\n}\n</script>\n\n<style scoped>\n.el-main {\n  margin: 0;\n  padding: 0;\n}\n\n.el-container {\n  height: calc(100vh - 70px);\n}\n.el-aside {\n  border-right: solid 1px #e6e6e6;\n}\n</style>\n\n\n//  import { permissionCheck } from '@/utils/permissionCheck.js' 这个js文件\nexport const permissionCheck = function(rolePermissions, menus, permissionCol) {\n  return menus.filter((item) => {\n    if (rolePermissions) {\n      return rolePermissions.indexOf(item[permissionCol]) > -1  // > -1 表示有\n    }\n  })\n}\n"
         },
         {
-          "label": "Fragment 2",
+          "label": "this.$route.path",
           "language": "javascript",
-          "value": ""
+          "value": "// 用动态class覆盖前面一个class实现定制化样式.注意最终的class可以继承之前class的属性\n\n<section class=\"app-main\" :class=\"mainClass\">\n   //用路由的唯一性作为key,强制页面刷新\n  <router-view :key=\"key\" />\n</section>\n\ncomputed: {\n  key() {\n      return this.$route.path;\n  },\n  mainClass() {\n      const currentPath = this.$route.path;\n      if (currentPath === \"/graph/graph/visual/index\") {\n        return \"app-main_darkBg\";\n      }\n    },\n}"
         }
       ],
       "id": "25Y802Po",
       "createdAt": 1690033918620,
-      "updatedAt": 1690034249302
+      "updatedAt": 1691486091355
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "-fio_qG6",
+      "tagsIds": [
+        "MapSWFq2"
+      ],
+      "description": null,
+      "name": "组件之间通信-2",
+      "content": [
+        {
+          "label": "事件总线模式",
+          "language": "javascript",
+          "value": "如果你在项目中需要更加复杂的组件间通信，可以考虑使用事件总线模式。Vue.js 中有多种方式来实现事件总线，比如使用一个全局的 Vue 实例作为事件中心，或者使用第三方库如 EventBus。通过事件总线，可以实现任意组件之间的通信，不仅限于父子组件关系。\n在这个示例中，我们创建了一个全局的 eventBus 实例作为事件中心。子组件通过 eventBus.$emit 触发自定义事件，并将数据传递给父组件。父组件通过 eventBus.$on 监听自定义事件，并在事件发生时调用相应的方法处理子组件传递的数据。\n请注意，在使用事件总线模式时，需要确保全局的 eventBus 实例被正确引入并创建，以及在适当的时机取消监听自定义事件，避免造成内存泄漏。\n此代码是引跑项目实际案例：\n\n// main.js\nimport Vue from 'vue';\n\n// 创建一个全局的 EventBus\nexport const eventBus = new Vue();\n\n// ...\n\n// ChildComponent.vue\n<template>\n  <div>\n    <button @click=\"modifyExecEnv\">执行异步操作</button>\n  </div>\n</template>\n\n<script>\nimport { eventBus } from './main.js';\n\nexport default {\n  methods: {\n    async modifyExecEnv() {\n      // 执行异步操作\n      \n      await yourAsyncFunction();\n      \n      this.$message.success('修改测试计划运行环境信息成功。');\n      \n      // 触发自定义事件，将数据传递给父组件\n      eventBus.$emit('modifyExecEnvSuccess', yourData);\n    },\n  },\n};\n</script>\n\n// ParentComponent.vue\n<template>\n  <div>\n    <ChildComponent />\n    <button @click=\"onConfirm\" :disabled=\"buttonDisabled || loading\">\n      <span v-if=\"loading\">\n        <i class=\"el-icon-loading\"></i>\n        加载中...\n      </span>\n      <span v-else>确定</span>\n    </button>\n  </div>\n</template>\n\n<script>\nimport { eventBus } from './main.js';\n\nexport default {\n  data() {\n    return {\n      buttonDisabled: false,\n      loading: false,\n    };\n  },\n  created() {\n    // 监听自定义事件，处理子组件传递的数据\n    eventBus.$on('modifyExecEnvSuccess', this.onModifyExecEnvSuccess);\n  },\n  beforeDestroy() {\n    // 取消监听自定义事件\n    eventBus.$off('modifyExecEnvSuccess', this.onModifyExecEnvSuccess);\n  },\n  methods: {\n    onModifyExecEnvSuccess(data) {\n      // 处理子组件传递的数据\n      console.log(data);\n      this.loading = false;\n    },\n    onConfirm() {\n      this.buttonDisabled = true;\n      this.loading = true;\n      \n      // 执行其他操作\n      \n      // 模拟异步操作\n      setTimeout(() => {\n        this.loading = false;\n      }, 2000);\n    },\n  },\n};\n</script>"
+        },
+        {
+          "label": "$emit 和自定义事件",
+          "language": "javascript",
+          "value": "以下为引跑项目atone实际案例,实现点击确定提交按钮后，按钮显示加载中...等待数据处，\n$emit是内置的方法,父元素用@接收子组件事件,但本例没有使用到\n//=============================================== 父组件\n<template>\n  <div>\n    //这里传递给子组件一个方法名enableConfirmButton，子组件在一个你希望的位置触发这个方法,而这个方法可以执行你希望的结果在页面的任何位置\n    <ChildComponent :enable-confirm-button=\"enableConfirmButton\" />\n    //子组件$emit()的信息可以改变这个按钮的状态，如恢复禁用，显示loading等\n    <button :disabled=\"buttonDisabled || loading\" @click=\"onConfirm\">\n      <span v-if=\"loading\">\n        <i class=\"el-icon-loading\"></i>\n        加载中...\n      </span>\n      <span v-else>确定</span>\n    </button>\n  </div>\n</template>\n\n<script>\nimport ChildComponent from './ChildComponent.vue';\n\nexport default {\n  components: {\n    ChildComponent,\n  },\n  data() {\n    return {\n      buttonDisabled: false,\n      loading: false,\n    };\n  },\n  methods: {\n    //这个方法可以被子组件触发\n    enableConfirmButton() {\n      this.buttonDisabled=false\n      this.loading = false;\n    },\n    onConfirm() {\n      this.buttonDisabled = true;\n      this.loading = true;\n      //下面的操作会在另一个外部组件执行, this.loading = false;需要通过 this.$emit('enableConfirmButton')传递过来\n\t\t\tthis.$refs[this.setRef[this.stepArr.active - 1]].stepNext()\n    },\n  },\n};\n</script>\n\n<script>\n//======================================================= 子组件\n    modifyExecEnv() {\n      apiScheduler.modifyExecEnv(this.envData).then((res) => {\n        if (res.code === '0') {\n          this.$message.success('修改测试计划运行环境信息成功')\n\n          this.$emit('enableConfirmButton')  //就是这一句向父组件发送信息触发父组件的方法enableConfirmButton()改变按钮状态\n          \n          // 跳转到计划详情\n          this.$router.push(`/scheduler/plan-details/${this.envData.id}`)\n        } else { this.$message.error(`修改测试计划运行环境信息失败。 ${res.msg}`) }\n      })\n    }\n</script>"
+        }
+      ],
+      "id": "2v6gYqii",
+      "createdAt": 1690442160401,
+      "updatedAt": 1690449112028
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [],
+      "description": null,
+      "name": "Grid布局",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": ".meals {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 20px;\n  margin-top: 20px;\n}"
+        }
+      ],
+      "id": "PLbmSeIm",
+      "createdAt": 1690601241163,
+      "updatedAt": 1690699414913
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [
+        "38-kGUGm",
+        "4FgER6K6",
+        "_WKR4zEa"
+      ],
+      "description": null,
+      "name": "媒体查询",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "@media (max-width: 800px) {\n  .meals {\n    grid-template-columns: repeat(3, 1fr);\n  }\n}\n@media (max-width: 700px) {\n  .meals {\n    grid-template-columns: repeat(2, 1fr);\n  }\n\n  .meal {\n    height: 200px;\n    width: 200px;\n  }\n}\n@media (max-width: 500px) {\n  input[type='text'] {\n    width: 100%;\n  }\n\n  .meals {\n    grid-template-columns: 1fr;\n  }\n\n  .meal {\n    height: 300px;\n    width: 300px;\n  }\n}"
+        }
+      ],
+      "id": "3OhxIYkT",
+      "createdAt": 1690685524812,
+      "updatedAt": 1690772286050
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [],
+      "description": null,
+      "name": "hover 效果",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "图片hover有标题和遮罩\n思路：跟简单，hover的div先绝对定位并把opacity设置为0; hover在设置成1即可\n//.maels是父容器，用grid布局\n.meals {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 20px;\n  margin-top: 20px;\n}\n.meal {\n  cursor: pointer;\n  position: relative;\n  height: 180px;\n  width: 180px;\n  text-align: center;\n}\n\n.meal img {\n  width: 100%;\n  height: 100%;\n  border: 4px #fff solid;\n  border-radius: 2px;\n}\n\n.meal-info {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  background: rgba(0, 0, 0, 0.7);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: opacity 0.2s ease-in;\n  opacity: 0;\n}\n\n.meal:hover .meal-info {\n  opacity: 1;\n}"
+        }
+      ],
+      "id": "4zQnVoPT",
+      "createdAt": 1690701310198,
+      "updatedAt": 1690701788477
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [
+        "EZljjTGm",
+        "SFDkpVg8"
+      ],
+      "description": "animation属性；animation-delay；.circle:nth-of-type(2)",
+      "name": "三个跳动的点-loading",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "<div class=\"loader\">\n  <div class=\"circle\"></div>\n  <div class=\"circle\"></div>\n  <div class=\"circle\"></div>\n</div>\n\n// css\n.loader {\n  opacity: 0;\n  display: flex;\n  position: fixed;\n  bottom: 50px;\n  transition: opacity 0.3s ease-in;\n}\n\n.loader.show {\n  opacity: 1;\n}\n\n.circle {\n  background-color: #fff;\n  width: 10px;\n  height: 10px;\n  border-radius: 50%;\n  margin: 5px;\n  animation: bounce 0.5s ease-in infinite; \n}\n\n.circle:nth-of-type(2) {\n  animation-delay: 0.1s;\n}\n\n.circle:nth-of-type(3) {\n  animation-delay: 0.2s;\n}\n\n@keyframes bounce {\n  0%,\n  100% {\n    transform: translateY(0);\n  }\n\n  50% {\n    transform: translateY(-10px);\n  }\n}"
+        }
+      ],
+      "id": "hcqM-7b8",
+      "createdAt": 1691307569615,
+      "updatedAt": 1691308416405
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "sCWt0xKF"
+      ],
+      "description": null,
+      "name": "js 循环对比",
+      "content": [
+        {
+          "label": "用时对比和概念",
+          "language": "javascript",
+          "value": "易错基础题: JS中三类循环对比及性能分析?\n\n  for循环及forEach底层原理\n*+ FOR循环是自己控制循环过程\n    Q1:基于var声明的时候，FOR和WHILE性能差不多 不确定循环次数的情况下使用WHILE\n    Q2:基于let声明的时候，FOR循环性能更好原理: 没有创造全局不释放的变量\n    \n*+  Q3:重写FOR-EACH\n    Array.prototype.forEach = function(callback, context){\n    let self = this,\n        i = 0,\n        len = self.length;\n    context = context == null ? window : context;\n    for (; i < len; i++) {\n        typeof callback === \"function\" ? callback.call(context, self[i], i) : null;\n        }\n    };\n\n*+\tfor in循环的BUG及解决方案\n     if (!obj.hasOwnProperty(key)) break;//只遍历私有属性\n     Q1:迭代所有可枚举属性 私有&公有，按照原型链一级级查找很耗性能\n     Q2:问题很多:不能选代Symbol属性、迭代顺序会以数字属性优先、公有可枚举的一般是自定义属性》属性也会进行迭代\n     \n*+  for of循环的底层机制\n     for of循环的原理是按照迭代器规范遍历的,注意对象没有迭代器iterator规范，所以是不可迭代的\n     Q1:迭代器iterator规范 (Symbol.iterator)[具备next方法，每次执行返回一个对象，具备 value/done 属性]\n     Q2:让对象具备可迭代性并且使用for of循环\n\n\nlet arr = new Array(9999999).fill(0);\n\n//========================= for循环 的速度极快，但是命令式编程的风格，适合处理大数据量的情况\nconsole.time('FOR~~');\nfor(let i = 0; i < arr.lentth; i++) {}\nconsole.timeEnd('FOR~~'); // FOR~~: 0.007080078125 ms\n\n//=========================== while循环 \nconsole.time('WHILE~~');\nlet j = 0;\nwhile (j < arr.length) {\n\tj++;\n}\nconsole.timeEnd('WHILE~~'); //WHILE~~: 17.644775390625 ms\n\n//============================ forEach 是封装过的函数式编程的风格，使用方便但无法管控过程，如不能中断，有性能消耗\nconsole.time('FOREACH~~');\narr.forEach(function (item) {});\nconsole.timeEnd('FOREACH~~'); //FOREACH~~: 60.17822265625 ms\n\n//===========================FOR IN 是最垃圾的循环耗时巨大，其查找机制上一定会搞到原型链上去\nconsole.time('FOR IN~~');\nfor (let key in arr){}\nconsole.timeEnd('FOR IN~~'); //FOR IN~~: 2102.823974609375 ms\n\n//========================= 'FOR OF\nconsole.time('FOR OF~~');\nfor (const val of arr) {}\nconsole.timeEnd('FOR OF~~');//FOR OF~~: 69.118896484375 ms\n\n//+++++++++++++++++++++++++++ FOR OF 的内部机制\narr = [10,20,30];\narr[Symbol.iterator] = function () {\n    let self = this\n    index = 0\n\t\treturn {\n\t\t\t// 必须具备next方法，执行一次next方法，拿到结构中的某一项的值\n    \t// done:false value:每一次获取的值\n    \t\tnext() {\n\t\t\t\t\tif (index > self.length - 1) {\n   \t\t\t\t\t return { //这里返回的是一个对象\n                done: true,\n                value: undefined\n                    }\n             }\n           //index += 2   //这里可以控制迭代的执行过程\n\t\t\t\t\treturn {\n                done: false,\n                //value: self[index]\n                value: self[index++]\n          }\n       }\n    }\n}\n\nfor (const val of arr) {\n    console.log(val)\n}\n\n//++ obj[Symbol.iterator] = Array.prototype[Symbol.iterator] 让不可迭代的对象成为可迭代的\n//类数组对象默认不具备迭代器规范\nlet obj = {\n  0: 200,\n  1: 300,\n  2: 400,\n  length: 3\n}\n//使用 Object.entries(obj) 将对象 obj 转换为键值对数组。然后，通过 for...of 循环和解构赋值来同时访问键和值\nfor (let [key, value] of Object.entries(obj)) {\n  console.log(key, value);\n}\n// 给对象添加一个可迭代的属性；Array.prototype[Symbol.iterator]; 很简单不过是Array.prototype上的一个属性而已\nobj[Symbol.iterator] = Array.prototype[Symbol.iterator];\nfor (let val of obj) {\n  //注意这里很方便，是直接输出属性的值\n\tconsole.log(val)\n};//输出200  300  400\n"
+        },
+        {
+          "label": "forEach应用在对象上",
+          "language": "javascript",
+          "value": "forEach()方法是用于遍历数组的，它是数组对象的内置方法，不适用于直接遍历普通对象。\n然而，如果你希望在对象上应用类似的迭代方法，可以考虑使用Object.keys()或Object.entries()方法来获取对象的键或键值对数组，然后再使用forEach()方法进行遍历。通过这种方式，我们可以模拟在对象上应用类似于forEach()的遍历操作，但实际上是先获取对象的键或键值对数组，然后再对数组进行遍历。示例\n\nconst obj = {\n  name: \"John\",\n  age: 30,\n  city: \"New York\"\n};\n\nObject.keys(obj).forEach(function(key) {\n  console.log(key + \": \" + obj[key]);\n});\n//输出：\nname: John\nage: 30\ncity: New York"
+        },
+        {
+          "label": "forEach的第二个参数",
+          "language": "javascript",
+          "value": "function printElement(element) {\n  console.log(this.prefix + element);\n}\n\nconst arr = [1, 2, 3];\n\narr.forEach(printElement, { prefix: 'Number' });\n//第二个参数context是可选的上下文对象，它用于指定回调函数中的this值。\n//输出：\nNumber1\nNumber2\nNumber3\n\n\n//========================================\n第二个参数context是可选的上下文对象，它用于指定回调函数中的this值。\n在JavaScript中，this关键字通常指向当前执行上下文的对象。当使用forEach方法遍历数组时，回调函数内部的this默认指向全局对象（通常是window对象）。但是，有时我们希望在回调函数中访问其他对象的属性或方法，这时可以使用context参数来指定回调函数内部的this值。\n通过将一个对象作为context参数传递给forEach方法，可以确保在回调函数中使用this时引用的是指定的上下文对象。这样，回调函数就可以在访问该对象的属性和方法时获取正确的值。示例：\n\nconst obj = {\n  name: \"John\",\n  sayHello: function() {\n    console.log(`Hello, ${this.name}!`);\n  }\n};\n\nconst arr = [1, 2, 3];\n\narr.forEach(function(element) {\n  // 在这里，this指向obj对象\n  console.log(this); // 输出: {name: \"John\", sayHello: ƒ}\n  this.sayHello(); // 输出: Hello, John!\n}, obj);"
+        }
+      ],
+      "id": "PVB0SQ5Z",
+      "createdAt": 1691659440242,
+      "updatedAt": 1691741763516
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": "ajax有回调地狱问题，axios是基于Promise封装的ajax库，解决了回调地狱的问题",
+      "name": "ajax、axios、fetch",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "==============+ ajax的核心是局部刷新， ajax的四步是其他方式的基础：\n\t// 发送请求，默认是异步的\n\tlet xhr = new XMLHttpRequest;\n\txhr.open(option.method, option.url);//默认是异步的\n\txhr.onreadystatechange = function () {\n\t\tif (/^2\\d{2}$/.test(xhr.status) && xhr.readyState === 4) {\n\t\t\t// 成功从服务器获取结果  JSON字符串\n\t\t\ttypeof option.success === \"function\" ? option.success(JSON.parse(xhr.responseText)) : null;\n\t\t}\n\t};\n\txhr.send(option.data);\n  \n  //-------------------------- jquery的范式对 ajax基于回调函数进行了封装（所以有回调地狱问题），简化了写法\n    $.ajax({\n        url: 'http://127.0.0.1:8888/user/list',\n        method: 'get',\n        success(result) {\n            console.log(result);\n        }\n    });\n    \n    // 用户登录\n// 登录成功 -> 获取用户信息\n\n/* $.ajax有回调地狱问题 */\n/* $.ajax({\n    url: 'http://127.0.0.1:8888/user/login',\n    method: 'post',\n    data: Qs.stringify({\n        account: '18310612838',\n        password: md5('1234567890')\n    }),\n    success(result) {\n        if (result.code === 0) {\n            // 登录成功\n            $.ajax({\n                url: 'http://127.0.0.1:8888/user/list',\n                method: 'get',\n                success(result) {\n                    console.log(result);\n                }\n            });\n        }\n    }\n}); */\n  \n===============+ axios是基于Promise封装的ajax库\n\n/!* Axios也是对ajax的封装，基于Promise管理请求，解决回调地狱问题（await）这里是对上面$.ajax回调地狱的重写 *!/\n(async function () {\n    let result = await axios.post('/user/login', {\n        account: '18310612838',\n        password: md5('1234567890')\n    });\n\n    result = await axios.get('/user/list');\n    console.log(result);\n})(); \n\n===============+ fetch是ES6新增的通信方法，不是ajax,是浏览器内置的函数，基于fetch可以向服务器发送请求，核心原理和AJAX XMLHttpRequest 不一致 (天生就是基于Promise管理的)，不论服务器返回的状态码是多少，都按照PROMISE成功算；只有断网，才算失败\n  \n  (async function () {\n    let result = await fetch('http://127.0.0.1:8888/user/login', {\n        method: 'post',\n        headers: {\n            'Content-Type': 'application/x-www-form-urlencoded' //headers里不设置有报错\n        },\n        body: Qs.stringify({\n            account: '18310612838',\n            password: md5('1234567890')\n        })\n    }).then(response => {\n        return response.json();\n    });\n\n    result = await fetch('http://127.0.0.1:8888/user/list').then(response => {\n        return response.json();\n    });\n    console.log(result);\n})();\n  "
+        }
+      ],
+      "id": "kMrFS6gz",
+      "createdAt": 1691917971157,
+      "updatedAt": 1691986117392
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "MqWdF2i4",
+      "tagsIds": [],
+      "description": null,
+      "name": "accept 属性",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "html",
+          "value": "优点：在弹出的选择内容中，将只有accept的类型是可选择的，其他后缀将是灰色不可点击状态\n/*accept用于限定文件的格式 */\n<input type=\"file\" class=\"upload_inp\" accept=\".png,.jpg,.gif\">"
+        }
+      ],
+      "id": "gEtL4cUG",
+      "createdAt": 1692107510689,
+      "updatedAt": 1692107688686
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "F_GVDzNT"
+      ],
+      "description": null,
+      "name": "事件委托/代理  Event Delegation ",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "    \n+ 事件代理的特点有点在于处理动态创建的子元素时特别有效;\n\n Event Delegation 基于事件冒泡的原理，在DOM树的较高层次上监听事件，而不是在每个子元素上单独绑定事件监听器;事件委托/代理的优势在于减少了事件处理程序的数量，提高了性能，并且可以动态处理新增的子元素，而无需为每个子元素重新绑定事件监听器。特别在对于大量的子元素或动态生成的元素时，使用事件委托/代理可以更加高效地处理事件。\n\n// 使用事件委托/代理，将点击事件委托给父元素\nconst parentElement = document.querySelector('.parent');\n\nparentElement.addEventListener('click', function(event) {\n  // 判断触发事件的元素\n  if (event.target.matches('.child')) {\n    console.log('Child element clicked'); // 执行相应的操作\n  }\n});\n\n\n//============================= 另一个实例\n    upload_list.addEventListener('click', function (ev) {\n        let target = ev.target;\n        if (target.tagName === \"EM\") { //<em>移除</em> 是动态创建的子元素，通过点击父元素获取子元素\n            // 点击的是移除按钮\n            clearHandle();\n        }\n    });\n    \n   // 移除按钮的点击处理\n    const clearHandle = () => {\n        _file = null;\n        upload_tip.style.display = 'block';\n        upload_list.style.display = 'none';\n        upload_list.innerHTML = ``;\n    };\n    \n     // 显示上传的文件,这里动态创建了 <em>移除</em>元素\n    upload_tip.style.display = 'none';\n    upload_list.style.display = 'block';\n    upload_list.innerHTML = `<li>\n        <span>文件：${file.name}</span>\n        <span><em>移除</em></span>\n    </li>`;"
+        }
+      ],
+      "id": "sfP-iTyU",
+      "createdAt": 1692108363083,
+      "updatedAt": 1692110001184
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "MFd514cI",
+      "tagsIds": [
+        "vANPuwsS",
+        "maUTSzjB"
+      ],
+      "description": null,
+      "name": "flag 使用",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "\n //======================================= 添加或去除特定的css类\n //下面的处理可以代替防抖，根据代码运行的阶段，添加loading、disable或去除，注意写法并不需要else\n const changeDisable = flag => {\n    if (flag) {\n        upload_button_select.classList.add('disable');\n        upload_button_upload.classList.add('loading');\n        return;\n    }\n    upload_button_select.classList.remove('disable');\n    upload_button_upload.classList.remove('loading');\n};\n\n//使用\nchangeDisable(true)\nchangeDisable(false)\n\n\n//================================================ 让按钮不可点击，可以配合上面一起使用\n// 验证是否处于可操作性状态\nconst checkIsDisable = element => {\n    let classList = element.classList;\n    return classList.contains('disable') || classList.contains('loading');\n};\n\nupload_button_upload.addEventListener('click', async function () {\n    // 如果有disable或loading类存在，跳出程序，也就是按钮不可点击状态\n    if (checkIsDisable(this)) return;\n    ..."
+        }
+      ],
+      "id": "t4JrawEr",
+      "createdAt": 1692155706073,
+      "updatedAt": 1692169608364
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "MFd514cI",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "//================================================ 让按钮不可点击\n// 验证是否处于可操作性状态\nconst checkIsDisable = element => {\n    let classList = element.classList;\n    return classList.contains('disable') || classList.contains('loading');\n};\n\nupload_button_upload.addEventListener('click', async function () {\n    // 如果有disable或loading类存在，跳出程序，也就是按钮不可点击状态\n    if (checkIsDisable(this)) return;\n    ..."
+        }
+      ],
+      "id": "nlXPNR1W",
+      "createdAt": 1692158978613,
+      "updatedAt": 1692159037751
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "MFd514cI",
+      "tagsIds": [],
+      "description": null,
+      "name": "让按钮不可点击",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "//================================================ 让按钮不可点击\n// 验证是否处于可操作性状态\nconst checkIsDisable = element => {\n    let classList = element.classList;\n    return classList.contains('disable') || classList.contains('loading');\n};\n\nupload_button_upload.addEventListener('click', async function () {\n    // 如果有disable或loading类存在，跳出程序，也就是按钮不可点击状态\n    if (checkIsDisable(this)) return;\n    ..."
+        }
+      ],
+      "id": "FMmlI9_F",
+      "createdAt": 1692159031141,
+      "updatedAt": 1692169619799
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "mIczLajv"
+      ],
+      "description": null,
+      "name": "基于BASE64实现文件上传",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "/* 基于BASE64实现文件上传 */\n(function () {\n    let upload = document.querySelector('#upload2'),\n        upload_inp = upload.querySelector('.upload_inp'),\n        upload_button_select = upload.querySelector('.upload_button.select');\n\n    // 验证是否处于可操作性状态\n    const checkIsDisable = element => {\n        let classList = element.classList;\n        return classList.contains('disable') || classList.contains('loading');\n    };\n\n    // 把选择的文件读取成为BASE64,传一个file对象，转换为BASE64格式\n    const changeBASE64 = file => {\n        return new Promise(resolve => {\n           //核心是这个 FileReader()是JS内置的方法,实现了BASE64\n            let fileReader = new FileReader();\n            fileReader.readAsDataURL(file);\n            //fileReader需要异步获取所以用.onload\n            fileReader.onload = ev => {\n                resolve(ev.target.result);\n            };\n        });\n    };\n\n    upload_inp.addEventListener('change', async function () {\n        let file = upload_inp.files[0],\n            BASE64,\n            data;\n        if (!file) return;\n        if (file.size > 2 * 1024 * 1024) {\n            alert('上传的文件不能超过2MB~~');\n            return;\n        }\n        upload_button_select.classList.add('loading');\n        BASE64 = await changeBASE64(file);\n        try {\n            data = await instance.post('/upload_single_base64', { //instance是封装过的axios的实例\n                file: encodeURIComponent(BASE64),//编码防止服务端乱码\n                filename: file.name\n            }, {\n                headers: {\n                     //BASE64需要这个文件头\n                    'Content-Type': 'application/x-www-form-urlencoded'\n                }\n            });\n            if (+data.code === 0) {\n                alert(`恭喜您，文件上传成功，您可以基于 ${data.servicePath} 地址去访问~~`);\n                return;\n            }\n            throw data.codeText; //这里抛出错误后，下面才可以catch到\n        } catch (err) {\n            alert('很遗憾，文件上传失败，请您稍后再试~~');\n        } finally { //不论是成功还是失败都执行这里\n            upload_button_select.classList.remove('loading');\n        }\n    });\n    upload_button_select.addEventListener('click', function () {\n        if (checkIsDisable(this)) return;\n        upload_inp.click(); //upload_inp是页面里被隐藏的那个原生input按钮\n    });\n})();"
+        }
+      ],
+      "id": "YXJi0Df9",
+      "createdAt": 1692159204691,
+      "updatedAt": 1692170102084
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "MFd514cI",
+      "tagsIds": [
+        "cH71p1QA",
+        "Y7mQg92x"
+      ],
+      "description": null,
+      "name": "延迟函数",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "// 延迟函数\nconst delay = function delay(interval) {\n    typeof interval !== \"number\" ? interval = 1000 : null;\n    return new Promise(resolve => {\n        setTimeout(() => {\n            resolve();\n        }, interval);\n    });\n};\n\n// 使用\ndelay(300);\n//或\nawait delay(300);"
+        }
+      ],
+      "id": "I8nV96Qz",
+      "createdAt": 1692170614854,
+      "updatedAt": 1692170710444
     }
   ],
   "tags": [
@@ -4624,6 +5002,96 @@
       "id": "MtywOPyV",
       "createdAt": 1690105307053,
       "updatedAt": 1690105307053
+    },
+    {
+      "name": "静态方法",
+      "id": "0BWL9dRi",
+      "createdAt": 1690426926914,
+      "updatedAt": 1690426926914
+    },
+    {
+      "name": "实例方法",
+      "id": "Ti7JWPw0",
+      "createdAt": 1690427102961,
+      "updatedAt": 1690427102961
+    },
+    {
+      "name": "侧边栏伸缩",
+      "id": "a_KWSk9m",
+      "createdAt": 1690536461990,
+      "updatedAt": 1690536461990
+    },
+    {
+      "name": "media",
+      "id": "38-kGUGm",
+      "createdAt": 1690685669567,
+      "updatedAt": 1690685669567
+    },
+    {
+      "name": "grid",
+      "id": "4FgER6K6",
+      "createdAt": 1690772278570,
+      "updatedAt": 1690772278570
+    },
+    {
+      "name": "grid布局",
+      "id": "_WKR4zEa",
+      "createdAt": 1690772286014,
+      "updatedAt": 1690772286014
+    },
+    {
+      "name": "laoding",
+      "id": "EZljjTGm",
+      "createdAt": 1691307657929,
+      "updatedAt": 1691307657929
+    },
+    {
+      "name": "animation",
+      "id": "SFDkpVg8",
+      "createdAt": 1691308330759,
+      "updatedAt": 1691308330759
+    },
+    {
+      "name": "解构赋值",
+      "id": "CTWrptR8",
+      "createdAt": 1691573104686,
+      "updatedAt": 1691573104686
+    },
+    {
+      "name": "事件代理",
+      "id": "F_GVDzNT",
+      "createdAt": 1692108504340,
+      "updatedAt": 1692108504340
+    },
+    {
+      "name": "flag",
+      "id": "vANPuwsS",
+      "createdAt": 1692155781786,
+      "updatedAt": 1692155781786
+    },
+    {
+      "name": "base64",
+      "id": "mIczLajv",
+      "createdAt": 1692159537439,
+      "updatedAt": 1692159537439
+    },
+    {
+      "name": "防抖",
+      "id": "maUTSzjB",
+      "createdAt": 1692169568545,
+      "updatedAt": 1692169568545
+    },
+    {
+      "name": "delay",
+      "id": "i2ZLRaT-",
+      "createdAt": 1692170692402,
+      "updatedAt": 1692170692402
+    },
+    {
+      "name": "delay函数",
+      "id": "Y7mQg92x",
+      "createdAt": 1692170710391,
+      "updatedAt": 1692170710391
     }
   ]
 }
