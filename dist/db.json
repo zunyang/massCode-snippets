@@ -3,34 +3,34 @@
     {
       "name": "NodeJS",
       "parentId": "y-C8x3sP",
-      "isOpen": false,
+      "isOpen": true,
       "isSystem": false,
-      "defaultLanguage": "plain_text",
+      "defaultLanguage": "javascript",
       "id": "TGQqRGFr",
       "createdAt": 1687255378341,
-      "updatedAt": 1692155838072,
+      "updatedAt": 1693552124644,
       "index": 0
     },
     {
       "name": "lodash",
       "parentId": "y-C8x3sP",
-      "isOpen": false,
+      "isOpen": true,
       "isSystem": false,
       "defaultLanguage": "plain_text",
       "id": "uIXLFdiz",
       "createdAt": 1682661303338,
-      "updatedAt": 1692155838042,
+      "updatedAt": 1693552124644,
       "index": 1
     },
     {
       "name": "小技巧",
       "parentId": "y-C8x3sP",
-      "isOpen": false,
+      "isOpen": true,
       "isSystem": false,
       "defaultLanguage": "javascript",
       "id": "MFd514cI",
       "createdAt": 1692155892160,
-      "updatedAt": 1692159025498,
+      "updatedAt": 1693552124645,
       "index": 2
     },
     {
@@ -41,86 +41,155 @@
       "defaultLanguage": "javascript",
       "id": "y-C8x3sP",
       "createdAt": 1677574921501,
-      "updatedAt": 1692155838033,
+      "updatedAt": 1693552124646,
       "index": 0,
-      "icon": "3d"
+      "icon": "javascript"
+    },
+    {
+      "name": "css 调试技巧",
+      "parentId": "3BVGYMMN",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "css",
+      "id": "6Ixdd13H",
+      "createdAt": 1697810265202,
+      "updatedAt": 1697810294667,
+      "index": 0
     },
     {
       "name": "CSS",
       "parentId": null,
-      "isOpen": false,
+      "isOpen": true,
       "isSystem": false,
       "defaultLanguage": "css",
       "id": "3BVGYMMN",
       "createdAt": 1677579960490,
-      "updatedAt": 1692155838041,
+      "updatedAt": 1693552124666,
       "index": 1
     },
     {
       "name": "vue",
       "parentId": null,
-      "isOpen": false,
+      "isOpen": true,
       "isSystem": false,
       "defaultLanguage": "javascript",
       "id": "-fio_qG6",
       "createdAt": 1678105368093,
-      "updatedAt": 1692155838041,
-      "index": 2
+      "updatedAt": 1693552124668,
+      "index": 2,
+      "icon": "vue"
     },
     {
       "name": "element ui",
       "parentId": null,
-      "isOpen": false,
+      "isOpen": true,
       "isSystem": false,
       "defaultLanguage": "javascript",
       "id": "kYeA3Yuv",
       "createdAt": 1678621283163,
-      "updatedAt": 1692155838041,
+      "updatedAt": 1693552124668,
       "index": 3
     },
     {
       "name": "electron",
       "parentId": null,
-      "isOpen": false,
+      "isOpen": true,
       "isSystem": false,
       "defaultLanguage": "javascript",
       "id": "ejtoZnYa",
       "createdAt": 1679982761618,
-      "updatedAt": 1692155838042,
+      "updatedAt": 1693552124669,
       "index": 4
     },
     {
       "name": "echarts",
       "parentId": null,
-      "isOpen": false,
+      "isOpen": true,
       "isSystem": false,
       "defaultLanguage": "javascript",
       "id": "CIqaS_Yh",
       "createdAt": 1681288611405,
-      "updatedAt": 1692155838042,
+      "updatedAt": 1693552124673,
       "index": 5
     },
     {
       "name": "VSCode",
       "parentId": null,
-      "isOpen": false,
+      "isOpen": true,
       "isSystem": false,
       "defaultLanguage": "javascript",
       "id": "WblIddgQ",
       "createdAt": 1685590221911,
-      "updatedAt": 1692155838072,
-      "index": 6
+      "updatedAt": 1693552124674,
+      "index": 6,
+      "icon": "vscode"
     },
     {
       "name": "HTML",
       "parentId": null,
-      "isOpen": false,
+      "isOpen": true,
       "isSystem": false,
       "defaultLanguage": "html",
       "id": "MqWdF2i4",
       "createdAt": 1685696039426,
-      "updatedAt": 1692155838072,
+      "updatedAt": 1693552124691,
       "index": 7
+    },
+    {
+      "name": "C",
+      "parentId": null,
+      "isOpen": true,
+      "isSystem": false,
+      "defaultLanguage": "c_cpp",
+      "id": "OEEtQJ4O",
+      "createdAt": 1692495522396,
+      "updatedAt": 1693552124697,
+      "index": 8
+    },
+    {
+      "name": "多态",
+      "parentId": "ztpcuydj",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "java",
+      "id": "WiVmIFIe",
+      "createdAt": 1693830344884,
+      "updatedAt": 1693830372314,
+      "index": 0
+    },
+    {
+      "name": "编程技巧",
+      "parentId": "ztpcuydj",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "java",
+      "id": "T0GXZDoL",
+      "createdAt": 1693552143324,
+      "updatedAt": 1693552175880,
+      "index": 1
+    },
+    {
+      "name": "基础知识点",
+      "parentId": "ztpcuydj",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "java",
+      "id": "HbQza7qh",
+      "createdAt": 1693619792948,
+      "updatedAt": 1693619835483,
+      "index": 2
+    },
+    {
+      "name": "java",
+      "parentId": null,
+      "isOpen": true,
+      "isSystem": false,
+      "defaultLanguage": "java",
+      "id": "ztpcuydj",
+      "createdAt": 1693548431974,
+      "updatedAt": 1693552124697,
+      "icon": "javaclass",
+      "index": 9
     }
   ],
   "snippets": [
@@ -412,11 +481,16 @@
           "label": "map出list",
           "language": "javascript",
           "value": "<ul>\n   ${ingredients.map(ing => `<li>${ing}</li>`).join('')}\n</ul>"
+        },
+        {
+          "label": "用map重构集合的数据结构",
+          "language": "javascript",
+          "value": "\n// 基于事件委托实现移除的操作\n/* upload_list.addEventListener('click', function (ev) {\n    let target = ev.target,\n        curLi = null,\n        key;\n    if (target.tagName === 'EM') {\n        curLi = target.parentNode.parentNode;\n        if (!curLi) return;\n        upload_list.removeChild(curLi);\n        key = curLi.getAttribute('key');\n        _files = _files.filter(item => item.key !== key);\n        if (_files.length === 0) {\n            upload_list.style.display = 'none';\n        }\n    }\n}); */\n\nupload_inp.addEventListener('change', async function () {\n    _files = Array.from(upload_inp.files);//将类数组转变为数组\n    if (_files.length === 0) return;\n    // 我们重构集合的数据结构「给每一项设置一个位置值，作为自定义属性存储到元素上，后期点击删除按钮的时候，我们基于这个自定义属性获取唯一值，再到集合中根据这个唯一值，删除集合中这一项」\n    _files = _files.map(file => {\n       // 返回的是一个个对象\n        return {\n            file,\n            filename: file.name,\n            key: createRandom()\n        };\n    });\n    // 绑定数据\n    let str = ``;\n    //下面展示出上传文件的列表\n    _files.forEach((item, index) => {\n        str += `<li key=\"${item.key}\">\n            <span>文件${index+1}：${item.filename}</span>\n            <span><em>移除</em></span>\n        </li>`;\n    });\n    upload_list.innerHTML = str;\n    upload_list.style.display = 'block';\n});"
         }
       ],
       "id": "Hr3Ejo-4",
       "createdAt": 1677576967090,
-      "updatedAt": 1690771754729
+      "updatedAt": 1692179648488
     },
     {
       "isDeleted": false,
@@ -1772,11 +1846,16 @@
           "label": "Fragment 1",
           "language": "javascript",
           "value": "date = new Date();\nid = (Date.now() + '' ).slice(-10);//根据时间的这个id实用性很有限\n\n\n//唯一值的id应用在下面的类里\nclass Workout {\n  date = new Date();\n  id = (Date.now() + '').sice(-10);\n  \n  constructor(coords, distance, duration) {\n    // this.date = ... 规范后的ES应该是这样的\n    // this.id =.\n    this.coords = coords\n    this.distance = distance; // in km\n    this.duration = duration; // in min\n    }\n}\n\n//临时不完美的用法\nid: new Date().toIsoString()\n\n// 其他不完美写法 Generate random ID\nfunction generateID() {\n\treturn Math.floor(Math.random() * 100000000);\n}\n//使用：\nid:generateID()"
+        },
+        {
+          "label": "随机数+时间戳+转字符串的唯一值",
+          "language": "javascript",
+          "value": "// 获取唯一值，这个是目前最实用的唯一值\nconst createRandom = () => {\n    let ran = Math.random() * new Date();\n    return ran.toString(16).replace('.', '');//toString(16)表示是16位\n};\n\n//使用\n key: createRandom() //createRandom()函数每次执行都产生一个唯一值"
         }
       ],
       "id": "C75l_SnB",
       "createdAt": 1680577679066,
-      "updatedAt": 1690788492801
+      "updatedAt": 1692178072081
     },
     {
       "isDeleted": false,
@@ -1959,7 +2038,7 @@
       ],
       "id": "gIL5zXlW",
       "createdAt": 1681269992432,
-      "updatedAt": 1681438459610
+      "updatedAt": 1698977740904
     },
     {
       "isDeleted": false,
@@ -2131,7 +2210,7 @@
       "updatedAt": 1682672082690
     },
     {
-      "isDeleted": false,
+      "isDeleted": true,
       "isFavorites": false,
       "folderId": "y-C8x3sP",
       "tagsIds": [
@@ -2149,7 +2228,7 @@
       ],
       "id": "hNF_6XsP",
       "createdAt": 1681733899191,
-      "updatedAt": 1681733966756
+      "updatedAt": 1693365280386
     },
     {
       "isDeleted": false,
@@ -2712,17 +2791,27 @@
       "folderId": "y-C8x3sP",
       "tagsIds": [],
       "description": null,
-      "name": "递归函数遍历DOM",
+      "name": "递归",
       "content": [
         {
-          "label": "Fragment 1",
+          "label": "递归函数遍历DOM",
           "language": "javascript",
           "value": "<div id=\"subTree\">\n  <form>\n \t\t <input type=\"text\"/>\n  </form>\n  <p>Paragraph</p>\n  <span>Span</span>\n</div>\n\n<script>\n  function traverseDOM(element, callback) {\n    //用回调函数处理当前节点\n    callback(element);\n    element = element.firstElementChild;\n    //遍历每个子树\n    while (element) {\n      traverseDOM(element, callback);\n      element = element.nextElementSibling;\n    }\n  }\n  const subTree = document.getElementById(\"subTree\");\n  //通过调用travenscDOM 方法从根节点开始遍历\n  traverseDOM(subTree, function(element) {\n  \tassert(element !== null, element.nodeName);\n  });\n</script>"
+        },
+        {
+          "label": "将树形结构的数量展示到页面",
+          "language": "javascript",
+          "value": "//在前端代码中，使用递归函数遍历树形结构，计算节点数量。将计算出的节点数量展示到页面中。\n// 递归函数，用于遍历树形结构并计算节点数量\nfunction countNodes(node) {\n  let count = 1; // 当前节点算一个\n  if (node.children && node.children.length > 0) { // 如果有子节点\n    for (let i = 0; i < node.children.length; i++) { // 遍历子节点\n      count += countNodes(node.children[i]); // 递归计算子节点数量\n    }\n  }\n  return count;\n}\n\n// 在页面中展示节点数量\nlet rootNode = { // 树形结构的根节点\n  name: 'root',\n  children: [\n    { name: 'child1' },\n    { name: 'child2', children: [\n      { name: 'grandchild1' },\n      { name: 'grandchild2' }\n    ]},\n    { name: 'child3' }\n  ]\n};\nlet nodeCount = countNodes(rootNode); // 计算节点数量\ndocument.getElementById('nodeCount').innerText = nodeCount; // 将节点数量展示到页面中\n\n在上面的代码中，我们定义了一个递归函数countNodes，用于遍历树形结构并计算节点数量。该函数接受一个节点作为参数，如果该节点有子节点，则遍历子节点并递归调用countNodes函数来计算子节点数量。最终返回的数量是当前节点数量加上所有子节点数量。\n\n在页面中，我们可以将树形结构的根节点传递给countNodes函数来计算节点数量，然后将计算出的数量展示到页面中。在上面的代码中，我们使用了一个div元素来展示节点数量，其id为nodeCount。我们通过document.getElementById('nodeCount')获取该元素，并将计算出的节点数量赋值给其innerText属性来展示节点数量。\n\n如果你需要将节点数量展示在树形结构上，可以在遍历树形结构时，将节点数量保存在节点的某个属性中，然后在渲染节点时，将该属性的值展示出来。\n"
+        },
+        {
+          "label": "不用循环计算数组的累加值",
+          "language": "javascript",
+          "value": "var nums = [5,1,3,6,2];\n\nfunction f(i) {\n    //i >= nums.length为终止条件；f(i + 1)是个有返回值的函数,每次会有一个返回值\n    return i >= nums.length ? 0 : nums[i] + f(i + 1);\n}\n\nconsole.log(f(0));\n/*\n首次调用f(0)时，当前索引i为0，不满足终止条件，进入递归调用。\n在第一次递归调用f(1)时，当前索引i为1，不满足终止条件，继续递归调用。\n在第二次递归调用f(2)时，当前索引i为2，不满足终止条件，继续递归调用。\n在第三次递归调用f(3)时，当前索引i为3，不满足终止条件，继续递归调用。\n在第四次递归调用f(4)时，当前索引i为4，不满足终止条件，继续递归调用。\n在第五次递归调用f(5)时，当前索引i为5，满足终止条件，返回0。\n\n然后，开始回溯计算结果。\n在第四次递归调用中，将返回的0与nums[4]相加，得到2 + 0 = 2，并返回该结果。\n在第三次递归调用中，将返回的2与nums[3]相加，得到6 + 2 = 8，并返回该结果。\n在第二次递归调用中，将返回的8与nums[2]相加，得到3 + 8 = 11，并返回该结果。\n在第一次递归调用中，将返回的11与nums[1]相加，得到1 + 11 = 12，并返回该结果。\n最终，在第一次函数调用中，将返回的12与nums[0]相加，得到5 + 12 = 17。\n因此，console.log(f(0))会输出结果17。\n\n*/"
         }
       ],
       "id": "JPoYSV0T",
       "createdAt": 1684735267295,
-      "updatedAt": 1684735453115
+      "updatedAt": 1693365804700
     },
     {
       "isDeleted": false,
@@ -2985,7 +3074,7 @@
       ],
       "id": "ODRpW_Ei",
       "createdAt": 1685502414868,
-      "updatedAt": 1685502635881
+      "updatedAt": 1694570570540
     },
     {
       "isDeleted": false,
@@ -3717,11 +3806,16 @@
           "label": "this.$route.path",
           "language": "javascript",
           "value": "// 用动态class覆盖前面一个class实现定制化样式.注意最终的class可以继承之前class的属性\n\n<section class=\"app-main\" :class=\"mainClass\">\n   //用路由的唯一性作为key,强制页面刷新\n  <router-view :key=\"key\" />\n</section>\n\ncomputed: {\n  key() {\n      return this.$route.path;\n  },\n  mainClass() {\n      const currentPath = this.$route.path;\n      if (currentPath === \"/graph/graph/visual/index\") {\n        return \"app-main_darkBg\";\n      }\n    },\n}"
+        },
+        {
+          "label": "舆情项目判断二级侧边栏",
+          "language": "javascript",
+          "value": "<sidebar v-show=\"sideBarShow\"/>\n\n<div :style=\"fullContent\" :class=\"{hasTagsView:needTagsView}\" class=\"main-container\">\n\n</div>\n    \ncomputed: {\n    fullContent(){\n      return {'margin-left': this.$route.path === '/index' || this.$route.path === '/meta/metadata' ? '12px' : '200px'}\n    },\n    sideBarShow(){\n      return this.$route.path !== '/index' && this.$route.path !== '/meta/metadata'\n    },\n}"
         }
       ],
       "id": "25Y802Po",
       "createdAt": 1690033918620,
-      "updatedAt": 1691486091355
+      "updatedAt": 1698746686431
     },
     {
       "isDeleted": false,
@@ -3797,14 +3891,19 @@
       "name": "hover 效果",
       "content": [
         {
-          "label": "Fragment 1",
+          "label": "图片hover有标题和遮罩",
           "language": "css",
-          "value": "图片hover有标题和遮罩\n思路：跟简单，hover的div先绝对定位并把opacity设置为0; hover在设置成1即可\n//.maels是父容器，用grid布局\n.meals {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 20px;\n  margin-top: 20px;\n}\n.meal {\n  cursor: pointer;\n  position: relative;\n  height: 180px;\n  width: 180px;\n  text-align: center;\n}\n\n.meal img {\n  width: 100%;\n  height: 100%;\n  border: 4px #fff solid;\n  border-radius: 2px;\n}\n\n.meal-info {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  background: rgba(0, 0, 0, 0.7);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: opacity 0.2s ease-in;\n  opacity: 0;\n}\n\n.meal:hover .meal-info {\n  opacity: 1;\n}"
+          "value": "\n思路：跟简单，hover的div先绝对定位并把opacity设置为0; hover在设置成1即可\n//.maels是父容器，用grid布局\n.meals {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 20px;\n  margin-top: 20px;\n}\n.meal {\n  cursor: pointer;\n  position: relative;\n  height: 180px;\n  width: 180px;\n  text-align: center;\n}\n\n.meal img {\n  width: 100%;\n  height: 100%;\n  border: 4px #fff solid;\n  border-radius: 2px;\n}\n\n.meal-info {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  background: rgba(0, 0, 0, 0.7);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: opacity 0.2s ease-in;\n  opacity: 0;\n}\n\n.meal:hover .meal-info {\n  opacity: 1;\n}"
+        },
+        {
+          "label": "box-shadow：hover后元素出现阴影",
+          "language": "css",
+          "value": "hover后元素出现阴影：\n.elemnt:hover{\n   box-shadow: 0 5px 15px 3px rgba(177, 183, 208, 0.33);\n}"
         }
       ],
       "id": "4zQnVoPT",
       "createdAt": 1690701310198,
-      "updatedAt": 1690701788477
+      "updatedAt": 1695362293132
     },
     {
       "isDeleted": false,
@@ -3898,7 +3997,8 @@
       "isFavorites": false,
       "folderId": "y-C8x3sP",
       "tagsIds": [
-        "F_GVDzNT"
+        "F_GVDzNT",
+        "RQFn3oQg"
       ],
       "description": null,
       "name": "事件委托/代理  Event Delegation ",
@@ -3907,11 +4007,16 @@
           "label": "Fragment 1",
           "language": "javascript",
           "value": "    \n+ 事件代理的特点有点在于处理动态创建的子元素时特别有效;\n\n Event Delegation 基于事件冒泡的原理，在DOM树的较高层次上监听事件，而不是在每个子元素上单独绑定事件监听器;事件委托/代理的优势在于减少了事件处理程序的数量，提高了性能，并且可以动态处理新增的子元素，而无需为每个子元素重新绑定事件监听器。特别在对于大量的子元素或动态生成的元素时，使用事件委托/代理可以更加高效地处理事件。\n\n// 使用事件委托/代理，将点击事件委托给父元素\nconst parentElement = document.querySelector('.parent');\n\nparentElement.addEventListener('click', function(event) {\n  // 判断触发事件的元素\n  if (event.target.matches('.child')) {\n    console.log('Child element clicked'); // 执行相应的操作\n  }\n});\n\n\n//============================= 另一个实例\n    upload_list.addEventListener('click', function (ev) {\n        let target = ev.target;\n        if (target.tagName === \"EM\") { //<em>移除</em> 是动态创建的子元素，通过点击父元素获取子元素\n            // 点击的是移除按钮\n            clearHandle();\n        }\n    });\n    \n   // 移除按钮的点击处理\n    const clearHandle = () => {\n        _file = null;\n        upload_tip.style.display = 'block';\n        upload_list.style.display = 'none';\n        upload_list.innerHTML = ``;\n    };\n    \n     // 显示上传的文件,这里动态创建了 <em>移除</em>元素\n    upload_tip.style.display = 'none';\n    upload_list.style.display = 'block';\n    upload_list.innerHTML = `<li>\n        <span>文件：${file.name}</span>\n        <span><em>移除</em></span>\n    </li>`;"
+        },
+        {
+          "label": "基于事件委托实现移除的操作",
+          "language": "javascript",
+          "value": "// 基于事件委托实现移除的操作\nupload_list.addEventListener('click', function (ev) {\n    let target = ev.target,\n        curLi = null,\n        key;\n    if (target.tagName === 'EM') {\n        curLi = target.parentNode.parentNode;\n        if (!curLi) return;\n        upload_list.removeChild(curLi);\n        key = curLi.getAttribute('key');\n        //核心是这里，重新生成数据\n        _files = _files.filter(item => item.key !== key);\n        if (_files.length === 0) {\n            upload_list.style.display = 'none';\n        }\n    }\n});"
         }
       ],
       "id": "sfP-iTyU",
       "createdAt": 1692108363083,
-      "updatedAt": 1692110001184
+      "updatedAt": 1692179798860
     },
     {
       "isDeleted": false,
@@ -4010,6 +4115,762 @@
       "id": "I8nV96Qz",
       "createdAt": 1692170614854,
       "updatedAt": 1692170710444
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "TGQqRGFr",
+      "tagsIds": [],
+      "description": "目的是绕过浏览器的同源策略，让服务器之间请求",
+      "name": "代理服务器设置",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "const express = require('express');\nconst app = express(); //创建服务器\n\n//接受对路径 /hero的 GET 请求\napp.get('/hero', async (req，res) =>{\n  // 使用CORS解决对代理服务器的跨域\n  res.header('access-control-allow-origin', '*');\n  //响应一段测试文本\n  res.send('你好，我是你忠实的代理');\n})\n\n//监听9527端口\napp.listen(9527,()=>{\n\tconsole.log('服务器已启动');\n})"
+        }
+      ],
+      "id": "247aPLNq",
+      "createdAt": 1692240132065,
+      "updatedAt": 1692240409597
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "MFd514cI",
+      "tagsIds": [
+        "tnE1auCZ"
+      ],
+      "description": "Reflect.ownKeys()可以判断所有包括Symbol 类型，其他的都不行",
+      "name": "判断对象为空",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "//Reflect.ownKeys() 方法\nfunction isEmpty5(obj) {\n\treturn Reflect.ownKeys(obj).length === 0;\n}\n/*Reflect.ownKeys() 方法是 ES6 引入的一个反射 API，它提供了对对象自身属性（包括 Symbol 类型）的访问和操作。在大多数情况下，使用 Object.keys() 或 for...in 循环已经足够来判断对象是否为空。然而，若需要获取对象自身的所有键，包括 Symbol 类型的键，可以使用 Reflect.ownKeys() 方法 */\n\n//使用Object.keys()方法：通过获取对象的所有键，并判断键的数量是否为0，来判断对象是否为空。示例代码如下：\nfunction isObjectEmpty(obj) {\n   return Object.keys(obj).length === 0;\n}\n//使用for...in循环：遍历对象的属性，在循环过程中如果有属性存在，则对象不为空。示例代码如下\nfunction isObjectEmpty(obj) {\n   for (let key in obj) {\n      if (obj.hasOwnProperty(key)) {\n         return false;\n      }\n   }\n   return true;\n}\n//使用JSON.stringify()方法：将对象转换为JSON字符串，然后判断\nfunction isObjectEmpty(obj) {\n   return JSON.stringify(obj) === '{}';\n}\n\n// 示例使用\nconst myObj = {};\nconsole.log(isObjectEmpty(myObj)); // 输出：true\n\nconst myNonEmptyObj = { name: \"John\", age: 30 };\nconsole.log(isObjectEmpty(myNonEmptyObj)); // 输出：false"
+        }
+      ],
+      "id": "UvF9e-Q_",
+      "createdAt": 1692492708846,
+      "updatedAt": 1692493461926
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "OEEtQJ4O",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippetUntitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "c_cpp",
+          "value": "#include <cs50.h>\n#include <stdio.h>\n\n//函数放在调用体的下面报错，可以这样处理\nint get_size(void);\nvoid print_grid(int size);\n\nint main(void)\n{\n  // Get size of grid\n  int n = get_size();\n  \n  // Print grid of bricks\n  print_grid(n);//print  is a void function,it returns nothing\n}\n\nint get_size(void) //void不传参数\n{\n  int n;\n  do\n  {\n  \t\tn = get_int(\"Size: \");\n  }\n  while(n<1); \n  return n;\n}\n\nvoid print_grid(int size)\n{\n    for (int i = 0; i < size; i++)\n    {\n        for (int j = 0; j < size; j++)\n        {\n         \t printf(\"#\");\n        }\n        printf(\"\\n\");\n    }\n}"
+        }
+      ],
+      "id": "PE31rJig",
+      "createdAt": 1692495557075,
+      "updatedAt": 1692506233108
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [],
+      "description": null,
+      "name": "appearance 属性",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "/*去除原生控件的样式*/\n\nselect{\n  appearance:none\n}"
+        }
+      ],
+      "id": "yQnhwFbA",
+      "createdAt": 1692539896654,
+      "updatedAt": 1692540001944
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [
+        "kv-CSfab",
+        "6Njm6X7l",
+        "wwLDze_V",
+        "HU1RtGEO",
+        "QO_Fn8iR"
+      ],
+      "description": null,
+      "name": "clip-path",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "/*clip-path 通过裁剪html元素的可见区域来创建自定义形状*/\n/*搜索 CSS clip-path generator  会有在线工具*/\ncontainert{\n  width: 500px;\n  height: 500px;\n  background-color:rebeccapurple;\n  /*circle(50%)是个圆形而 加at 0 0 将使圆形中心点在元素的左上角，因为有部分超出范围，这样就形成一个扇形 */\n  clip-path:circle(50% at 0 0);\n  transition:all 2s ease; /*这里给hover一个动画效果*/\n}\ncontainer:hover{\n  clip-path:circle(100%);/*这里会有一个动画效果*/\n}\n\n仅使用CSS 即可轻松为形和徽标添加动画效果\nclip-path:path(\"只需在Figma中绘制形状，将其另存为SVG，获取其路径，然后将其粘贴到此处\")\n\n使用下面svg里path的M0.5 73.5V1H20V56H72V73.5H0.5Z这一段即可\n<svg width=\"73\" height=\"74\" viewBox=\"00...>\n\t\t<path d=\"M0.5 73.5V1H20V56H72V73.5H0.5Z\" str...>\n</svg>"
+        }
+      ],
+      "id": "LBUKFHiP",
+      "createdAt": 1692582696558,
+      "updatedAt": 1692584309900
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [],
+      "description": null,
+      "name": "aspect-ratio",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "player{\n  width: 100%;\n  background-color:black;\n  aspect-ratio: 16/9;\n}\n\n/*\naspect-ratio 是 CSS 中用于指定元素宽高比的属性。它可以帮助开发者在不使用具体的宽度和高度值的情况下，仅通过一个比例关系来设置元素的尺寸。\naspect-ratio 属性适用于所有元素，包括块级元素和内联元素。\n它可以与其他布局属性（如 width、height、max-width、max-height）一起使用，以调整元素的实际尺寸。\n如果同时设置了 width 和 height 属性，aspect-ratio 属性优先级更高，将覆盖这两个值。\n当元素的父容器具有固定的宽度时，aspect-ratio 属性可以确保子元素的高度相对于宽度按照比例缩放。\naspect-ratio 属性目前处于实验性阶段，并且仅有部分浏览器支持。您可以使用 -webkit- 前缀来兼容 WebKit 内核的浏览器。\n*/"
+        }
+      ],
+      "id": "hM7iOKIR",
+      "createdAt": 1692584807052,
+      "updatedAt": 1692585270959
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [],
+      "description": null,
+      "name": "filter",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "filter里有很多属性是快速制作交互效果的利器；下面是一个模糊文字变清晰的效果\n\n.spoiler{\n  filter: blur(5px);\n  font-size: 30px;\n}\n.spoiler:active{\n\tfilter: none;\n}\n\n/* 黑白效果*/\nimg{\n\tfilter:grayscale(100%);\n}\n"
+        }
+      ],
+      "id": "mYK0jfvh",
+      "createdAt": 1692585425934,
+      "updatedAt": 1692585659077
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [
+        "7RtIwv96"
+      ],
+      "description": null,
+      "name": "input",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "更改placeholder\n\ninput::placeholder{\n color:red;\n}\n\n更改点击时默认的黑色边框\n\ninput:focus{\n   /*outline:none;*/\n\toutline: 1px solid red;\n}\n\n更改鼠标光标颜色\ninput{\n caret-color:red;\n}"
+        }
+      ],
+      "id": "CHr-DZs0",
+      "createdAt": 1692585772998,
+      "updatedAt": 1692586090548
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "ztpcuydj",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": ""
+        }
+      ],
+      "id": "h5AOACVx",
+      "createdAt": 1693548439599,
+      "updatedAt": 1693548462526
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "ztpcuydj",
+      "tagsIds": [],
+      "description": null,
+      "name": "数组中查找字符串",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "java",
+          "value": "public class Homework01 {\n    //编写一个main方法\n    public static void main(String[] args) {\n\n      String[] strs = {};\n      A02 a02 = new A02();\n      int index = a02.find(\"tom\", strs);\n      System.out.println(\"index=\" + index);\n  }\n}\n//编写类A02，定义方法find，实现查找某字符串是否在字符串数组中,并返回索引,如果找不到,返回-1\n//分析:注意这里在写代码前的分析很重要\n//1.类名 A02\n//2.方法名 find\n//3.返回值 int\n//4.形参 (String, string[])\nclass A02{\n  public int find(String findStr, String[] strs) {\n    //遍历字符串数组,如果找到,则返回索引\n    for (int i = 0; i < strs.length; i++) {\n      if (findStr.equals(strs[i])) {\n        return i;\n      }\n    }\n    //如果没有，就返回-1\n    return -1;   \n   }\n}"
+        }
+      ],
+      "id": "VMXFxFmn",
+      "createdAt": 1693548465231,
+      "updatedAt": 1693549257538
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "ztpcuydj",
+      "tagsIds": [],
+      "description": null,
+      "name": "更改书籍价格",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "java",
+          "value": "public class Homework01 {\n  // 编写一个main方法，注意任何一个类都可以有main方法\n  public static void main(String[] args) {\n  Book book = new Book(\"笑傲江湖\",60);\n    book.updatePrice();\n    book.info();\n  }\n}\n/*\n * 具体:如果价格>159,则更改为150，如果价格>100,更改为100，否则不变\n * 分析:Book;  属性 rice,name; 方法名 updatePrice; 形参(); 返回值 void;\n * 提供一个构造器\n */\nclass Book {\n  String name;\n  double price;\n\n  public Book(String name, double price) { //提供一个构造器\n    this.name = name;\n    this.price = price;\n  }\n\n  public void updatePrice() {\n    //如果方法中,没有price 局部变量,this.price等价price，可以写成price\n    if (this.price > 150) {\n      this.price = 150;\n    } else if (this.price > 100) {\n      this.price = 100;\n    }\n  }\n  //显示书籍情况\n  public void info(){\n    System.out.println(\"书名=\" + this.name + \"价格=\" + this.price);\n  }\n}"
+        }
+      ],
+      "id": "1BUokrru",
+      "createdAt": 1693550924460,
+      "updatedAt": 1693570479151
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "T0GXZDoL",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "java",
+          "value": "//编程思想：先假定数组的第一个元素就是最大值\nint max = arr[i]\n\nif(max<arr[i]){\n   max = arr[i]\n}"
+        }
+      ],
+      "id": "2_G5aZZ0",
+      "createdAt": 1693551515015,
+      "updatedAt": 1693552192182
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "T0GXZDoL",
+      "tagsIds": [],
+      "description": null,
+      "name": "求数组最大值",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "java",
+          "value": "//核心：先假定一个最大值，然后循环对比得出结果\nint max = arr[0];\nif (arr[i] > max) {\n\tmax = arr[i];\n}\n\n//完整代码：\npublic class Maxnum {\n    public static void main(String[] args) {\n        int[] arr = new int[] { 1, 34, 3, 4, 5 };\n        int max = arr[0];\n\n        for (int i = 0; i < arr.length; i++) {\n            if (arr[i] > max) {\n                max = arr[i];\n            }\n        }\n        System.out.println(\"Maximum number is: \" + max);\n    }\n}"
+        }
+      ],
+      "id": "xNJ_dlu_",
+      "createdAt": 1693552204262,
+      "updatedAt": 1693552698055
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "ztpcuydj",
+      "tagsIds": [],
+      "description": null,
+      "name": "数组克隆",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "java",
+          "value": "public class Copyarr {\n    public static void main(String[] args) {\n        int[] oldArr = { 30, 50, 60 };\n        A03 a03 = new A03();\n        int[] newArr = a03.copyArr(oldArr);\n        //输出结果\n        for(int i = 0; i < newArr.length; i++){\n           System.out.print(newArr[i] + \"\\t\");\n        }\n    }\n}\n\nclass A03 {\n    public int[] copyArr(int[] oldArr) {// 在堆中，创建一个长度为 oldArr.length 数组\n        int[] newArr = new int[oldArr.length];// 遍历 oldArr,将元泰拷贝到newArr\n        for (int i = 0; i < oldArr.length; i++) {\n            newArr[i] = oldArr[i];\n        }\n        return newArr;\n    }\n}"
+        }
+      ],
+      "id": "ScXzxV1c",
+      "createdAt": 1693553700202,
+      "updatedAt": 1693554146618
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "HbQza7qh",
+      "tagsIds": [],
+      "description": null,
+      "name": "前++ 和后++ 的区别",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "java",
+          "value": "//只有在作为表达式的时候有区别：++i 先自增后赋值:i++ 先赋值后自增\nint i = 8;\n// int j = ++i; //先自增后赋值; 等价 i=i+1; j=i;  //输出9  9\nint j = i++; //先赋值后自增; 等价 j=i; i=i+1;\nSystem.out.println(\"j=\" + j + \"i=\" + i); //输出8 9"
+        },
+        {
+          "label": "输出结果判断",
+          "language": "java",
+          "value": "public class Test {\n    public static void main(String[] args) { //这个main并没有运行\n    }\n}\n\nclass Demo {\n    int i = 100;\n\n    public void m() {\n        int j = i++;\n        System.out.println(\"i=\" + i);//101,因为 i=i+1;\n        System.out.println(\"j=\" + j);//100,因为j=i; i=i+1;\n    }\n}\n\nclass realMain {\n\t\t//运行的是这里，因为任何类都可以有main方法\n    public static void main(String[] args) {\n        Demo d1 = new Demo();\n        Demo d2 = d1;\n        d2.m();\n        System.out.println(\"d1.i=\" + d1.i);\n        System.out.println(\"d2.i=\" + d2.i);\n    }\n}"
+        }
+      ],
+      "id": "GhpOjozp",
+      "createdAt": 1693619837230,
+      "updatedAt": 1693620963043
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "ztpcuydj",
+      "tagsIds": [],
+      "description": null,
+      "name": "剪刀石头布游戏",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "java",
+          "value": "import java.util.Random;                                                                              \nimport java.util.Scanner;                                                                             \n                                                                                                      \n/*                                                                                                    \n请编写一个猜拳的游戏                                                                                            \n有个人 Tom，设计他的成员变量. 成员方法, 可以电脑猜拳. 电脑每次都会随机生成 0, 1, 2                                                    \n0 表示 石头 1 表示剪刀 2 表示 布                                                                                 \n并要可以显示 Tom的输赢次数（清单）, 假定 玩三次.                                                                          \n */ \n // 测试类,主类\npublic class MoraGame {                                                                               \n                                                                                                     \n    // 测试                                                                                             \n    public static void main(String[] args) {                                                          \n        // 创建一个玩家对象                                                                                   \n        Tom t = new Tom();                                                                            \n        // 用来记录最后输赢的次数                                                                                \n        int isWinCount = 0;                                                                           \n                                                                                                      \n        // 创建一个二维数组，用来接收局数，Tom出拳情况以及电脑出拳情况                                                            \n        int[][] arr1 = new int[3][3];                                                                 \n        int j = 0;                                                                                    \n                                                                                                      \n        // 创建一个一维数组，用来接收输赢情况                                                                          \n        String[] arr2 = new String[3];                                                                \n                                                                                                      \n        Scanner scanner = new Scanner(System.in);                                                     \n        for (int i = 0; i < 3; i++) {   //比赛3次                                                              \n            // 获取玩家出的拳                                                                                \n            System.out.println(\"请输入你要出的拳（0-拳头，1-剪刀，2-布）：\");                                           \n            int num = scanner.nextInt();                                                              \n            t.setTomGuessNum(num);                                                                    \n            int tomGuess = t.getTomGuessNum();                                                        \n            arr1[i][j + 1] = tomGuess;                                                                \n                                                                                                      \n            // 获取电脑出的拳                                                                                \n            int comGuess = t.computerNum();                                                           \n            arr1[i][j + 2] = comGuess;                                                                \n                                                                                                      \n            // 将玩家猜的拳与电脑做比较                                                                           \n            String isWin = t.vsComputer();                                                            \n            arr2[i] = isWin;                                                                          \n            arr1[i][j] = t.count;                                                                     \n                                                                                                      \n            // 对每一局的情况进行输出                                                                            \n           System.out.println(\"=========================================\");                           \n            System.out.println(\"局数\\t玩家的出拳\\t电脑的出拳\\t输赢情况\");                                             \n            System.out.println(t.count + \"\\t\" + tomGuess + \"\\t\\t\" + comGuess + \"\\t\\t\" + t.vsComputer());\n            System.out.println(\"=========================================\");                          \n            System.out.println(\"\\n\\n\");                                                               \n            isWinCount = t.winCount(isWin);                                                           \n        }    \n        scanner.close();\n                                                                                                      \n        // 对游戏的最终结果进行输出                                                                               \n        System.out.println(\"局数\\t玩家的出拳\\t电脑的出拳\\t\\t输赢情况\");                                               \n        for (int a = 0; a < arr1.length; a++) {                                                       \n            for (int b = 0; b < arr1[a].length; b++) {                                                \n                System.out.print(arr1[a][b] + \"\\t\\t\\t\");                                              \n            }                                                                                         \n                                                                                                      \n            System.out.print(arr2[a]);                                                                \n            System.out.println();                                                                     \n        }                                                                                             \n        System.out.println(\"你赢了\" + isWinCount + \"次\");                                                 \n    }                                                                                                 \n                                                                                                      \n}                                                                                                     \n\n// Tom类\nclass Tom {     // 核心代码  \n\t// 玩家出拳的类型 \n    int tomGuessNum; //0,1,2\n\t// 电脑出拳的类型\n    int comGuessNum; //0,1,2\n\t// 玩家赢的次数\n    int winCountNum;  \n\t// 比赛的次数\n    int count = 1;   //一共比赛3次                                                                                 \n     \n\t\n\tpublic void showInfo() {\n\t\t//....\n\t}\n\t\n    /**                                                                                               \n     * 电脑随机生成猜拳的数字的方法                                                                                 \n     * @return                                                                                        \n     */                                                                                               \n    public int computerNum() {                                                                        \n        Random r = new Random();                                                                      \n        comGuessNum = r.nextInt(3);      // 方法 返回 0-2的随机数                                                             \n        // System.out.println(comGuessNum);                                                           \n        return comGuessNum;                                                                           \n    }                                                                                                 \n                                                                                                      \n    /**                                                                                               \n     * 设置玩家猜拳的数字的方法                                                                                   \n     * @param tomGuessNum                                                                             \n     */                                                                                               \n    public void setTomGuessNum(int tomGuessNum) {                                                     \n        if (tomGuessNum > 2 || tomGuessNum < 0) { \n\t\t\t//抛出一个异常, 李同学会写，没有处理\n            throw new IllegalArgumentException(\"数字输入错误\");                                             \n        }                                                                                             \n        this.tomGuessNum = tomGuessNum;                                                               \n    }                                                                                                 \n                                                                                                      \n    public int getTomGuessNum() {                                                                     \n        return tomGuessNum;                                                                           \n    }                                                                                                 \n                                                                                                      \n    /**                                                                                               \n     * 比较猜拳的结果                                                                                        \n     * @return 玩家赢返回true，否则返回false                                                                    \n     */                                                                                               \n    public String vsComputer() { \n\t\t //比较巧\n        if (tomGuessNum == 0 && comGuessNum == 1) {                                                   \n            return \"你赢了\";                                                                             \n        } else if (tomGuessNum == 1 && comGuessNum == 2) {                                            \n            return \"你赢了\";                                                                             \n        } else if (tomGuessNum == 2 && comGuessNum == 0) {                                            \n            return \"你赢了\";                                                                             \n        } else if (tomGuessNum == comGuessNum){                                                       \n            return \"平手\";                                                                              \n        } else {                                                                                      \n            return \"你输了\";                                                                             \n        }                                                                                             \n    }                                                                                                 \n                                                                                                      \n    /**                                                                                               \n     * 记录玩家赢的次数                                                                                       \n     * @return                                                                                        \n     */                                                                                               \n    public int winCount(String s) {                                                                   \n        count++;    //控制玩的次数                                                                                   \n        if (s.equals(\"你赢了\")) {     //统计赢的次数                                                                   \n            winCountNum++;                                                                            \n        }                                                                                             \n        return winCountNum;                                                                           \n    }                                                                                                 \n                                                                                                      \n}  \n"
+        }
+      ],
+      "id": "L8ysN3Fl",
+      "createdAt": 1693627321282,
+      "updatedAt": 1693627340250
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "HbQza7qh",
+      "tagsIds": [],
+      "description": null,
+      "name": "方法重载",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "java",
+          "value": "public class Student extends Persont{\n\n    ....\n    //利用super实现代码复用\n    public String say() {\n        return super.say() + \" id=\"+ id + \" score=\" + score;\n    }\n\n}"
+        }
+      ],
+      "id": "9AME0zhr",
+      "createdAt": 1693743874799,
+      "updatedAt": 1693744087501
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "WiVmIFIe",
+      "tagsIds": [
+        "VnECTVOl"
+      ],
+      "description": null,
+      "name": "多态--面向对象编程的精华和难点",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "java",
+          "value": "public class Poly01 {\n    public static void main(String[] args) {\n        Sub sub = new Sub();\n        System.out.println(sub.count); //20\n        sub.display(); //20\n \n        Base b = sub; //向上转型\n        System.out.print(b == sub); //true,因为指向内存的同一个空间\n        System.out.print(b.count); //10,属性没有重写之说! 属性的值看编译类型（而方法是有重写的）\n        b.display(); //20\n    }\n}\n\nclass Base {\n    int count = 10;\n\n    public void display() {\n        System.out.print(this.count);\n    }\n}\n\nclass Sub extends Base {\n    int count = 20;\n\n    public void display() {\n        System.out.print(this.count);\n    }\n}"
+        }
+      ],
+      "id": "yKfnHjzq",
+      "createdAt": 1693818463824,
+      "updatedAt": 1694257601449
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "WiVmIFIe",
+      "tagsIds": [],
+      "description": null,
+      "name": "多态数组",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "java",
+          "value": "package com.extend_.poly_.polyarr; //可以去电脑的相关文件夹找到包，里面还有几个类\n\npublic class polyarr {\n    public static void main(String[] args) {\n       \n        Person[] persons = new Person[5]; //创建5个对象\n        persons[0] = new Person(\"jack\", 19);\n        persons[1] = new Student(\"Tom\", 18, 100);\n        persons[2] = new Student(\"smith\", 22, 90);\n        persons[3] = new Teacher(\"scott\", 30, 20000);\n        persons[4] = new Teacher(\"king\", 50, 25000);\n//        循环遍历多态数组，调用say()\n        for (int i = 0; i < persons.length; i++) {\n//     persons[i]编译类型是Person，运行类型是是根据实际情况有JVM来判渐\n            System.out.println(persons[i].say()); //动态绑定机制\n//            以下是为了调用类特有的方法，使用类型判断，结合向下转型\n            if (persons[i] instanceof Student) {\n                Student student = (Student) persons[i];//向下转型\n                student.study();//调用特有的方法\n//               或者 ((Student) persons[i]).study();\n            } else if (persons[i] instanceof Teacher) {\n                Teacher teacher = (Teacher) persons[i];//向下转型\n                teacher.teach();\n            } else {\n                System.out.println(\"你的类型有误\");\n            }\n        }\n    }\n}\n"
+        }
+      ],
+      "id": "D5bF_emc",
+      "createdAt": 1693830383812,
+      "updatedAt": 1693830537128
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "WiVmIFIe",
+      "tagsIds": [],
+      "description": null,
+      "name": "多态参数",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "java",
+          "value": "package com.extend_.poly_.polyparameter; //可以在电脑文件夹查找此包的所有类\n\npublic class polyParameter {\n    public static void main(String[] args) {\n        Worker tom = new Worker(\"Tom\", 3000);\n        Manager milan = new Manager(\"milan\", 5000, 200000);\n//      在main方法中创建了一个polyParameter对象的实例，用于调用该类中的方法。\n        polyParameter polyParameter = new polyParameter();\n        polyParameter.showEmpAnnual(tom);//会和Worker类绑定\n        polyParameter.showEmpAnnual(milan);//会和Manager类绑定\n\n        polyParameter.testWork(tom);\n        polyParameter.testWork(milan);\n    }\n//    实现获取任何员工对象的年薪,并在main方法中调用\n  /*  通过将参数的类型声明为父类类型（例如Employee),方法可以接受该父类及其子类的任意实例作为参数。\n      这就是多态的应用，它允许我们使用基类的引用来操作派生类的对象。这样可以增加代码的灵活性，使得方法\n      能够适用于多种不同的子类对象。\n    */\n    public void showEmpAnnual(Employee e){\n        System.out.println(e.getAnnual());  //动态绑定机制\n    }\n    public void testWork(Employee e){\n        if(e instanceof Worker){\n            //向下转型操作\n           ((Worker) e).work();//这里输入e.work(),idea会给你自动生成\n        } else if (e instanceof Manager) {\n           ((Manager) e).manage();//向下转型操作\n        }else{\n            System.out.println(\"不作处理...\");\n        }\n\n    }\n}\n"
+        }
+      ],
+      "id": "COfe9OrN",
+      "createdAt": 1693886695734,
+      "updatedAt": 1693886754616
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "T0GXZDoL",
+      "tagsIds": [],
+      "description": null,
+      "name": "一段代码完成一个小功能，尽量不要混在一起",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "java",
+          "value": "String choice = \"\";\n//功能 1\n//建议一段代码，完成一个小功能，尽量不要混在一起,下面的while判断是否为y或n,而if判断了是两者哪一个\nwhile (true) { //要求用户必须输入y/n否则就一直循环\n  System.out.println(\"你确定要退出吗? y/n\");\n  choice = scanner.next();\n  if (\"y\".equals(choice) || \"n\".equals(choice)) {\n  \tbreak;\n  }\n  //下面这样虽然也可以实现，但复杂化了，不利于维护扩展\n  /*if(\"y\".equas(choice)) {\n     loop = false;\n     break;\n   } else if (\"n\".equals(choice)) {\n     break;\n   }*/\n}\n//功能 2\n//当用户退出while,进行判断\n//编程思想:能if的就不要用分支写法if-else,因为太啰嗦不简洁,遇到不符合的条件就跳出程序，而不要执行很多不必要的代码再判断和跳出\nif (choice.equals(\"y\")) {\n  loop = false;\n}"
+        }
+      ],
+      "id": "KMZVg20v",
+      "createdAt": 1693994487719,
+      "updatedAt": 1693995778454
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "HbQza7qh",
+      "tagsIds": [],
+      "description": null,
+      "name": "get/set方法的灵活之处",
+      "content": [
+        {
+          "label": "Teacher子类",
+          "language": "java",
+          "value": "//在其他类中调用属性，会用到get/set方法\npublic class Teacher extends Employee {\n    // 特有属性,不写入构造器\n    private int classDays;    //一年上课次数\n    private double cLassSal; //课时费\n\n    // 构造器\n    public Teacher(String name, double sal) {\n        super(name, sal);\n    }\n\n    //重写父类方法 printSal\n    @Override\n    public void printSal() { //老师不能使用super.printSal(),因为有其特有的属性\n        System.out.println(getName() + \"年工资是:\"\n                + (getSal() * getSalMonth() + classDays * classSal));\n                //getSalMonth没有写入构造器,而是在属性里,因为月份会有变化,也体现了set方法的灵活应用\n    }\n}\n"
+        },
+        {
+          "label": "入口调用文件",
+          "language": "java",
+          "value": "//入口调用的文件\npublic class mainApp {\n    public static void main(String[] args) {\n       //老师测试\n        Teacher teacher = new Teacher(\"顺平\", 2000); //老师有课时费\n        teacher.setclassDays(360);\n        teacher.setclassSal(1000);\n        //通过给上面的set方法设置不同的变量值，下面的打印会相应的变化，这就是set方法的灵活之处！\n        teacher.printSal();\n    \n       Worker jack = new Worker(\"jack\", 10000);\n       jack.setSalMonth(15);//灵活额修改带薪月份\n       jack.printSal();//上面setSaTMonth(15)后, printSal()里会有相应的输出\n       \n       Peasant smith = new Peasant(\"smith\", 20000);\n       smith.printSal();\n    }\n}"
+        },
+        {
+          "label": "父类 Employee",
+          "language": "java",
+          "value": "public class Employee {\n    // 属性\n    private String name;\n    private double sal;\n//    有变化的写入属性，不要写入构造器,方便子类灵活应用(通过set方法可以自定义)\n    private int salMonth = 12; //默认12,之后可以通过set方法自定义\n    \n//  方法\n//  打印年薪\n    public void printSal(){\n        System.out.print(name + \"年工资是:\" + (sal * salMonth));\n    }\n    \n//构造器,注意运行中有变化的属性不要写入构造器,放在属性里子类可以通过set方法灵活应用\n    public Employee(String name, double sal) {\n        this.name = name;\n        this.sal = sal;\n    }\n    \n  //get/set方法\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n\n    public double getSal() {\n        return sal;\n    }\n\n    public void setSal(double sal) {\n        this.sal = sal;\n    }\n\n    public int getSalMonth() {\n        return salMonth;\n    }\n\n    public void setSalMonth(int salMonth) {\n        this.salMonth = salMonth;\n    }\n}"
+        }
+      ],
+      "id": "ZhLaETz9",
+      "createdAt": 1694050390778,
+      "updatedAt": 1694057007818
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "HbQza7qh",
+      "tagsIds": [],
+      "description": "子类构造器如何利用父类的参数等",
+      "name": "constructor 构造器",
+      "content": [
+        {
+          "label": "父类",
+          "language": "java",
+          "value": "package com.exercise.constructor_;\n\n/**\n * 设计一个Point类，其 x和 y坐标可以通过构造器提供。\n * 提供一个子类 LabeledPoint,构造器接受一个标签值和 x,y坐标,比如:new LabeledPoint(“Black”,1929,230.07)\n * 写出对应的构造器即可\n */\npublic class Point {\n    private double x;\n    private double y;\n\n    public Point(double x, double y) {\n        this.x = x;\n        this.y = y;\n    }\n}"
+        },
+        {
+          "label": "子类",
+          "language": "java",
+          "value": "package com.exercise.constructor_;\n\npublic class LabeledPoint extends Point {\n    //特有属性\n    private String label;\n    \n    //在idea里alt + reset 会自动生成下面的构造器\n    public LabeledPoint(String label, double x, double y) {\n        super(x, y);\n        this.label = label;\n    }\n}"
+        },
+        {
+          "label": "main",
+          "language": "java",
+          "value": "package com.exercise.constructor_;\n\npublic class mainApp {\n    public static void main(String[] args) {\n        new LabeledPoint(\"okzu\",123,156);//调用\n    }\n}\n"
+        }
+      ],
+      "id": "YATwlMui",
+      "createdAt": 1694093307901,
+      "updatedAt": 1694093548780
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "WiVmIFIe",
+      "tagsIds": [],
+      "description": null,
+      "name": "对象的多态--运行类型",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "java",
+          "value": "package com.exercise.poly_;\n\n/**\n * 创建的对象B的类型在运行中是可以不断变化的\n * 通过 obj.getClass()可以查看运行中的对象类型\n * 但是obj在编译的时候的类型是A，这个是一直不变的，运行中不会变化\n * 编译类型看等号左边，运行类型看等号右边\n * 对象类型在运行中不断变化在实际开发中很常用\n */\n\npublic class A_B_C {\n    public static void main(String[] args) {\n        A obj = new B();//向上转型\n\n        A b1 = obj; //b1指向B,多态的前提是：两个对象(类)存在继承关系\n        //C b1 = obj; 这样就会报错,因为obj的编译类型是A,这个不能改变;\n        // 编译类型不能改变,好比一个人的父母不能改变，但自己的身份性格名字是可以改变的;\n\n        System.out.println(\" obj的运行类型= \" + obj.getClass());//B\n        obj = new C();//向上转型\n        System.out.println(\" obj的运行类型= \" + obj.getClass());//C\n\n        obj = b1;\n        System.out.println(\" obj的运行类型= \" + obj.getClass());//B;注意又切回了B\n    }\n}\n\nclass A { //超类\n\n}\n\nclass B extends A { //父类\n\n}\n\nclass C extends B { //子类\n\n}\n"
+        }
+      ],
+      "id": "K4hHqlZ_",
+      "createdAt": 1694250702144,
+      "updatedAt": 1694257373788
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "MFd514cI",
+      "tagsIds": [],
+      "description": null,
+      "name": "英文转中文名称映射",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "  // 中文名称映射\n  const idMap = {\n    \"Email\": \"邮件\",\n    \"Username\": \"用户名\",\n    \"FirmName\": \"公司名\",\n  }\n  \n  function getFieldName(input) {\n    const fieldName = input.id.charAt(0).toUpperCase() + input.id.slice(1);\n    return idMap[fieldName] || fieldName; // 使用idMap中的中文形式，如果找不到则返回原字段名\n  }\n"
+        }
+      ],
+      "id": "ZyjkOfPG",
+      "createdAt": 1695090221299,
+      "updatedAt": 1695090271165
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "MFd514cI",
+      "tagsIds": [],
+      "description": null,
+      "name": "重置所有输入框的状态为初始状态",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": " // 重置所有输入框的状态为初始状态\nconst inputElements = formElement.querySelectorAll(\"input\");\n  inputElements.forEach((input) => {\n    showOrigin(input);\n});\n\nfunction showOrigin(input) {\n  const formControl = input.parentElement;\n  if (formControl) {\n  //formControl.className = \"form-control erro\"; 这里原来多一个erro类，用于给input框添加错误边框\n     formControl.className = \"form-control\";\n  }\n}\n\n//去除掉的css红色边框写法\n.form-control.error input {\n  border-color: var(--error-color);\n}"
+        }
+      ],
+      "id": "0H7NC70d",
+      "createdAt": 1695105824340,
+      "updatedAt": 1695106047526
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [
+        "4x70qi88"
+      ],
+      "description": null,
+      "name": "按钮hover渐变",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "在:hover之前的元素使用：\ntransition：all 0.4s ease-out 0s\n\n如：\n.Btn{\n  transition：all 0.4s ease-out 0s;\n  background-color:white;\n}\n\n//那么白色到蓝色会有个渐变效果\n.Btn:hover{\n  background-color:blue;\n}\n//第二种方式：\n<--给所有按钮添加hover后的transition背景动画效果-->\nbutton {  \n  transition: background 0.3s ease;  \n}  \n  \nbutton:hover {  \n  background: blue;  \n}"
+        }
+      ],
+      "id": "exohtigO",
+      "createdAt": 1695109921777,
+      "updatedAt": 1697697187811
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "MFd514cI",
+      "tagsIds": [],
+      "description": null,
+      "name": "dataset的使用",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "dom元素dataset的使用：使用dataset元素可以方便地访问和修改HTML元素的自定义属性。它也可以为JavaScript应用程序提供一种简单的方法来存储额外的信息。要使用dataset元素，您需要在HTML元素上添加属性，并将其前缀“data-”。例如，要添加一个名为“color”的属性，您可以使用data-color属性，如下所示：<div data-color=\"blue\">。然后，您可以使用JavaScript来访问这个属性，如下所示：var color = element.dataset.color;\n\n引跑实际案例-动态改变一个提交表单的标题：\n<div id=\"openModalBtn\" data-title=\"申请试用\">申请试用</div>\n<div id=\"otherBtn\" data-title=\"预约演示\">申请试用</div>\n\nconst openModalBtn = document.getElementById(\"openModalBtn\");\nconst otherBtn = document.getElementById(\"otherBtn\");\n\nfunction openModalHandler() {\n  const title = this.dataset.title; // 访问html定义的 data-title\n  openModal(title); // 打开模态框并显示指定的标题  \n}\n\nopenModalBtn.addEventListener(\"click\", openModalHandler);\notherBtn.addEventListener(\"click\", openModalHandler);\n\n function openModal(title) {\n   modalTitle.textContent = title;\n   //...\n }"
+        }
+      ],
+      "id": "DreLhY2z",
+      "createdAt": 1695114698341,
+      "updatedAt": 1695115210588
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "静态分页实现",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "//---------------- HTML\n<div class=\"content content_1 active\"></div>\n<div class=\"content content_2\"></div>\n\n<div class=\"pagination\">\n  <span class=\"prev\">上一页</span>\n  <span class=\"page\" data-target=\"content_1\">1</span>\n  <span class=\"page\" data-target=\"content_2\">2</span>\n  <span class=\"next\">下一页</span>\n</div>\n\n//------------------- JS\nconst pages = document.querySelectorAll(\".page\"); //这里是一个可以forEach的类数组\nconst contentContainers = document.querySelectorAll(\".content\");\nconst prevBtn = document.querySelector(\".prev\");\nconst nextBtn = document.querySelector(\".next\");\n\nlet currentPageIndex = 0; //跟踪当前页面索引\n// 初始化时隐藏prevBtn\nprevBtn.style.display = \"none\";\n\npages.forEach((page, index) => {\n    page.addEventListener(\"click\", () => {\n    //console.log(\"page= \",page, \"index= \",index);\n    // 点击页面时，根据索引切换到对应的内容容器\n    showPage(index);\n  });\n});\n\nprevBtn.addEventListener(\"click\", () => {\n  if (currentPageIndex > 0) {\n    // 上一页按钮点击时，显示前一页\n    showPage(currentPageIndex - 1);\n  }\n});\n\nnextBtn.addEventListener(\"click\", () => {\n  if (currentPageIndex < pages.length - 1) {\n    // 下一页按钮点击时，显示下一页\n    showPage(currentPageIndex + 1);\n  }\n});\n\nfunction showPage(index) {\n  window.scrollTo({ top:670, behavior: \"smooth\" });//滚动触发内容显示\n  // 隐藏当前页面\n  contentContainers[currentPageIndex].classList.remove(\"active\");\n  //给分页的数字添加样式\n  pages[currentPageIndex].classList.remove(\"active\");\n\n  \n  // 显示新页面\n  contentContainers[index].classList.add(\"active\");\n  pages[index].classList.add(\"active\");\n  currentPageIndex = index; // 更新当前页面索引\n\n  // 根据当前页面索引显示/隐藏prevBtn和nextBtn\n  if (currentPageIndex === 0) {\n    prevBtn.style.display = \"none\";\n  } else {\n    prevBtn.style.display = \"block\";\n  }\n\n  if (currentPageIndex === pages.length - 1) {\n    nextBtn.style.display = \"none\";\n  } else {\n    nextBtn.style.display = \"block\";\n  }\n}\n"
+        }
+      ],
+      "id": "SYTCTENq",
+      "createdAt": 1695965901772,
+      "updatedAt": 1695969408527
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "捕获异常 try catch finally",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "捕获异常就是处理错误，当错误发生后，我们对错误进行相应的处理，让程序不至于终止\n在绝大部分时候，我们都无须捕获异常，除非满足以下要求:\n1.我们能够预知某段代码会出现异常\n2.我们知道出现异常后要做什么\n上面的条件任意一个不满足，都不应该处理异常永远不能为了不报错而捕获异常!\ntry{\n   //代码1,错误也是对象，有的话会把错误对象传递给catch的err参数\n   //有错误的话，不会继续执行try里下面的代码，会执行catch代码块\n}\ncatch(err){\n  // 代码2: 当代码1出现异常后，会执行这里的代码，异常对象会传递给err\n  console.log(err.message)\nfinally{ //可省略\n // 代码3可省略。无论是否有异常，都会执行\n}"
+        }
+      ],
+      "id": "z_WM_cWr",
+      "createdAt": 1696496965626,
+      "updatedAt": 1696497681399
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "MFd514cI",
+      "tagsIds": [
+        "vXANOYOt",
+        "G2We-xe-"
+      ],
+      "description": null,
+      "name": "封装一个通用的防止重复点击的函数",
+      "content": [
+        {
+          "label": "没有处理前",
+          "language": "javascript",
+          "value": "模拟这样的异步请求逻辑：点击表单提交，需要保存一个东西，先发一个请求出去，后端返回一个id给前端，前端把id存下，下次在点提交的时候就成了编辑，不做限制的话，用户多次点击会保存多条重复的记录\n（未完成）\n<body>\n    <button id=\"btn\">提交</button>\n    <script>\n      const oBtn = document.getElementById(\"btn\");\n      oBtn.addEventListener(\"click\", () => {\n        save();\n      });\n      function save() {\n        return new Promise((resolve, reject) => {\n          setTimeout(() => {\n            Math.random() > 0.5 //随机数，一般的概率\n              ? resolve(2) //模拟成功返回的id\n              : reject(new Error(\"custom error\"));\n          }, 1000);\n        })\n          .then((id) => {\n            console.log(\"save success\");\n          })\n          .catch(console.error);\n      }\n    </script>\n  </body>"
+        }
+      ],
+      "id": "c5erqQ1Y",
+      "createdAt": 1696661912314,
+      "updatedAt": 1696669032785
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "MFd514cI",
+      "tagsIds": [],
+      "description": null,
+      "name": "老韩重要的编程技巧分享！！",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "         //对输入的参数做一个验证\n         老韩重要的编程技巧分享!!!\n         (1) 写出正确的情况\n         (2) 然后取反即可\n         (3) 这样写，你的思路就不乱\n        if(!(str != null && start >= 0 && end > start && end < str.length())) {\n            throw new RuntimeException(\"参数不正确\");\n        }"
+        }
+      ],
+      "id": "y8xrPQQA",
+      "createdAt": 1696749937003,
+      "updatedAt": 1696750089619
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "T0GXZDoL",
+      "tagsIds": [],
+      "description": null,
+      "name": "老韩重要的编程技巧分享!!!",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "java",
+          "value": "  //对输入的参数做一个验证\n         老韩重要的编程技巧分享!!!\n         (1) 写出正确的情况\n         (2) 然后取反即可\n         (3) 这样写，你的思路就不乱\n        if(!(str != null && start >= 0 && end > start && end < str.length())) {\n            throw new RuntimeException(\"参数不正确\");\n        }"
+        }
+      ],
+      "id": "k1IP0_c2",
+      "createdAt": 1696750097263,
+      "updatedAt": 1696750102975
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "T0GXZDoL",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "java",
+          "value": ""
+        }
+      ],
+      "id": "uWBcnP5s",
+      "createdAt": 1696750102941,
+      "updatedAt": 1696750109857
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "tocBVsRT",
+        "NwaiK6Nk"
+      ],
+      "description": "比如让菜单列表倒序排列显示",
+      "name": "将dom元素反转",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "  /*\n  主要牵扯l两个个概念: \n  1) 用Array.from('伪数组')得到数组,然后使用数组的reverse();\n  2) forEach()的使用\n  */\n  \n  const parentContainer = document.querySelector(\".parent_Container\");\n  const childItems = parentContainer.querySelectorAll(\".child_Item\");\n  //将伪数组转换为数组以便使用数组的方法\n  const childItemArray = Array.from(childItems);\n//使用数组的reverse()方法反转数组\n  childItemArray.reverse();\n//将反转后的数组里的每个元素append到父元素\n  childItemArray.forEach((item) => {\n    parentContainer.appendChild(item);\n  });"
+        }
+      ],
+      "id": "-FN_DPhW",
+      "createdAt": 1697615639477,
+      "updatedAt": 1697616575113
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "MFd514cI",
+      "tagsIds": [],
+      "description": null,
+      "name": "选择CSS的继承类",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "const selectElement = document.querySelector(\".bootstrap-select>.dropdown-toggle.bs-placeholder\");"
+        }
+      ],
+      "id": "FO3SJzpI",
+      "createdAt": 1697702002049,
+      "updatedAt": 1697702047715
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "6Ixdd13H",
+      "tagsIds": [],
+      "description": null,
+      "name": "全局加边框",
+      "content": [
+        {
+          "label": "本地添加",
+          "language": "css",
+          "value": "/* 调试大部分是处理对齐，加边框方便定位问题*/\n\n*{\n  outline:1px dashed tomato;\n}\n"
+        },
+        {
+          "label": "项目上线后 -> 浏览器添加",
+          "language": "css",
+          "value": "/*复制下面的代码，Ctrl+D当前页面到书签，修改书签网址，粘贴代码\n第一次点击是添加边框\n第二次点击会去除边框\n*/\njavascript: (() => {\n  const headElement = document.head;\n  const styleElement = document.createElement('style');\n  styleElement.setAttribute('debug-css', '');\n  styleElement.innerText = '* { outline: 1px solid tomato; }';\n  const debugElement = headElement.querySelector('[debug-css]');\n  if (debugElement) return debugElement.remove();\n  headElement.append(styleElement);\n})()"
+        },
+        {
+          "label": "终极 ->安装插件VisBug",
+          "language": "css",
+          "value": "安装浏览器插件VisBug是终极方案！！！"
+        }
+      ],
+      "id": "iJfGAbqV",
+      "createdAt": 1697810299328,
+      "updatedAt": 1697815296757
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [
+        "4wrRqnmP",
+        "m56TwSRZ",
+        "FMTo2l7O",
+        "yOmiJD_J",
+        "38-kGUGm",
+        "IvFchhtk"
+      ],
+      "description": null,
+      "name": "css 查询电脑缩放比例",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "CSS是Cascading Style Sheets的缩写，是用于控制网页样式与布局的标准。在不同分辨率的设备上，页面的显示效果是不一样的。为了让网页在不同设备上能够自适应，我们需要查询电脑的缩放比例。\n\nvar scale = window.devicePixelRatio;\nconsole.log(scale);\n上面的代码使用了window.devicePixelRatio属性来获取当前设备的缩放比例，并且将它输出到控制台。这个属性返回的是设备实际像素分辨率与CSS像素分辨率之间的比值。\n\n在实际应用中，我们可以使用这个属性来优化页面的显示效果。当设备的缩放比例不为1时，我们可以针对不同的缩放比例设置不同的样式。比如，当缩放比例为2时，我们可以使用更高清晰度的图片，以达到更好的视觉效果。\n\n结合CSS的媒体查询，我们可以为不同的设备设置不同的样式，以达到更好的用户体验。\n\n注意：大缩放率的放上面\n/* 针对缩放比例为2的设备，使用2倍的图片 */\n@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-device-width: 320px) and (max-device-width: 568px) {\n  .logo {\n    background-image: url(2x-logo.png);\n    background-size: cover;\n  }\n}\n通过上面的代码，我们可以为缩放比例为2的设备设置更高清晰度的图片，并且保持背景图片的尺寸不变，以达到更好的视觉效果。"
+        },
+        {
+          "label": "@media",
+          "language": "css",
+          "value": "\nTo limit the styles to devices with a screen, you can chain the mediafeatures to the screen media type:\n\n@media(min-width: 3em) and (orientation: landscape) {\n/**/\n}\n\nYou can use a comma-separated list to apply styles when the user'sdevice matches any one of various media types, features, or states. Forinstance, the following rule will apply its styles if the user's device has either a minimum height of 680px or is a screen device in portrait mode:\n\n@media (min-height: 680px), screen and(orientation: portrait) {\n/**/\n}"
+        },
+        {
+          "label": "一个鼠标提示信息实例！",
+          "language": "css",
+          "value": "/*---- HTML ----*/\n<p>\n  <abbr title=\"National Aeronautics and Space Administration\">NASA</abbr> is a U.S. government agency that is\n  responsible for science and technology related to air and space.\n</p>\n\n/*---- CSS----*/\nabbr {\n  color: chocolate;\n}\n\n@media (hover: hover) {\n  abbr:hover {\n    color:limegreen;\n    transition-duration: 1s;\n  }\n}\n\n@media not all and (hover: hover) {\n  abbr::after {\n    content: ' (' attr(title) ')';\n  }\n}\n\n\n"
+        }
+      ],
+      "id": "cGY2CDkG",
+      "createdAt": 1698983160688,
+      "updatedAt": 1699496353851
     }
   ],
   "tags": [
@@ -5092,6 +5953,108 @@
       "id": "Y7mQg92x",
       "createdAt": 1692170710391,
       "updatedAt": 1692170710391
+    },
+    {
+      "name": "删除数据",
+      "id": "RQFn3oQg",
+      "createdAt": 1692179798802,
+      "updatedAt": 1692179798802
+    },
+    {
+      "name": "空对象",
+      "id": "tnE1auCZ",
+      "createdAt": 1692493461875,
+      "updatedAt": 1692493461875
+    },
+    {
+      "name": "动画",
+      "id": "kv-CSfab",
+      "createdAt": 1692583556760,
+      "updatedAt": 1692583556760
+    },
+    {
+      "name": "动画效果",
+      "id": "6Njm6X7l",
+      "createdAt": 1692583563809,
+      "updatedAt": 1692583563809
+    },
+    {
+      "name": "svg",
+      "id": "wwLDze_V",
+      "createdAt": 1692584252953,
+      "updatedAt": 1692584252953
+    },
+    {
+      "name": "svg动画",
+      "id": "HU1RtGEO",
+      "createdAt": 1692584259799,
+      "updatedAt": 1692584259799
+    },
+    {
+      "name": "logo动画",
+      "id": "QO_Fn8iR",
+      "createdAt": 1692584309840,
+      "updatedAt": 1692584309840
+    },
+    {
+      "name": "placeholder",
+      "id": "7RtIwv96",
+      "createdAt": 1692585828073,
+      "updatedAt": 1692585828073
+    },
+    {
+      "name": "方法或对象具有多种形态。是面向对象的第三大特征，多态是建立在封装和继承基础之上的。",
+      "id": "VnECTVOl",
+      "createdAt": 1693818721976,
+      "updatedAt": 1693818721976
+    },
+    {
+      "name": "random",
+      "id": "vXANOYOt",
+      "createdAt": 1696661990066,
+      "updatedAt": 1696661990066
+    },
+    {
+      "name": "随机值",
+      "id": "G2We-xe-",
+      "createdAt": 1696662005154,
+      "updatedAt": 1696662005154
+    },
+    {
+      "name": "hover",
+      "id": "4x70qi88",
+      "createdAt": 1697697187739,
+      "updatedAt": 1697697187739
+    },
+    {
+      "name": "缩放比",
+      "id": "4wrRqnmP",
+      "createdAt": 1699259000003,
+      "updatedAt": 1699259000003
+    },
+    {
+      "name": "分辨率",
+      "id": "m56TwSRZ",
+      "createdAt": 1699259008725,
+      "updatedAt": 1699259008725
+    },
+    {
+      "name": "@media",
+      "id": "FMTo2l7O",
+      "createdAt": 1699494901441,
+      "updatedAt": 1699494901441
+    },
+    {
+      "name": "媒体查询",
+      "id": "yOmiJD_J",
+      "createdAt": 1699494908351,
+      "updatedAt": 1699494908351
+    },
+    {
+      "name": " hover",
+      "id": "IvFchhtk",
+      "createdAt": 1699496353800,
+      "updatedAt": 1699496353800
     }
   ]
 }
