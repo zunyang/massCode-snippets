@@ -46,6 +46,17 @@
       "icon": "javascript"
     },
     {
+      "name": "图像相关",
+      "parentId": "3BVGYMMN",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "css",
+      "id": "d_FAu2Me",
+      "createdAt": 1703153088965,
+      "updatedAt": 1703153175537,
+      "index": 0
+    },
+    {
       "name": "css 调试技巧",
       "parentId": "3BVGYMMN",
       "isOpen": false,
@@ -54,18 +65,40 @@
       "id": "6Ixdd13H",
       "createdAt": 1697810265202,
       "updatedAt": 1697810294667,
-      "index": 0
+      "index": 1
+    },
+    {
+      "name": "媒体/容器查询",
+      "parentId": "3BVGYMMN",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "css",
+      "id": "yJren5oY",
+      "createdAt": 1702191905015,
+      "updatedAt": 1702191933979,
+      "index": 2
     },
     {
       "name": "CSS",
       "parentId": null,
-      "isOpen": true,
+      "isOpen": false,
       "isSystem": false,
       "defaultLanguage": "css",
       "id": "3BVGYMMN",
       "createdAt": 1677579960490,
       "updatedAt": 1693552124666,
       "index": 1
+    },
+    {
+      "name": "form 表单",
+      "parentId": "-fio_qG6",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "vue",
+      "id": "db9Zyb5Z",
+      "createdAt": 1706150361748,
+      "updatedAt": 1706150672606,
+      "index": 0
     },
     {
       "name": "vue",
@@ -2179,11 +2212,16 @@
           "label": "Promise.race, allSettled and any",
           "language": "javascript",
           "value": "// Other Promise Combinators: race, allSettled and any\n// Promise.racerace, allSettled and any\n(async function () {\n  const res = await Promise.race([\n    getJSON(`https://restcountries.eu/rest/v2/name/italy`),\n    getJSON(`https://restcountries.eu/rest/v2/name/egypt`),\n    getJSON(`https://restcountries.eu/rest/v2/name/mexico`),\n  ]);\n  console.log(res[0]);\n})();\n\nconst timeout = function (sec) {\n  return new Promise(function (_, reject) {\n    setTimeout(function () {\n      reject(new Error('Request took too long!'));\n    }, sec * 1000);\n  });\n};\n//Promise.race的一个实际应用案例-超时报错\nPromise.race([\n  getJSON(`https://restcountries.eu/rest/v2/name/tanzania`),\n  //如果time(5)先race在前面，也就是超出5秒就报出错误信息\n  timeout(5),\n])\n  .then(res => console.log(res[0]))\n  .catch(err => console.error(err));\n\n// Promise.allSettled\nPromise.allSettled([\n  Promise.resolve('Success'),\n  Promise.reject('ERROR'),\n  Promise.resolve('Another success'),\n]).then(res => console.log(res));\n\nPromise.all([ //这里会报错因为有reject\n  Promise.resolve('Success'),\n  Promise.reject('ERROR'),\n  Promise.resolve('Another success'),\n])\n  .then(res => console.log(res))\n  .catch(err => console.error(err));\n\n// Promise.any [ES2021]\nPromise.any([ //有reject不会报错\n  Promise.resolve('Success'),\n  Promise.reject('ERROR'),\n  Promise.resolve('Another success'),\n])\n  .then(res => console.log(res))\n  .catch(err => console.error(err));"
+        },
+        {
+          "label": "实例",
+          "language": "javascript",
+          "value": "<script>\n  const isA = true;\n  const isB = true;\n  const isC = true;\n\n  function A() {\n    // 1.创建 Promise 实例\n    return new Promise((resolve, reject) => {\n    // 2. 当前处于[待定 (pending)] 状态下\n      console.log(\"执行 A 接口的逻辑\");\n      setTimeout(() => {\n        if (isA) {\n        // 3.进入 [已兑现 (fulfilled) ] 状态下\n          resolve(\"A 接口执行成功\");\n        } else {\n        // 4.进入 [已拒绝 (rejected) ] 状态下\n          reject(\"A 接口执行失败\");\n        }\n      }, 500);\n    });\n  }\n\n  function B() {\n    // 1.创建 Promise 实例\n    return new Promise((resolve, reject) => {\n      console.log(\"执行 B 接口的逻辑\");\n      setTimeout(() => {\n        if (isB) {\n          resolve(\"B 接口执行成功\");\n        } else {\n          reject(\"B 接口执行失败\");\n        }\n      }, 500);\n    });\n  }\n  function C() {\n    return new Promise((resolve, reject) => {\n      console.log(\"执行 C 接口的逻辑\");\n      setTimeout(() => {\n        if (isC) {\n          resolve(\"C 接口执行成功\");\n        } else {\n          reject(\"C 接口执行失败\");\n        }\n      }, 500);\n    });\n  }\n  //  then() 实现方案：顺序打印 A()、B()、C()------------\n  A()\n  .then((res) => { //这个then 返回的是一个Promise对象(是B的结果)，所以下面可以继续调用then\n    console.log(res);\n    return B();\n  }).\n  then((res) => { //这个then 返回的是一个Promise对象(是C的结果)，然后回调执行完毕，仍然可以在内部继续异步并发\n    console.log(res);\n    return C();\n  }).\n  then((res) => {\n    console.log(res);\n  })\n\n// 用最简单的async await 实现----------\n// async函数是使用async 关键字声明的函数，其中允许使用 await 关键字。\n// await操作符用于等待一个Promise兑现(就是说必须和Promise配合使用)并获取它兑现之后的值它只能在异步函数或者模块顶层中使用\n// async 和 await 关键字可以让我们以更简洁的方式写出基于Promise的异步行为，而无需刻意地链式调用Promise \nasync function test() {\n    const res = await A();//A()因为返回的是Promise对象，所以await会等待它执行完毕，然后返回结果\n    console.log(res);\n    const str = await B();\n    console.log(str);\n    const result = await C();\n    console.log(result);\n}\ntest()\n\n\n</script>\n"
         }
       ],
       "id": "hafqkq6-",
       "createdAt": 1681460910573,
-      "updatedAt": 1682676147249
+      "updatedAt": 1703597549516
     },
     {
       "isDeleted": false,
@@ -2779,11 +2817,21 @@
           "label": "Fragment 1",
           "language": "javascript",
           "value": "// 排除一个路径，如首页\nv-if和v-show的区别：\n注意：v-if决定dom元素是否存在，而v-show是隐藏和显示\n\n<div v-show=\"$route.path !== '/index'\">\n      <portalMenu></portalMenu>\n</div>\n\n//同一个div容器，路径不同样式不同\n<div class=\"main-container\" :style=\"{'margin-left': $route.path === '/index' ? '12px' : '200px'}\">"
+        },
+        {
+          "label": "引跑星光项目隐藏二级菜单",
+          "language": "plain_text",
+          "value": " <sidebar v-show=\"shouldShowSidebar\" class=\"sidebar-container\" />\n "
+        },
+        {
+          "label": "Fragment 3",
+          "language": "javascript",
+          "value": " <sidebar v-show=\"shouldShowSidebar\" class=\"sidebar-container\" />\n \n<div :class=\"{ hasTagsView: needTagsView }\" class=\"main-container\" :style=\"styles\">\n   <app-main :style=\"isDeductionUrl ? 'padding-top:0' : ''\" />\n</div>\n\ncomputed: {\n  styles() {\n      let res = \"\";  //先定义一个之后要返回的变量res,存储css属性margin-left的值\n      if (this.isDeductionRealUrl || this.isReportUrl) {\n        res = \"margin-left:12px\";\n      } else if (this.isDeductionUrl) {\n        res = \"margin-left: 1px ; margin-top: 1px; padding-top: 0;\";\n      } else {\n        res = \"margin-left:200px\";\n      }\n      return res;\n    },\n    \n    isDeductionUrl() {\n      return this.$route.path.endsWith(\"/deduction/detail\");\n    },\n    isDeductionRealUrl() {\n      return this.$route.path.endsWith(\"/deduction/real\");\n    },\n    isReportUrl() {\n      return this.$route.path.endsWith(\"/report/index\");\n    },\n  },\n}\n "
         }
       ],
       "id": "_4zn4SsK",
       "createdAt": 1684725573866,
-      "updatedAt": 1684809374742
+      "updatedAt": 1699757074472
     },
     {
       "isDeleted": false,
@@ -3595,12 +3643,17 @@
         {
           "label": "防抖函数",
           "language": "javascript",
-          "value": "1）只传一个参数的实用版\n函数防抖是指在一定时间内，只执行最后一次操作，而忽略之前的操作。\n这个版本和第二个带参数的版本在使用上没有太大的不同，但是在实现上有一些细微的差异。\n在这个版本中，我们没有使用剩余参数语法(...args)，而是直接定义了一个没有参数的匿名函数。这意味着在调用debounce函数时，我们只能传入一个函数作为参数，而不能传入任意数量的参数。\n另外，这个版本中的定时器的回调函数直接调用了fn函数，而不是使用apply方法来传递参数。这意味着在调用fn函数时，不会传递任何参数。\n\nfunction debounce(fn, delay) {\n  var timerId;\n  return function() {\n    clearTimeout(timerId);//清除之前的等待时间\n    timerId = setTimeout(fn, delay);\n  };\n}\n//使用：\nvar func = debounce(layout，1000);\nwindow.onresize = func  //在改变窗口的时候不会频繁调用函数，让页面卡顿\n\n\n\n2）带参数传递的版本：\n//以下是一个简单的实现防抖函数的例子：在这个函数中，我们使用了闭包来保存一个定时器的ID，并在每次函数被调用时清除之前的定时器。然后，再设置一个新的定时器来延迟执行函数。这样做的目的是为了确保在一定时间内，如果函数被连续调用多次，只有最后一次调用会被执行。\nfunction debounce(fn, delay) {\n  let timerId;\n\n  return function(...args) {\n    clearTimeout(timerId);//清除之前的等待时间\n\n    timerId = setTimeout(() => {\n      fn.apply(this, args);\n    }, delay);\n  };\n}\n\nexport { debounce };\n\n//使用方法示例：\nimport { debounce } from './debounce.js';\n\nconst myFunction = () => {\n  // 要执行的函数逻辑\n};\n\nconst debouncedFunction = debounce(myFunction, 1000); // 创建一个防抖版本的函数\n\n// 在需要限制执行频率的地方调用防抖函数\ndebouncedFunction();\n\n\n"
+          "value": "1）带参数传递的版本：\n可以这样使用,写在项目src/components/utils/utils.js文件里：\n// 发抖函数:在一定时间内，只执行最后一次操作，而忽略之前的操作,比如避免向后台频繁提交数据\nexport function debounce(fn, delay) {  \n  let timerId;  \n  \n  return function(...args) {  \n    clearTimeout(timerId); // 清除之前的等待时间  \n  \n    timerId = setTimeout(() => {  \n      fn.apply(this, args);  \n    }, delay);  \n  };  \n}\n按钮：\n<button @click=\"onRefreshDebounced()\"> 微博热搜 </butto>\n引入到页面：\nimport { debounce } from \"@/components/_util/util\";\n\nmethods: {\n    // 箭头函数不会绑定正确的上下文this,这里只能用普通函数\n    onRefreshDebounced: debounce(function () {\n      this.getData();\n      console.log(\"Refreshing data...\");\n    }, 1500),\n    \n    getData() {\n      //。。。获取接口数据\n    }\n}\n\n或者\n\n以下是一个简单的实现防抖函数的例子：在这个函数中，我们使用了闭包来保存一个定时器的ID，并在每次函数被调用时清除之前的定时器。然后，再设置一个新的定时器来延迟执行函数。这样做的目的是为了确保在一定时间内，如果函数被连续调用多次，只有最后一次调用会被执行。\nfunction debounce(fn, delay) {\n  let timerId;\n\n  return function(...args) {\n    clearTimeout(timerId);//清除之前的等待时间\n\n    timerId = setTimeout(() => {\n      fn.apply(this, args);\n    }, delay);\n  };\n}\n\nexport { debounce };\n\n//使用方法示例：\nimport { debounce } from './debounce.js';\n\nconst myFunction = () => {\n  // 要执行的函数逻辑\n};\n\nconst debouncedFunction = debounce(myFunction, 1000); // 创建一个防抖版本的函数\n\n// 在需要限制执行频率的地方调用防抖函数\ndebouncedFunction();\n\n\n\n2）只传一个参数的实用版\n函数防抖是指在一定时间内，只执行最后一次操作，而忽略之前的操作。\n这个版本和第二个带参数的版本在使用上没有太大的不同，但是在实现上有一些细微的差异。\n在这个版本中，我们没有使用剩余参数语法(...args)，而是直接定义了一个没有参数的匿名函数。这意味着在调用debounce函数时，我们只能传入一个函数作为参数，而不能传入任意数量的参数。\n另外，这个版本中的定时器的回调函数直接调用了fn函数，而不是使用apply方法来传递参数。这意味着在调用fn函数时，不会传递任何参数。\n\nfunction debounce(fn, delay) {\n  var timerId;\n  return function() {\n    clearTimeout(timerId);//清除之前的等待时间\n    timerId = setTimeout(fn, delay);\n  };\n}\n//使用：\nvar func = debounce(layout，1000);\nwindow.onresize = func  //在改变窗口的时候不会频繁调用函数，让页面卡顿\n\n\n\n\n\n\n\n\n"
+        },
+        {
+          "label": "使用ladash库",
+          "language": "javascript",
+          "value": "import debounce from \"lodash/debounce\";"
         }
       ],
       "id": "XWVeHpG_",
       "createdAt": 1688967884934,
-      "updatedAt": 1690425268605
+      "updatedAt": 1705633749943
     },
     {
       "isDeleted": false,
@@ -4840,7 +4893,7 @@
     {
       "isDeleted": false,
       "isFavorites": false,
-      "folderId": "3BVGYMMN",
+      "folderId": "yJren5oY",
       "tagsIds": [
         "4wrRqnmP",
         "m56TwSRZ",
@@ -4855,12 +4908,12 @@
         {
           "label": "Fragment 1",
           "language": "css",
-          "value": "CSS是Cascading Style Sheets的缩写，是用于控制网页样式与布局的标准。在不同分辨率的设备上，页面的显示效果是不一样的。为了让网页在不同设备上能够自适应，我们需要查询电脑的缩放比例。\n\nvar scale = window.devicePixelRatio;\nconsole.log(scale);\n上面的代码使用了window.devicePixelRatio属性来获取当前设备的缩放比例，并且将它输出到控制台。这个属性返回的是设备实际像素分辨率与CSS像素分辨率之间的比值。\n\n在实际应用中，我们可以使用这个属性来优化页面的显示效果。当设备的缩放比例不为1时，我们可以针对不同的缩放比例设置不同的样式。比如，当缩放比例为2时，我们可以使用更高清晰度的图片，以达到更好的视觉效果。\n\n结合CSS的媒体查询，我们可以为不同的设备设置不同的样式，以达到更好的用户体验。\n\n注意：大缩放率的放上面\n/* 针对缩放比例为2的设备，使用2倍的图片 */\n@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-device-width: 320px) and (max-device-width: 568px) {\n  .logo {\n    background-image: url(2x-logo.png);\n    background-size: cover;\n  }\n}\n通过上面的代码，我们可以为缩放比例为2的设备设置更高清晰度的图片，并且保持背景图片的尺寸不变，以达到更好的视觉效果。"
+          "value": "var scale = window.devicePixelRatio;\nconsole.log(scale);\n\n上面的代码使用了window.devicePixelRatio属性来获取当前设备的缩放比例，并且将它输出到控制台。这个属性返回的是设备实际像素分辨率与CSS像素分辨率之间的比值。\n\n在实际应用中，我们可以使用这个属性来优化页面的显示效果。当设备的缩放比例不为1时，我们可以针对不同的缩放比例设置不同的样式。比如，当缩放比例为2时，我们可以使用更高清晰度的图片，以达到更好的视觉效果。\n\n结合CSS的媒体查询，我们可以为不同的设备设置不同的样式，以达到更好的用户体验。\n\n注意：大缩放率的放上面\n/* 针对缩放比例为2的设备，使用2倍的图片 */\n@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-device-width: 320px) and (max-device-width: 568px) {\n  .logo {\n    background-image: url(2x-logo.png);\n    background-size: cover;\n  }\n}\n通过上面的代码，我们可以为缩放比例为2的设备设置更高清晰度的图片，并且保持背景图片的尺寸不变，以达到更好的视觉效果。\n\n@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {\n   ::v-deep .el-tabs__item{\n   padding:.5vw 1.5vw;\n   height:unset;\n   }\n }"
         },
         {
           "label": "@media",
           "language": "css",
-          "value": "\nTo limit the styles to devices with a screen, you can chain the mediafeatures to the screen media type:\n\n@media(min-width: 3em) and (orientation: landscape) {\n/**/\n}\n\nYou can use a comma-separated list to apply styles when the user'sdevice matches any one of various media types, features, or states. Forinstance, the following rule will apply its styles if the user's device has either a minimum height of 680px or is a screen device in portrait mode:\n\n@media (min-height: 680px), screen and(orientation: portrait) {\n/**/\n}"
+          "value": "\nTo limit the styles to devices with a screen, you can chain the mediafeatures to the screen media type:\nThis example combines two media features to restrict styles to landscape-oriented devices with a width of at least 30 ems:\n\n@media(min-width: 3em) and (orientation: landscape) {\n/**/\n}\n\nYou can use a comma-separated list to apply styles when the user'sdevice matches any one of various media types, features, or states. Forinstance, the following rule will apply its styles if the user's device has either a minimum height of 680px or is a screen device in portrait mode:\n\n@media (min-height: 680px), screen and(orientation: portrait) {\n/**/\n}\n/*检查当前浏览器是否支持display: flex属性。如果支持，那么以下的CSS规则将会被应用。*/\n@supports (display: flex) {\n  @media screen and (min-width: 900px) {\n    article {\n      display: flex;\n    }\n  }\n}\n\n/* This example applies styles when the user's primary input mechanism (such as a mouse) can hover over elements:*/\n@media (hover: hover) {\n  /* … */\n}\n\n/*这种查询可以用于为支持单色显示模式的设备或浏览器提供特定的样式优化。*/\n@media not all and (monochrome) {\n  /* … */\n}\n\n@media only screen and (min-width: 320px) and (max-width: 480px) and (resolution: 150dpi) {\n  body {\n    line-height: 1.4;\n  }\n}"
         },
         {
           "label": "一个鼠标提示信息实例！",
@@ -4870,7 +4923,230 @@
       ],
       "id": "cGY2CDkG",
       "createdAt": 1698983160688,
-      "updatedAt": 1699496353851
+      "updatedAt": 1702191954298
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "Setter方法",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "Setter方法是一种特殊的方法，用于设置对象的属性值，并可以定义在属性值改变时执行的附加逻辑。与Java中的Setter方法类似，JavaScript中的Setter方法也用于控制对对象属性的访问和修改。\n与Java中的Setter方法相比，JavaScript中的Setter方法有一些不同之处。其中最大的区别是，JavaScript中的Setter方法是通过在对象上定义一个特殊的setter属性来完成的。这个setter属性可以是一个函数，当尝试修改该属性的值时，该函数将被调用。\nObject.defineProperty(obj, 'property', {  \n  set: function(value) {  \n    // 在属性值改变时执行的逻辑  \n  }  \n});\n在这个例子中，Object.defineProperty()方法用于在对象obj上定义一个名为property的属性。set选项是一个函数，它将在尝试修改该属性的值时被调用。可以在这个函数中定义任何需要的逻辑，例如验证输入值或更新其他属性的值。\n与Java中的Setter方法不同，JavaScript中的Setter方法可以定义更灵活的逻辑，例如在设置属性值时进行条件判断或触发其他操作。此外，JavaScript中的Setter方法还可以通过使用Object.observe()方法来监听属性变化，以便在属性值改变时执行特定的回调函数。\n总之，JavaScript有Setter方法，并且它们与Java中的Setter方法类似，但具有更多的灵活性和功能。\n以下是一个更真实的代码实例，演示了如何使用Object.defineProperty()定义一个具有Setter方法的属性：\n\nconst person = {};  \nObject.defineProperty(person, 'age', {  \n  set: function(newValue) {  \n    if (newValue < 0 || newValue > 100) {  \n      throw new Error('Age must be between 0 and 100');  \n    }  \n    this._age = newValue;  \n  }  \n});  \n  \n// 尝试设置年龄属性  \nperson.age = 25; // 正常设置，不会抛出异常  \nconsole.log(person.age); // 输出: 25   \nperson.age = 150; // 抛出异常: Age must be between 0 and 100\n\n在这个例子中，我们定义了一个名为age的属性，并使用Object.defineProperty()方法将其添加到person对象中。在定义的Setter函数中，我们检查新值是否在0到100的范围内。如果新值不在此范围内，则抛出一个错误。否则，我们将新值存储在_age私有属性中。\n\n请注意，在这个例子中，我们使用了this关键字来引用person对象。这是因为Setter方法是在person对象上定义的，所以this关键字引用的是person对象本身。"
+        }
+      ],
+      "id": "s6OS7VKZ",
+      "createdAt": 1701523517717,
+      "updatedAt": 1701523846271
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "MqWdF2i4",
+      "tagsIds": [
+        "eyNtKXGM"
+      ],
+      "description": null,
+      "name": "loading=\"lazy\" 图片懒加载",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "html",
+          "value": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n   <link rel=\"stylesheet\" href=\"index.css\">\n   <script src=\"https://unpkg.com/vue@latest\"></script>\n</head>\n<body> \n    <main class=\"app\">\n        <div v-for=\"image in images\">\n            <!-- 原生的img标签都可以像下面实现图片懒加载不管是在vue、react等什么应用里！ -->\n            <!-- 加height属性懒加载lazy才能生效！否则在network里可以看到全部图片都加载了 -->\n            <img :src=\"image\" height=\"600\" loading=\"lazy\" alt=\"\">\n        </div>\n    </main>\n\n    <script src=\"main.js\"></script>\n</body>\n</html>\n\n下面是main.js\n// 这个文件并不实现懒加载，只是方便批量加载图片\n\nconst imageArr = new Array(36)\n    .fill(\"\")\n    // 注意demo (${idx + 1})这里有个空格，因为批量重命名时自动有个空格！\n    .map((_image, idx) =>`./imgs/demo (${idx + 1}).jpg`);\n\nconst app = { //vue的实例\n    data() {\n        return {\n            images:[...imageArr],\n        }\n    }\n\n}\nVue.createApp(app).mount(\".app\")"
+        }
+      ],
+      "id": "97Mwd9sz",
+      "createdAt": 1701915016842,
+      "updatedAt": 1701934131869
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "yJren5oY",
+      "tagsIds": [
+        "yOmiJD_J"
+      ],
+      "description": null,
+      "name": "container-name",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "h1{\n  /*这两个属性可以用于查询*/\n container-name: abc;\n container-type: inline-size;\n}\n\n//另一个实例：\n.container {  \n  container-name: my-container;  \n  contain: style layout paint;  \n}  \n  \n/* 这个样式只会应用到 container 元素及其子元素 */  \n@container my-container {  \n  color: red;  \n}"
+        }
+      ],
+      "id": "FAV6tTaw",
+      "createdAt": 1702191274418,
+      "updatedAt": 1702197884175
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "3BVGYMMN",
+      "tagsIds": [],
+      "description": null,
+      "name": "clamp()函数实现自适应",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "假设我们有一个元素，我们希望它的宽度能够灵活地适应不同的屏幕大小，但又不希望它太大或太小。这时候，我们就可以使用clamp()函数来设置宽度。比如，我们可以这样写：\n\n.child {\n   width: clamp(100px, 75%, 200px);\n}\n\n这个元素的宽度会在100像素到200像素之间变化，但如果屏幕足够大，它的宽度会保持在屏幕宽度的75%。这样，无论在大屏幕还是小屏幕上，这个元素都能保持合适的大小，既不会太窄，也不会过于宽阔。\nclamp()函数的这种灵活性，使得它成为响应式设计中的一个非常有用的工具。你可以用它来调整字体大小、元素的间距、甚至是布局的大小。通过灵活运用，你的网站或应用界面在不同设备上都能展现出最佳效果。"
+        }
+      ],
+      "id": "nqDoXmhn",
+      "createdAt": 1703138754982,
+      "updatedAt": 1703138841328
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "d_FAu2Me",
+      "tagsIds": [
+        "PbudwP0Z",
+        "Qd6JJgfB"
+      ],
+      "description": null,
+      "name": "background 属性",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": ".element{\n\t   background: url(cool.jpg) \n  top left/50px 50px no-repeat;\n}\ntop left 是位置也就是放在容器的左上角\n50px 50px 是图片的长和宽，也就是background-size:50px 50px;\n\n\n下面可以在页面显示两张图片第二个是居中显示的,注意第二个是在下层的\n.element{\n\t   background: url(cool.jpg) \n  top left/50px 50px no-repeat,\n     url(cool.jpg)\n   center/70px 70px no-repeat;   \n}\n\n下面这个很实用，会给图片加个自定义的遮罩\n.hero {\n\t\tbackground:linear-gradient(\n        rgba(0,0,0,0.15),rgba( 0,0,0,0.15)\n    ),\n\t\turl(\"landscape.jpg\") center/cover;\n}\n\nbackground-blend-mode 属性在CSS中用于设置元素的背景图像如何与其背景色或其他背景图像进行混合。当你设置background-blend-mode: color; 时，这意味着背景图像将与背景颜色使用“color”混合模式混合\n.hero{\n  background: linear-gradient(#000,#000),url(\"landscape.jpg\") center/cover;\n  background-blend-mode:color;\n}\n"
+        }
+      ],
+      "id": "sgHPf6sz",
+      "createdAt": 1703144280859,
+      "updatedAt": 1703153106417
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "d_FAu2Me",
+      "tagsIds": [],
+      "description": null,
+      "name": "object-fit 属性",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "img{\n  object-fit\n}"
+        }
+      ],
+      "id": "V2Adu7bv",
+      "createdAt": 1703153124035,
+      "updatedAt": 1703153182199
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "d_FAu2Me",
+      "tagsIds": [],
+      "description": null,
+      "name": "object-fit 属性",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "img{\n object-fit:contain;\n}\nobject-fit:fill; /* 会变形，忽略原始比例，会充满容器*/\nobject-fit:contain; /* 不会变形，不会充满容器,随着图像比例伸缩到容器边缘，另一侧可能会有空隙*/\nobject-fit:cover; /* 不会变形，会充满容器,可能裁切图片的某些部分以充满容器*/"
+        }
+      ],
+      "id": "ZoI5sWSr",
+      "createdAt": 1703153188898,
+      "updatedAt": 1703153599034
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "d_FAu2Me",
+      "tagsIds": [],
+      "description": null,
+      "name": "display 和 visibility",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "\n.box{\n  visibility:hidden;  /*元素不可见但占据着原来的位置空间 */\n}\n注意：\nVisibility属性：\n隐身术的秘密：它有两个可能的值: visible(默认值)和hidden，虽然它“隐身”了，但它仍然占据着原来的空间\n\n\n.box{\n display:none;  /*元素不可见并且不占据位置*/\n}\ndisplay:none;  \n这个属性更像是一位空间魔法师，不占据空间位置(不仅藏起来了，而且连藏身的地方也消失了)，设置后相邻的元素会移动填补这个空缺！\ndisplay属性有none、block inline inline-block flex grid table等\n"
+        }
+      ],
+      "id": "303xQX0B",
+      "createdAt": 1703153787444,
+      "updatedAt": 1703154383427
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "db9Zyb5Z",
+      "tagsIds": [],
+      "description": null,
+      "name": "动态表单创建",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "vue",
+          "value": "基本思路：就是各个对象里有个next()方法，判断下一个链接关系\n\nimport {isReactive,reactive } from 'vue\""
+        }
+      ],
+      "id": "LoXtdNx9",
+      "createdAt": 1706150399585,
+      "updatedAt": 1706150708724
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "db9Zyb5Z",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "vue",
+          "value": "基本思路：就是各个对象里有个next()方法，判断下一个链接关系\n\nimport {isReactive,reactive } from 'vue\""
+        }
+      ],
+      "id": "xWsqLLQK",
+      "createdAt": 1706150565730,
+      "updatedAt": 1706150710636
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "db9Zyb5Z",
+      "tagsIds": [],
+      "description": null,
+      "name": "动态表单创建",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "就是前面表单的选择项关联下一个表单的呈现状态，会用到链表结构\n\n【动态表单的实现【渡一教育】】 https://www.bilibili.com/video/BV1wi4y1q7Uw/?share_source=copy_web&vd_source=9d8f63206dcddc625bc45eb5cf95eb0f\n\n基本思路：就是各个对象里有个next方法，判断下一个链接关系 \n{  \n   next:() => 下一个表单\n}\n{  \n   next:() => 下一个表单\n}\n...\n\n下面是FormPageDatas.ts文件,是一个对象结构，还不是表单页面\n\nimport {isReactive,reactive} from 'vue\";\n\nexport type FormItemType = 'input'|'select'|'checkbox'|'radio';\n\nexport interface FormItem{ //数据结构\n\t\ttype:FormItemType;\n    payload: any;\n    next:(current:FormItem, acients:FormItem[]) => FormItem | null;\n    parent:FormItem | null;\n}\n\nexport function createFormItem( //辅助函数\n  formItemType: FormItem['type'],\n  payload: FormItem['payload'],\n  next?: FormItem['next'],\n  parent?: FormItem['parent']\n ): FormItem{\n   if(!next){\n      next => () => null;\n   }\n   if(!parent){\n      parent = null;\n   }\n   const nextFunc:FormItem['next']= (current,acients) => {\n   \t let nextItem =next!(current,acients);\n     if (!nextItem)\n\t\t   return null;\n    }\n    nextItem.parent = current;\n    if(!isReactive(nextItem)){\n    \t\tnextItem = reactive(nextItem);\n    }\n\t\t\treturn nextItem;\n   };\n   const formItem:FormItem = reactive({\n   \t\ttype: formItemType,\n      payload,\n\t\t\tnext: nextFunc,\n\t\t\tparent,\n\t\t});\n    \n    return FormItem;\n }\n \n"
+        }
+      ],
+      "id": "KVfERGoL",
+      "createdAt": 1706150625610,
+      "updatedAt": 1706152199925
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "db9Zyb5Z",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "vue",
+          "value": "基本思路：就是各个对象里有个next()方法，判断下一个链接关系\n\nimport {isReactive,reactive } from 'vue\""
+        }
+      ],
+      "id": "1thna70Y",
+      "createdAt": 1706150674521,
+      "updatedAt": 1706150678670
     }
   ],
   "tags": [
@@ -6055,6 +6331,24 @@
       "id": "IvFchhtk",
       "createdAt": 1699496353800,
       "updatedAt": 1699496353800
+    },
+    {
+      "name": "懒加载",
+      "id": "eyNtKXGM",
+      "createdAt": 1701915102634,
+      "updatedAt": 1701915102634
+    },
+    {
+      "name": "background",
+      "id": "PbudwP0Z",
+      "createdAt": 1703151739301,
+      "updatedAt": 1703151739301
+    },
+    {
+      "name": "图片background",
+      "id": "Qd6JJgfB",
+      "createdAt": 1703151747859,
+      "updatedAt": 1703151747859
     }
   ]
 }
