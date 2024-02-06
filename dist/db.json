@@ -81,7 +81,7 @@
     {
       "name": "CSS",
       "parentId": null,
-      "isOpen": false,
+      "isOpen": true,
       "isSystem": false,
       "defaultLanguage": "css",
       "id": "3BVGYMMN",
