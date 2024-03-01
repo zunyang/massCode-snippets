@@ -103,7 +103,7 @@
     {
       "name": "vue",
       "parentId": null,
-      "isOpen": true,
+      "isOpen": false,
       "isSystem": false,
       "defaultLanguage": "javascript",
       "id": "-fio_qG6",
@@ -2066,12 +2066,12 @@
         {
           "label": "Fragment 1",
           "language": "css",
-          "value": "普通：\n/*设置宽度,轨道颜色*/\ndiv::-webkit-scrollbar {\n    width: 10px;\n    height: 10px;\n    background: #fdfdfd;\n    padding-right: 2px;\n}\n/*滚动条*/\ndiv::-webkit-scrollbar-thumb {\n    background: #70959f;\n    border-radius: 10px;\n}\n\n\n理发店招牌底纹效果：引跑218项目用过\n/*设置宽度,轨道颜色*/\ndiv::-webkit-scrollbar {\n    width: 10px;\n    height: 10px;\n    background: #0e0c0c;\n    padding-right: 2px;\n}\n\n/*滚动条*/\ndiv::-webkit-scrollbar-thumb {\n    background: #0b6b89;\n  /*理发店招牌底纹效果*/\n    background-image: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, .2) 10%, transparent 0, transparent 20%, hsla(0, 0%, 100%, .2) 0, hsla(0, 0%, 100%, .2) 30%, transparent 0, transparent 40%, hsla(0, 0%, 100%, .2) 0, hsla(0, 0%, 100%, .2) 50%, transparent 0, transparent 60%, hsla(0, 0%, 100%, .2) 0, hsla(0, 0%, 100%, .2) 70%, transparent 0, transparent 80%, hsla(0, 0%, 100%, .2) 0, hsla(0, 0%, 100%, .2) 90%, transparent 0, transparent 100%);\n    border-radius: 10px;\n}\n\n\n/*+++++++++++++++++++++++++++++++++自定义野火im 滚动条 */\n/* 滚动条样式 */\n::-webkit-scrollbar {\n  width: 8px;\n  height: 8px;\n}\n\n/* 滚动条轨道样式 */\n::-webkit-scrollbar-track {\n  background-color: #f5f5f5;\n}\n\n/* 滚动条-thumb（滑块）样式 */\n::-webkit-scrollbar-thumb {\n  background-color: #c1c1c1;\n  border-radius: 999px;\n}"
+          "value": "普通：\n/*设置宽度,轨道颜色*/\ndiv::-webkit-scrollbar {\n    width: 10px;\n    height: 10px;\n    border-radius: 10px;\n    background: #fdfdfd;\n    padding-right: 2px;\n}\n/*滚动条*/\ndiv::-webkit-scrollbar-thumb {\n    background: #70959f;\n    border-radius: 10px;\n}\n\n\n理发店招牌底纹效果：引跑218项目用过\n/*设置宽度,轨道颜色*/\ndiv::-webkit-scrollbar {\n    width: 10px;\n    height: 10px;\n    border-radius: 10px;\n    background: #0e0c0c;\n    padding-right: 2px;\n}\n\n/*滚动条*/\ndiv::-webkit-scrollbar-thumb {\n    background: #0b6b89;\n  /*理发店招牌底纹效果*/\n    background-image: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, .2) 10%, transparent 0, transparent 20%, hsla(0, 0%, 100%, .2) 0, hsla(0, 0%, 100%, .2) 30%, transparent 0, transparent 40%, hsla(0, 0%, 100%, .2) 0, hsla(0, 0%, 100%, .2) 50%, transparent 0, transparent 60%, hsla(0, 0%, 100%, .2) 0, hsla(0, 0%, 100%, .2) 70%, transparent 0, transparent 80%, hsla(0, 0%, 100%, .2) 0, hsla(0, 0%, 100%, .2) 90%, transparent 0, transparent 100%);\n    border-radius: 10px;\n}\n\n\n/*+++++++++++++++++++++++++++++++++自定义野火im 滚动条 */\n/* 滚动条样式 */\n::-webkit-scrollbar {\n  width: 8px;\n  height: 8px;\n}\n\n/* 滚动条轨道样式 */\n::-webkit-scrollbar-track {\n  background-color: #f5f5f5;\n}\n\n/* 滚动条-thumb（滑块）样式 */\n::-webkit-scrollbar-thumb {\n  background-color: #c1c1c1;\n  border-radius: 999px;\n}"
         }
       ],
       "id": "gIL5zXlW",
       "createdAt": 1681269992432,
-      "updatedAt": 1698977740904
+      "updatedAt": 1708593105111
     },
     {
       "isDeleted": false,
@@ -5015,12 +5015,12 @@
         {
           "label": "Fragment 1",
           "language": "css",
-          "value": ".element{\n\t   background: url(cool.jpg) \n  top left/50px 50px no-repeat;\n}\ntop left 是位置也就是放在容器的左上角\n50px 50px 是图片的长和宽，也就是background-size:50px 50px;\n\n\n下面可以在页面显示两张图片第二个是居中显示的,注意第二个是在下层的\n.element{\n\t   background: url(cool.jpg) \n  top left/50px 50px no-repeat,\n     url(cool.jpg)\n   center/70px 70px no-repeat;   \n}\n\n下面这个很实用，会给图片加个自定义的遮罩\n.hero {\n\t\tbackground:linear-gradient(\n        rgba(0,0,0,0.15),rgba( 0,0,0,0.15)\n    ),\n\t\turl(\"landscape.jpg\") center/cover;\n}\n\nbackground-blend-mode 属性在CSS中用于设置元素的背景图像如何与其背景色或其他背景图像进行混合。当你设置background-blend-mode: color; 时，这意味着背景图像将与背景颜色使用“color”混合模式混合\n.hero{\n  background: linear-gradient(#000,#000),url(\"landscape.jpg\") center/cover;\n  background-blend-mode:color;\n}\n"
+          "value": ".element{\n\t   background: url(cool.jpg) \n     top left/50px 50px no-repeat;\n}\ntop left 是位置也就是放在容器的左上角\n50px 50px 是图片的长和宽，也就是background-size:50px 50px;\n\n\n下面可以在页面显示两张图片第二个是居中显示的,注意第二个是在下层的\n.element{\n\t   background: url(cool.jpg) \n  top left/50px 50px no-repeat,\n     url(cool.jpg)\n   center/70px 70px no-repeat;   \n}\n\n下面这个很实用，会给图片加个自定义的遮罩\n.hero {\n\t\tbackground:linear-gradient(\n        rgba(0,0,0,0.15),rgba( 0,0,0,0.15)\n    ),\n\t\turl(\"landscape.jpg\") center/cover;\n}\n\nbackground-blend-mode 属性在CSS中用于设置元素的背景图像如何与其背景色或其他背景图像进行混合。当你设置background-blend-mode: color; 时，这意味着背景图像将与背景颜色使用“color”混合模式混合\n.hero{\n  background: linear-gradient(#000,#000),url(\"landscape.jpg\") center/cover;\n  background-blend-mode:color;\n}\n"
         }
       ],
       "id": "sgHPf6sz",
       "createdAt": 1703144280859,
-      "updatedAt": 1703153106417
+      "updatedAt": 1708307118576
     },
     {
       "isDeleted": true,
@@ -5147,6 +5147,60 @@
       "id": "1thna70Y",
       "createdAt": 1706150674521,
       "updatedAt": 1706150678670
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": null,
+      "name": "JS读取本地文件",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": ""
+        }
+      ],
+      "id": "1r3r7y0B",
+      "createdAt": 1708310671220,
+      "updatedAt": 1708310677454
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "CIqaS_Yh",
+      "tagsIds": [],
+      "description": null,
+      "name": "如何改变echarts折线图数据点的外观",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "在 ECharts 中，你可以通过配置 series 项中的 itemStyle 和 symbol 属性来改变折线图数据点的外观。itemStyle 用于设置数据点的样式，包括颜色、边框等，而 symbol 用于设置数据点的形状。\n\n下面是一些示例配置，展示了如何改变折线图数据点的颜色和形状：\n\nvar option = {  \n    xAxis: {  \n        type: 'category',  \n        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']  \n    },  \n    yAxis: {  \n        type: 'value'  \n    },  \n    series: [{  \n        data: [820, 932, 901, 934, 1290, 1330, 1320],  \n        type: 'line',  \n        smooth: true,  \n        // 设置数据点的样式  \n        itemStyle: {  \n            // 设置数据点的颜色  \n            color: '#ff0000', // 例如，设置为红色  \n            // 其他样式设置，如边框等  \n            borderColor: '#ffffff', // 边框颜色  \n            borderWidth: 2, // 边框宽度  \n        },  \n        // 设置数据点的形状  \n        symbol: 'rect', // 例如，设置为矩形  \n        // 还可以设置形状的大小  \n        symbolSize: 10,  \n        // 设置数据点标签的样式  \n        label: {  \n            show: true,  \n            position: 'top', // 标签位置  \n            formatter: '{b}: {c}' // 标签格式，{b}是数据项名称，{c}是数据值  \n        }  \n    }]  \n};  \n  \necharts.init(document.getElementById('main')).setOption(option);"
+        }
+      ],
+      "id": "zecWKGb9",
+      "createdAt": 1709258894538,
+      "updatedAt": 1709258915817
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "CIqaS_Yh",
+      "tagsIds": [],
+      "description": null,
+      "name": "如何改变echarts折线图，某个一个数据点的色彩或形状",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "1. 修改颜色\n你可以使用 itemStyle 属性来修改数据点的颜色。你可以为 itemStyle 设置一个回调函数，该函数根据数据点的信息（如它的值或它在数组中的位置）返回相应的颜色。\noption = {  \n    xAxis: {  \n        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']  \n    },  \n    yAxis: {},  \n    series: [{  \n        type: 'line',  \n        data: [120, 200, 150, 80, 70, 110, 130],  \n        itemStyle: {  \n            color: function(params) {  \n                // 根据数据点的值或位置返回颜色  \n                if (params.data === 200) {  \n                    return 'red';  // 当数据点值为 200 时，返回红色  \n                }  \n                return 'blue';  // 其他情况下返回蓝色  \n            }  \n        }  \n    }]  \n};"
+        }
+      ],
+      "id": "C6FxiY-4",
+      "createdAt": 1709258979784,
+      "updatedAt": 1709259016662
     }
   ],
   "tags": [
