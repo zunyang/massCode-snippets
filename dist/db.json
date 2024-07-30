@@ -12,14 +12,14 @@
       "index": 0
     },
     {
-      "name": "lodash",
+      "name": "npm实用包",
       "parentId": "y-C8x3sP",
       "isOpen": true,
       "isSystem": false,
-      "defaultLanguage": "plain_text",
+      "defaultLanguage": "javascript",
       "id": "uIXLFdiz",
       "createdAt": 1682661303338,
-      "updatedAt": 1693552124644,
+      "updatedAt": 1722082439035,
       "index": 1
     },
     {
@@ -121,6 +121,17 @@
       "createdAt": 1710466890436,
       "updatedAt": 1710466928794,
       "index": 2
+    },
+    {
+      "name": "接口联调",
+      "parentId": "-fio_qG6",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "javascript",
+      "id": "LlYDhi5S",
+      "createdAt": 1722150313082,
+      "updatedAt": 1722150342677,
+      "index": 3
     },
     {
       "name": "vue",
@@ -235,6 +246,17 @@
       "index": 2
     },
     {
+      "name": "java正则",
+      "parentId": "ztpcuydj",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "sSyOs_JN",
+      "createdAt": 1713859778903,
+      "updatedAt": 1713859789767,
+      "index": 3
+    },
+    {
       "name": "java",
       "parentId": null,
       "isOpen": true,
@@ -245,6 +267,27 @@
       "updatedAt": 1693552124697,
       "icon": "javaclass",
       "index": 9
+    },
+    {
+      "name": "Vue3",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "vue",
+      "id": "tFfDNl8E",
+      "createdAt": 1713755728137,
+      "updatedAt": 1713755802667,
+      "index": 10
+    },
+    {
+      "name": "Untitled folder",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "uar1NBts",
+      "createdAt": 1722322355397,
+      "updatedAt": 1722322355397
     }
   ],
   "snippets": [
@@ -545,7 +588,7 @@
       ],
       "id": "Hr3Ejo-4",
       "createdAt": 1677576967090,
-      "updatedAt": 1692179648488
+      "updatedAt": 1722219434047
     },
     {
       "isDeleted": false,
@@ -694,7 +737,7 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "\nlocalStorage is a very simple APl.主要了解存入时对象要转成字符串，获取时字符串要转为对象,\n另外注意：objects coming from local storage，will not inherit all the methods that they did before,原因是中间有个格式转换\n\nJSON.stringify() //to convert any object in JavaScript to a string\n//下面存储的对象是这样的：Key:workouts; Value:[\"date\":\"2020-08-22T07:16:54.493Z\"\"id\":\"8080614493\"\"clicks\":0..\nJSON.parse() //将对象转换为字符串\n\n_setLocalStorage() {\n   //第二个参数是把对象转换为字符串存入localStorage\n  localstorage.setItem('workouts', JSON,stringify(this.#workouts));\n}\n\n_getLocalStorage() {\n  //第二个参数是把字符串转换为对象然后获取\n  const data = JSON.parse(localStorage.getItem('workouts'));\n  //console.log(data);\n  if(!data) return\n  this.#workouts = data\n  this.#workouts.forEach(work => {\n    this._renderWorkout(work);\n  })\n}\n\nreset(){\n   localStorage.removeItem('workouts');\n   location.reload();\n}\n\n\n// +++++++++++++++++++++++++++++++++++++++++++++++++++\n<textarea id=\"note\" cols=\"30\" rows=\"10\"></textarea><br>\n<input type=\"button\" id=\"save\" value=\"Save\">\n\nconst elmNote = document.getElementById(\"note\");\nconst elmSave = document.getElementById(\"save\");\n\nlet note = localStorage[\"note\"];\nif (note == null) {\n  note = \"\";\n}\nelmNote.value = note;\n\nelmSave.onclick = () => {\n  localStorage[\"note\"] = elmNote.value;\n};\n\n================================== 引跑项目\n//获取localStorage 还可以是document.localStorage.uid (document的方式更适合iframe)或localStorage.getItem(\"uid\");\n\n user_id: window.localStorage.uid\n\n methods: {\n    getLogData() {\n      getLog({\n        'namespace': `can6-user-${this.user_id}`,\n        'containerName': 'ok'\n      }).then(res => {\n        this.tableLog = res.data.list\n      })\n}\n"
+          "value": "\nlocalStorage is a very simple APl.主要了解存入时对象要转成字符串，获取时字符串要转为对象,\n另外注意：objects coming from local storage，will not inherit all the methods that they did before,原因是中间有个格式转换\n\nJSON.stringify() //to convert any object in JavaScript to a string\n//下面存储的对象是这样的：Key:workouts; Value:[\"date\":\"2020-08-22T07:16:54.493Z\"\"id\":\"8080614493\"\"clicks\":0..\nJSON.parse() //将 JSON 字符串解析为 JSON 对象\n\n_setLocalStorage() {\n   //第二个参数是把对象转换为字符串存入localStorage\n  localstorage.setItem('workouts', JSON,stringify(this.#workouts));\n}\n\n_getLocalStorage() {\n  //第二个参数是把字符串转换为对象然后获取\n  const data = JSON.parse(localStorage.getItem('workouts'));\n  //console.log(data);\n  if(!data) return\n  this.#workouts = data\n  this.#workouts.forEach(work => {\n    this._renderWorkout(work);\n  })\n}\n\nreset(){\n   localStorage.removeItem('workouts');\n   location.reload();\n}\n\n\n// +++++++++++++++++++++++++++++++++++++++++++++++++++\n<textarea id=\"note\" cols=\"30\" rows=\"10\"></textarea><br>\n<input type=\"button\" id=\"save\" value=\"Save\">\n\nconst elmNote = document.getElementById(\"note\");\nconst elmSave = document.getElementById(\"save\");\n\nlet note = localStorage[\"note\"];\nif (note == null) {\n  note = \"\";\n}\nelmNote.value = note;\n\nelmSave.onclick = () => {\n  localStorage[\"note\"] = elmNote.value;\n};\n\n================================== 引跑项目\n//获取localStorage 还可以是document.localStorage.uid (document的方式更适合iframe)或localStorage.getItem(\"uid\");\n\n user_id: window.localStorage.uid\n\n methods: {\n    getLogData() {\n      getLog({\n        'namespace': `can6-user-${this.user_id}`,\n        'containerName': 'ok'\n      }).then(res => {\n        this.tableLog = res.data.list\n      })\n}\n"
         },
         {
           "label": "init(); //进入页面就获取localStorage",
@@ -714,7 +757,7 @@
       ],
       "id": "fihKW6fb",
       "createdAt": 1677581638818,
-      "updatedAt": 1688348212389
+      "updatedAt": 1722153032319
     },
     {
       "isDeleted": false,
@@ -1414,12 +1457,12 @@
         {
           "label": "Fragment 1",
           "language": "javascript",
-          "value": "\nconst imgTargets = document.querySelectorAll('img[data-src]')\n\ninput[type=\"text\"]{\n//input[type=\"submit\"]\n  margin: 10px ;\n  display: block;\n}\n这种用法是CSS中的属性选择器，它可以根据元素的属性值来选择元素并设置样式。\n除了[type=\"text\"]外，还有一些其他常见的属性选择器，例如：\n\n[href]：选择具有 href 属性的元素\n[target=\"_blank\"]：选择 target 属性为 \"_blank\" 的链接元素\n[class^=\"box\"]：选择 class 属性以 \"box\" 开头的元素，如 class=\"box1\" 或 class=\"box2\"\n[data-color~=\"red\"]：选择 data-color 属性值包含 \"red\" 的元素\n这些选择器可以在CSS中灵活地应用于不同的场景。"
+          "value": "\nconst imgTargets = document.querySelectorAll('img[data-src]')\n\ninput[type=\"text\"]{\n//input[type=\"submit\"]\n  margin: 10px ;\n  display: block;\n}\n这种用法是CSS中的属性选择器，它可以根据元素的属性值来选择元素并设置样式。\n除了[type=\"text\"]外，还有一些其他常见的属性选择器，例如：\n\n[href]：选择具有 href 属性的元素\n[target=\"_blank\"]：选择 target 属性为 \"_blank\" 的链接元素\n[class^=\"box\"]：选择 class 属性以 \"box\" 开头的元素，如 class=\"box1\" 或 class=\"box2\"\n[data-color~=\"red\"]：选择 data-color 属性值包含 \"red\" 的元素\n这些选择器可以在CSS中灵活地应用于不同的场景。\n\n\n// --------------------------------------------\n在某些情况下，开发者可能希望仅在元素具有特定属性或属性值时才应用样式。属性选择器使得这种条件样式化成为可能，无需额外的类或ID，也无需使用JavaScript。这种方式非常适合实现基于特定数据属性（data-*属性）的样式变化。\n假设我们想为所有含有特定属性data-tooltip的元素添加一个工具提示样式，我们可以使用如下CSS规则：仅通过CSS和HTML属性来实现一个简单的工具提示功能，无需修改HTML结构或使用JavaScript。\n\n[data-tooltip] {\n    position: relative;\n    cursor: pointer;\n}\n\n[data-tooltip]:before {\n    content: attr(data-tooltip);\n    /* 更多的样式规则来定义工具提示的外观 */\n}\n总之，属性选择器为CSS提供了更多的选择和样式化能力，增加了样式表的灵活性和可维护性，同时促进了更好的文档结构和语义化。"
         }
       ],
       "id": "eLvZiojw",
       "createdAt": 1678359553335,
-      "updatedAt": 1690535494358
+      "updatedAt": 1714973745773
     },
     {
       "isDeleted": false,
@@ -2163,11 +2206,16 @@
           "label": "timeout 函数",
           "language": "javascript",
           "value": "const timeout = function (s) {\n  return new Promise(function (_, reject) {\n    setTimeout(function () {\n      reject(new Error(`Request took too long! Timeout after ${s} second`));\n    }, s * 1000);\n  });\n};\n该函数通常用于配合其他异步操作，例如网络请求或者数据库查询等，以确保应用程序不会因为某个异步操作卡死而无法响应用户输入。\n这段代码中定义了一个 timeout 函数，它返回一个 Promise 对象。该函数的作用是在指定时间内（以秒为单位）检查异步操作是否已经完成，如果超时则抛出一个错误。\n\n具体来说，该函数接受一个参数 s，表示超时时间（单位为秒）。它创建一个新的 Promise 对象，并使用 setTimeout 函数在指定的时间后调用 reject 方法，从而抛出一个 Error 对象，提示异步操作超时。需要注意的是，在 setTimeout 中使用模板字符串，可以将超时时间插入到错误消息中，以便更好地提示用户。"
+        },
+        {
+          "label": "Promise.all",
+          "language": "javascript",
+          "value": "以下是引跑项目实际可用代码\n原来的代码进行批量删除有问题：\nhandleBatchDelete() {\n  this.$modal\n  .confirm(`确认删除这 <b>${this.ids.length}</b> 个分组`)\n  .then(function () {\n  \treturn delGroup(this.ids);\n  })\n  .then(() => {\n    this.getList();\n    this.$modal.msgSuccess(\"删除成功\");\n  })\n  .catch(() => {});\n}\n使用Promise.all来处理所有删除请求，确保全部完成或任一失败即停止\n  handleBatchDelete() {\n      if (this.ids.length === 0) {\n        this.$message.warning(\"请至少选择一项进行删除\");\n        return;\n      }\n\n      this.$modal\n        .confirm(`确认删除这 <b>${this.ids.length}</b> 个分组`)\n        .then(() => {\n          // 使用Promise.all来处理所有删除请求，确保全部完成或任一失败即停止\n          Promise.all(this.ids.map((id) => delGroup(id)))\n            .then((responses) => {\n              // 检查所有请求是否都成功\n              const allSuccess = responses.every(\n                (response) => response && response.code === 200\n              ); // 假设成功的响应code为200，根据实际情况调整\n              if (allSuccess) {\n                this.$modal.msgSuccess(\"所有选中分组已成功删除\");\n                this.getList(); // 刷新列表\n              } else {\n                this.$modal.msgError(\"删除过程中出现错误，请检查网络或联系管理员\");\n              }\n            })\n            .catch(() => {\n              this.$modal.msgError(\"删除请求失败，请稍后再试\");\n            });\n        })\n        .catch(() => {\n          // 用户取消删除操作\n        });\n    },"
         }
       ],
       "id": "Oh_SFa72",
       "createdAt": 1681355064997,
-      "updatedAt": 1684153133997
+      "updatedAt": 1716968113416
     },
     {
       "isDeleted": true,
@@ -2356,7 +2404,7 @@
       ],
       "id": "J4kkBfUp",
       "createdAt": 1682234527113,
-      "updatedAt": 1692106011790
+      "updatedAt": 1721629722205
     },
     {
       "isDeleted": false,
@@ -2560,22 +2608,22 @@
       "updatedAt": 1713674963096
     },
     {
-      "isDeleted": false,
+      "isDeleted": true,
       "isFavorites": false,
       "folderId": "uIXLFdiz",
       "tagsIds": [],
       "description": null,
-      "name": "lodash install",
+      "name": "npm实用包 ",
       "content": [
         {
           "label": "Fragment 1",
           "language": "plain_text",
-          "value": "npm i lodash-es\n在vscode安装后点开node_modules目录下会有lodash_es文件夹，下面有很多.js文件，是lodash的方法；\n举例：将其中的cloneDeep.js导入,点击cloneDeep.js可以查看其中内容,可以看到这个方法是export default cloneDeep出来的，这就是说，import进来的时候可以自定义名称。"
+          "value": "lodash install:\nnpm i lodash-es\n在vscode安装后点开node_modules目录下会有lodash_es文件夹，下面有很多.js文件，是lodash的方法；\n举例：将其中的cloneDeep.js导入,点击cloneDeep.js可以查看其中内容,可以看到这个方法是export default cloneDeep出来的，这就是说，import进来的时候可以自定义名称。\n\nnpm i superagent;\n使用：\nconst superagent = require('superagent');\n superagent\n\n     .get(`https://dog.ceo/api/breed/${data}/images/random`)\n\n    .end((err, res) => {\n\n      console.log(res.body);\n\n});"
         }
       ],
       "id": "4-gYIY6A",
       "createdAt": 1682661328548,
-      "updatedAt": 1682662867017
+      "updatedAt": 1722321638014
     },
     {
       "isDeleted": false,
@@ -4530,7 +4578,7 @@
       ],
       "id": "yKfnHjzq",
       "createdAt": 1693818463824,
-      "updatedAt": 1694257601449
+      "updatedAt": 1713860357230
     },
     {
       "isDeleted": false,
@@ -5474,6 +5522,253 @@
       "id": "cdDw5S1i",
       "createdAt": 1713675323099,
       "updatedAt": 1713675526207
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "tFfDNl8E",
+      "tagsIds": [],
+      "description": null,
+      "name": "更新原理",
+      "content": [
+        {
+          "label": "未优化前",
+          "language": "vue",
+          "value": "<script setup>\n  import {ref onUpdated} from \"vue\";\n\n  let other='这不是响应式的';\n  setTimeOut(()=>{\n   other=\"整个页面刷新，这里才会刷新显示\"\n  }，3000)\n\n  let time1 = ref(200); //这里是响应式的\n\n  setTimeInterval(()=>{\n    time1.value-=1  //这里每秒会刷新,但上面非响应式的dom不会跟着刷新变化\n  },1000)\n\n  onUpdated(()=>{\n    console.log(\"update\")\n  })\n</script>\n\n<template>\n   <div>\n      <div>{{other}}</div>\n      <div>{{time1}}</div>\n   </div>\n </template>\n 问题：\n 如果页面特别庞大。倒计时会频繁的导致diff算法去比对dom(注意这里说的是比对更新dom的时候还是只会更新倒计时所在的dom)，会产生很多内存和性能的消耗，\n \n 每次修改倒计时的对应的变量，就会引起vue的触发整个组件的更新机制。\n 如果页面特别庞大。倒计时会频繁的导致diff算法去比对dom(注意这里说的是比对更新dom的时候还是只会更新倒计时所在的dom)，会产生很多内存和性能的消耗，\n 解决：\n 1，vue的更新是以组件为单位的，把倒计时区域提取为组件，数据通过props传递给组件，这样更新和比对都只会触发组件本身，而组件的代码非常小，就一个倒计时。所以性能较优。注意传递的时候不要传递ref。\n 绕开vue体系，用原生dom操作设置innerHTML的方式(简单的设置文字内容可以考2，虑)\n \n 知识点--vue的更新是以组件为最小统计的单位的(注意不是dom)\n 我们常说vue的响应式原理是get和set，set部分在修改数据的时候触发更新，而get会有一个依赖收集的过程\n 尽量复用之前的dom，避免相似的结构，用v-if切换显影,如：{{content?'显示':'隐藏'}}而不要用div包裹去判断\n "
+        },
+        {
+          "label": "优化后只更新子组件",
+          "language": "vue",
+          "value": "父组件：\n<script setup>\n  import {ref onUpdated} from \"vue\";\n  import timeCounter from \"./components/timeCounter.vue\n\n  let other='这不是响应式的';\n  setTimeOut(()=>{\n   other=\"整个页面刷新，这里才会刷新显示\"\n  }，3000)\n\n  //let time1 = ref(200); //这里是响应式的\n  let time1 = 200; //这里要给子组件传非响应式的数据\n\n  //setTimeInterval(()=>{\n    //time1.value-=1  //这里每秒会刷新,但上面非响应式的dom不会跟着刷新变化\n  //},1000)\n\n  onUpdated(()=>{\n    console.log(\"update\")\n  })\n</script>\n\n<template>\n   <div\n      <div>{{other}}</div> <!-- 这里不会被更新,只会更新下面的子组件 -->\n      <!-- <div>{{time1}}</div> -->\n      <timeCounter :time=\"time1\"></timeCounter>    \n   </div>\n </template>\n \n 子组件 timeCounter.vue：\n <script setup>\n    import {ref onUpdated} from \"vue\";\n    \n    const {time} = defineProps([\"time\"]);\n    const couterTime = ref(time)；\n    setTimeInterval(()=>{\n      conterTime.value-=1  \n    },1000)\n  \n  </script>\n  <template>\n   <div>\n      <div>{{conterTime}}</div>\n   </div>\n </template>\n "
+        }
+      ],
+      "id": "Zz9dN8jh",
+      "createdAt": 1713755819649,
+      "updatedAt": 1713767976775
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "sSyOs_JN",
+      "tagsIds": [],
+      "description": null,
+      "name": "String 支持正则",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "content=\"JDK1.4  JDK1.1 JDK1.3\"  //全部改为JDK\n\\\\. 对.进行转义, | 表示或,replaceAll()第二个参数是希望替换后的值\ncontent = content.replaceAll(\"JDK1\\\\.3\"|JDK1\\\\.4\",\"JDK\");\n\n验证一个手机号必须以138 139开头\ncontent = \"13888889999\";\nif(content.matches(\"1(38|39)\\\\d{8}\")){\n  System.out.printIn(\"验证成功\");\n}else{\n System.out.printIn(\"验证失败\");\n}"
+        }
+      ],
+      "id": "tpJgu-BL",
+      "createdAt": 1713859811979,
+      "updatedAt": 1713860382815
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "sSyOs_JN",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "content = content.replaceAll(\"JDK1\\\\.3\"|JDK1\\\\.4\",\"JDK\");"
+        }
+      ],
+      "id": "33jxcQ1k",
+      "createdAt": 1713859939053,
+      "updatedAt": 1713859953896
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "sSyOs_JN",
+      "tagsIds": [],
+      "description": null,
+      "name": "Untitled snippet",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": "content = content.replaceAll(\"JDK1\\\\.3\"|JDK1\\\\.4\",\"JDK\");"
+        }
+      ],
+      "id": "xC8S_ABp",
+      "createdAt": 1713859947167,
+      "updatedAt": 1713859951931
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "sSyOs_JN",
+      "tagsIds": [],
+      "description": null,
+      "name": "String 类中使用正则表达(支持正则)",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "java",
+          "value": " //要求全部改为JDK\nString content = \"JDK1.4  JDK1.1 JDK1.3\"; \n//  \\\\. 对.进行转义, | 表示或,replaceAll()第二个参数是希望替换后的值\ncontent = content.replaceAll(\"JDK1\\\\.3|JDK1\\\\.4\", \"JDK\");\n\n//验证一个手机号必须以138 139开头\ncontent = \"13888889999\";\nif(content.matches(\"1(38|39)\\\\d{8}\")){\n  System.out.printIn(\"验证成功\");\n}else{\n System.out.printIn(\"验证失败\");\n}\n\n//要求按照#或者-或者~或者数字来分割\ncontent =\"hello#abc-jack12smith~北京\";\nString[] split = content.split(\"#|-|~|\\\\d+\"); // +号表示1到多\nfor(String s:split){\n   System.out.printIn(s);\n}\n\n电子邮件规则：\n只能有一个@; @前面是用户名, 可以是a\nString content =\"hsp@shu.com\"-z A-Z 0-9 _-字符\n@后面是域名，并且域名只能是英文字母\n//要求写出对应的正则表达式，验证输入的字符串是否为满足规则\nString content =\"hsp@shu.com\";\nString regStr = \"^[\\\\w-]+@([a-zA-Z]+\\\\.)+[a-zA-Z]+\";\n//String 的 matches 是整体匹配 所以前面不加^定位符也是可以的\nif(content.matches(regStr)){\n  System.out.println(\"匹配成功\")\n} else {\n  System.out.println(\"匹配失败\")\n}\n^ 表示必须以后面的字符开始\n\\w 等同于 [A-Za-z0-9_] (注意也匹配下划线 _)\n+ 为量词（quantifier）,表示前面的字符集（在这里是 \\w-）应至少出现一次，至多不限次数（即一至多个）。\n该正则表达式能匹配以下格式的电子邮件地址：\nuser@example.com\nmy-email@subdomain.example.co.uk\ntest_123@another.subdomain.example.org\n\n//要求验证是不是路数或者小数,比如:123 -345 34.89-87.9 -0.01 0.45 等\n思路： 1.先写出简单的正则表达式2  .在逐步的完善[根据各种情况来完善]\nString content =\"-0.89\";\nString regStr = \"^[-+]?[1-9]\\\\d*|0)(\\\\.\\\\d+)?$\";\n// (?) 表示前面的字符或子模式出现 0 次或 1 次\n//[ ] 用于匹配括号内列举的任何一个字符 而(1-9) 是无效的正则表达式\n// |0: 或（|）匹配一个单独的 '0' 字符。\n// \\d 表示一个数字字符（等价于 [0-9]），代表任何一位从 0 到 9 的数字 \n// \\d* 允许匹配 零个或多个 连续的数字字符，包括空字符串和\"abc\"这样的字母。\n// \\d+ 要求匹配 至少一个 连续的数字字符，不能是空字符串。\n// )?: 结束未闭合的捕获组，并使其成为可选的，即可以出现 0 次或 1 次。\n// $: 表示字符串的结束位置\n// \\.: 匹配一个点字符 '.'。由于点在正则中有特殊意义（匹配除换行符外的任意字符），这里使用反斜杠 (\\) 对其进行转义，以匹配实际的点字符。\nif(content.matches(regStr)){\n  System.out.println(\"匹配成功\")\n} else {\n  System.out.println(\"匹配失败\")\n}\n\n"
+        }
+      ],
+      "id": "Kl4MckVM",
+      "createdAt": 1713860363813,
+      "updatedAt": 1713863847136
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "CIqaS_Yh",
+      "tagsIds": [],
+      "description": null,
+      "name": "引跑推演气泡图",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "<template>\n  <div>\n    <div class=\"colorWhite chartTitle\" style=\"font-size: 16px; padding-left: 1vw\">\n      媒体动态 <small style=\"color:#ccc;margin-left:.4vw\">发帖数量</small>\n    </div>\n    <div id=\"bubble\" :style=\"{width: width +'px', height: '300px',marginLeft:'-3vw'}\"></div>\n  </div>\n</template>\n\n<script>\nimport { getMedia } from \"@/api/index/graphs.js\";\nexport default {\n  props: {\n    deduction: {\n      type: Object,\n    },\n    width: {   //父元素是这样应用的  :width=\"screenWidth * 0.26\"\n      type: Number,\n      required: true,\n    },\n  \n  },\n  data() {\n    return {\n      to:0,\n      end:0,\n      getMediaData: [],\n    };\n  },\n  methods: {\n    getMediaList() {\n      this.end = this.deduction.startTime + this.to * this.deduction.interval;\n      getMedia(\n        this.deduction.sid,\n        { end: this.end }\n        // limit:12\n      ).then((res) => {\n        this.getMediaData = res.rows;\n        this.bubbleChart();\n      });\n    },\n    bubbleChart() {\n      var myChart = this.$echarts.init(document.getElementById(\"bubble\"));\n      //随机从这里取颜色\n      const colorList = [\n        \"rgba(100, 255, 70,.6)\",\n        \"rgba(255, 70, 131,.6)\",\n        \"rgba(255, 158, 68,.7)\",\n        \"rgba(255, 105, 180, 0.5)\",\n        \"rgba(64, 224, 208, 0.5)\",\n        \"rgba(30, 144, 225, 0.7)\",\n        \"rgba(100, 220, 150, 0.5)\",\n        \"rgba(48, 226, 127, 0.5)\",\n        \"rgba(231, 226, 71, 0.6)\",\n        \"rgba(50, 205, 50, 0.6)\",\n        \"rgba(255, 99, 71, 0.6)\",\n        \"rgba(210, 85, 190, 0.6)\",\n        \"rgba(120, 210, 100, 0.6)\",\n        \"rgba(70, 230, 180, 0.6)\",\n        \"rgba(250, 150, 80, 0.5)\",\n        \"rgba(90, 200, 220, 0.7)\",\n        \"rgba(180, 120, 240, 0.6)\",\n      ];\n      // 用于存储已经选择过的颜色\n      let usedColors = [];\n      function getUniqueRandomColor() {\n        if (colorList.length === 0) {\n          return \"No more colors available\";\n        }\n\n        const randomIndex = Math.floor(Math.random() * colorList.length);\n        const selectedColor = colorList[randomIndex];\n\n        // 从颜色列表中移除已选择的颜色\n        colorList.splice(randomIndex, 1);\n\n        // 将已选择的颜色添加到已使用颜色列表中\n        usedColors.push(selectedColor);\n\n        return selectedColor;\n      }\n      // 计算 图形 的最小值和最大值\n      const minValue = Math.min(...this.getMediaData.map((item) => item.postCount));\n      const maxValue = Math.max(...this.getMediaData.map((item) => item.postCount));\n\n      var option = {\n        backgroundColor: \"transparent\",\n        tooltip: {},\n        animationDurationUpdate: function (idx) {\n          return idx * 100; // 越往后的数据延迟越大\n        },\n        animationEasingUpdate: \"bounceIn\",\n        color: [\"#fff\", \"#fff\", \"#fff\"],\n        series: [\n          {\n            type: \"graph\",\n            layout: \"force\",\n            force: {\n              repulsion: 115,\n              edgeLength: 6,\n            },\n            roam: true,\n            label: {\n              normal: {\n                show: true,\n              },\n            },\n            data: this.getMediaData.map((item) => ({\n              name: item.title + \"\\n\\n\" + item.postCount,\n              value: item.postCount,\n              // 映射 symbolSize 到 40 到 180 的范围\n              symbolSize: Math.min(\n                Math.max(\n                  40, // 最小值\n                  ((item.postCount - minValue) / (maxValue - minValue)) * (180 - 40) + 40 // 线性映射\n                ),\n                180 // 最大值\n              ),\n              //   symbolSize: 80,\n              draggable: true,\n              itemStyle: {\n                normal: {\n                  shadowBlur: 5,\n                  shadowColor: \"colorList[Math.floor(Math.random() * colorList.length)]\",\n                  //   color: colorList[5],\n                  //随机显示色彩,并且这个颜色只出现一次，避免多次使用\n                  color: getUniqueRandomColor(),\n                  // color: colorList[Math.floor(Math.random() * colorList.length)],\n                },\n              },\n            })).slice(0, 12), //控制最多只显示12个数据,多了会超出边界\n            //\n          },\n        ],\n      };\n      myChart.setOption(option);\n      setTimeout(() => {\n        window.addEventListener(\"resize\", () => myChart.resize());\n      }, 200);\n    },\n  },\n};\n</script>\n"
+        }
+      ],
+      "id": "GSgek6k6",
+      "createdAt": 1715328726517,
+      "updatedAt": 1715328930634
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "uIXLFdiz",
+      "tagsIds": [],
+      "description": null,
+      "name": "npm实用包 ",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "lodash install:\nnpm i lodash-es\n在vscode安装后点开node_modules目录下会有lodash_es文件夹，下面有很多.js文件，是lodash的方法；\n举例：将其中的cloneDeep.js导入,点击cloneDeep.js可以查看其中内容,可以看到这个方法是export default cloneDeep出来的，这就是说，import进来的时候可以自定义名称。\n\nnpm i superagent; // HTTP request\n使用：\nconst superagent = require('superagent');\n\nconst getDogPic = async () => {\n  try {\n    const res = await superagent.get(\n      `https://dog.ceo/api/breed/${data}/images/random`\n    ); //返回promise的结果\n    console.log(res.body.message);\n  } catch (err) {\n    console.log(err.message);\n  }\n};"
+        }
+      ],
+      "id": "sE8yhJCn",
+      "createdAt": 1722082368061,
+      "updatedAt": 1722321690798
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "LlYDhi5S",
+      "tagsIds": [
+        "prJCN7St",
+        "Xb4hnTSg",
+        "VsWTq8VP"
+      ],
+      "description": null,
+      "name": "数据格式化",
+      "content": [
+        {
+          "label": "stringify",
+          "language": "javascript",
+          "value": " 下面都是 stringify:\n \n // 将 graphData 转换为 JSON 字符串\n const graphDataJson = JSON.stringify(this.graphData, null, 2); // 第三个参数为缩进空格数,\n //第二个参数是一个可选的替换函数或者一个数组，用于指定哪些属性应该被包含在最终的 JSON 字符串中。\n 当第二个参数为 null 时，这意味着不使用任何替换函数，也不过滤任何属性，即所有属性都将被包含在 JSON 字符串中。换句话说，null 表示将完整地序列化整个对象，包括所有属性。\n 如果你提供一个函数作为第二个参数，那么该函数将被用来替换对象的属性值。如果你提供一个数组作为第二个参数，那么只有数组中列出的属性名称才会出现在最终的 JSON 字符串中。\n 1.不使用替换函数（即第二个参数为 null）\n     const obj = {\n      name: \"John\",\n      age: 30,\n      city: \"New York\"\n    };\n    const jsonString = JSON.stringify(obj, null, 2);\n    // jsonString 将包含所有属性\n\n2. 使用替换函数\n    const obj = {\n      name: \"John\",\n      age: 30,\n      city: \"New York\"\n    };\n\n    function replacer(key, value) {\n      if (key === 'age') {\n        return value + 5; // 增加年龄\n      }\n      return value;\n    }\n    const jsonString = JSON.stringify(obj, replacer, 2);\n    // jsonString 中的 age 将是 35\n\n3. 使用属性过滤数组:\n    const obj = {\n      name: \"John\",\n      age: 30,\n      city: \"New York\"\n    };\n\n    const jsonString = JSON.stringify(obj, ['name', 'city'], 2);\n    // jsonString 将只包含 name 和 city 属性"
+        },
+        {
+          "label": "JSON 字符串和 JSON 对象",
+          "language": "javascript",
+          "value": "JSON 字符串和 JSON 对象：是两个不同的概念：\n \n - JSON 对象：在 JavaScript 中，一个 JSON 对象就是一个普通的 JavaScript 对象，它遵循 JSON 的格式规范。这意味着它是一个由键值对组成的集合，其中键是字符串，值可以是字符串、数字、布尔值、数组、另一个对象或 null。\n \n - JSON 字符串：JSON 字符串是一个纯文本字符串，它表示一个符合 JSON 规范的对象或数组。这个字符串可以被解析成一个 JavaScript 对象，但本身是一个字符串类型。JSON 字符串适合在网络传播适合各个平台\n \n 简而言之： \n JSON 对象：是一个普通的 JavaScript 对象，它遵循 JSON 的数据格式; \n JSON 字符串: 是一个纯文本字符串,它表示一个 JSON 对象或数组,可以被解析成一个JavaScript对象;\n \n JSON 对象示例：\n   const jsonObject = {\n    name: \"Alice\",\n    age: 30,\n    isStudent: false,\n    address: {\n      street: \"123 Main St\",\n      city: \"Anytown\"\n    }\n  };\n  在 JavaScript 中，可以使用 JSON.stringify() 将一个 JSON 对象转换为 JSON 字符串，以及使用 JSON.parse() 将一个 JSON 字符串解析回 JSON 对象。\n  \n  JSON 字符串示例：\n  const jsonString = '{\n  \t\"name\":\"Alice\",\"age\":30,\"isStudent\":false,\"address\":{\"street\":\"123 Main St\",\"city\":\"Anytown\"}\n  }';"
+        }
+      ],
+      "id": "oXmpn42X",
+      "createdAt": 1722150345744,
+      "updatedAt": 1722154083243
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [],
+      "description": "一个相同的案例使用Promise后的不同展示",
+      "name": "Promise-2",
+      "content": [
+        {
+          "label": "回调地狱",
+          "language": "javascript",
+          "value": "node里使用：注意回调函数里有两个子回调，很简单 1)读文件 2)获取HTTP数据 3)写入文件 形成回调地狱\nconst fs = require('fs');\nconst superagent = require('superagent');\n\nfs.readFile(`${__dirname}/dog.txt`, (err, data) => { //__dirname 表示绝对路径\n  if (err) throw err;\n  console.log(`Breed: ${data}`);\n  \n  //doing the HTTP request.\n  superagent\n    .get(`https://dog.ceo/api/breed/${data}/images/random`)\n    .end((err, res) => {\n      if (err) return console.log(err.message);\n      console.log(`Random ${data} image: ${res.body.message}`);//data只是一个狗名称的d关键字\n\n      fs.writeFile(`${__dirname}/dog-img.txt`, res.body.message, (err) => {\n        if (err) return console.log(err.message);\n        console.log('Random dog image saved to file!');\n      });\n    });\n});"
+        },
+        {
+          "label": "使用Promise",
+          "language": "javascript",
+          "value": "const fs = require('fs');\nconst superagent = require('superagent');\n\nconst readFilePromise = (filePath) => {\n  return new Promise((resolve, reject) =>\n    fs.readFile(filePath, (err, data) => (err ? reject(err) : resolve(data)))\n  );\n};\n\nconst writeFilePromise = (filePath, fileData) => {\n  return new Promise((resolve, reject) =>\n    fs.writeFile(filePath, fileData, (err) =>\n      err ? reject(err) : resolve('success')\n    )\n  );\n};\n\nreadFilePromise(`${__dirname}/dog.txt`)\n  .then((data) => {\n    console.log(`Breed: ${data}`);\n\n    return superagent.get(`https://dog.ceo/api/breed/${data}/images/random`);\n  })\n  .then((res, data) => {\n    // if (err) return console.log(err.message); 这个err没用因为then里面没有err,要放到catch里面\n    console.log(res.body.message);\n\n    return writeFilePromise(`dog-img.txt`, res.body.message);\n  })\n  .then(() => {\n    console.log('Random dog image saved to file!');\n  })\n  .catch((err) => {  //这里能够捕获到整个链条上的任何错误\n    console.log(err.message);\n  });\n"
+        },
+        {
+          "label": "使用async/await",
+          "language": "javascript",
+          "value": "const fs = require('fs');\nconst superagent = require('superagent');\n\nconst readFilePromise = (filePath) => {\n  return new Promise((resolve, reject) =>\n    fs.readFile(filePath, (err, data) =>\n      err ? reject('I could not find that file 😢') : resolve(data)\n    )\n  );\n};\n\nconst writeFilePromise = (filePath, fileData) => {\n  return new Promise((resolve, reject) =>\n    fs.writeFile(filePath, fileData, (err) =>\n      err ? reject('Could not write file 😢') : resolve('success')\n    )\n  );\n};\nconst getDogPic = async () => {\n  try {\n    const data = await readFilePromise(`${__dirname}/dog.txt`); //返回promise的结果\n    console.log(`Breed: ${data}`);\n\n    const res = await superagent.get(\n      `https://dog.ceo/api/breed/${data}/images/random`\n    ); //返回promise的结果\n    console.log(res.body.message);\n\n    await writeFilePromise(`dog-img.txt`, res.body.message); //写入文件，没有返回结果\n    console.log('Random dog image saved to file!');\n  } catch (err) {\n    console.log(err.message);\n  }\n  return '2: READY 🐶'; //测试执行机制和顺序\n};\n\n(async () => {\n  try {\n    console.log('1. Will get dog pic!');\n    const x = await getDogPic(); //注意await的灵活用法\n    console.log(x);\n    console.log('3. Done getting dog pic');\n  } catch (err) {\n    console.log('ERROR 💥');\n  }\n})();"
+        },
+        {
+          "label": "使用Promise.all",
+          "language": "javascript",
+          "value": "const fs = require('fs');\nconst superagent = require('superagent');\n\nconst readFilePromise = (filePath) => {\n  return new Promise((resolve, reject) =>\n    fs.readFile(filePath, (err, data) => (err ? reject('I could not find that file 😢') : resolve(data)))\n  );\n};\n\nconst writeFilePromise = (filePath, fileData) => {\n  return new Promise((resolve, reject) =>\n    fs.writeFile(filePath, fileData, (err) => (err ? reject('Could not write file 😢') : resolve('success')))\n  );\n};\nconst getDogPic = async () => {\n  try {\n    const data = await readFilePromise(`${__dirname}/dog.txt`); //返回promise的结果\n    console.log(`Breed: ${data}`);\n\n    const res1Pro = superagent.get(`https://dog.ceo/api/breed/${data}/images/random`);\n    const res2Pro = superagent.get(`https://dog.ceo/api/breed/${data}/images/random`);\n    const res3Pro = superagent.get(`https://dog.ceo/api/breed/${data}/images/random`);\n\n    const all = await Promise.all([res1Pro, res2Pro, res3Pro]); //返回一个数组，里面是三个promise的结果\n    // const res = all[0]; //取第一个promise的结果\n    const imgs = all.map(el => el.body.message); //取所有promise的结果\n    console.log(imgs);\n\n    await writeFilePromise(`dog-img.txt`,imgs.join('\\n')); //写入文件，没有返回结果,第二个参数是写入的内容\n    console.log('Random dog image saved to file!');\n  } catch (err) {\n    console.log(err.message);\n  }\n  return '2: READY 🐶';\n};\n\n(async () => {\n  try {\n    console.log('1. Will get dog pic!');\n    const x = await getDogPic(); //注意await的灵活用法\n    console.log(x);\n    console.log('3. Done getting dog pic');\n  } catch (err) {\n    console.log('ERROR 💥');\n  }\n})();\n"
+        }
+      ],
+      "id": "qGi2X2kM",
+      "createdAt": 1722175641301,
+      "updatedAt": 1722321898877
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "y-C8x3sP",
+      "tagsIds": [
+        "ymLUsPF9"
+      ],
+      "description": null,
+      "name": "map()方法-2",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "javascript",
+          "value": "{\n    \"id\": null,\n    \"type\": null,\n    \"space\": \"militarynews\",\n    \"vertices\": [\n        {\n            \"id\": \"3f18077d68f245059be575213790f431\",\n            \"type\": \"vertex\",\n            \"space\": \"militarynews\",\n            \"vidType\": \"FIXED_STRING\",\n            \"vid\": \"3f18077d68f245059be575213790f431\",\n            \"tags\": [\n                {\n                    \"name\": \"EVENT\",\n                    \"properties\": {\n                        \"event_end\": \"2024-07-20 12:00:00\",\n                        \"name\": \"aaa_事件后续\",\n                        \"event_uuid\": \"aaa_small_200\",\n                        \"event_begin\": \"2024-07-19 12:00:00\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": \"8c2b4829-961b-4c51-aec5-64dce8b49a24\",\n            \"type\": \"vertex\",\n            \"space\": \"militarynews\",\n            \"vidType\": \"FIXED_STRING\",\n            \"vid\": \"8c2b4829-961b-4c51-aec5-64dce8b49a24\",\n            \"tags\": [\n                {\n                    \"name\": \"EVENT\",\n                    \"properties\": {\n                        \"event_end\": \"2024-07-18 12:00:00\",\n                        \"name\": \"aaa_small_100\",\n                        \"event_uuid\": \"aaa_small_100\",\n                        \"event_begin\": \"2024-07-17 12:00:00\"\n                    }\n                }\n            ]\n        }\n    ],\n    \"edges\": [\n\n    ],\n    \"extra\": null\n}\n上面是从后端获取的一个数据，需要遍历每个对象tags数组下的第一个对象的properties对象里的name和event_begin字段的值\n      <el-dialog title=\"事件详情\" :visible.sync=\"eventVisible\">\n          <div v-for=\"(event, index) in events\" :key=\"index\">\n              <p>事件名称: {{ event.name }}</p>\n              <p>开始时间: {{ event.event_begin }}</p>\n              <hr />\n          </div>\n      </el-dialog>\n\n         data(){\n            return{\n                events:[] //声明一个空数组\n            }\n         }\n        // 提取所有顶点的 \"name\", 和 \"event_begin\" 字段\n        //map方法会返回一个新数组\n        this.events = res.data.vertices.map((vertex) => {\n            //思路：先分解\n            const eventProperties = vertex.tags[0].properties;\n            //注意这个直接return一个对象的用法!!\n            return {\n                name: eventProperties.name,\n                event_begin: eventProperties.event_begin,\n            };\n        });"
+        }
+      ],
+      "id": "xYRrZynN",
+      "createdAt": 1722219459843,
+      "updatedAt": 1722220930966
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "d_FAu2Me",
+      "tagsIds": [],
+      "description": null,
+      "name": "伪元素 ::before  ::after",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "可以使用伪元素从新设计项目符号，按钮酷炫悬停动效\n\nh1{\n  position: relative; //给伪元素定位\n  width: max-content;\n}\n//注意伪元素可以看做真实的元素，可以使用所有效果！包括悬停和过渡\nh1::after{\n  content:''; // content:'Hello';可以有文本内容或图像.是必须有的一个属性\n  background:linear-gradient(to right,red,blue);\n  heightL4px;\n  width:100%;\n  position:absolute;\n  bottom:0;\n  left:0;\n  transition:100ms;\n}\nh1:hover::after{\n  width:0;\n}\n"
+        }
+      ],
+      "id": "jjLOLCtf",
+      "createdAt": 1722238383898,
+      "updatedAt": 1722239138625
+    },
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "d_FAu2Me",
+      "tagsIds": [],
+      "description": null,
+      "name": "元素居中",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "css",
+          "value": "\n------------------------ display: flex;\njustify-content: center;\nalign-items:center;\n\n\n------------------------ display:grid;\nplace-content:center;\n\n------------------------ align-content\n.container{\n\ttext-align:center;    //水平居中\n\talign-content:center; //垂直居中\n}"
+        }
+      ],
+      "id": "sWQO78D0",
+      "createdAt": 1722239262726,
+      "updatedAt": 1722239650293
     }
   ],
   "tags": [
@@ -6694,6 +6989,30 @@
       "id": "9Q2F16yV",
       "createdAt": 1713675270432,
       "updatedAt": 1713675270432
+    },
+    {
+      "name": "stringify",
+      "id": "prJCN7St",
+      "createdAt": 1722150739714,
+      "updatedAt": 1722150739714
+    },
+    {
+      "name": "parse",
+      "id": "Xb4hnTSg",
+      "createdAt": 1722153638133,
+      "updatedAt": 1722153638133
+    },
+    {
+      "name": "json转换",
+      "id": "VsWTq8VP",
+      "createdAt": 1722154083172,
+      "updatedAt": 1722154083172
+    },
+    {
+      "name": "数据结构",
+      "id": "ymLUsPF9",
+      "createdAt": 1722220930926,
+      "updatedAt": 1722220930926
     }
   ]
 }
