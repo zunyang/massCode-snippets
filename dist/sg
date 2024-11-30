@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# REMOTE_HOST="root@11.0.24.216"
+REMOTE_HOST="root@11.0.136.38"
+# 38的目录
+REMOTE_PATH="/home/opt/dgmone/modules/nginx/projects/admin"
+
+# 216的目录
+# REMOTE_PATH="/home/dgmone/modules/nginx/projects/admin"
+LOCAL_DIST_PATH="D:/Intple/intpleProject/yqDataone_2/20Src/admin-web/dist"
+
+echo "Removing Remote old dist directory..."
+ssh $REMOTE_HOST "rm -rf $REMOTE_PATH/dist"
+
+echo "Uploading new dist directory..."
+scp -r "$LOCAL_DIST_PATH" $REMOTE_HOST:$REMOTE_PATH/
+
+echo "Deployment completed successfully!"

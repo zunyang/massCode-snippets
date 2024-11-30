@@ -1,0 +1,13 @@
+#!/bin/bash
+
+REMOTE_HOST="root@11.0.136.38"
+REMOTE_PATH="/usr/share/nginx/html"
+LOCAL_DIST_PATH="D:/Intple/intpleProject/qa_2/dist/"
+
+echo "Removing Remote old dist directory..."
+ssh $REMOTE_HOST "rm -rf $REMOTE_PATH"
+
+echo "Uploading new dist directory..."
+scp -r "$LOCAL_DIST_PATH"* $REMOTE_HOST:$REMOTE_PATH  # 添加 * 复制目录内容
+
+echo "Deployment completed successfully!"

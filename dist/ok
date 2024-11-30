@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# 设置变量
+REMOTE_HOST="root@11.0.4.182"
+REMOTE_PATH="/home/zhuqin/ai-web/docker/release"
+LOCAL_DIST_PATH="D:/Intple/intpleProject/canOne_2408/20Src/ai-web/dist"
+NAMESPACE="canone-core"
+DEPLOYMENT="ai-web"
+
+# 1. 更新 dist
+echo "Updating dist..."
+ssh $REMOTE_HOST "rm -rf $REMOTE_PATH/dist/"
+scp -r $LOCAL_DIST_PATH/* $REMOTE_HOST:$REMOTE_PATH/dist/
+
+# 2. 构建和推送 Docker 镜像，以及更新 Kubernetes 部署
+echo "Building, pushing Docker image, and updating Kubernetes deployment..."
+IMAGE_TAG=$(date "+%Y%m%d%H%M%S")
+IMAGE_NAME="harbor.canone.com/canone/core/canone-ai-web:$IMAGE_TAG"
+
+ssh $REMOTE_HOST << EOF
+    cd $REMOTE_PATH
+    docker build -t $IMAGE_NAME .
+    docker push $IMAGE_NAME
+    kubectl -n $NAMESPACE set image deploy $DEPLOYMENT "*=$IMAGE_NAME"
+EOF
+
+echo "Deployment completed successfully!"
